@@ -42,6 +42,7 @@ part 'utilities_web_api_protos_list_units_response_types_list_units_response_ite
 /// * [sensors] - List of sensors
 /// * [isInWarning]
 /// * [lastSeen] - Timestamp of the last activity
+/// * [deviceGroupId] - Id of the device group this unit belongs to
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem
     implements
@@ -152,6 +153,10 @@ abstract class UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem
   /// Timestamp of the last activity
   @BuiltValueField(wireName: r'lastSeen')
   int? get lastSeen;
+
+  /// Id of the device group this unit belongs to
+  @BuiltValueField(wireName: r'deviceGroupId')
+  String? get deviceGroupId;
 
   UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem._();
 
@@ -382,6 +387,13 @@ class _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItemSerializ
       yield serializers.serialize(
         object.lastSeen,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.deviceGroupId != null) {
+      yield r'deviceGroupId';
+      yield serializers.serialize(
+        object.deviceGroupId,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -654,6 +666,15 @@ class _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItemSerializ
               serializers.deserialize(value, specifiedType: const FullType(int))
                   as int;
           result.lastSeen = valueDes;
+          break;
+        case r'deviceGroupId':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
+          result.deviceGroupId = valueDes;
           break;
         default:
           unhandled.add(key);

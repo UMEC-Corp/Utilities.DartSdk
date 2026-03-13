@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **vendorName** | **String** |  | [optional] 
 **modelName** | **String** | Display name of the model | [optional] 
 **lastSeen** | **int** | Timestamp of the last activity | [optional] 
+**deviceGroupId** | **String** | Id of the device group this unit belongs to | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

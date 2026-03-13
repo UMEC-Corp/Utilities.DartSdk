@@ -4230,25 +4230,6 @@
           }
         }
       }
-    },
-    "/": {
-      "get": {
-        "tags": [
-          "Utilities.Web.Api"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
     }
   },
   "components": {
@@ -6534,6 +6515,10 @@
             "type": "integer",
             "description": "Timestamp of the last activity",
             "format": "int64"
+          },
+          "deviceGroupId": {
+            "type": "string",
+            "description": "Id of the device group this unit belongs to"
           }
         },
         "additionalProperties": false,
@@ -7499,6 +7484,10 @@
             "type": "integer",
             "description": "Timestamp of the last activity",
             "format": "int64"
+          },
+          "deviceGroupId": {
+            "type": "string",
+            "description": "Id of the device group this unit belongs to"
           }
         },
         "additionalProperties": false,
@@ -8306,11 +8295,15 @@
     },
     {
       "name": "UsersService",
-      "description": "The UsersService definition."
+      "description": "gRPC service for authentication and user access operations."
+    },
+    {
+      "name": "EmployeesService",
+      "description": "gRPC service for employee management operations."
     },
     {
       "name": "UnitsService",
-      "description": "UnitsService provides operations for managing virtual devices (units) and their associated data."
+      "description": "gRPC service for virtual device (unit) operations."
     },
     {
       "name": "MonitorsService",
@@ -8318,7 +8311,7 @@
     },
     {
       "name": "StreamsService",
-      "description": "/ Service for streaming virtual device (aka unit) events."
+      "description": "gRPC service for streaming unit events."
     },
     {
       "name": "MaintainersService",
@@ -8330,7 +8323,7 @@
     },
     {
       "name": "ProfileService",
-      "description": "Service for managing current users profiles"
+      "description": "gRPC service for current user profile operations."
     },
     {
       "name": "ModelsService",
@@ -8342,15 +8335,15 @@
     },
     {
       "name": "IntegrationsService",
-      "description": "Service for listing integrations and related models."
+      "description": "gRPC service for integration catalog operations."
     },
     {
       "name": "AlertsService",
-      "description": "Service for managing unit alerts."
+      "description": "gRPC service for alert operations."
     },
     {
       "name": "ScenariosService",
-      "description": "Service for scenario management"
+      "description": "gRPC service for scenario operations."
     },
     {
       "name": "EventTypesService",
@@ -8358,7 +8351,7 @@
     },
     {
       "name": "ReportsService",
-      "description": "Service for report generation."
+      "description": "gRPC service for report generation operations."
     },
     {
       "name": "RolesService",

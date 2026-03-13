@@ -1,24 +1,14 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.18
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:utilities_dart_sdk_client/api.dart';
 import 'package:test/test.dart';
+import 'package:utilities_dart_sdk_client/utilities_dart_sdk_client.dart';
 
 /// tests for EventTypesServiceApi
 void main() {
-  // final instance = EventTypesServiceApi();
+  final instance = UtilitiesDartSdkClient().getEventTypesServiceApi();
 
-  group('tests for EventTypesServiceApi', () {
+  group(EventTypesServiceApi, () {
     // Remove event type
     //
-    //Future<Object> apiDashboardV1EventTypesEventTypeIdDelete(String eventTypeId) async
+    //Future<JsonObject> apiDashboardV1EventTypesEventTypeIdDelete(String eventTypeId) async
     test('test apiDashboardV1EventTypesEventTypeIdDelete', () async {
       // TODO
     });
@@ -39,14 +29,14 @@ void main() {
 
     // Create event for the specified event type and address
     //
-    //Future<Object> apiDashboardV1EventTypesEventTypeIddispatchPost(String eventTypeId, { UtilitiesWebApiProtosDispatchEventRequest utilitiesWebApiProtosDispatchEventRequest }) async
+    //Future<JsonObject> apiDashboardV1EventTypesEventTypeIddispatchPost(String eventTypeId, { UtilitiesWebApiProtosDispatchEventRequest utilitiesWebApiProtosDispatchEventRequest }) async
     test('test apiDashboardV1EventTypesEventTypeIddispatchPost', () async {
       // TODO
     });
 
     // Get a list if available event types
     //
-    //Future<UtilitiesWebApiProtosListEventTypesResponse> apiDashboardV1EventTypesGet({ int offset, int limit, List<String> ids }) async
+    //Future<UtilitiesWebApiProtosListEventTypesResponse> apiDashboardV1EventTypesGet({ int offset, int limit, BuiltList<String> ids }) async
     test('test apiDashboardV1EventTypesGet', () async {
       // TODO
     });
@@ -60,7 +50,7 @@ void main() {
 
     // Get a list of events
     //
-    //Future<UtilitiesWebApiProtosListEventsResponse> apiDashboardV1EventsGet({ int offset, int limit, List<String> eventTypeIds, int fromTimestamp, int toTimestamp, List<String> addressIds, String deviceId, String unitCode }) async
+    //Future<UtilitiesWebApiProtosListEventsResponse> apiDashboardV1EventsGet({ int offset, int limit, BuiltList<String> eventTypeIds, int fromTimestamp, int toTimestamp, BuiltList<String> addressIds, String deviceId, String unitCode }) async
     test('test apiDashboardV1EventsGet', () async {
       // TODO
     });

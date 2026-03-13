@@ -26,7 +26,6 @@ import 'package:utilities_dart_sdk_client/src/api/statistics_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/streams_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/units_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/users_service_api.dart';
-import 'package:utilities_dart_sdk_client/src/api/utilities_web_api_api.dart';
 
 class UtilitiesDartSdkClient {
   static const String basePath = r'http://localhost';
@@ -201,11 +200,5 @@ class UtilitiesDartSdkClient {
   /// by doing that all interceptors will not be executed
   UsersServiceApi getUsersServiceApi() {
     return UsersServiceApi(dio, serializers);
-  }
-
-  /// Get UtilitiesWebApiApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  UtilitiesWebApiApi getUtilitiesWebApiApi() {
-    return UtilitiesWebApiApi(dio, serializers);
   }
 }

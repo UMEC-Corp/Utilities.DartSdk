@@ -27,7 +27,6 @@ export 'package:utilities_dart_sdk_client/src/api/statistics_service_api.dart';
 export 'package:utilities_dart_sdk_client/src/api/streams_service_api.dart';
 export 'package:utilities_dart_sdk_client/src/api/units_service_api.dart';
 export 'package:utilities_dart_sdk_client/src/api/users_service_api.dart';
-export 'package:utilities_dart_sdk_client/src/api/utilities_web_api_api.dart';
 
 export 'package:utilities_dart_sdk_client/src/model/google_protobuf_well_known_types_any.dart';
 export 'package:utilities_dart_sdk_client/src/model/google_rpc_status.dart';

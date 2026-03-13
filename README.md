@@ -25,8 +25,17 @@ Repository containing two separate libraries:
 2. Regenerate the client from `Utilities.DartSdk.Generator`:
 
 ```powershell
+cd Utilities.DartSdk.Generator
 flutter pub get
 dart run build_runner build --delete-conflicting-outputs
 ```
 
-3. Consume the generated package from `Utilities.DartSdk.Client`.
+3. Generate built value files in `Utilities.DartSdk.Client`:
+
+```powershell
+cd Utilities.DartSdk.Client
+dart pub get
+dart run build_runner build --delete-conflicting-outputs
+```
+
+4. Consume the generated package from `Utilities.DartSdk.Client`.

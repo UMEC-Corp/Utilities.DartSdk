@@ -1,21 +1,12 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.18
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:utilities_dart_sdk_client/api.dart';
 import 'package:test/test.dart';
+import 'package:utilities_dart_sdk_client/utilities_dart_sdk_client.dart';
 
 // tests for UtilitiesWebApiProtosMaintainer
 void main() {
-  // final instance = UtilitiesWebApiProtosMaintainer();
+  final instance = UtilitiesWebApiProtosMaintainerBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test UtilitiesWebApiProtosMaintainer', () {
+  group(UtilitiesWebApiProtosMaintainer, () {
     // Id of the current service company (maintainer)
     // String maintainerId
     test('to test the property `maintainerId`', () async {
@@ -41,7 +32,7 @@ void main() {
     });
 
     // Business contacts of the company
-    // List<UtilitiesWebApiProtosContact> contacts (default value: const [])
+    // BuiltList<UtilitiesWebApiProtosContact> contacts
     test('to test the property `contacts`', () async {
       // TODO
     });

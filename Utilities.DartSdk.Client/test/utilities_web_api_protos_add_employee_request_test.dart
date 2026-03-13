@@ -1,21 +1,12 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.18
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:utilities_dart_sdk_client/api.dart';
 import 'package:test/test.dart';
+import 'package:utilities_dart_sdk_client/utilities_dart_sdk_client.dart';
 
 // tests for UtilitiesWebApiProtosAddEmployeeRequest
 void main() {
-  // final instance = UtilitiesWebApiProtosAddEmployeeRequest();
+  final instance = UtilitiesWebApiProtosAddEmployeeRequestBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test UtilitiesWebApiProtosAddEmployeeRequest', () {
+  group(UtilitiesWebApiProtosAddEmployeeRequest, () {
     // The username of the employee.
     // String username
     test('to test the property `username`', () async {
@@ -41,7 +32,7 @@ void main() {
     });
 
     // The list of contacts for the employee.
-    // List<UtilitiesWebApiProtosContact> contacts (default value: const [])
+    // BuiltList<UtilitiesWebApiProtosContact> contacts
     test('to test the property `contacts`', () async {
       // TODO
     });

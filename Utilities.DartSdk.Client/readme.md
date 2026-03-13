@@ -152,7 +152,6 @@ Class | Method | HTTP request | Description
 [*UsersServiceApi*](doc/UsersServiceApi.md) | [**apiDashboardV1AuthResetPasswordPost**](doc/UsersServiceApi.md#apidashboardv1authresetpasswordpost) | **POST** /api/dashboard/v1/auth/reset-password | Resets the user&#39;s password using the provided reset token.
 [*UsersServiceApi*](doc/UsersServiceApi.md) | [**apiDashboardV1AuthSignInPost**](doc/UsersServiceApi.md#apidashboardv1authsigninpost) | **POST** /api/dashboard/v1/auth/sign-in | Sign a user in with provided credentials
 [*UsersServiceApi*](doc/UsersServiceApi.md) | [**apiDashboardV1AuthSignOutPost**](doc/UsersServiceApi.md#apidashboardv1authsignoutpost) | **POST** /api/dashboard/v1/auth/sign-out | Signs out the current user.
-[*UtilitiesWebApiApi*](doc/UtilitiesWebApiApi.md) | [**rootGet**](doc/UtilitiesWebApiApi.md#rootget) | **GET** / | 
 
 
 ## Documentation For Models

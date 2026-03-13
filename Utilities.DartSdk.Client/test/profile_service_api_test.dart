@@ -1,21 +1,11 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.18
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:utilities_dart_sdk_client/api.dart';
 import 'package:test/test.dart';
+import 'package:utilities_dart_sdk_client/utilities_dart_sdk_client.dart';
 
 /// tests for ProfileServiceApi
 void main() {
-  // final instance = ProfileServiceApi();
+  final instance = UtilitiesDartSdkClient().getProfileServiceApi();
 
-  group('tests for ProfileServiceApi', () {
+  group(ProfileServiceApi, () {
     // Get detailed info on current company
     //
     //Future<UtilitiesWebApiProtosGetCompanyResponse> apiDashboardV1ProfileCompanyGet() async
@@ -25,7 +15,7 @@ void main() {
 
     // Update current company
     //
-    //Future<Object> apiDashboardV1ProfileCompanyIdPut(String id, { UtilitiesWebApiProtosUpdateCompanyRequest utilitiesWebApiProtosUpdateCompanyRequest }) async
+    //Future<JsonObject> apiDashboardV1ProfileCompanyIdPut(String id, { UtilitiesWebApiProtosUpdateCompanyRequest utilitiesWebApiProtosUpdateCompanyRequest }) async
     test('test apiDashboardV1ProfileCompanyIdPut', () async {
       // TODO
     });
@@ -39,14 +29,14 @@ void main() {
 
     // Update profile for current user
     //
-    //Future<Object> apiDashboardV1ProfileIdPut(String id, { UtilitiesWebApiProtosUpdateProfileRequest utilitiesWebApiProtosUpdateProfileRequest }) async
+    //Future<JsonObject> apiDashboardV1ProfileIdPut(String id, { UtilitiesWebApiProtosUpdateProfileRequest utilitiesWebApiProtosUpdateProfileRequest }) async
     test('test apiDashboardV1ProfileIdPut', () async {
       // TODO
     });
 
     // Set preferences for current user
     //
-    //Future<Object> apiDashboardV1ProfilePreferencesPut({ UtilitiesWebApiProtosSetPreferencesRequest utilitiesWebApiProtosSetPreferencesRequest }) async
+    //Future<JsonObject> apiDashboardV1ProfilePreferencesPut({ UtilitiesWebApiProtosSetPreferencesRequest utilitiesWebApiProtosSetPreferencesRequest }) async
     test('test apiDashboardV1ProfilePreferencesPut', () async {
       // TODO
     });

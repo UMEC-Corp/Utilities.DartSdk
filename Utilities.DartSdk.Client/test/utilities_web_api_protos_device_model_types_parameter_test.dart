@@ -1,21 +1,12 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.18
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:utilities_dart_sdk_client/api.dart';
 import 'package:test/test.dart';
+import 'package:utilities_dart_sdk_client/utilities_dart_sdk_client.dart';
 
 // tests for UtilitiesWebApiProtosDeviceModelTypesParameter
 void main() {
-  // final instance = UtilitiesWebApiProtosDeviceModelTypesParameter();
+  final instance = UtilitiesWebApiProtosDeviceModelTypesParameterBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test UtilitiesWebApiProtosDeviceModelTypesParameter', () {
+  group(UtilitiesWebApiProtosDeviceModelTypesParameter, () {
     // bool isFixed
     test('to test the property `isFixed`', () async {
       // TODO
@@ -36,7 +27,7 @@ void main() {
       // TODO
     });
 
-    // List<String> valueBinding (default value: const [])
+    // BuiltList<String> valueBinding
     test('to test the property `valueBinding`', () async {
       // TODO
     });

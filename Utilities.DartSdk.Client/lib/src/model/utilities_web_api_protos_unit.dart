@@ -48,6 +48,7 @@ part 'utilities_web_api_protos_unit.g.dart';
 /// * [vendorName]
 /// * [modelName] - Display name of the model
 /// * [lastSeen] - Timestamp of the last activity
+/// * [deviceGroupId] - Id of the device group this unit belongs to
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUnit
     implements
@@ -180,6 +181,10 @@ abstract class UtilitiesWebApiProtosUnit
   /// Timestamp of the last activity
   @BuiltValueField(wireName: r'lastSeen')
   int? get lastSeen;
+
+  /// Id of the device group this unit belongs to
+  @BuiltValueField(wireName: r'deviceGroupId')
+  String? get deviceGroupId;
 
   UtilitiesWebApiProtosUnit._();
 
@@ -444,6 +449,13 @@ class _$UtilitiesWebApiProtosUnitSerializer
       yield serializers.serialize(
         object.lastSeen,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.deviceGroupId != null) {
+      yield r'deviceGroupId';
+      yield serializers.serialize(
+        object.deviceGroupId,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -766,6 +778,15 @@ class _$UtilitiesWebApiProtosUnitSerializer
               serializers.deserialize(value, specifiedType: const FullType(int))
                   as int;
           result.lastSeen = valueDes;
+          break;
+        case r'deviceGroupId':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
+          result.deviceGroupId = valueDes;
           break;
         default:
           unhandled.add(key);

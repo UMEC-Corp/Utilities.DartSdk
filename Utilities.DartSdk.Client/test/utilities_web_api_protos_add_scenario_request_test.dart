@@ -1,21 +1,12 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.18
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:utilities_dart_sdk_client/api.dart';
 import 'package:test/test.dart';
+import 'package:utilities_dart_sdk_client/utilities_dart_sdk_client.dart';
 
 // tests for UtilitiesWebApiProtosAddScenarioRequest
 void main() {
-  // final instance = UtilitiesWebApiProtosAddScenarioRequest();
+  final instance = UtilitiesWebApiProtosAddScenarioRequestBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test UtilitiesWebApiProtosAddScenarioRequest', () {
+  group(UtilitiesWebApiProtosAddScenarioRequest, () {
     // Id of the host object for the scenario
     // String objectId
     test('to test the property `objectId`', () async {
@@ -41,13 +32,13 @@ void main() {
     });
 
     // List of actions that should be done during scenario execution
-    // List<UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioActionItem> actions (default value: const [])
+    // BuiltList<UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioActionItem> actions
     test('to test the property `actions`', () async {
       // TODO
     });
 
     // List of conditions that should be checked before scenario execution
-    // List<UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioConditionItem> conditions (default value: const [])
+    // BuiltList<UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioConditionItem> conditions
     test('to test the property `conditions`', () async {
       // TODO
     });

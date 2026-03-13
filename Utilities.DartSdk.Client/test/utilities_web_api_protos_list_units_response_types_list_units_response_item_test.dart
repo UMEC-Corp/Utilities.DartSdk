@@ -1,22 +1,13 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.18
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:utilities_dart_sdk_client/api.dart';
 import 'package:test/test.dart';
+import 'package:utilities_dart_sdk_client/utilities_dart_sdk_client.dart';
 
 // tests for UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem
 void main() {
-  // final instance = UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem();
+  final instance =
+      UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItemBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem',
-      () {
+  group(UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem, () {
     // The ID of the virtual device.
     // String id
     test('to test the property `id`', () async {
@@ -35,7 +26,7 @@ void main() {
     });
 
     // The list of contacts associated with the virtual device.
-    // List<UtilitiesWebApiProtosContact> contacts (default value: const [])
+    // BuiltList<UtilitiesWebApiProtosContact> contacts
     test('to test the property `contacts`', () async {
       // TODO
     });
@@ -65,7 +56,7 @@ void main() {
     });
 
     // Employees assigned to maintain the device
-    // List<UtilitiesWebApiProtosMaintenanceAssignment> maintenanceAssignments (default value: const [])
+    // BuiltList<UtilitiesWebApiProtosMaintenanceAssignment> maintenanceAssignments
     test('to test the property `maintenanceAssignments`', () async {
       // TODO
     });
@@ -155,7 +146,7 @@ void main() {
     });
 
     // List of sensors
-    // List<UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor> sensors (default value: const [])
+    // BuiltList<UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor> sensors
     test('to test the property `sensors`', () async {
       // TODO
     });
@@ -168,6 +159,12 @@ void main() {
     // Timestamp of the last activity
     // int lastSeen
     test('to test the property `lastSeen`', () async {
+      // TODO
+    });
+
+    // Id of the device group this unit belongs to
+    // String deviceGroupId
+    test('to test the property `deviceGroupId`', () async {
       // TODO
     });
   });
