@@ -20,10 +20,8 @@ part 'utilities_web_api_protos_notification.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosNotification
     implements
-        Built<
-          UtilitiesWebApiProtosNotification,
-          UtilitiesWebApiProtosNotificationBuilder
-        > {
+        Built<UtilitiesWebApiProtosNotification,
+            UtilitiesWebApiProtosNotificationBuilder> {
   /// The ID of the notification.
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -46,9 +44,9 @@ abstract class UtilitiesWebApiProtosNotification
 
   UtilitiesWebApiProtosNotification._();
 
-  factory UtilitiesWebApiProtosNotification([
-    void updates(UtilitiesWebApiProtosNotificationBuilder b),
-  ]) = _$UtilitiesWebApiProtosNotification;
+  factory UtilitiesWebApiProtosNotification(
+          [void updates(UtilitiesWebApiProtosNotificationBuilder b)]) =
+      _$UtilitiesWebApiProtosNotification;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosNotificationBuilder b) => b;
@@ -63,7 +61,7 @@ class _$UtilitiesWebApiProtosNotificationSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosNotification,
-    _$UtilitiesWebApiProtosNotification,
+    _$UtilitiesWebApiProtosNotification
   ];
 
   @override
@@ -117,11 +115,9 @@ class _$UtilitiesWebApiProtosNotificationSerializer
     UtilitiesWebApiProtosNotification object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -137,44 +133,38 @@ class _$UtilitiesWebApiProtosNotificationSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.id = valueDes;
           break;
         case r'unitId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitId = valueDes;
           break;
         case r'timestamp':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.timestamp = valueDes;
           break;
         case r'text':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.text = valueDes;
           break;
         case r'importance':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosImportance,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosImportance;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UtilitiesWebApiProtosImportance),
+          ) as UtilitiesWebApiProtosImportance;
           result.importance = valueDes;
           break;
         default:

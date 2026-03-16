@@ -20,10 +20,8 @@ part 'utilities_web_api_protos_update_maintainer_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpdateMaintainerRequest
     implements
-        Built<
-          UtilitiesWebApiProtosUpdateMaintainerRequest,
-          UtilitiesWebApiProtosUpdateMaintainerRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosUpdateMaintainerRequest,
+            UtilitiesWebApiProtosUpdateMaintainerRequestBuilder> {
   /// The name of the current company
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -42,18 +40,20 @@ abstract class UtilitiesWebApiProtosUpdateMaintainerRequest
 
   UtilitiesWebApiProtosUpdateMaintainerRequest._();
 
-  factory UtilitiesWebApiProtosUpdateMaintainerRequest([
-    void updates(UtilitiesWebApiProtosUpdateMaintainerRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosUpdateMaintainerRequest;
+  factory UtilitiesWebApiProtosUpdateMaintainerRequest(
+          [void updates(
+              UtilitiesWebApiProtosUpdateMaintainerRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosUpdateMaintainerRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosUpdateMaintainerRequestBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosUpdateMaintainerRequestBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosUpdateMaintainerRequest>
-  get serializer => _$UtilitiesWebApiProtosUpdateMaintainerRequestSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosUpdateMaintainerRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosUpdateMaintainerRequestSerializer
@@ -62,7 +62,7 @@ class _$UtilitiesWebApiProtosUpdateMaintainerRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdateMaintainerRequest,
-    _$UtilitiesWebApiProtosUpdateMaintainerRequest,
+    _$UtilitiesWebApiProtosUpdateMaintainerRequest
   ];
 
   @override
@@ -98,9 +98,8 @@ class _$UtilitiesWebApiProtosUpdateMaintainerRequestSerializer
       yield r'contacts';
       yield serializers.serialize(
         object.contacts,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosContact),
-        ]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
       );
     }
   }
@@ -111,11 +110,9 @@ class _$UtilitiesWebApiProtosUpdateMaintainerRequestSerializer
     UtilitiesWebApiProtosUpdateMaintainerRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -131,41 +128,32 @@ class _$UtilitiesWebApiProtosUpdateMaintainerRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.name = valueDes;
           break;
         case r'promo':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.promo = valueDes;
           break;
         case r'avatar':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.avatar = valueDes;
           break;
         case r'contacts':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosContact),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosContact>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
+          ) as BuiltList<UtilitiesWebApiProtosContact>;
           result.contacts.replace(valueDes);
           break;
         default:

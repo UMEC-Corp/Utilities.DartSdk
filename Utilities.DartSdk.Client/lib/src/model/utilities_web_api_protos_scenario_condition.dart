@@ -40,10 +40,8 @@ part 'utilities_web_api_protos_scenario_condition.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosScenarioCondition
     implements
-        Built<
-          UtilitiesWebApiProtosScenarioCondition,
-          UtilitiesWebApiProtosScenarioConditionBuilder
-        > {
+        Built<UtilitiesWebApiProtosScenarioCondition,
+            UtilitiesWebApiProtosScenarioConditionBuilder> {
   /// Id of the action
   @BuiltValueField(wireName: r'id')
   String? get id;
@@ -138,9 +136,9 @@ abstract class UtilitiesWebApiProtosScenarioCondition
 
   UtilitiesWebApiProtosScenarioCondition._();
 
-  factory UtilitiesWebApiProtosScenarioCondition([
-    void updates(UtilitiesWebApiProtosScenarioConditionBuilder b),
-  ]) = _$UtilitiesWebApiProtosScenarioCondition;
+  factory UtilitiesWebApiProtosScenarioCondition(
+          [void updates(UtilitiesWebApiProtosScenarioConditionBuilder b)]) =
+      _$UtilitiesWebApiProtosScenarioCondition;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosScenarioConditionBuilder b) => b;
@@ -155,7 +153,7 @@ class _$UtilitiesWebApiProtosScenarioConditionSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosScenarioCondition,
-    _$UtilitiesWebApiProtosScenarioCondition,
+    _$UtilitiesWebApiProtosScenarioCondition
   ];
 
   @override
@@ -205,9 +203,8 @@ class _$UtilitiesWebApiProtosScenarioConditionSerializer
       yield r'operation';
       yield serializers.serialize(
         object.operation,
-        specifiedType: const FullType(
-          UtilitiesWebApiProtosScenarioConditionOperation,
-        ),
+        specifiedType:
+            const FullType(UtilitiesWebApiProtosScenarioConditionOperation),
       );
     }
     if (object.targetDeviceModel != null) {
@@ -298,9 +295,8 @@ class _$UtilitiesWebApiProtosScenarioConditionSerializer
       yield r'conditionType';
       yield serializers.serialize(
         object.conditionType,
-        specifiedType: const FullType(
-          UtilitiesWebApiProtosScenarioConditionType,
-        ),
+        specifiedType:
+            const FullType(UtilitiesWebApiProtosScenarioConditionType),
       );
     }
     if (object.parameterCode != null) {
@@ -339,11 +335,9 @@ class _$UtilitiesWebApiProtosScenarioConditionSerializer
     UtilitiesWebApiProtosScenarioCondition object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -359,213 +353,167 @@ class _$UtilitiesWebApiProtosScenarioConditionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.id = valueDes;
           break;
         case r'index':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.index = valueDes;
           break;
         case r'deviceId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.deviceId = valueDes;
           break;
         case r'unitCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitCode = valueDes;
           break;
         case r'sensorCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sensorCode = valueDes;
           break;
         case r'operation':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosScenarioConditionOperation,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosScenarioConditionOperation;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(UtilitiesWebApiProtosScenarioConditionOperation),
+          ) as UtilitiesWebApiProtosScenarioConditionOperation;
           result.operation = valueDes;
           break;
         case r'targetDeviceModel':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.targetDeviceModel = valueDes;
           break;
         case r'targetDeviceName':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.targetDeviceName = valueDes;
           break;
         case r'valueType':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosScenarioValueType,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosScenarioValueType;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(UtilitiesWebApiProtosScenarioValueType),
+          ) as UtilitiesWebApiProtosScenarioValueType;
           result.valueType = valueDes;
           break;
         case r'value':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(double),
-                  )
-                  as double;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
           result.value = valueDes;
           break;
         case r'sourceDeviceId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sourceDeviceId = valueDes;
           break;
         case r'sourceUnitCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sourceUnitCode = valueDes;
           break;
         case r'sourceSensorCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sourceSensorCode = valueDes;
           break;
         case r'sourceParameterCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sourceParameterCode = valueDes;
           break;
         case r'sourceDeviceModel':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sourceDeviceModel = valueDes;
           break;
         case r'sourceDeviceName':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sourceDeviceName = valueDes;
           break;
         case r'sourceDeviceSerial':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sourceDeviceSerial = valueDes;
           break;
         case r'targetDeviceSerail':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.targetDeviceSerail = valueDes;
           break;
         case r'conditionType':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosScenarioConditionType,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosScenarioConditionType;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(UtilitiesWebApiProtosScenarioConditionType),
+          ) as UtilitiesWebApiProtosScenarioConditionType;
           result.conditionType = valueDes;
           break;
         case r'parameterCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.parameterCode = valueDes;
           break;
         case r'sourceExpression':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sourceExpression = valueDes;
           break;
         case r'targetDeviceVendorCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.targetDeviceVendorCode = valueDes;
           break;
         case r'sourceDeviceVendorCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sourceDeviceVendorCode = valueDes;
           break;
         default:

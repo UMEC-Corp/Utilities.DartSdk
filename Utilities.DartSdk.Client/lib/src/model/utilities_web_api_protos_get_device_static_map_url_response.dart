@@ -15,40 +15,38 @@ part 'utilities_web_api_protos_get_device_static_map_url_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse
     implements
-        Built<
-          UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse,
-          UtilitiesWebApiProtosGetDeviceStaticMapUrlResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse,
+            UtilitiesWebApiProtosGetDeviceStaticMapUrlResponseBuilder> {
   /// Url of the map
   @BuiltValueField(wireName: r'url')
   String? get url;
 
   UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse._();
 
-  factory UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse([
-    void updates(UtilitiesWebApiProtosGetDeviceStaticMapUrlResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse;
+  factory UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse(
+          [void updates(
+              UtilitiesWebApiProtosGetDeviceStaticMapUrlResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosGetDeviceStaticMapUrlResponseBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosGetDeviceStaticMapUrlResponseBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse>
-  get serializer =>
-      _$UtilitiesWebApiProtosGetDeviceStaticMapUrlResponseSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosGetDeviceStaticMapUrlResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetDeviceStaticMapUrlResponseSerializer
     implements
         PrimitiveSerializer<
-          UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse
-        > {
+            UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse> {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse,
-    _$UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse,
+    _$UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse
   ];
 
   @override
@@ -74,11 +72,9 @@ class _$UtilitiesWebApiProtosGetDeviceStaticMapUrlResponseSerializer
     UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -94,12 +90,10 @@ class _$UtilitiesWebApiProtosGetDeviceStaticMapUrlResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'url':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.url = valueDes;
           break;
         default:

@@ -16,10 +16,8 @@ part 'utilities_web_api_protos_device_model_types_device_manual.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDeviceModelTypesDeviceManual
     implements
-        Built<
-          UtilitiesWebApiProtosDeviceModelTypesDeviceManual,
-          UtilitiesWebApiProtosDeviceModelTypesDeviceManualBuilder
-        > {
+        Built<UtilitiesWebApiProtosDeviceModelTypesDeviceManual,
+            UtilitiesWebApiProtosDeviceModelTypesDeviceManualBuilder> {
   @BuiltValueField(wireName: r'locale')
   String? get locale;
 
@@ -28,19 +26,20 @@ abstract class UtilitiesWebApiProtosDeviceModelTypesDeviceManual
 
   UtilitiesWebApiProtosDeviceModelTypesDeviceManual._();
 
-  factory UtilitiesWebApiProtosDeviceModelTypesDeviceManual([
-    void updates(UtilitiesWebApiProtosDeviceModelTypesDeviceManualBuilder b),
-  ]) = _$UtilitiesWebApiProtosDeviceModelTypesDeviceManual;
+  factory UtilitiesWebApiProtosDeviceModelTypesDeviceManual(
+          [void updates(
+              UtilitiesWebApiProtosDeviceModelTypesDeviceManualBuilder b)]) =
+      _$UtilitiesWebApiProtosDeviceModelTypesDeviceManual;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosDeviceModelTypesDeviceManualBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosDeviceModelTypesDeviceManualBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosDeviceModelTypesDeviceManual>
-  get serializer =>
-      _$UtilitiesWebApiProtosDeviceModelTypesDeviceManualSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosDeviceModelTypesDeviceManualSerializer();
 }
 
 class _$UtilitiesWebApiProtosDeviceModelTypesDeviceManualSerializer
@@ -49,7 +48,7 @@ class _$UtilitiesWebApiProtosDeviceModelTypesDeviceManualSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosDeviceModelTypesDeviceManual,
-    _$UtilitiesWebApiProtosDeviceModelTypesDeviceManual,
+    _$UtilitiesWebApiProtosDeviceModelTypesDeviceManual
   ];
 
   @override
@@ -82,11 +81,9 @@ class _$UtilitiesWebApiProtosDeviceModelTypesDeviceManualSerializer
     UtilitiesWebApiProtosDeviceModelTypesDeviceManual object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -102,21 +99,17 @@ class _$UtilitiesWebApiProtosDeviceModelTypesDeviceManualSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'locale':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.locale = valueDes;
           break;
         case r'url':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.url = valueDes;
           break;
         default:

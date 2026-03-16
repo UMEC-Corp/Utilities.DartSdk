@@ -18,10 +18,8 @@ part 'utilities_web_api_protos_get_inputs_statistics_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetInputsStatisticsResponse
     implements
-        Built<
-          UtilitiesWebApiProtosGetInputsStatisticsResponse,
-          UtilitiesWebApiProtosGetInputsStatisticsResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosGetInputsStatisticsResponse,
+            UtilitiesWebApiProtosGetInputsStatisticsResponseBuilder> {
   /// Total count of observations in response
   @BuiltValueField(wireName: r'totalCount')
   int? get totalCount;
@@ -29,25 +27,25 @@ abstract class UtilitiesWebApiProtosGetInputsStatisticsResponse
   /// Collection of observations
   @BuiltValueField(wireName: r'items')
   BuiltList<
-    UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem
-  >?
-  get items;
+          UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem>?
+      get items;
 
   UtilitiesWebApiProtosGetInputsStatisticsResponse._();
 
-  factory UtilitiesWebApiProtosGetInputsStatisticsResponse([
-    void updates(UtilitiesWebApiProtosGetInputsStatisticsResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosGetInputsStatisticsResponse;
+  factory UtilitiesWebApiProtosGetInputsStatisticsResponse(
+          [void updates(
+              UtilitiesWebApiProtosGetInputsStatisticsResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosGetInputsStatisticsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosGetInputsStatisticsResponseBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosGetInputsStatisticsResponseBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosGetInputsStatisticsResponse>
-  get serializer =>
-      _$UtilitiesWebApiProtosGetInputsStatisticsResponseSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosGetInputsStatisticsResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetInputsStatisticsResponseSerializer
@@ -56,7 +54,7 @@ class _$UtilitiesWebApiProtosGetInputsStatisticsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetInputsStatisticsResponse,
-    _$UtilitiesWebApiProtosGetInputsStatisticsResponse,
+    _$UtilitiesWebApiProtosGetInputsStatisticsResponse
   ];
 
   @override
@@ -80,8 +78,7 @@ class _$UtilitiesWebApiProtosGetInputsStatisticsResponseSerializer
         object.items,
         specifiedType: const FullType(BuiltList, [
           FullType(
-            UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem,
-          ),
+              UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem)
         ]),
       );
     }
@@ -93,11 +90,9 @@ class _$UtilitiesWebApiProtosGetInputsStatisticsResponseSerializer
     UtilitiesWebApiProtosGetInputsStatisticsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -113,24 +108,21 @@ class _$UtilitiesWebApiProtosGetInputsStatisticsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'totalCount':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.totalCount = valueDes;
           break;
         case r'items':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(
-                        UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem,
-                      ),
-                    ]),
-                  )
-                  as BuiltList<
-                    UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem
-                  >;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [
+              FullType(
+                  UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem)
+            ]),
+          ) as BuiltList<
+              UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem>;
           result.items.replace(valueDes);
           break;
         default:

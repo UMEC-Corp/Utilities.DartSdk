@@ -24,10 +24,8 @@ part 'utilities_web_api_protos_add_event_type_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAddEventTypeRequest
     implements
-        Built<
-          UtilitiesWebApiProtosAddEventTypeRequest,
-          UtilitiesWebApiProtosAddEventTypeRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosAddEventTypeRequest,
+            UtilitiesWebApiProtosAddEventTypeRequestBuilder> {
   /// Name of the event type
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -66,9 +64,9 @@ abstract class UtilitiesWebApiProtosAddEventTypeRequest
 
   UtilitiesWebApiProtosAddEventTypeRequest._();
 
-  factory UtilitiesWebApiProtosAddEventTypeRequest([
-    void updates(UtilitiesWebApiProtosAddEventTypeRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosAddEventTypeRequest;
+  factory UtilitiesWebApiProtosAddEventTypeRequest(
+          [void updates(UtilitiesWebApiProtosAddEventTypeRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosAddEventTypeRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosAddEventTypeRequestBuilder b) => b;
@@ -83,7 +81,7 @@ class _$UtilitiesWebApiProtosAddEventTypeRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAddEventTypeRequest,
-    _$UtilitiesWebApiProtosAddEventTypeRequest,
+    _$UtilitiesWebApiProtosAddEventTypeRequest
   ];
 
   @override
@@ -165,11 +163,9 @@ class _$UtilitiesWebApiProtosAddEventTypeRequestSerializer
     UtilitiesWebApiProtosAddEventTypeRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -185,86 +181,66 @@ class _$UtilitiesWebApiProtosAddEventTypeRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.name = valueDes;
           break;
         case r'description':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.description = valueDes;
           break;
         case r'color':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.color = valueDes;
           break;
         case r'icon':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.icon = valueDes;
           break;
         case r'eventClass':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosEventClass,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosEventClass;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UtilitiesWebApiProtosEventClass),
+          ) as UtilitiesWebApiProtosEventClass;
           result.eventClass = valueDes;
           break;
         case r'vendorCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.vendorCode = valueDes;
           break;
         case r'modelCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.modelCode = valueDes;
           break;
         case r'hardwareVersion':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.hardwareVersion = valueDes;
           break;
         case r'sensorCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sensorCode = valueDes;
           break;
         default:

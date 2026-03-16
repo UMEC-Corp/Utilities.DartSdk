@@ -16,18 +16,16 @@ part 'utilities_web_api_protos_add_event_type_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAddEventTypeResponse
     implements
-        Built<
-          UtilitiesWebApiProtosAddEventTypeResponse,
-          UtilitiesWebApiProtosAddEventTypeResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosAddEventTypeResponse,
+            UtilitiesWebApiProtosAddEventTypeResponseBuilder> {
   @BuiltValueField(wireName: r'item')
   UtilitiesWebApiProtosEventType? get item;
 
   UtilitiesWebApiProtosAddEventTypeResponse._();
 
-  factory UtilitiesWebApiProtosAddEventTypeResponse([
-    void updates(UtilitiesWebApiProtosAddEventTypeResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosAddEventTypeResponse;
+  factory UtilitiesWebApiProtosAddEventTypeResponse(
+          [void updates(UtilitiesWebApiProtosAddEventTypeResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosAddEventTypeResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosAddEventTypeResponseBuilder b) =>
@@ -43,7 +41,7 @@ class _$UtilitiesWebApiProtosAddEventTypeResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAddEventTypeResponse,
-    _$UtilitiesWebApiProtosAddEventTypeResponse,
+    _$UtilitiesWebApiProtosAddEventTypeResponse
   ];
 
   @override
@@ -69,11 +67,9 @@ class _$UtilitiesWebApiProtosAddEventTypeResponseSerializer
     UtilitiesWebApiProtosAddEventTypeResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -89,14 +85,10 @@ class _$UtilitiesWebApiProtosAddEventTypeResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'item':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosEventType,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosEventType;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UtilitiesWebApiProtosEventType),
+          ) as UtilitiesWebApiProtosEventType;
           result.item.replace(valueDes);
           break;
         default:

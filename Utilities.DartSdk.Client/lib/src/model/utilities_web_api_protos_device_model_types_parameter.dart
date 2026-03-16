@@ -20,10 +20,8 @@ part 'utilities_web_api_protos_device_model_types_parameter.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDeviceModelTypesParameter
     implements
-        Built<
-          UtilitiesWebApiProtosDeviceModelTypesParameter,
-          UtilitiesWebApiProtosDeviceModelTypesParameterBuilder
-        > {
+        Built<UtilitiesWebApiProtosDeviceModelTypesParameter,
+            UtilitiesWebApiProtosDeviceModelTypesParameterBuilder> {
   @BuiltValueField(wireName: r'isFixed')
   bool? get isFixed;
 
@@ -41,19 +39,20 @@ abstract class UtilitiesWebApiProtosDeviceModelTypesParameter
 
   UtilitiesWebApiProtosDeviceModelTypesParameter._();
 
-  factory UtilitiesWebApiProtosDeviceModelTypesParameter([
-    void updates(UtilitiesWebApiProtosDeviceModelTypesParameterBuilder b),
-  ]) = _$UtilitiesWebApiProtosDeviceModelTypesParameter;
+  factory UtilitiesWebApiProtosDeviceModelTypesParameter(
+          [void updates(
+              UtilitiesWebApiProtosDeviceModelTypesParameterBuilder b)]) =
+      _$UtilitiesWebApiProtosDeviceModelTypesParameter;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosDeviceModelTypesParameterBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosDeviceModelTypesParameterBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosDeviceModelTypesParameter>
-  get serializer =>
-      _$UtilitiesWebApiProtosDeviceModelTypesParameterSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosDeviceModelTypesParameterSerializer();
 }
 
 class _$UtilitiesWebApiProtosDeviceModelTypesParameterSerializer
@@ -62,7 +61,7 @@ class _$UtilitiesWebApiProtosDeviceModelTypesParameterSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosDeviceModelTypesParameter,
-    _$UtilitiesWebApiProtosDeviceModelTypesParameter,
+    _$UtilitiesWebApiProtosDeviceModelTypesParameter
   ];
 
   @override
@@ -116,11 +115,9 @@ class _$UtilitiesWebApiProtosDeviceModelTypesParameterSerializer
     UtilitiesWebApiProtosDeviceModelTypesParameter object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -136,50 +133,38 @@ class _$UtilitiesWebApiProtosDeviceModelTypesParameterSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'isFixed':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(bool),
-                  )
-                  as bool;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
           result.isFixed = valueDes;
           break;
         case r'isEncoded':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(bool),
-                  )
-                  as bool;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
           result.isEncoded = valueDes;
           break;
         case r'unitOfMeasurement':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitOfMeasurement = valueDes;
           break;
         case r'value':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.value = valueDes;
           break;
         case r'valueBinding':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(String),
-                    ]),
-                  )
-                  as BuiltList<String>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
           result.valueBinding.replace(valueDes);
           break;
         default:

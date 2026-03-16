@@ -15,29 +15,28 @@ part 'utilities_web_api_protos_request_password_reset_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosRequestPasswordResetRequest
     implements
-        Built<
-          UtilitiesWebApiProtosRequestPasswordResetRequest,
-          UtilitiesWebApiProtosRequestPasswordResetRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosRequestPasswordResetRequest,
+            UtilitiesWebApiProtosRequestPasswordResetRequestBuilder> {
   /// The registered email of the user.
   @BuiltValueField(wireName: r'email')
   String? get email;
 
   UtilitiesWebApiProtosRequestPasswordResetRequest._();
 
-  factory UtilitiesWebApiProtosRequestPasswordResetRequest([
-    void updates(UtilitiesWebApiProtosRequestPasswordResetRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosRequestPasswordResetRequest;
+  factory UtilitiesWebApiProtosRequestPasswordResetRequest(
+          [void updates(
+              UtilitiesWebApiProtosRequestPasswordResetRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosRequestPasswordResetRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosRequestPasswordResetRequestBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosRequestPasswordResetRequestBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosRequestPasswordResetRequest>
-  get serializer =>
-      _$UtilitiesWebApiProtosRequestPasswordResetRequestSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosRequestPasswordResetRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosRequestPasswordResetRequestSerializer
@@ -46,7 +45,7 @@ class _$UtilitiesWebApiProtosRequestPasswordResetRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosRequestPasswordResetRequest,
-    _$UtilitiesWebApiProtosRequestPasswordResetRequest,
+    _$UtilitiesWebApiProtosRequestPasswordResetRequest
   ];
 
   @override
@@ -72,11 +71,9 @@ class _$UtilitiesWebApiProtosRequestPasswordResetRequestSerializer
     UtilitiesWebApiProtosRequestPasswordResetRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -92,12 +89,10 @@ class _$UtilitiesWebApiProtosRequestPasswordResetRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'email':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.email = valueDes;
           break;
         default:

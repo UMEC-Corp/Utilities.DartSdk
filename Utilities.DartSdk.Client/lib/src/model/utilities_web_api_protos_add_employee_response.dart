@@ -16,18 +16,16 @@ part 'utilities_web_api_protos_add_employee_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAddEmployeeResponse
     implements
-        Built<
-          UtilitiesWebApiProtosAddEmployeeResponse,
-          UtilitiesWebApiProtosAddEmployeeResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosAddEmployeeResponse,
+            UtilitiesWebApiProtosAddEmployeeResponseBuilder> {
   @BuiltValueField(wireName: r'item')
   UtilitiesWebApiProtosEmployee? get item;
 
   UtilitiesWebApiProtosAddEmployeeResponse._();
 
-  factory UtilitiesWebApiProtosAddEmployeeResponse([
-    void updates(UtilitiesWebApiProtosAddEmployeeResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosAddEmployeeResponse;
+  factory UtilitiesWebApiProtosAddEmployeeResponse(
+          [void updates(UtilitiesWebApiProtosAddEmployeeResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosAddEmployeeResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosAddEmployeeResponseBuilder b) => b;
@@ -42,7 +40,7 @@ class _$UtilitiesWebApiProtosAddEmployeeResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAddEmployeeResponse,
-    _$UtilitiesWebApiProtosAddEmployeeResponse,
+    _$UtilitiesWebApiProtosAddEmployeeResponse
   ];
 
   @override
@@ -68,11 +66,9 @@ class _$UtilitiesWebApiProtosAddEmployeeResponseSerializer
     UtilitiesWebApiProtosAddEmployeeResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -88,14 +84,10 @@ class _$UtilitiesWebApiProtosAddEmployeeResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'item':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosEmployee,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosEmployee;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UtilitiesWebApiProtosEmployee),
+          ) as UtilitiesWebApiProtosEmployee;
           result.item.replace(valueDes);
           break;
         default:

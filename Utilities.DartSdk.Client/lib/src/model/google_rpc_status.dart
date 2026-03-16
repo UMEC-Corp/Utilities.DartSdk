@@ -72,9 +72,8 @@ class _$GoogleRpcStatusSerializer
       yield r'details';
       yield serializers.serialize(
         object.details,
-        specifiedType: const FullType(BuiltList, [
-          FullType(GoogleProtobufWellKnownTypesAny),
-        ]),
+        specifiedType: const FullType(
+            BuiltList, [FullType(GoogleProtobufWellKnownTypesAny)]),
       );
     }
   }
@@ -85,11 +84,9 @@ class _$GoogleRpcStatusSerializer
     GoogleRpcStatus object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -105,29 +102,25 @@ class _$GoogleRpcStatusSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.code = valueDes;
           break;
         case r'message':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.message = valueDes;
           break;
         case r'details':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(GoogleProtobufWellKnownTypesAny),
-                    ]),
-                  )
-                  as BuiltList<GoogleProtobufWellKnownTypesAny>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(GoogleProtobufWellKnownTypesAny)]),
+          ) as BuiltList<GoogleProtobufWellKnownTypesAny>;
           result.details.replace(valueDes);
           break;
         default:

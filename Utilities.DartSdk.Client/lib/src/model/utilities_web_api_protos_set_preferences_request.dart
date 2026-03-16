@@ -16,19 +16,17 @@ part 'utilities_web_api_protos_set_preferences_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosSetPreferencesRequest
     implements
-        Built<
-          UtilitiesWebApiProtosSetPreferencesRequest,
-          UtilitiesWebApiProtosSetPreferencesRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosSetPreferencesRequest,
+            UtilitiesWebApiProtosSetPreferencesRequestBuilder> {
   @BuiltValueField(wireName: r'dashboardDisplayMode')
   UtilitiesWebApiProtosDashboardDisplayMode? get dashboardDisplayMode;
   // enum dashboardDisplayModeEnum {  Table,  Grid,  };
 
   UtilitiesWebApiProtosSetPreferencesRequest._();
 
-  factory UtilitiesWebApiProtosSetPreferencesRequest([
-    void updates(UtilitiesWebApiProtosSetPreferencesRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosSetPreferencesRequest;
+  factory UtilitiesWebApiProtosSetPreferencesRequest(
+          [void updates(UtilitiesWebApiProtosSetPreferencesRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosSetPreferencesRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosSetPreferencesRequestBuilder b) =>
@@ -36,7 +34,8 @@ abstract class UtilitiesWebApiProtosSetPreferencesRequest
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosSetPreferencesRequest>
-  get serializer => _$UtilitiesWebApiProtosSetPreferencesRequestSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosSetPreferencesRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosSetPreferencesRequestSerializer
@@ -44,7 +43,7 @@ class _$UtilitiesWebApiProtosSetPreferencesRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosSetPreferencesRequest,
-    _$UtilitiesWebApiProtosSetPreferencesRequest,
+    _$UtilitiesWebApiProtosSetPreferencesRequest
   ];
 
   @override
@@ -59,9 +58,8 @@ class _$UtilitiesWebApiProtosSetPreferencesRequestSerializer
       yield r'dashboardDisplayMode';
       yield serializers.serialize(
         object.dashboardDisplayMode,
-        specifiedType: const FullType(
-          UtilitiesWebApiProtosDashboardDisplayMode,
-        ),
+        specifiedType:
+            const FullType(UtilitiesWebApiProtosDashboardDisplayMode),
       );
     }
   }
@@ -72,11 +70,9 @@ class _$UtilitiesWebApiProtosSetPreferencesRequestSerializer
     UtilitiesWebApiProtosSetPreferencesRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -92,14 +88,11 @@ class _$UtilitiesWebApiProtosSetPreferencesRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'dashboardDisplayMode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosDashboardDisplayMode,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosDashboardDisplayMode;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(UtilitiesWebApiProtosDashboardDisplayMode),
+          ) as UtilitiesWebApiProtosDashboardDisplayMode;
           result.dashboardDisplayMode = valueDes;
           break;
         default:

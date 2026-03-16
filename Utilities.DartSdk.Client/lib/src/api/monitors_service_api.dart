@@ -42,7 +42,7 @@ class MonitorsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosListMonitorsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosListMonitorsResponse>>
-  apiDashboardV1UnitsUnitIdMonitorsGet({
+      apiDashboardV1UnitsUnitIdMonitorsGet({
     required String unitId,
     int? offset,
     int? limit,
@@ -54,21 +54,21 @@ class MonitorsServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}/monitors'.replaceAll(
-      '{'
-      r'unitId'
-      '}',
-      encodeQueryParameter(
-        _serializers,
-        unitId,
-        const FullType(String),
-      ).toString(),
-    );
+        '{' r'unitId' '}',
+        encodeQueryParameter(_serializers, unitId, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -77,17 +77,11 @@ class MonitorsServiceApi {
 
     final _queryParameters = <String, dynamic>{
       if (offset != null)
-        r'offset': encodeQueryParameter(
-          _serializers,
-          offset,
-          const FullType(int),
-        ),
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
       if (limit != null)
-        r'limit': encodeQueryParameter(
-          _serializers,
-          limit,
-          const FullType(int),
-        ),
+        r'limit':
+            encodeQueryParameter(_serializers, limit, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -106,12 +100,10 @@ class MonitorsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosListMonitorsResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosListMonitorsResponse;
+              rawResponse,
+              specifiedType:
+                  const FullType(UtilitiesWebApiProtosListMonitorsResponse),
+            ) as UtilitiesWebApiProtosListMonitorsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -150,7 +142,7 @@ class MonitorsServiceApi {
   /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>>
-  apiDashboardV1UnitsUnitIdMonitorsMonitorIdDelete({
+      apiDashboardV1UnitsUnitIdMonitorsMonitorIdDelete({
     required String unitId,
     required int monitorId,
     CancelToken? cancelToken,
@@ -162,31 +154,25 @@ class MonitorsServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}/monitors/{monitorId}'
         .replaceAll(
-          '{'
-          r'unitId'
-          '}',
-          encodeQueryParameter(
-            _serializers,
-            unitId,
-            const FullType(String),
-          ).toString(),
-        )
+            '{' r'unitId' '}',
+            encodeQueryParameter(_serializers, unitId, const FullType(String))
+                .toString())
         .replaceAll(
-          '{'
-          r'monitorId'
-          '}',
-          encodeQueryParameter(
-            _serializers,
-            monitorId,
-            const FullType(int),
-          ).toString(),
-        );
+            '{' r'monitorId' '}',
+            encodeQueryParameter(_serializers, monitorId, const FullType(int))
+                .toString());
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -208,10 +194,9 @@ class MonitorsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(JsonObject),
-                )
-                as JsonObject;
+              rawResponse,
+              specifiedType: const FullType(JsonObject),
+            ) as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -250,7 +235,7 @@ class MonitorsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetMonitorResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetMonitorResponse>>
-  apiDashboardV1UnitsUnitIdMonitorsMonitorIdGet({
+      apiDashboardV1UnitsUnitIdMonitorsMonitorIdGet({
     required String unitId,
     required int monitorId,
     CancelToken? cancelToken,
@@ -262,31 +247,25 @@ class MonitorsServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}/monitors/{monitorId}'
         .replaceAll(
-          '{'
-          r'unitId'
-          '}',
-          encodeQueryParameter(
-            _serializers,
-            unitId,
-            const FullType(String),
-          ).toString(),
-        )
+            '{' r'unitId' '}',
+            encodeQueryParameter(_serializers, unitId, const FullType(String))
+                .toString())
         .replaceAll(
-          '{'
-          r'monitorId'
-          '}',
-          encodeQueryParameter(
-            _serializers,
-            monitorId,
-            const FullType(int),
-          ).toString(),
-        );
+            '{' r'monitorId' '}',
+            encodeQueryParameter(_serializers, monitorId, const FullType(int))
+                .toString());
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -308,12 +287,10 @@ class MonitorsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosGetMonitorResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosGetMonitorResponse;
+              rawResponse,
+              specifiedType:
+                  const FullType(UtilitiesWebApiProtosGetMonitorResponse),
+            ) as UtilitiesWebApiProtosGetMonitorResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -356,7 +333,7 @@ class MonitorsServiceApi {
     required String unitId,
     required int monitorId,
     UtilitiesWebApiProtosUpdateMonitorRequest?
-    utilitiesWebApiProtosUpdateMonitorRequest,
+        utilitiesWebApiProtosUpdateMonitorRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -366,31 +343,25 @@ class MonitorsServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}/monitors/{monitorId}'
         .replaceAll(
-          '{'
-          r'unitId'
-          '}',
-          encodeQueryParameter(
-            _serializers,
-            unitId,
-            const FullType(String),
-          ).toString(),
-        )
+            '{' r'unitId' '}',
+            encodeQueryParameter(_serializers, unitId, const FullType(String))
+                .toString())
         .replaceAll(
-          '{'
-          r'monitorId'
-          '}',
-          encodeQueryParameter(
-            _serializers,
-            monitorId,
-            const FullType(int),
-          ).toString(),
-        );
+            '{' r'monitorId' '}',
+            encodeQueryParameter(_serializers, monitorId, const FullType(int))
+                .toString());
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -404,13 +375,14 @@ class MonitorsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosUpdateMonitorRequest);
       _bodyData = utilitiesWebApiProtosUpdateMonitorRequest == null
           ? null
-          : _serializers.serialize(
-              utilitiesWebApiProtosUpdateMonitorRequest,
-              specifiedType: _type,
-            );
+          : _serializers.serialize(utilitiesWebApiProtosUpdateMonitorRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -433,10 +405,9 @@ class MonitorsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(JsonObject),
-                )
-                as JsonObject;
+              rawResponse,
+              specifiedType: const FullType(JsonObject),
+            ) as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -476,11 +447,11 @@ class MonitorsServiceApi {
   /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>>
-  apiDashboardV1UnitsUnitIdMonitorsMonitorIdresetPost({
+      apiDashboardV1UnitsUnitIdMonitorsMonitorIdresetPost({
     required String unitId,
     required int monitorId,
     UtilitiesWebApiProtosResetMonitorRequest?
-    utilitiesWebApiProtosResetMonitorRequest,
+        utilitiesWebApiProtosResetMonitorRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -490,31 +461,25 @@ class MonitorsServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}/monitors/{monitorId}:reset'
         .replaceAll(
-          '{'
-          r'unitId'
-          '}',
-          encodeQueryParameter(
-            _serializers,
-            unitId,
-            const FullType(String),
-          ).toString(),
-        )
+            '{' r'unitId' '}',
+            encodeQueryParameter(_serializers, unitId, const FullType(String))
+                .toString())
         .replaceAll(
-          '{'
-          r'monitorId'
-          '}',
-          encodeQueryParameter(
-            _serializers,
-            monitorId,
-            const FullType(int),
-          ).toString(),
-        );
+            '{' r'monitorId' '}',
+            encodeQueryParameter(_serializers, monitorId, const FullType(int))
+                .toString());
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -528,13 +493,14 @@ class MonitorsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosResetMonitorRequest);
       _bodyData = utilitiesWebApiProtosResetMonitorRequest == null
           ? null
-          : _serializers.serialize(
-              utilitiesWebApiProtosResetMonitorRequest,
-              specifiedType: _type,
-            );
+          : _serializers.serialize(utilitiesWebApiProtosResetMonitorRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -557,10 +523,9 @@ class MonitorsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(JsonObject),
-                )
-                as JsonObject;
+              rawResponse,
+              specifiedType: const FullType(JsonObject),
+            ) as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -599,10 +564,10 @@ class MonitorsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosAddMonitorResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosAddMonitorResponse>>
-  apiDashboardV1UnitsUnitIdMonitorsPost({
+      apiDashboardV1UnitsUnitIdMonitorsPost({
     required String unitId,
     UtilitiesWebApiProtosAddMonitorRequest?
-    utilitiesWebApiProtosAddMonitorRequest,
+        utilitiesWebApiProtosAddMonitorRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -611,21 +576,21 @@ class MonitorsServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}/monitors'.replaceAll(
-      '{'
-      r'unitId'
-      '}',
-      encodeQueryParameter(
-        _serializers,
-        unitId,
-        const FullType(String),
-      ).toString(),
-    );
+        '{' r'unitId' '}',
+        encodeQueryParameter(_serializers, unitId, const FullType(String))
+            .toString());
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -639,13 +604,14 @@ class MonitorsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosAddMonitorRequest);
       _bodyData = utilitiesWebApiProtosAddMonitorRequest == null
           ? null
-          : _serializers.serialize(
-              utilitiesWebApiProtosAddMonitorRequest,
-              specifiedType: _type,
-            );
+          : _serializers.serialize(utilitiesWebApiProtosAddMonitorRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -668,12 +634,10 @@ class MonitorsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosAddMonitorResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosAddMonitorResponse;
+              rawResponse,
+              specifiedType:
+                  const FullType(UtilitiesWebApiProtosAddMonitorResponse),
+            ) as UtilitiesWebApiProtosAddMonitorResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

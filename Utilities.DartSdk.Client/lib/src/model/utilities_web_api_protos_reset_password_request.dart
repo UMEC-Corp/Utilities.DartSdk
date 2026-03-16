@@ -16,10 +16,8 @@ part 'utilities_web_api_protos_reset_password_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosResetPasswordRequest
     implements
-        Built<
-          UtilitiesWebApiProtosResetPasswordRequest,
-          UtilitiesWebApiProtosResetPasswordRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosResetPasswordRequest,
+            UtilitiesWebApiProtosResetPasswordRequestBuilder> {
   /// The reset token received via email.
   @BuiltValueField(wireName: r'resetToken')
   String? get resetToken;
@@ -30,9 +28,9 @@ abstract class UtilitiesWebApiProtosResetPasswordRequest
 
   UtilitiesWebApiProtosResetPasswordRequest._();
 
-  factory UtilitiesWebApiProtosResetPasswordRequest([
-    void updates(UtilitiesWebApiProtosResetPasswordRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosResetPasswordRequest;
+  factory UtilitiesWebApiProtosResetPasswordRequest(
+          [void updates(UtilitiesWebApiProtosResetPasswordRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosResetPasswordRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosResetPasswordRequestBuilder b) =>
@@ -48,7 +46,7 @@ class _$UtilitiesWebApiProtosResetPasswordRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosResetPasswordRequest,
-    _$UtilitiesWebApiProtosResetPasswordRequest,
+    _$UtilitiesWebApiProtosResetPasswordRequest
   ];
 
   @override
@@ -81,11 +79,9 @@ class _$UtilitiesWebApiProtosResetPasswordRequestSerializer
     UtilitiesWebApiProtosResetPasswordRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -101,21 +97,17 @@ class _$UtilitiesWebApiProtosResetPasswordRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'resetToken':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.resetToken = valueDes;
           break;
         case r'newPassword':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.newPassword = valueDes;
           break;
         default:

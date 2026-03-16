@@ -16,10 +16,8 @@ part 'utilities_web_api_protos_reset_monitor_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosResetMonitorRequest
     implements
-        Built<
-          UtilitiesWebApiProtosResetMonitorRequest,
-          UtilitiesWebApiProtosResetMonitorRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosResetMonitorRequest,
+            UtilitiesWebApiProtosResetMonitorRequestBuilder> {
   /// The ID of the unit (virtual device) associated with the monitor.
   @BuiltValueField(wireName: r'unitId')
   String? get unitId;
@@ -30,9 +28,9 @@ abstract class UtilitiesWebApiProtosResetMonitorRequest
 
   UtilitiesWebApiProtosResetMonitorRequest._();
 
-  factory UtilitiesWebApiProtosResetMonitorRequest([
-    void updates(UtilitiesWebApiProtosResetMonitorRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosResetMonitorRequest;
+  factory UtilitiesWebApiProtosResetMonitorRequest(
+          [void updates(UtilitiesWebApiProtosResetMonitorRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosResetMonitorRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosResetMonitorRequestBuilder b) => b;
@@ -47,7 +45,7 @@ class _$UtilitiesWebApiProtosResetMonitorRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosResetMonitorRequest,
-    _$UtilitiesWebApiProtosResetMonitorRequest,
+    _$UtilitiesWebApiProtosResetMonitorRequest
   ];
 
   @override
@@ -80,11 +78,9 @@ class _$UtilitiesWebApiProtosResetMonitorRequestSerializer
     UtilitiesWebApiProtosResetMonitorRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -100,18 +96,17 @@ class _$UtilitiesWebApiProtosResetMonitorRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'unitId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitId = valueDes;
           break;
         case r'monitorId':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.monitorId = valueDes;
           break;
         default:

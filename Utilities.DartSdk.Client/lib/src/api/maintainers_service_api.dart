@@ -36,7 +36,7 @@ class MaintainersServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetMaintainerResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetMaintainerResponse>>
-  apiDashboardV1MaintainersGet({
+      apiDashboardV1MaintainersGet({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -47,10 +47,16 @@ class MaintainersServiceApi {
     final _path = r'/api/dashboard/v1/maintainers';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -72,12 +78,10 @@ class MaintainersServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosGetMaintainerResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosGetMaintainerResponse;
+              rawResponse,
+              specifiedType:
+                  const FullType(UtilitiesWebApiProtosGetMaintainerResponse),
+            ) as UtilitiesWebApiProtosGetMaintainerResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -115,9 +119,9 @@ class MaintainersServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosAddMaintainerResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosAddMaintainerResponse>>
-  apiDashboardV1MaintainersPost({
+      apiDashboardV1MaintainersPost({
     UtilitiesWebApiProtosAddMaintainerRequest?
-    utilitiesWebApiProtosAddMaintainerRequest,
+        utilitiesWebApiProtosAddMaintainerRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -128,10 +132,16 @@ class MaintainersServiceApi {
     final _path = r'/api/dashboard/v1/maintainers';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -145,13 +155,14 @@ class MaintainersServiceApi {
       const _type = FullType(UtilitiesWebApiProtosAddMaintainerRequest);
       _bodyData = utilitiesWebApiProtosAddMaintainerRequest == null
           ? null
-          : _serializers.serialize(
-              utilitiesWebApiProtosAddMaintainerRequest,
-              specifiedType: _type,
-            );
+          : _serializers.serialize(utilitiesWebApiProtosAddMaintainerRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -174,12 +185,10 @@ class MaintainersServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosAddMaintainerResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosAddMaintainerResponse;
+              rawResponse,
+              specifiedType:
+                  const FullType(UtilitiesWebApiProtosAddMaintainerResponse),
+            ) as UtilitiesWebApiProtosAddMaintainerResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -218,7 +227,7 @@ class MaintainersServiceApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>> apiDashboardV1MaintainersPut({
     UtilitiesWebApiProtosUpdateMaintainerRequest?
-    utilitiesWebApiProtosUpdateMaintainerRequest,
+        utilitiesWebApiProtosUpdateMaintainerRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -229,10 +238,16 @@ class MaintainersServiceApi {
     final _path = r'/api/dashboard/v1/maintainers';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -246,13 +261,14 @@ class MaintainersServiceApi {
       const _type = FullType(UtilitiesWebApiProtosUpdateMaintainerRequest);
       _bodyData = utilitiesWebApiProtosUpdateMaintainerRequest == null
           ? null
-          : _serializers.serialize(
-              utilitiesWebApiProtosUpdateMaintainerRequest,
-              specifiedType: _type,
-            );
+          : _serializers.serialize(utilitiesWebApiProtosUpdateMaintainerRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -275,10 +291,9 @@ class MaintainersServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(JsonObject),
-                )
-                as JsonObject;
+              rawResponse,
+              specifiedType: const FullType(JsonObject),
+            ) as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

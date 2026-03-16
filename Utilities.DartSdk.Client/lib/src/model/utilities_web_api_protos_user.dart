@@ -47,9 +47,9 @@ abstract class UtilitiesWebApiProtosUser
 
   UtilitiesWebApiProtosUser._();
 
-  factory UtilitiesWebApiProtosUser([
-    void updates(UtilitiesWebApiProtosUserBuilder b),
-  ]) = _$UtilitiesWebApiProtosUser;
+  factory UtilitiesWebApiProtosUser(
+          [void updates(UtilitiesWebApiProtosUserBuilder b)]) =
+      _$UtilitiesWebApiProtosUser;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosUserBuilder b) => b;
@@ -64,7 +64,7 @@ class _$UtilitiesWebApiProtosUserSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUser,
-    _$UtilitiesWebApiProtosUser,
+    _$UtilitiesWebApiProtosUser
   ];
 
   @override
@@ -125,11 +125,9 @@ class _$UtilitiesWebApiProtosUserSerializer
     UtilitiesWebApiProtosUser object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -145,48 +143,45 @@ class _$UtilitiesWebApiProtosUserSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.id = valueDes;
           break;
         case r'unitId':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.unitId = valueDes;
           break;
         case r'userName':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.userName = valueDes;
           break;
         case r'nickname':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.nickname = valueDes;
           break;
         case r'role':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.role = valueDes;
           break;
         case r'lastActivity':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.lastActivity = valueDes;
           break;
         default:

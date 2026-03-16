@@ -15,19 +15,17 @@ part 'utilities_web_api_protos_build_report_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosBuildReportRequest
     implements
-        Built<
-          UtilitiesWebApiProtosBuildReportRequest,
-          UtilitiesWebApiProtosBuildReportRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosBuildReportRequest,
+            UtilitiesWebApiProtosBuildReportRequestBuilder> {
   /// Name of the report to build
   @BuiltValueField(wireName: r'reportName')
   String? get reportName;
 
   UtilitiesWebApiProtosBuildReportRequest._();
 
-  factory UtilitiesWebApiProtosBuildReportRequest([
-    void updates(UtilitiesWebApiProtosBuildReportRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosBuildReportRequest;
+  factory UtilitiesWebApiProtosBuildReportRequest(
+          [void updates(UtilitiesWebApiProtosBuildReportRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosBuildReportRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosBuildReportRequestBuilder b) => b;
@@ -42,7 +40,7 @@ class _$UtilitiesWebApiProtosBuildReportRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosBuildReportRequest,
-    _$UtilitiesWebApiProtosBuildReportRequest,
+    _$UtilitiesWebApiProtosBuildReportRequest
   ];
 
   @override
@@ -68,11 +66,9 @@ class _$UtilitiesWebApiProtosBuildReportRequestSerializer
     UtilitiesWebApiProtosBuildReportRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -88,12 +84,10 @@ class _$UtilitiesWebApiProtosBuildReportRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'reportName':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.reportName = valueDes;
           break;
         default:

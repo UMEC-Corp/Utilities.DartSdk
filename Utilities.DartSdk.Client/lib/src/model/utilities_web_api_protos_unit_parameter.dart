@@ -19,10 +19,8 @@ part 'utilities_web_api_protos_unit_parameter.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUnitParameter
     implements
-        Built<
-          UtilitiesWebApiProtosUnitParameter,
-          UtilitiesWebApiProtosUnitParameterBuilder
-        > {
+        Built<UtilitiesWebApiProtosUnitParameter,
+            UtilitiesWebApiProtosUnitParameterBuilder> {
   /// Code of the parameter
   @BuiltValueField(wireName: r'code')
   String? get code;
@@ -45,9 +43,9 @@ abstract class UtilitiesWebApiProtosUnitParameter
 
   UtilitiesWebApiProtosUnitParameter._();
 
-  factory UtilitiesWebApiProtosUnitParameter([
-    void updates(UtilitiesWebApiProtosUnitParameterBuilder b),
-  ]) = _$UtilitiesWebApiProtosUnitParameter;
+  factory UtilitiesWebApiProtosUnitParameter(
+          [void updates(UtilitiesWebApiProtosUnitParameterBuilder b)]) =
+      _$UtilitiesWebApiProtosUnitParameter;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosUnitParameterBuilder b) => b;
@@ -62,7 +60,7 @@ class _$UtilitiesWebApiProtosUnitParameterSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUnitParameter,
-    _$UtilitiesWebApiProtosUnitParameter,
+    _$UtilitiesWebApiProtosUnitParameter
   ];
 
   @override
@@ -116,11 +114,9 @@ class _$UtilitiesWebApiProtosUnitParameterSerializer
     UtilitiesWebApiProtosUnitParameter object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -136,48 +132,38 @@ class _$UtilitiesWebApiProtosUnitParameterSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.code = valueDes;
           break;
         case r'value':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.value = valueDes;
           break;
         case r'isFixed':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(bool),
-                  )
-                  as bool;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
           result.isFixed = valueDes;
           break;
         case r'isEncoded':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(bool),
-                  )
-                  as bool;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
           result.isEncoded = valueDes;
           break;
         case r'unitOfMeasurement':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitOfMeasurement = valueDes;
           break;
         default:

@@ -17,10 +17,8 @@ part 'utilities_web_api_protos_create_share_link_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosCreateShareLinkRequest
     implements
-        Built<
-          UtilitiesWebApiProtosCreateShareLinkRequest,
-          UtilitiesWebApiProtosCreateShareLinkRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosCreateShareLinkRequest,
+            UtilitiesWebApiProtosCreateShareLinkRequestBuilder> {
   /// The ID of the unit for which the link is generated.
   @BuiltValueField(wireName: r'unitId')
   String? get unitId;
@@ -31,9 +29,10 @@ abstract class UtilitiesWebApiProtosCreateShareLinkRequest
 
   UtilitiesWebApiProtosCreateShareLinkRequest._();
 
-  factory UtilitiesWebApiProtosCreateShareLinkRequest([
-    void updates(UtilitiesWebApiProtosCreateShareLinkRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosCreateShareLinkRequest;
+  factory UtilitiesWebApiProtosCreateShareLinkRequest(
+          [void updates(
+              UtilitiesWebApiProtosCreateShareLinkRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosCreateShareLinkRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosCreateShareLinkRequestBuilder b) =>
@@ -41,7 +40,8 @@ abstract class UtilitiesWebApiProtosCreateShareLinkRequest
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosCreateShareLinkRequest>
-  get serializer => _$UtilitiesWebApiProtosCreateShareLinkRequestSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosCreateShareLinkRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosCreateShareLinkRequestSerializer
@@ -50,7 +50,7 @@ class _$UtilitiesWebApiProtosCreateShareLinkRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosCreateShareLinkRequest,
-    _$UtilitiesWebApiProtosCreateShareLinkRequest,
+    _$UtilitiesWebApiProtosCreateShareLinkRequest
   ];
 
   @override
@@ -83,11 +83,9 @@ class _$UtilitiesWebApiProtosCreateShareLinkRequestSerializer
     UtilitiesWebApiProtosCreateShareLinkRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -103,23 +101,17 @@ class _$UtilitiesWebApiProtosCreateShareLinkRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'unitId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitId = valueDes;
           break;
         case r'role':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosUserRole,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosUserRole;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UtilitiesWebApiProtosUserRole),
+          ) as UtilitiesWebApiProtosUserRole;
           result.role = valueDes;
           break;
         default:

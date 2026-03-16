@@ -28,6 +28,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosAddScenarioResponse.serializer)
       ..add(UtilitiesWebApiProtosAddress.serializer)
       ..add(UtilitiesWebApiProtosAlert.serializer)
+      ..add(UtilitiesWebApiProtosAssignUnitToGroupRequest.serializer)
+      ..add(UtilitiesWebApiProtosAssignUnitToGroupResponse.serializer)
       ..add(UtilitiesWebApiProtosAttachDeviceRequest.serializer)
       ..add(UtilitiesWebApiProtosAttachUnitRequest.serializer)
       ..add(UtilitiesWebApiProtosBuildReportRequest.serializer)
@@ -38,10 +40,15 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosConnectInputResponse.serializer)
       ..add(UtilitiesWebApiProtosContact.serializer)
       ..add(UtilitiesWebApiProtosContactType.serializer)
+      ..add(UtilitiesWebApiProtosCreateGroupRequest.serializer)
+      ..add(UtilitiesWebApiProtosCreateGroupResponse.serializer)
       ..add(UtilitiesWebApiProtosCreateShareLinkRequest.serializer)
       ..add(UtilitiesWebApiProtosCreateShareLinkResponse.serializer)
       ..add(UtilitiesWebApiProtosDashboardDisplayMode.serializer)
+      ..add(UtilitiesWebApiProtosDeleteGroupStrategy.serializer)
       ..add(UtilitiesWebApiProtosDetachUserFromUnitRequest.serializer)
+      ..add(UtilitiesWebApiProtosDeviceGroup.serializer)
+      ..add(UtilitiesWebApiProtosDeviceGroupTreeNode.serializer)
       ..add(UtilitiesWebApiProtosDeviceModel.serializer)
       ..add(UtilitiesWebApiProtosDeviceModelTypesAction.serializer)
       ..add(UtilitiesWebApiProtosDeviceModelTypesCommand.serializer)
@@ -75,6 +82,8 @@ Serializers _$serializers = (Serializers().toBuilder()
           .serializer)
       ..add(UtilitiesWebApiProtosGetDistributionsResponseTypesItem.serializer)
       ..add(UtilitiesWebApiProtosGetEventTypeDetailsResponse.serializer)
+      ..add(UtilitiesWebApiProtosGetGroupResponse.serializer)
+      ..add(UtilitiesWebApiProtosGetGroupSubtreeResponse.serializer)
       ..add(UtilitiesWebApiProtosGetInputsResponse.serializer)
       ..add(UtilitiesWebApiProtosGetInputsStatisticsRequest.serializer)
       ..add(UtilitiesWebApiProtosGetInputsStatisticsResponse.serializer)
@@ -86,8 +95,10 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosGetNotificationsResponse.serializer)
       ..add(UtilitiesWebApiProtosGetProfileResponse.serializer)
       ..add(UtilitiesWebApiProtosGetScenarioDetailsResponse.serializer)
+      ..add(UtilitiesWebApiProtosGetUnitGroupResponse.serializer)
       ..add(UtilitiesWebApiProtosGetUnitResponse.serializer)
       ..add(UtilitiesWebApiProtosGetUsersResponse.serializer)
+      ..add(UtilitiesWebApiProtosGroupDashboard.serializer)
       ..add(UtilitiesWebApiProtosHideAlertRequest.serializer)
       ..add(UtilitiesWebApiProtosHideAlertResponse.serializer)
       ..add(UtilitiesWebApiProtosImportance.serializer)
@@ -108,6 +119,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosListEmployeesResponse.serializer)
       ..add(UtilitiesWebApiProtosListEventTypesResponse.serializer)
       ..add(UtilitiesWebApiProtosListEventsResponse.serializer)
+      ..add(UtilitiesWebApiProtosListGroupUnitsResponse.serializer)
+      ..add(UtilitiesWebApiProtosListGroupsResponse.serializer)
       ..add(UtilitiesWebApiProtosListIntegartionsResponse.serializer)
       ..add(UtilitiesWebApiProtosListIntegrationModelsResponse.serializer)
       ..add(UtilitiesWebApiProtosListMonitorsResponse.serializer)
@@ -122,6 +135,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosMaintainer.serializer)
       ..add(UtilitiesWebApiProtosMaintenanceAssignment.serializer)
       ..add(UtilitiesWebApiProtosMonitor.serializer)
+      ..add(UtilitiesWebApiProtosMoveGroupRequest.serializer)
+      ..add(UtilitiesWebApiProtosMoveGroupResponse.serializer)
       ..add(UtilitiesWebApiProtosNotification.serializer)
       ..add(UtilitiesWebApiProtosRefreshTokenRequest.serializer)
       ..add(UtilitiesWebApiProtosRefreshTokenResponse.serializer)
@@ -130,6 +145,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosResetEmployeePasswordRequest.serializer)
       ..add(UtilitiesWebApiProtosResetMonitorRequest.serializer)
       ..add(UtilitiesWebApiProtosResetPasswordRequest.serializer)
+      ..add(UtilitiesWebApiProtosResetUnitGroupRequest.serializer)
+      ..add(UtilitiesWebApiProtosResetUnitGroupResponse.serializer)
       ..add(UtilitiesWebApiProtosRole.serializer)
       ..add(UtilitiesWebApiProtosRunRequest.serializer)
       ..add(UtilitiesWebApiProtosScenario.serializer)
@@ -168,6 +185,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosUpdateEmployeeRequest.serializer)
       ..add(UtilitiesWebApiProtosUpdateEventTypeRequest.serializer)
       ..add(UtilitiesWebApiProtosUpdateEventTypeResponse.serializer)
+      ..add(UtilitiesWebApiProtosUpdateGroupRequest.serializer)
+      ..add(UtilitiesWebApiProtosUpdateGroupResponse.serializer)
       ..add(UtilitiesWebApiProtosUpdateMaintainerRequest.serializer)
       ..add(UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest.serializer)
       ..add(
@@ -196,6 +215,9 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GoogleProtobufWellKnownTypesAny)]),
           () => ListBuilder<GoogleProtobufWellKnownTypesAny>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())
@@ -299,6 +321,18 @@ Serializers _$serializers = (Serializers().toBuilder()
               UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor>())
       ..addBuilderFactory(
           const FullType(BuiltList,
+              const [const FullType(UtilitiesWebApiProtosDeviceGroup)]),
+          () => ListBuilder<UtilitiesWebApiProtosDeviceGroup>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(UtilitiesWebApiProtosDeviceGroupTreeNode)]),
+          () => ListBuilder<UtilitiesWebApiProtosDeviceGroupTreeNode>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(UtilitiesWebApiProtosDeviceGroupTreeNode)]),
+          () => ListBuilder<UtilitiesWebApiProtosDeviceGroupTreeNode>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
               const [const FullType(UtilitiesWebApiProtosDeviceModel)]),
           () => ListBuilder<UtilitiesWebApiProtosDeviceModel>())
       ..addBuilderFactory(
@@ -361,6 +395,10 @@ Serializers _$serializers = (Serializers().toBuilder()
           ]),
           () => ListBuilder<
               UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(UtilitiesWebApiProtosGroupDashboard)]),
+          () => ListBuilder<UtilitiesWebApiProtosGroupDashboard>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(UtilitiesWebApiProtosInput)]),

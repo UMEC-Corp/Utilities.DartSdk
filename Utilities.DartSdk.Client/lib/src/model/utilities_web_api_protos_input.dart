@@ -57,9 +57,9 @@ abstract class UtilitiesWebApiProtosInput
 
   UtilitiesWebApiProtosInput._();
 
-  factory UtilitiesWebApiProtosInput([
-    void updates(UtilitiesWebApiProtosInputBuilder b),
-  ]) = _$UtilitiesWebApiProtosInput;
+  factory UtilitiesWebApiProtosInput(
+          [void updates(UtilitiesWebApiProtosInputBuilder b)]) =
+      _$UtilitiesWebApiProtosInput;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosInputBuilder b) => b;
@@ -74,7 +74,7 @@ class _$UtilitiesWebApiProtosInputSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosInput,
-    _$UtilitiesWebApiProtosInput,
+    _$UtilitiesWebApiProtosInput
   ];
 
   @override
@@ -149,11 +149,9 @@ class _$UtilitiesWebApiProtosInputSerializer
     UtilitiesWebApiProtosInput object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -169,66 +167,59 @@ class _$UtilitiesWebApiProtosInputSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.id = valueDes;
           break;
         case r'code':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.code = valueDes;
           break;
         case r'unitOfMeasurement':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitOfMeasurement = valueDes;
           break;
         case r'value':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(double),
-                  )
-                  as double;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
           result.value = valueDes;
           break;
         case r'valueTime':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.valueTime = valueDes;
           break;
         case r'valueType':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.valueType = valueDes;
           break;
         case r'dashboardDisplayIndex':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.dashboardDisplayIndex = valueDes;
           break;
         case r'isConnected':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(bool),
-                  )
-                  as bool;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
           result.isConnected = valueDes;
           break;
         default:

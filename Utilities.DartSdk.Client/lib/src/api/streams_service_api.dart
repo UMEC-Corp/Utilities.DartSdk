@@ -34,7 +34,7 @@ class StreamsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosUnitEventsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosUnitEventsResponse>>
-  apiDashboardV1StreamsMaintainerUnitEventsGet({
+      apiDashboardV1StreamsMaintainerUnitEventsGet({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -45,10 +45,16 @@ class StreamsServiceApi {
     final _path = r'/api/dashboard/v1/streams/maintainer-unit-events';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -70,12 +76,10 @@ class StreamsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosUnitEventsResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosUnitEventsResponse;
+              rawResponse,
+              specifiedType:
+                  const FullType(UtilitiesWebApiProtosUnitEventsResponse),
+            ) as UtilitiesWebApiProtosUnitEventsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -113,7 +117,7 @@ class StreamsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosUnitEventsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosUnitEventsResponse>>
-  apiDashboardV1StreamsUnitEventsGet({
+      apiDashboardV1StreamsUnitEventsGet({
     BuiltList<String>? unitIds,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -125,10 +129,16 @@ class StreamsServiceApi {
     final _path = r'/api/dashboard/v1/streams/unit-events';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -161,12 +171,10 @@ class StreamsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosUnitEventsResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosUnitEventsResponse;
+              rawResponse,
+              specifiedType:
+                  const FullType(UtilitiesWebApiProtosUnitEventsResponse),
+            ) as UtilitiesWebApiProtosUnitEventsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

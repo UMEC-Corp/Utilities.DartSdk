@@ -13,6 +13,7 @@ export 'package:utilities_dart_sdk_client/src/model/date.dart';
 export 'package:utilities_dart_sdk_client/src/api/addresses_service_api.dart';
 export 'package:utilities_dart_sdk_client/src/api/alerts_service_api.dart';
 export 'package:utilities_dart_sdk_client/src/api/command_runner_api.dart';
+export 'package:utilities_dart_sdk_client/src/api/device_groups_service_api.dart';
 export 'package:utilities_dart_sdk_client/src/api/employees_service_api.dart';
 export 'package:utilities_dart_sdk_client/src/api/event_types_service_api.dart';
 export 'package:utilities_dart_sdk_client/src/api/integrations_service_api.dart';
@@ -47,6 +48,8 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_add
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_add_scenario_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_address.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_alert.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_assign_unit_to_group_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_assign_unit_to_group_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_attach_device_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_attach_unit_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_build_report_request.dart';
@@ -57,10 +60,15 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_con
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_connect_input_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_contact.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_contact_type.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_group_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_group_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_share_link_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_share_link_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_dashboard_display_mode.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_delete_group_strategy.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_detach_user_from_unit_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_device_group.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_device_group_tree_node.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_device_model.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_device_model_types_action.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_device_model_types_command.dart';
@@ -92,6 +100,8 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_distributions_response_types_distribution_entry.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_distributions_response_types_item.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_event_type_details_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_group_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_group_subtree_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_inputs_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_inputs_statistics_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_inputs_statistics_response.dart';
@@ -101,8 +111,10 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_notifications_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_profile_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_scenario_details_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_unit_group_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_unit_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_users_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_group_dashboard.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_hide_alert_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_hide_alert_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_importance.dart';
@@ -118,6 +130,8 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_lis
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_employees_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_event_types_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_events_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_group_units_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_groups_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_integartions_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_integration_models_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_monitors_response.dart';
@@ -130,6 +144,8 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_lis
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_maintainer.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_maintenance_assignment.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_monitor.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_move_group_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_move_group_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_notification.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_refresh_token_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_refresh_token_response.dart';
@@ -138,6 +154,8 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_res
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_reset_employee_password_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_reset_monitor_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_reset_password_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_reset_unit_group_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_reset_unit_group_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_role.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_run_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_scenario.dart';
@@ -174,6 +192,8 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_upd
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_employee_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_event_type_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_event_type_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_group_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_group_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_maintainer_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_maintenance_assignments_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_maintenance_assignments_request_types_update_maintenance_assignments_item.dart';

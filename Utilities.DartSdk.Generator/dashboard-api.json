@@ -499,6 +499,536 @@
         }
       }
     },
+    "/api/dashboard/v1/device-groups": {
+      "post": {
+        "tags": [
+          "DeviceGroupsService"
+        ],
+        "summary": "Create a new device group",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utilities.Web.Api.Protos.CreateGroupRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.CreateGroupResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "DeviceGroupsService"
+        ],
+        "summary": "Get a paged list of device groups",
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "parentGroupId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ListGroupsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/device-groups/{groupId}": {
+      "get": {
+        "tags": [
+          "DeviceGroupsService"
+        ],
+        "summary": "Get a device group by id",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "Id of the device group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.GetGroupResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "DeviceGroupsService"
+        ],
+        "summary": "Update an existing device group",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "Id of the device group to update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UpdateGroupRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UpdateGroupResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "DeviceGroupsService"
+        ],
+        "summary": "Delete a device group",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "Id of the device group to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "strategy",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeleteGroupStrategy"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeleteGroupResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/device-groups/{groupId}:move": {
+      "post": {
+        "tags": [
+          "DeviceGroupsService"
+        ],
+        "summary": "Move a device group under a new parent",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "Id of the device group to move",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utilities.Web.Api.Protos.MoveGroupRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.MoveGroupResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/device-groups:subtree": {
+      "get": {
+        "tags": [
+          "DeviceGroupsService"
+        ],
+        "summary": "Get the subtree of a device group",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.GetGroupSubtreeResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/device-groups/{groupId}/units/{deviceClientId}:assign": {
+      "post": {
+        "tags": [
+          "DeviceGroupsService"
+        ],
+        "summary": "Assign a unit to a device group (creates or reassigns)",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "Id of the target device group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "deviceClientId",
+            "in": "path",
+            "description": "Id of the device client to assign",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utilities.Web.Api.Protos.AssignUnitToGroupRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.AssignUnitToGroupResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/device-groups/{groupId}/units": {
+      "get": {
+        "tags": [
+          "DeviceGroupsService"
+        ],
+        "summary": "List unit IDs belonging to a device group",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "Id of the device group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeDescendants",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ListGroupUnitsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/units/{deviceClientId}/device-group": {
+      "get": {
+        "tags": [
+          "DeviceGroupsService"
+        ],
+        "summary": "Get the group a unit belongs to",
+        "parameters": [
+          {
+            "name": "deviceClientId",
+            "in": "path",
+            "description": "Id of the device client",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.GetUnitGroupResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/units/{deviceClientId}:reset-device-group": {
+      "post": {
+        "tags": [
+          "DeviceGroupsService"
+        ],
+        "summary": "Reset a unit's group assignment back to the tenant root group",
+        "parameters": [
+          {
+            "name": "deviceClientId",
+            "in": "path",
+            "description": "Id of the device client to reset",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ResetUnitGroupRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ResetUnitGroupResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/dashboard/v1/employees": {
       "get": {
         "tags": [
@@ -4715,6 +5245,36 @@
         "additionalProperties": false,
         "description": "Details of an alert for a unit."
       },
+      "Utilities.Web.Api.Protos.AssignUnitToGroupRequest": {
+        "type": "object",
+        "properties": {
+          "deviceClientId": {
+            "type": "string",
+            "description": "Id of the device client to assign"
+          },
+          "groupId": {
+            "type": "string",
+            "description": "Id of the target device group"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request to assign a device client to a device group"
+      },
+      "Utilities.Web.Api.Protos.AssignUnitToGroupResponse": {
+        "type": "object",
+        "properties": {
+          "deviceClientId": {
+            "type": "string",
+            "description": "The device client id that was assigned"
+          },
+          "groupId": {
+            "type": "string",
+            "description": "The group id it was assigned to"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response after assigning a device client to a group"
+      },
       "Utilities.Web.Api.Protos.AttachDeviceRequest": {
         "type": "object",
         "properties": {
@@ -4918,6 +5478,31 @@
         "type": "string",
         "description": "Type of contact value."
       },
+      "Utilities.Web.Api.Protos.CreateGroupRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the device group"
+          },
+          "parentGroupId": {
+            "type": "string",
+            "description": "Id of the parent group (empty for root-level group)"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request to create a new device group"
+      },
+      "Utilities.Web.Api.Protos.CreateGroupResponse": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceGroup"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response after creating a device group"
+      },
       "Utilities.Web.Api.Protos.CreateShareLinkRequest": {
         "type": "object",
         "properties": {
@@ -4955,6 +5540,20 @@
         "type": "object",
         "additionalProperties": false
       },
+      "Utilities.Web.Api.Protos.DeleteGroupResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response after deleting a device group"
+      },
+      "Utilities.Web.Api.Protos.DeleteGroupStrategy": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "description": "Strategy for deleting a group that has children",
+        "format": "int32"
+      },
       "Utilities.Web.Api.Protos.DetachUnitResponse": {
         "type": "object",
         "additionalProperties": false,
@@ -4980,6 +5579,58 @@
         "type": "object",
         "additionalProperties": false,
         "description": "Response message for detaching a user from a unit."
+      },
+      "Utilities.Web.Api.Protos.DeviceGroup": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id of the device group"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the device group"
+          },
+          "parentGroupId": {
+            "type": "string",
+            "description": "Id of the parent group (empty for root)"
+          },
+          "tenantId": {
+            "type": "string",
+            "description": "Id of the tenant this group belongs to"
+          },
+          "createdAt": {
+            "type": "integer",
+            "description": "Timestamp of creation (unix ms)",
+            "format": "int64"
+          },
+          "dashboards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.GroupDashboard"
+            },
+            "description": "Dashboards supported by this group"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A device group in the hierarchy"
+      },
+      "Utilities.Web.Api.Protos.DeviceGroupTreeNode": {
+        "type": "object",
+        "properties": {
+          "group": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceGroup"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceGroupTreeNode"
+            },
+            "description": "Child nodes"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A node in the device group subtree"
       },
       "Utilities.Web.Api.Protos.DeviceModel": {
         "type": "object",
@@ -5698,6 +6349,30 @@
         },
         "additionalProperties": false
       },
+      "Utilities.Web.Api.Protos.GetGroupResponse": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceGroup"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response with a device group"
+      },
+      "Utilities.Web.Api.Protos.GetGroupSubtreeResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceGroupTreeNode"
+            },
+            "description": "The root nodes of the subtree"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response with the subtree of a device group"
+      },
       "Utilities.Web.Api.Protos.GetInputsResponse": {
         "type": "object",
         "properties": {
@@ -5929,6 +6604,16 @@
         "additionalProperties": false,
         "description": "Scenario response"
       },
+      "Utilities.Web.Api.Protos.GetUnitGroupResponse": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceGroup"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response with the group a device client belongs to"
+      },
       "Utilities.Web.Api.Protos.GetUnitResponse": {
         "type": "object",
         "properties": {
@@ -5978,6 +6663,25 @@
         },
         "additionalProperties": false,
         "description": "Response message containing the users associated with a virtual device."
+      },
+      "Utilities.Web.Api.Protos.GroupDashboard": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id of the dashboard"
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the dashboard"
+          },
+          "isDefault": {
+            "type": "boolean",
+            "description": "Whether this is the default dashboard for the group"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A dashboard associated with a device group"
       },
       "Utilities.Web.Api.Protos.HideAlertRequest": {
         "type": "object",
@@ -6283,6 +6987,44 @@
           }
         },
         "additionalProperties": false
+      },
+      "Utilities.Web.Api.Protos.ListGroupUnitsResponse": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "description": "Total count of device clients matching the filter",
+            "format": "int32"
+          },
+          "deviceClientIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Device client IDs assigned to the group(s)"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response with device client IDs belonging to a group"
+      },
+      "Utilities.Web.Api.Protos.ListGroupsResponse": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "description": "Total count of device groups matching the filter",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceGroup"
+            },
+            "description": "Paged list of device groups"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response with a list of device groups"
       },
       "Utilities.Web.Api.Protos.ListIntegartionsResponse": {
         "type": "object",
@@ -6635,6 +7377,31 @@
         "additionalProperties": false,
         "description": "Details of a monitor for a unit."
       },
+      "Utilities.Web.Api.Protos.MoveGroupRequest": {
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "type": "string",
+            "description": "Id of the device group to move"
+          },
+          "newParentGroupId": {
+            "type": "string",
+            "description": "Id of the new parent group (empty to move to root)"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request to move a device group under a new parent"
+      },
+      "Utilities.Web.Api.Protos.MoveGroupResponse": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceGroup"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response after moving a device group"
+      },
       "Utilities.Web.Api.Protos.Notification": {
         "type": "object",
         "properties": {
@@ -6794,6 +7561,32 @@
         "type": "object",
         "additionalProperties": false,
         "description": "Reset password response message."
+      },
+      "Utilities.Web.Api.Protos.ResetUnitGroupRequest": {
+        "type": "object",
+        "properties": {
+          "deviceClientId": {
+            "type": "string",
+            "description": "Id of the device client to reset"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request to reset a device client's group to the root group"
+      },
+      "Utilities.Web.Api.Protos.ResetUnitGroupResponse": {
+        "type": "object",
+        "properties": {
+          "deviceClientId": {
+            "type": "string",
+            "description": "The device client id that was reset"
+          },
+          "groupId": {
+            "type": "string",
+            "description": "The root group id it was assigned to"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response after resetting a device client's group"
       },
       "Utilities.Web.Api.Protos.Role": {
         "type": "object",
@@ -7854,6 +8647,31 @@
         },
         "additionalProperties": false
       },
+      "Utilities.Web.Api.Protos.UpdateGroupRequest": {
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "type": "string",
+            "description": "Id of the device group to update"
+          },
+          "name": {
+            "type": "string",
+            "description": "New name of the device group"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request to update an existing device group"
+      },
+      "Utilities.Web.Api.Protos.UpdateGroupResponse": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceGroup"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response after updating a device group"
+      },
       "Utilities.Web.Api.Protos.UpdateMaintainerRequest": {
         "type": "object",
         "properties": {
@@ -8356,6 +9174,10 @@
     {
       "name": "RolesService",
       "description": "An endpoint to manage roles"
+    },
+    {
+      "name": "DeviceGroupsService",
+      "description": "Proxy service that delegates device group operations to the Companies microservice"
     }
   ]
 }

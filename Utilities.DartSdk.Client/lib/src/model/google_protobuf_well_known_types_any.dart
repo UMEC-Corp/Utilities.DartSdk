@@ -17,18 +17,16 @@ part 'google_protobuf_well_known_types_any.g.dart';
 @BuiltValue()
 abstract class GoogleProtobufWellKnownTypesAny
     implements
-        Built<
-          GoogleProtobufWellKnownTypesAny,
-          GoogleProtobufWellKnownTypesAnyBuilder
-        > {
+        Built<GoogleProtobufWellKnownTypesAny,
+            GoogleProtobufWellKnownTypesAnyBuilder> {
   @BuiltValueField(wireName: r'@type')
   String get atType;
 
   GoogleProtobufWellKnownTypesAny._();
 
-  factory GoogleProtobufWellKnownTypesAny([
-    void updates(GoogleProtobufWellKnownTypesAnyBuilder b),
-  ]) = _$GoogleProtobufWellKnownTypesAny;
+  factory GoogleProtobufWellKnownTypesAny(
+          [void updates(GoogleProtobufWellKnownTypesAnyBuilder b)]) =
+      _$GoogleProtobufWellKnownTypesAny;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(GoogleProtobufWellKnownTypesAnyBuilder b) => b;
@@ -43,7 +41,7 @@ class _$GoogleProtobufWellKnownTypesAnySerializer
   @override
   final Iterable<Type> types = const [
     GoogleProtobufWellKnownTypesAny,
-    _$GoogleProtobufWellKnownTypesAny,
+    _$GoogleProtobufWellKnownTypesAny
   ];
 
   @override
@@ -67,11 +65,9 @@ class _$GoogleProtobufWellKnownTypesAnySerializer
     GoogleProtobufWellKnownTypesAny object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -87,12 +83,10 @@ class _$GoogleProtobufWellKnownTypesAnySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'@type':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.atType = valueDes;
           break;
         default:

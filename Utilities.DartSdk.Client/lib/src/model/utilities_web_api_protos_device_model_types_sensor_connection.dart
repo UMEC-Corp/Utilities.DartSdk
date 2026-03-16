@@ -22,10 +22,8 @@ part 'utilities_web_api_protos_device_model_types_sensor_connection.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDeviceModelTypesSensorConnection
     implements
-        Built<
-          UtilitiesWebApiProtosDeviceModelTypesSensorConnection,
-          UtilitiesWebApiProtosDeviceModelTypesSensorConnectionBuilder
-        > {
+        Built<UtilitiesWebApiProtosDeviceModelTypesSensorConnection,
+            UtilitiesWebApiProtosDeviceModelTypesSensorConnectionBuilder> {
   @BuiltValueField(wireName: r'connectedSensorCode')
   String? get connectedSensorCode;
 
@@ -46,32 +44,30 @@ abstract class UtilitiesWebApiProtosDeviceModelTypesSensorConnection
 
   UtilitiesWebApiProtosDeviceModelTypesSensorConnection._();
 
-  factory UtilitiesWebApiProtosDeviceModelTypesSensorConnection([
-    void updates(
-      UtilitiesWebApiProtosDeviceModelTypesSensorConnectionBuilder b,
-    ),
-  ]) = _$UtilitiesWebApiProtosDeviceModelTypesSensorConnection;
+  factory UtilitiesWebApiProtosDeviceModelTypesSensorConnection(
+      [void updates(
+          UtilitiesWebApiProtosDeviceModelTypesSensorConnectionBuilder
+              b)]) = _$UtilitiesWebApiProtosDeviceModelTypesSensorConnection;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosDeviceModelTypesSensorConnectionBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosDeviceModelTypesSensorConnectionBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosDeviceModelTypesSensorConnection>
-  get serializer =>
-      _$UtilitiesWebApiProtosDeviceModelTypesSensorConnectionSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosDeviceModelTypesSensorConnectionSerializer();
 }
 
 class _$UtilitiesWebApiProtosDeviceModelTypesSensorConnectionSerializer
     implements
         PrimitiveSerializer<
-          UtilitiesWebApiProtosDeviceModelTypesSensorConnection
-        > {
+            UtilitiesWebApiProtosDeviceModelTypesSensorConnection> {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosDeviceModelTypesSensorConnection,
-    _$UtilitiesWebApiProtosDeviceModelTypesSensorConnection,
+    _$UtilitiesWebApiProtosDeviceModelTypesSensorConnection
   ];
 
   @override
@@ -94,9 +90,8 @@ class _$UtilitiesWebApiProtosDeviceModelTypesSensorConnectionSerializer
       yield r'triggers';
       yield serializers.serialize(
         object.triggers,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosDeviceModelTypesTrigger),
-        ]),
+        specifiedType: const FullType(BuiltList,
+            [FullType(UtilitiesWebApiProtosDeviceModelTypesTrigger)]),
       );
     }
     if (object.isPersistent != null) {
@@ -135,11 +130,9 @@ class _$UtilitiesWebApiProtosDeviceModelTypesSensorConnectionSerializer
     UtilitiesWebApiProtosDeviceModelTypesSensorConnection object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -148,7 +141,7 @@ class _$UtilitiesWebApiProtosDeviceModelTypesSensorConnectionSerializer
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosDeviceModelTypesSensorConnectionBuilder
-    result,
+        result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -156,59 +149,46 @@ class _$UtilitiesWebApiProtosDeviceModelTypesSensorConnectionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'connectedSensorCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.connectedSensorCode = valueDes;
           break;
         case r'triggers':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosDeviceModelTypesTrigger),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosDeviceModelTypesTrigger>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList,
+                [FullType(UtilitiesWebApiProtosDeviceModelTypesTrigger)]),
+          ) as BuiltList<UtilitiesWebApiProtosDeviceModelTypesTrigger>;
           result.triggers.replace(valueDes);
           break;
         case r'isPersistent':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(bool),
-                  )
-                  as bool;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
           result.isPersistent = valueDes;
           break;
         case r'unitOfMeasurement':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitOfMeasurement = valueDes;
           break;
         case r'name':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.name = valueDes;
           break;
         case r'valueType':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.valueType = valueDes;
           break;
         default:

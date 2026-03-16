@@ -21,10 +21,8 @@ part 'utilities_web_api_protos_get_distributions_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetDistributionsRequest
     implements
-        Built<
-          UtilitiesWebApiProtosGetDistributionsRequest,
-          UtilitiesWebApiProtosGetDistributionsRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosGetDistributionsRequest,
+            UtilitiesWebApiProtosGetDistributionsRequestBuilder> {
   /// Id of the physical device.
   @BuiltValueField(wireName: r'deviceId')
   String? get deviceId;
@@ -51,18 +49,20 @@ abstract class UtilitiesWebApiProtosGetDistributionsRequest
 
   UtilitiesWebApiProtosGetDistributionsRequest._();
 
-  factory UtilitiesWebApiProtosGetDistributionsRequest([
-    void updates(UtilitiesWebApiProtosGetDistributionsRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosGetDistributionsRequest;
+  factory UtilitiesWebApiProtosGetDistributionsRequest(
+          [void updates(
+              UtilitiesWebApiProtosGetDistributionsRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosGetDistributionsRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosGetDistributionsRequestBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosGetDistributionsRequestBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosGetDistributionsRequest>
-  get serializer => _$UtilitiesWebApiProtosGetDistributionsRequestSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosGetDistributionsRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetDistributionsRequestSerializer
@@ -71,7 +71,7 @@ class _$UtilitiesWebApiProtosGetDistributionsRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetDistributionsRequest,
-    _$UtilitiesWebApiProtosGetDistributionsRequest,
+    _$UtilitiesWebApiProtosGetDistributionsRequest
   ];
 
   @override
@@ -132,11 +132,9 @@ class _$UtilitiesWebApiProtosGetDistributionsRequestSerializer
     UtilitiesWebApiProtosGetDistributionsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -152,50 +150,45 @@ class _$UtilitiesWebApiProtosGetDistributionsRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'deviceId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.deviceId = valueDes;
           break;
         case r'unitCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitCode = valueDes;
           break;
         case r'inputCodes':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(String),
-                    ]),
-                  )
-                  as BuiltList<String>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
           result.inputCodes.replace(valueDes);
           break;
         case r'begin':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.begin = valueDes;
           break;
         case r'end':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.end = valueDes;
           break;
         case r'timeFrame':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.timeFrame = valueDes;
           break;
         default:

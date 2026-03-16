@@ -19,10 +19,8 @@ part 'utilities_web_api_protos_send_command_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosSendCommandRequest
     implements
-        Built<
-          UtilitiesWebApiProtosSendCommandRequest,
-          UtilitiesWebApiProtosSendCommandRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosSendCommandRequest,
+            UtilitiesWebApiProtosSendCommandRequestBuilder> {
   /// Id of the physical device
   @BuiltValueField(wireName: r'deviceId')
   String? get deviceId;
@@ -41,9 +39,9 @@ abstract class UtilitiesWebApiProtosSendCommandRequest
 
   UtilitiesWebApiProtosSendCommandRequest._();
 
-  factory UtilitiesWebApiProtosSendCommandRequest([
-    void updates(UtilitiesWebApiProtosSendCommandRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosSendCommandRequest;
+  factory UtilitiesWebApiProtosSendCommandRequest(
+          [void updates(UtilitiesWebApiProtosSendCommandRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosSendCommandRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosSendCommandRequestBuilder b) => b;
@@ -58,7 +56,7 @@ class _$UtilitiesWebApiProtosSendCommandRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosSendCommandRequest,
-    _$UtilitiesWebApiProtosSendCommandRequest,
+    _$UtilitiesWebApiProtosSendCommandRequest
   ];
 
   @override
@@ -94,10 +92,8 @@ class _$UtilitiesWebApiProtosSendCommandRequestSerializer
       yield r'arguments';
       yield serializers.serialize(
         object.arguments,
-        specifiedType: const FullType(BuiltMap, [
-          FullType(String),
-          FullType(String),
-        ]),
+        specifiedType:
+            const FullType(BuiltMap, [FullType(String), FullType(String)]),
       );
     }
   }
@@ -108,11 +104,9 @@ class _$UtilitiesWebApiProtosSendCommandRequestSerializer
     UtilitiesWebApiProtosSendCommandRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -128,42 +122,32 @@ class _$UtilitiesWebApiProtosSendCommandRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'deviceId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.deviceId = valueDes;
           break;
         case r'unitCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitCode = valueDes;
           break;
         case r'command':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.command = valueDes;
           break;
         case r'arguments':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltMap, [
-                      FullType(String),
-                      FullType(String),
-                    ]),
-                  )
-                  as BuiltMap<String, String>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(BuiltMap, [FullType(String), FullType(String)]),
+          ) as BuiltMap<String, String>;
           result.arguments.replace(valueDes);
           break;
         default:

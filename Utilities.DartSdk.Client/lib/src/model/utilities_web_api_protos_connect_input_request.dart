@@ -17,10 +17,8 @@ part 'utilities_web_api_protos_connect_input_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosConnectInputRequest
     implements
-        Built<
-          UtilitiesWebApiProtosConnectInputRequest,
-          UtilitiesWebApiProtosConnectInputRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosConnectInputRequest,
+            UtilitiesWebApiProtosConnectInputRequestBuilder> {
   /// Id of the physical device
   @BuiltValueField(wireName: r'deviceId')
   String? get deviceId;
@@ -35,9 +33,9 @@ abstract class UtilitiesWebApiProtosConnectInputRequest
 
   UtilitiesWebApiProtosConnectInputRequest._();
 
-  factory UtilitiesWebApiProtosConnectInputRequest([
-    void updates(UtilitiesWebApiProtosConnectInputRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosConnectInputRequest;
+  factory UtilitiesWebApiProtosConnectInputRequest(
+          [void updates(UtilitiesWebApiProtosConnectInputRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosConnectInputRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosConnectInputRequestBuilder b) => b;
@@ -52,7 +50,7 @@ class _$UtilitiesWebApiProtosConnectInputRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosConnectInputRequest,
-    _$UtilitiesWebApiProtosConnectInputRequest,
+    _$UtilitiesWebApiProtosConnectInputRequest
   ];
 
   @override
@@ -92,11 +90,9 @@ class _$UtilitiesWebApiProtosConnectInputRequestSerializer
     UtilitiesWebApiProtosConnectInputRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -112,30 +108,24 @@ class _$UtilitiesWebApiProtosConnectInputRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'deviceId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.deviceId = valueDes;
           break;
         case r'unitCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitCode = valueDes;
           break;
         case r'inputCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.inputCode = valueDes;
           break;
         default:

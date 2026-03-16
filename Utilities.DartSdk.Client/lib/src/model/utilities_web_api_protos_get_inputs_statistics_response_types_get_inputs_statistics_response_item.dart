@@ -23,9 +23,8 @@ part 'utilities_web_api_protos_get_inputs_statistics_response_types_get_inputs_s
 abstract class UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem
     implements
         Built<
-          UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem,
-          UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItemBuilder
-        > {
+            UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem,
+            UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItemBuilder> {
   /// Code of the input
   @BuiltValueField(wireName: r'inputCode')
   String? get inputCode;
@@ -60,37 +59,33 @@ abstract class UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsSta
 
   UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem._();
 
-  factory UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem([
-    void updates(
-      UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItemBuilder
-      b,
-    ),
-  ]) =
+  factory UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem(
+          [void updates(
+              UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItemBuilder
+                  b)]) =
       _$UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItemBuilder
-    b,
-  ) => b;
+          UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItemBuilder
+              b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<
-    UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem
-  >
-  get serializer =>
-      _$UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItemSerializer();
+          UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem>
+      get serializer =>
+          _$UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItemSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItemSerializer
     implements
         PrimitiveSerializer<
-          UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem
-        > {
+            UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem> {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem,
-    _$UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem,
+    _$UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem
   ];
 
   @override
@@ -100,7 +95,7 @@ class _$UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatistics
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
     UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem
-    object, {
+        object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.inputCode != null) {
@@ -165,14 +160,12 @@ class _$UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatistics
   Object serialize(
     Serializers serializers,
     UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem
-    object, {
+        object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -181,7 +174,7 @@ class _$UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatistics
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItemBuilder
-    result,
+        result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -189,69 +182,59 @@ class _$UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatistics
       final value = serializedList[i + 1];
       switch (key) {
         case r'inputCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.inputCode = valueDes;
           break;
         case r'begin':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.begin = valueDes;
           break;
         case r'end':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.end = valueDes;
           break;
         case r'meanValue':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(double),
-                  )
-                  as double;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
           result.meanValue = valueDes;
           break;
         case r'firstValue':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(double),
-                  )
-                  as double;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
           result.firstValue = valueDes;
           break;
         case r'lastValue':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(double),
-                  )
-                  as double;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
           result.lastValue = valueDes;
           break;
         case r'minValue':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(double),
-                  )
-                  as double;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
           result.minValue = valueDes;
           break;
         case r'maxValue':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(double),
-                  )
-                  as double;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
           result.maxValue = valueDes;
           break;
         default:
@@ -264,7 +247,7 @@ class _$UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatistics
 
   @override
   UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem
-  deserialize(
+      deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,

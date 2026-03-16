@@ -17,28 +17,28 @@ part 'utilities_web_api_protos_list_integartions_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListIntegartionsResponse
     implements
-        Built<
-          UtilitiesWebApiProtosListIntegartionsResponse,
-          UtilitiesWebApiProtosListIntegartionsResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosListIntegartionsResponse,
+            UtilitiesWebApiProtosListIntegartionsResponseBuilder> {
   /// List of available integrations
   @BuiltValueField(wireName: r'items')
   BuiltList<UtilitiesWebApiProtosIntegration>? get items;
 
   UtilitiesWebApiProtosListIntegartionsResponse._();
 
-  factory UtilitiesWebApiProtosListIntegartionsResponse([
-    void updates(UtilitiesWebApiProtosListIntegartionsResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosListIntegartionsResponse;
+  factory UtilitiesWebApiProtosListIntegartionsResponse(
+          [void updates(
+              UtilitiesWebApiProtosListIntegartionsResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosListIntegartionsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosListIntegartionsResponseBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosListIntegartionsResponseBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosListIntegartionsResponse>
-  get serializer => _$UtilitiesWebApiProtosListIntegartionsResponseSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosListIntegartionsResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosListIntegartionsResponseSerializer
@@ -47,7 +47,7 @@ class _$UtilitiesWebApiProtosListIntegartionsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListIntegartionsResponse,
-    _$UtilitiesWebApiProtosListIntegartionsResponse,
+    _$UtilitiesWebApiProtosListIntegartionsResponse
   ];
 
   @override
@@ -62,9 +62,8 @@ class _$UtilitiesWebApiProtosListIntegartionsResponseSerializer
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosIntegration),
-        ]),
+        specifiedType: const FullType(
+            BuiltList, [FullType(UtilitiesWebApiProtosIntegration)]),
       );
     }
   }
@@ -75,11 +74,9 @@ class _$UtilitiesWebApiProtosListIntegartionsResponseSerializer
     UtilitiesWebApiProtosListIntegartionsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -95,14 +92,11 @@ class _$UtilitiesWebApiProtosListIntegartionsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosIntegration),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosIntegration>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(UtilitiesWebApiProtosIntegration)]),
+          ) as BuiltList<UtilitiesWebApiProtosIntegration>;
           result.items.replace(valueDes);
           break;
         default:

@@ -33,6 +33,8 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_add
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_add_scenario_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_address.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_alert.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_assign_unit_to_group_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_assign_unit_to_group_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_attach_device_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_attach_unit_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_build_report_request.dart';
@@ -43,10 +45,15 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_con
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_connect_input_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_contact.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_contact_type.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_group_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_group_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_share_link_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_share_link_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_dashboard_display_mode.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_delete_group_strategy.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_detach_user_from_unit_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_device_group.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_device_group_tree_node.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_device_model.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_device_model_types_action.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_device_model_types_command.dart';
@@ -78,6 +85,8 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_distributions_response_types_distribution_entry.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_distributions_response_types_item.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_event_type_details_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_group_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_group_subtree_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_inputs_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_inputs_statistics_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_inputs_statistics_response.dart';
@@ -87,8 +96,10 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_notifications_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_profile_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_scenario_details_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_unit_group_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_unit_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_users_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_group_dashboard.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_hide_alert_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_hide_alert_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_importance.dart';
@@ -104,6 +115,8 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_lis
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_employees_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_event_types_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_events_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_group_units_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_groups_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_integartions_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_integration_models_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_monitors_response.dart';
@@ -116,6 +129,8 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_lis
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_maintainer.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_maintenance_assignment.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_monitor.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_move_group_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_move_group_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_notification.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_refresh_token_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_refresh_token_response.dart';
@@ -124,6 +139,8 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_res
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_reset_employee_password_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_reset_monitor_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_reset_password_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_reset_unit_group_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_reset_unit_group_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_role.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_run_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_scenario.dart';
@@ -160,6 +177,8 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_upd
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_employee_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_event_type_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_event_type_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_group_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_group_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_maintainer_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_maintenance_assignments_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_maintenance_assignments_request_types_update_maintenance_assignments_item.dart';
@@ -199,6 +218,8 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosAddScenarioResponse,
   UtilitiesWebApiProtosAddress,
   UtilitiesWebApiProtosAlert,
+  UtilitiesWebApiProtosAssignUnitToGroupRequest,
+  UtilitiesWebApiProtosAssignUnitToGroupResponse,
   UtilitiesWebApiProtosAttachDeviceRequest,
   UtilitiesWebApiProtosAttachUnitRequest,
   UtilitiesWebApiProtosBuildReportRequest,
@@ -209,10 +230,15 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosConnectInputResponse,
   UtilitiesWebApiProtosContact,
   UtilitiesWebApiProtosContactType,
+  UtilitiesWebApiProtosCreateGroupRequest,
+  UtilitiesWebApiProtosCreateGroupResponse,
   UtilitiesWebApiProtosCreateShareLinkRequest,
   UtilitiesWebApiProtosCreateShareLinkResponse,
   UtilitiesWebApiProtosDashboardDisplayMode,
+  UtilitiesWebApiProtosDeleteGroupStrategy,
   UtilitiesWebApiProtosDetachUserFromUnitRequest,
+  UtilitiesWebApiProtosDeviceGroup,
+  UtilitiesWebApiProtosDeviceGroupTreeNode,
   UtilitiesWebApiProtosDeviceModel,
   UtilitiesWebApiProtosDeviceModelTypesAction,
   UtilitiesWebApiProtosDeviceModelTypesCommand,
@@ -244,6 +270,8 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry,
   UtilitiesWebApiProtosGetDistributionsResponseTypesItem,
   UtilitiesWebApiProtosGetEventTypeDetailsResponse,
+  UtilitiesWebApiProtosGetGroupResponse,
+  UtilitiesWebApiProtosGetGroupSubtreeResponse,
   UtilitiesWebApiProtosGetInputsResponse,
   UtilitiesWebApiProtosGetInputsStatisticsRequest,
   UtilitiesWebApiProtosGetInputsStatisticsResponse,
@@ -253,8 +281,10 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosGetNotificationsResponse,
   UtilitiesWebApiProtosGetProfileResponse,
   UtilitiesWebApiProtosGetScenarioDetailsResponse,
+  UtilitiesWebApiProtosGetUnitGroupResponse,
   UtilitiesWebApiProtosGetUnitResponse,
   UtilitiesWebApiProtosGetUsersResponse,
+  UtilitiesWebApiProtosGroupDashboard,
   UtilitiesWebApiProtosHideAlertRequest,
   UtilitiesWebApiProtosHideAlertResponse,
   UtilitiesWebApiProtosImportance,
@@ -270,6 +300,8 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosListEmployeesResponse,
   UtilitiesWebApiProtosListEventTypesResponse,
   UtilitiesWebApiProtosListEventsResponse,
+  UtilitiesWebApiProtosListGroupUnitsResponse,
+  UtilitiesWebApiProtosListGroupsResponse,
   UtilitiesWebApiProtosListIntegartionsResponse,
   UtilitiesWebApiProtosListIntegrationModelsResponse,
   UtilitiesWebApiProtosListMonitorsResponse,
@@ -282,6 +314,8 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosMaintainer,
   UtilitiesWebApiProtosMaintenanceAssignment,
   UtilitiesWebApiProtosMonitor,
+  UtilitiesWebApiProtosMoveGroupRequest,
+  UtilitiesWebApiProtosMoveGroupResponse,
   UtilitiesWebApiProtosNotification,
   UtilitiesWebApiProtosRefreshTokenRequest,
   UtilitiesWebApiProtosRefreshTokenResponse,
@@ -290,6 +324,8 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosResetEmployeePasswordRequest,
   UtilitiesWebApiProtosResetMonitorRequest,
   UtilitiesWebApiProtosResetPasswordRequest,
+  UtilitiesWebApiProtosResetUnitGroupRequest,
+  UtilitiesWebApiProtosResetUnitGroupResponse,
   UtilitiesWebApiProtosRole,
   UtilitiesWebApiProtosRunRequest,
   UtilitiesWebApiProtosScenario,
@@ -326,6 +362,8 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosUpdateEmployeeRequest,
   UtilitiesWebApiProtosUpdateEventTypeRequest,
   UtilitiesWebApiProtosUpdateEventTypeResponse,
+  UtilitiesWebApiProtosUpdateGroupRequest,
+  UtilitiesWebApiProtosUpdateGroupResponse,
   UtilitiesWebApiProtosUpdateMaintainerRequest,
   UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest,
   UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestTypesUpdateMaintenanceAssignmentsItem,
@@ -343,23 +381,20 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosUser,
   UtilitiesWebApiProtosUserRole,
 ])
-Serializers serializers =
-    (_$serializers.toBuilder()
-          ..addBuilderFactory(
-            const FullType(BuiltList, [
-              FullType(UtilitiesWebApiProtosUnitStatus),
-            ]),
-            () => ListBuilder<UtilitiesWebApiProtosUnitStatus>(),
-          )
-          ..addBuilderFactory(
-            const FullType(BuiltList, [FullType(String)]),
-            () => ListBuilder<String>(),
-          )
-          ..add(const OneOfSerializer())
-          ..add(const AnyOfSerializer())
-          ..add(const DateSerializer())
-          ..add(Iso8601DateTimeSerializer()))
-        .build();
+Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(UtilitiesWebApiProtosUnitStatus)]),
+        () => ListBuilder<UtilitiesWebApiProtosUnitStatus>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(String)]),
+        () => ListBuilder<String>(),
+      )
+      ..add(const OneOfSerializer())
+      ..add(const AnyOfSerializer())
+      ..add(const DateSerializer())
+      ..add(Iso8601DateTimeSerializer()))
+    .build();
 
 Serializers standardSerializers =
     (serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();

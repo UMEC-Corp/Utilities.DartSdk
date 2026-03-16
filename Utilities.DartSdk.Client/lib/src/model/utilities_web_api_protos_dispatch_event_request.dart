@@ -16,10 +16,8 @@ part 'utilities_web_api_protos_dispatch_event_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDispatchEventRequest
     implements
-        Built<
-          UtilitiesWebApiProtosDispatchEventRequest,
-          UtilitiesWebApiProtosDispatchEventRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosDispatchEventRequest,
+            UtilitiesWebApiProtosDispatchEventRequestBuilder> {
   /// Id of the type of event to dispatch
   @BuiltValueField(wireName: r'eventTypeId')
   String? get eventTypeId;
@@ -30,9 +28,9 @@ abstract class UtilitiesWebApiProtosDispatchEventRequest
 
   UtilitiesWebApiProtosDispatchEventRequest._();
 
-  factory UtilitiesWebApiProtosDispatchEventRequest([
-    void updates(UtilitiesWebApiProtosDispatchEventRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosDispatchEventRequest;
+  factory UtilitiesWebApiProtosDispatchEventRequest(
+          [void updates(UtilitiesWebApiProtosDispatchEventRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosDispatchEventRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosDispatchEventRequestBuilder b) =>
@@ -48,7 +46,7 @@ class _$UtilitiesWebApiProtosDispatchEventRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosDispatchEventRequest,
-    _$UtilitiesWebApiProtosDispatchEventRequest,
+    _$UtilitiesWebApiProtosDispatchEventRequest
   ];
 
   @override
@@ -81,11 +79,9 @@ class _$UtilitiesWebApiProtosDispatchEventRequestSerializer
     UtilitiesWebApiProtosDispatchEventRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -101,21 +97,17 @@ class _$UtilitiesWebApiProtosDispatchEventRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'eventTypeId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.eventTypeId = valueDes;
           break;
         case r'addressId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.addressId = valueDes;
           break;
         default:

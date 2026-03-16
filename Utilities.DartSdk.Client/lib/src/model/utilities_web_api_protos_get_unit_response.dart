@@ -23,10 +23,8 @@ part 'utilities_web_api_protos_get_unit_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetUnitResponse
     implements
-        Built<
-          UtilitiesWebApiProtosGetUnitResponse,
-          UtilitiesWebApiProtosGetUnitResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosGetUnitResponse,
+            UtilitiesWebApiProtosGetUnitResponseBuilder> {
   @BuiltValueField(wireName: r'unit')
   UtilitiesWebApiProtosUnit? get unit;
 
@@ -44,9 +42,9 @@ abstract class UtilitiesWebApiProtosGetUnitResponse
 
   UtilitiesWebApiProtosGetUnitResponse._();
 
-  factory UtilitiesWebApiProtosGetUnitResponse([
-    void updates(UtilitiesWebApiProtosGetUnitResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosGetUnitResponse;
+  factory UtilitiesWebApiProtosGetUnitResponse(
+          [void updates(UtilitiesWebApiProtosGetUnitResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosGetUnitResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosGetUnitResponseBuilder b) => b;
@@ -61,7 +59,7 @@ class _$UtilitiesWebApiProtosGetUnitResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetUnitResponse,
-    _$UtilitiesWebApiProtosGetUnitResponse,
+    _$UtilitiesWebApiProtosGetUnitResponse
   ];
 
   @override
@@ -83,27 +81,24 @@ class _$UtilitiesWebApiProtosGetUnitResponseSerializer
       yield r'inputs';
       yield serializers.serialize(
         object.inputs,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosInput),
-        ]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosInput)]),
       );
     }
     if (object.parameters != null) {
       yield r'parameters';
       yield serializers.serialize(
         object.parameters,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosUnitParameter),
-        ]),
+        specifiedType: const FullType(
+            BuiltList, [FullType(UtilitiesWebApiProtosUnitParameter)]),
       );
     }
     if (object.commands != null) {
       yield r'commands';
       yield serializers.serialize(
         object.commands,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosUnitCommand),
-        ]),
+        specifiedType: const FullType(
+            BuiltList, [FullType(UtilitiesWebApiProtosUnitCommand)]),
       );
     }
   }
@@ -114,11 +109,9 @@ class _$UtilitiesWebApiProtosGetUnitResponseSerializer
     UtilitiesWebApiProtosGetUnitResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -134,45 +127,34 @@ class _$UtilitiesWebApiProtosGetUnitResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'unit':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(UtilitiesWebApiProtosUnit),
-                  )
-                  as UtilitiesWebApiProtosUnit;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UtilitiesWebApiProtosUnit),
+          ) as UtilitiesWebApiProtosUnit;
           result.unit.replace(valueDes);
           break;
         case r'inputs':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosInput),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosInput>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(UtilitiesWebApiProtosInput)]),
+          ) as BuiltList<UtilitiesWebApiProtosInput>;
           result.inputs.replace(valueDes);
           break;
         case r'parameters':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosUnitParameter),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosUnitParameter>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(UtilitiesWebApiProtosUnitParameter)]),
+          ) as BuiltList<UtilitiesWebApiProtosUnitParameter>;
           result.parameters.replace(valueDes);
           break;
         case r'commands':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosUnitCommand),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosUnitCommand>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(UtilitiesWebApiProtosUnitCommand)]),
+          ) as BuiltList<UtilitiesWebApiProtosUnitCommand>;
           result.commands.replace(valueDes);
           break;
         default:

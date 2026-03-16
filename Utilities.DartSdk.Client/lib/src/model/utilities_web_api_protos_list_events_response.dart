@@ -18,10 +18,8 @@ part 'utilities_web_api_protos_list_events_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListEventsResponse
     implements
-        Built<
-          UtilitiesWebApiProtosListEventsResponse,
-          UtilitiesWebApiProtosListEventsResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosListEventsResponse,
+            UtilitiesWebApiProtosListEventsResponseBuilder> {
   /// Total number of matching events
   @BuiltValueField(wireName: r'totalCount')
   int? get totalCount;
@@ -32,9 +30,9 @@ abstract class UtilitiesWebApiProtosListEventsResponse
 
   UtilitiesWebApiProtosListEventsResponse._();
 
-  factory UtilitiesWebApiProtosListEventsResponse([
-    void updates(UtilitiesWebApiProtosListEventsResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosListEventsResponse;
+  factory UtilitiesWebApiProtosListEventsResponse(
+          [void updates(UtilitiesWebApiProtosListEventsResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosListEventsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosListEventsResponseBuilder b) => b;
@@ -49,7 +47,7 @@ class _$UtilitiesWebApiProtosListEventsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListEventsResponse,
-    _$UtilitiesWebApiProtosListEventsResponse,
+    _$UtilitiesWebApiProtosListEventsResponse
   ];
 
   @override
@@ -71,9 +69,8 @@ class _$UtilitiesWebApiProtosListEventsResponseSerializer
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosEvent),
-        ]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosEvent)]),
       );
     }
   }
@@ -84,11 +81,9 @@ class _$UtilitiesWebApiProtosListEventsResponseSerializer
     UtilitiesWebApiProtosListEventsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -104,20 +99,18 @@ class _$UtilitiesWebApiProtosListEventsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'totalCount':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.totalCount = valueDes;
           break;
         case r'items':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosEvent),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosEvent>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(UtilitiesWebApiProtosEvent)]),
+          ) as BuiltList<UtilitiesWebApiProtosEvent>;
           result.items.replace(valueDes);
           break;
         default:

@@ -18,10 +18,8 @@ part 'utilities_web_api_protos_set_unit_parameter_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosSetUnitParameterRequest
     implements
-        Built<
-          UtilitiesWebApiProtosSetUnitParameterRequest,
-          UtilitiesWebApiProtosSetUnitParameterRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosSetUnitParameterRequest,
+            UtilitiesWebApiProtosSetUnitParameterRequestBuilder> {
   /// Id of the physical device
   @BuiltValueField(wireName: r'deviceId')
   String? get deviceId;
@@ -40,18 +38,20 @@ abstract class UtilitiesWebApiProtosSetUnitParameterRequest
 
   UtilitiesWebApiProtosSetUnitParameterRequest._();
 
-  factory UtilitiesWebApiProtosSetUnitParameterRequest([
-    void updates(UtilitiesWebApiProtosSetUnitParameterRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosSetUnitParameterRequest;
+  factory UtilitiesWebApiProtosSetUnitParameterRequest(
+          [void updates(
+              UtilitiesWebApiProtosSetUnitParameterRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosSetUnitParameterRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosSetUnitParameterRequestBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosSetUnitParameterRequestBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosSetUnitParameterRequest>
-  get serializer => _$UtilitiesWebApiProtosSetUnitParameterRequestSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosSetUnitParameterRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosSetUnitParameterRequestSerializer
@@ -60,7 +60,7 @@ class _$UtilitiesWebApiProtosSetUnitParameterRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosSetUnitParameterRequest,
-    _$UtilitiesWebApiProtosSetUnitParameterRequest,
+    _$UtilitiesWebApiProtosSetUnitParameterRequest
   ];
 
   @override
@@ -107,11 +107,9 @@ class _$UtilitiesWebApiProtosSetUnitParameterRequestSerializer
     UtilitiesWebApiProtosSetUnitParameterRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -127,39 +125,31 @@ class _$UtilitiesWebApiProtosSetUnitParameterRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'deviceId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.deviceId = valueDes;
           break;
         case r'unitCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitCode = valueDes;
           break;
         case r'parameterCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.parameterCode = valueDes;
           break;
         case r'value':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.value = valueDes;
           break;
         default:

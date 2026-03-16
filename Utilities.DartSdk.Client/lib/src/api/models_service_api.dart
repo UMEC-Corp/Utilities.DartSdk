@@ -34,7 +34,7 @@ class ModelsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosListAvailableModelsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosListAvailableModelsResponse>>
-  apiDashboardV1ModelsGet({
+      apiDashboardV1ModelsGet({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -45,10 +45,16 @@ class ModelsServiceApi {
     final _path = r'/api/dashboard/v1/models';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -70,12 +76,10 @@ class ModelsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosListAvailableModelsResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosListAvailableModelsResponse;
+              rawResponse,
+              specifiedType: const FullType(
+                  UtilitiesWebApiProtosListAvailableModelsResponse),
+            ) as UtilitiesWebApiProtosListAvailableModelsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -113,9 +117,9 @@ class ModelsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetDeviceModelsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetDeviceModelsResponse>>
-  apiDashboardV1ModelsbatchGetPost({
+      apiDashboardV1ModelsbatchGetPost({
     UtilitiesWebApiProtosGetDeviceModelsRequest?
-    utilitiesWebApiProtosGetDeviceModelsRequest,
+        utilitiesWebApiProtosGetDeviceModelsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -126,10 +130,16 @@ class ModelsServiceApi {
     final _path = r'/api/dashboard/v1/models:batch-get';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -143,13 +153,14 @@ class ModelsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosGetDeviceModelsRequest);
       _bodyData = utilitiesWebApiProtosGetDeviceModelsRequest == null
           ? null
-          : _serializers.serialize(
-              utilitiesWebApiProtosGetDeviceModelsRequest,
-              specifiedType: _type,
-            );
+          : _serializers.serialize(utilitiesWebApiProtosGetDeviceModelsRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -172,12 +183,10 @@ class ModelsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosGetDeviceModelsResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosGetDeviceModelsResponse;
+              rawResponse,
+              specifiedType:
+                  const FullType(UtilitiesWebApiProtosGetDeviceModelsResponse),
+            ) as UtilitiesWebApiProtosGetDeviceModelsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

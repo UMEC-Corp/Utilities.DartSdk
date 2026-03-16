@@ -16,10 +16,8 @@ part 'utilities_web_api_protos_update_unit_firmware_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpdateUnitFirmwareRequest
     implements
-        Built<
-          UtilitiesWebApiProtosUpdateUnitFirmwareRequest,
-          UtilitiesWebApiProtosUpdateUnitFirmwareRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosUpdateUnitFirmwareRequest,
+            UtilitiesWebApiProtosUpdateUnitFirmwareRequestBuilder> {
   /// Id of the physical device
   @BuiltValueField(wireName: r'deviceId')
   String? get deviceId;
@@ -30,19 +28,20 @@ abstract class UtilitiesWebApiProtosUpdateUnitFirmwareRequest
 
   UtilitiesWebApiProtosUpdateUnitFirmwareRequest._();
 
-  factory UtilitiesWebApiProtosUpdateUnitFirmwareRequest([
-    void updates(UtilitiesWebApiProtosUpdateUnitFirmwareRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosUpdateUnitFirmwareRequest;
+  factory UtilitiesWebApiProtosUpdateUnitFirmwareRequest(
+          [void updates(
+              UtilitiesWebApiProtosUpdateUnitFirmwareRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosUpdateUnitFirmwareRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosUpdateUnitFirmwareRequestBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosUpdateUnitFirmwareRequestBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosUpdateUnitFirmwareRequest>
-  get serializer =>
-      _$UtilitiesWebApiProtosUpdateUnitFirmwareRequestSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosUpdateUnitFirmwareRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosUpdateUnitFirmwareRequestSerializer
@@ -51,7 +50,7 @@ class _$UtilitiesWebApiProtosUpdateUnitFirmwareRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdateUnitFirmwareRequest,
-    _$UtilitiesWebApiProtosUpdateUnitFirmwareRequest,
+    _$UtilitiesWebApiProtosUpdateUnitFirmwareRequest
   ];
 
   @override
@@ -84,11 +83,9 @@ class _$UtilitiesWebApiProtosUpdateUnitFirmwareRequestSerializer
     UtilitiesWebApiProtosUpdateUnitFirmwareRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -104,21 +101,17 @@ class _$UtilitiesWebApiProtosUpdateUnitFirmwareRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'deviceId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.deviceId = valueDes;
           break;
         case r'unitCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitCode = valueDes;
           break;
         default:

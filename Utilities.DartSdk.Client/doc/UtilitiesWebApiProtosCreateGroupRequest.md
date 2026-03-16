@@ -1,0 +1,16 @@
+# utilities_dart_sdk_client.model.UtilitiesWebApiProtosCreateGroupRequest
+
+## Load the model package
+```dart
+import 'package:utilities_dart_sdk_client/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**name** | **String** | Name of the device group | [optional] 
+**parentGroupId** | **String** | Id of the parent group (empty for root-level group) | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

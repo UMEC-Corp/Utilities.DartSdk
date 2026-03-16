@@ -27,9 +27,9 @@ abstract class UtilitiesWebApiProtosRole
 
   UtilitiesWebApiProtosRole._();
 
-  factory UtilitiesWebApiProtosRole([
-    void updates(UtilitiesWebApiProtosRoleBuilder b),
-  ]) = _$UtilitiesWebApiProtosRole;
+  factory UtilitiesWebApiProtosRole(
+          [void updates(UtilitiesWebApiProtosRoleBuilder b)]) =
+      _$UtilitiesWebApiProtosRole;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosRoleBuilder b) => b;
@@ -44,7 +44,7 @@ class _$UtilitiesWebApiProtosRoleSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosRole,
-    _$UtilitiesWebApiProtosRole,
+    _$UtilitiesWebApiProtosRole
   ];
 
   @override
@@ -77,11 +77,9 @@ class _$UtilitiesWebApiProtosRoleSerializer
     UtilitiesWebApiProtosRole object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -97,21 +95,17 @@ class _$UtilitiesWebApiProtosRoleSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.id = valueDes;
           break;
         case r'systemName':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.systemName = valueDes;
           break;
         default:

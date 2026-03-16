@@ -25,10 +25,8 @@ part 'utilities_web_api_protos_update_event_type_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpdateEventTypeRequest
     implements
-        Built<
-          UtilitiesWebApiProtosUpdateEventTypeRequest,
-          UtilitiesWebApiProtosUpdateEventTypeRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosUpdateEventTypeRequest,
+            UtilitiesWebApiProtosUpdateEventTypeRequestBuilder> {
   /// Id of the event type
   @BuiltValueField(wireName: r'eventTypeId')
   String? get eventTypeId;
@@ -71,9 +69,10 @@ abstract class UtilitiesWebApiProtosUpdateEventTypeRequest
 
   UtilitiesWebApiProtosUpdateEventTypeRequest._();
 
-  factory UtilitiesWebApiProtosUpdateEventTypeRequest([
-    void updates(UtilitiesWebApiProtosUpdateEventTypeRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosUpdateEventTypeRequest;
+  factory UtilitiesWebApiProtosUpdateEventTypeRequest(
+          [void updates(
+              UtilitiesWebApiProtosUpdateEventTypeRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosUpdateEventTypeRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosUpdateEventTypeRequestBuilder b) =>
@@ -81,7 +80,8 @@ abstract class UtilitiesWebApiProtosUpdateEventTypeRequest
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosUpdateEventTypeRequest>
-  get serializer => _$UtilitiesWebApiProtosUpdateEventTypeRequestSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosUpdateEventTypeRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosUpdateEventTypeRequestSerializer
@@ -90,7 +90,7 @@ class _$UtilitiesWebApiProtosUpdateEventTypeRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdateEventTypeRequest,
-    _$UtilitiesWebApiProtosUpdateEventTypeRequest,
+    _$UtilitiesWebApiProtosUpdateEventTypeRequest
   ];
 
   @override
@@ -179,11 +179,9 @@ class _$UtilitiesWebApiProtosUpdateEventTypeRequestSerializer
     UtilitiesWebApiProtosUpdateEventTypeRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -199,95 +197,73 @@ class _$UtilitiesWebApiProtosUpdateEventTypeRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'eventTypeId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.eventTypeId = valueDes;
           break;
         case r'name':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.name = valueDes;
           break;
         case r'description':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.description = valueDes;
           break;
         case r'color':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.color = valueDes;
           break;
         case r'icon':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.icon = valueDes;
           break;
         case r'eventClass':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosEventClass,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosEventClass;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UtilitiesWebApiProtosEventClass),
+          ) as UtilitiesWebApiProtosEventClass;
           result.eventClass = valueDes;
           break;
         case r'vendorCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.vendorCode = valueDes;
           break;
         case r'modelCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.modelCode = valueDes;
           break;
         case r'hardwareVersion':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.hardwareVersion = valueDes;
           break;
         case r'sensorCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.sensorCode = valueDes;
           break;
         default:

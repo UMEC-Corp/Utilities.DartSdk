@@ -18,9 +18,8 @@ part 'utilities_web_api_protos_get_distributions_response_types_distribution_ent
 abstract class UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry
     implements
         Built<
-          UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry,
-          UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntryBuilder
-        > {
+            UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry,
+            UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntryBuilder> {
   @BuiltValueField(wireName: r'value')
   double? get value;
 
@@ -32,36 +31,33 @@ abstract class UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEnt
 
   UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry._();
 
-  factory UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry([
-    void updates(
-      UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntryBuilder
-      b,
-    ),
-  ]) = _$UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry;
+  factory UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry(
+          [void updates(
+              UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntryBuilder
+                  b)]) =
+      _$UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntryBuilder
-    b,
-  ) => b;
+          UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntryBuilder
+              b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<
-    UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry
-  >
-  get serializer =>
-      _$UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntrySerializer();
+          UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry>
+      get serializer =>
+          _$UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntrySerializer();
 }
 
 class _$UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntrySerializer
     implements
         PrimitiveSerializer<
-          UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry
-        > {
+            UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry> {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry,
-    _$UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry,
+    _$UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry
   ];
 
   @override
@@ -71,7 +67,7 @@ class _$UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntrySeria
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
     UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry
-    object, {
+        object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.value != null) {
@@ -101,14 +97,12 @@ class _$UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntrySeria
   Object serialize(
     Serializers serializers,
     UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry
-    object, {
+        object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -117,7 +111,7 @@ class _$UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntrySeria
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntryBuilder
-    result,
+        result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -125,27 +119,24 @@ class _$UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntrySeria
       final value = serializedList[i + 1];
       switch (key) {
         case r'value':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(double),
-                  )
-                  as double;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
           result.value = valueDes;
           break;
         case r'count':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.count = valueDes;
           break;
         case r'share':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(double),
-                  )
-                  as double;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
           result.share = valueDes;
           break;
         default:
@@ -158,7 +149,7 @@ class _$UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntrySeria
 
   @override
   UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry
-  deserialize(
+      deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,

@@ -12,6 +12,7 @@ import 'package:utilities_dart_sdk_client/src/auth/oauth.dart';
 import 'package:utilities_dart_sdk_client/src/api/addresses_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/alerts_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/command_runner_api.dart';
+import 'package:utilities_dart_sdk_client/src/api/device_groups_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/employees_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/event_types_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/integrations_service_api.dart';
@@ -38,16 +39,13 @@ class UtilitiesDartSdkClient {
     Serializers? serializers,
     String? basePathOverride,
     List<Interceptor>? interceptors,
-  }) : this.serializers = serializers ?? standardSerializers,
-       this.dio =
-           dio ??
-           Dio(
-             BaseOptions(
-               baseUrl: basePathOverride ?? basePath,
-               connectTimeout: const Duration(milliseconds: 5000),
-               receiveTimeout: const Duration(milliseconds: 3000),
-             ),
-           ) {
+  })  : this.serializers = serializers ?? standardSerializers,
+        this.dio = dio ??
+            Dio(BaseOptions(
+              baseUrl: basePathOverride ?? basePath,
+              connectTimeout: const Duration(milliseconds: 5000),
+              receiveTimeout: const Duration(milliseconds: 3000),
+            )) {
     if (interceptors == null) {
       this.dio.interceptors.addAll([
         OAuthInterceptor(),
@@ -63,18 +61,16 @@ class UtilitiesDartSdkClient {
   void setOAuthToken(String name, String token) {
     if (this.dio.interceptors.any((i) => i is OAuthInterceptor)) {
       (this.dio.interceptors.firstWhere((i) => i is OAuthInterceptor)
-                  as OAuthInterceptor)
-              .tokens[name] =
-          token;
+              as OAuthInterceptor)
+          .tokens[name] = token;
     }
   }
 
   void setBearerAuth(String name, String token) {
     if (this.dio.interceptors.any((i) => i is BearerAuthInterceptor)) {
       (this.dio.interceptors.firstWhere((i) => i is BearerAuthInterceptor)
-                  as BearerAuthInterceptor)
-              .tokens[name] =
-          token;
+              as BearerAuthInterceptor)
+          .tokens[name] = token;
     }
   }
 
@@ -82,21 +78,18 @@ class UtilitiesDartSdkClient {
     if (this.dio.interceptors.any((i) => i is BasicAuthInterceptor)) {
       (this.dio.interceptors.firstWhere((i) => i is BasicAuthInterceptor)
               as BasicAuthInterceptor)
-          .authInfo[name] = BasicAuthInfo(
-        username,
-        password,
-      );
+          .authInfo[name] = BasicAuthInfo(username, password);
     }
   }
 
   void setApiKey(String name, String apiKey) {
     if (this.dio.interceptors.any((i) => i is ApiKeyAuthInterceptor)) {
-      (this.dio.interceptors.firstWhere(
-                    (element) => element is ApiKeyAuthInterceptor,
-                  )
-                  as ApiKeyAuthInterceptor)
-              .apiKeys[name] =
-          apiKey;
+      (this
+                  .dio
+                  .interceptors
+                  .firstWhere((element) => element is ApiKeyAuthInterceptor)
+              as ApiKeyAuthInterceptor)
+          .apiKeys[name] = apiKey;
     }
   }
 
@@ -116,6 +109,12 @@ class UtilitiesDartSdkClient {
   /// by doing that all interceptors will not be executed
   CommandRunnerApi getCommandRunnerApi() {
     return CommandRunnerApi(dio, serializers);
+  }
+
+  /// Get DeviceGroupsServiceApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  DeviceGroupsServiceApi getDeviceGroupsServiceApi() {
+    return DeviceGroupsServiceApi(dio, serializers);
   }
 
   /// Get EmployeesServiceApi instance, base route and serializer can be overridden by a given but be careful,

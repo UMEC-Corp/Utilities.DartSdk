@@ -15,29 +15,28 @@ part 'utilities_web_api_protos_reset_client_address_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosResetClientAddressRequest
     implements
-        Built<
-          UtilitiesWebApiProtosResetClientAddressRequest,
-          UtilitiesWebApiProtosResetClientAddressRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosResetClientAddressRequest,
+            UtilitiesWebApiProtosResetClientAddressRequestBuilder> {
   /// Id of the client to reset address for
   @BuiltValueField(wireName: r'clientId')
   String? get clientId;
 
   UtilitiesWebApiProtosResetClientAddressRequest._();
 
-  factory UtilitiesWebApiProtosResetClientAddressRequest([
-    void updates(UtilitiesWebApiProtosResetClientAddressRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosResetClientAddressRequest;
+  factory UtilitiesWebApiProtosResetClientAddressRequest(
+          [void updates(
+              UtilitiesWebApiProtosResetClientAddressRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosResetClientAddressRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosResetClientAddressRequestBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosResetClientAddressRequestBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosResetClientAddressRequest>
-  get serializer =>
-      _$UtilitiesWebApiProtosResetClientAddressRequestSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosResetClientAddressRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosResetClientAddressRequestSerializer
@@ -46,7 +45,7 @@ class _$UtilitiesWebApiProtosResetClientAddressRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosResetClientAddressRequest,
-    _$UtilitiesWebApiProtosResetClientAddressRequest,
+    _$UtilitiesWebApiProtosResetClientAddressRequest
   ];
 
   @override
@@ -72,11 +71,9 @@ class _$UtilitiesWebApiProtosResetClientAddressRequestSerializer
     UtilitiesWebApiProtosResetClientAddressRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -92,12 +89,10 @@ class _$UtilitiesWebApiProtosResetClientAddressRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'clientId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.clientId = valueDes;
           break;
         default:

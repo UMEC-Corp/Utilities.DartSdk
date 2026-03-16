@@ -21,10 +21,8 @@ part 'utilities_web_api_protos_maintainer.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosMaintainer
     implements
-        Built<
-          UtilitiesWebApiProtosMaintainer,
-          UtilitiesWebApiProtosMaintainerBuilder
-        > {
+        Built<UtilitiesWebApiProtosMaintainer,
+            UtilitiesWebApiProtosMaintainerBuilder> {
   /// Id of the current service company (maintainer)
   @BuiltValueField(wireName: r'maintainerId')
   String? get maintainerId;
@@ -47,9 +45,9 @@ abstract class UtilitiesWebApiProtosMaintainer
 
   UtilitiesWebApiProtosMaintainer._();
 
-  factory UtilitiesWebApiProtosMaintainer([
-    void updates(UtilitiesWebApiProtosMaintainerBuilder b),
-  ]) = _$UtilitiesWebApiProtosMaintainer;
+  factory UtilitiesWebApiProtosMaintainer(
+          [void updates(UtilitiesWebApiProtosMaintainerBuilder b)]) =
+      _$UtilitiesWebApiProtosMaintainer;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosMaintainerBuilder b) => b;
@@ -64,7 +62,7 @@ class _$UtilitiesWebApiProtosMaintainerSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosMaintainer,
-    _$UtilitiesWebApiProtosMaintainer,
+    _$UtilitiesWebApiProtosMaintainer
   ];
 
   @override
@@ -107,9 +105,8 @@ class _$UtilitiesWebApiProtosMaintainerSerializer
       yield r'contacts';
       yield serializers.serialize(
         object.contacts,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosContact),
-        ]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
       );
     }
   }
@@ -120,11 +117,9 @@ class _$UtilitiesWebApiProtosMaintainerSerializer
     UtilitiesWebApiProtosMaintainer object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -140,50 +135,39 @@ class _$UtilitiesWebApiProtosMaintainerSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'maintainerId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.maintainerId = valueDes;
           break;
         case r'name':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.name = valueDes;
           break;
         case r'promo':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.promo = valueDes;
           break;
         case r'logoUrl':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.logoUrl = valueDes;
           break;
         case r'contacts':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosContact),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosContact>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
+          ) as BuiltList<UtilitiesWebApiProtosContact>;
           result.contacts.replace(valueDes);
           break;
         default:

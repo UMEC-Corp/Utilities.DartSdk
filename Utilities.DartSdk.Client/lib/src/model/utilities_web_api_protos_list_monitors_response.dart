@@ -17,19 +17,17 @@ part 'utilities_web_api_protos_list_monitors_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListMonitorsResponse
     implements
-        Built<
-          UtilitiesWebApiProtosListMonitorsResponse,
-          UtilitiesWebApiProtosListMonitorsResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosListMonitorsResponse,
+            UtilitiesWebApiProtosListMonitorsResponseBuilder> {
   /// List of monitors for the requested virtual device.
   @BuiltValueField(wireName: r'items')
   BuiltList<UtilitiesWebApiProtosMonitor>? get items;
 
   UtilitiesWebApiProtosListMonitorsResponse._();
 
-  factory UtilitiesWebApiProtosListMonitorsResponse([
-    void updates(UtilitiesWebApiProtosListMonitorsResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosListMonitorsResponse;
+  factory UtilitiesWebApiProtosListMonitorsResponse(
+          [void updates(UtilitiesWebApiProtosListMonitorsResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosListMonitorsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosListMonitorsResponseBuilder b) =>
@@ -45,7 +43,7 @@ class _$UtilitiesWebApiProtosListMonitorsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListMonitorsResponse,
-    _$UtilitiesWebApiProtosListMonitorsResponse,
+    _$UtilitiesWebApiProtosListMonitorsResponse
   ];
 
   @override
@@ -60,9 +58,8 @@ class _$UtilitiesWebApiProtosListMonitorsResponseSerializer
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosMonitor),
-        ]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosMonitor)]),
       );
     }
   }
@@ -73,11 +70,9 @@ class _$UtilitiesWebApiProtosListMonitorsResponseSerializer
     UtilitiesWebApiProtosListMonitorsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -93,14 +88,11 @@ class _$UtilitiesWebApiProtosListMonitorsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosMonitor),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosMonitor>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(UtilitiesWebApiProtosMonitor)]),
+          ) as BuiltList<UtilitiesWebApiProtosMonitor>;
           result.items.replace(valueDes);
           break;
         default:

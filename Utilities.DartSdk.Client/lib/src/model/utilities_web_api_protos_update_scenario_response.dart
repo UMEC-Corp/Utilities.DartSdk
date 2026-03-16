@@ -16,18 +16,17 @@ part 'utilities_web_api_protos_update_scenario_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpdateScenarioResponse
     implements
-        Built<
-          UtilitiesWebApiProtosUpdateScenarioResponse,
-          UtilitiesWebApiProtosUpdateScenarioResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosUpdateScenarioResponse,
+            UtilitiesWebApiProtosUpdateScenarioResponseBuilder> {
   @BuiltValueField(wireName: r'item')
   UtilitiesWebApiProtosScenario? get item;
 
   UtilitiesWebApiProtosUpdateScenarioResponse._();
 
-  factory UtilitiesWebApiProtosUpdateScenarioResponse([
-    void updates(UtilitiesWebApiProtosUpdateScenarioResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosUpdateScenarioResponse;
+  factory UtilitiesWebApiProtosUpdateScenarioResponse(
+          [void updates(
+              UtilitiesWebApiProtosUpdateScenarioResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosUpdateScenarioResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosUpdateScenarioResponseBuilder b) =>
@@ -35,7 +34,8 @@ abstract class UtilitiesWebApiProtosUpdateScenarioResponse
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosUpdateScenarioResponse>
-  get serializer => _$UtilitiesWebApiProtosUpdateScenarioResponseSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosUpdateScenarioResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosUpdateScenarioResponseSerializer
@@ -44,7 +44,7 @@ class _$UtilitiesWebApiProtosUpdateScenarioResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdateScenarioResponse,
-    _$UtilitiesWebApiProtosUpdateScenarioResponse,
+    _$UtilitiesWebApiProtosUpdateScenarioResponse
   ];
 
   @override
@@ -70,11 +70,9 @@ class _$UtilitiesWebApiProtosUpdateScenarioResponseSerializer
     UtilitiesWebApiProtosUpdateScenarioResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -90,14 +88,10 @@ class _$UtilitiesWebApiProtosUpdateScenarioResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'item':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosScenario,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosScenario;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UtilitiesWebApiProtosScenario),
+          ) as UtilitiesWebApiProtosScenario;
           result.item.replace(valueDes);
           break;
         default:

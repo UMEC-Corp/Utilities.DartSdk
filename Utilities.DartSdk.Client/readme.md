@@ -75,6 +75,17 @@ Class | Method | HTTP request | Description
 [*AlertsServiceApi*](doc/AlertsServiceApi.md) | [**apiDashboardV1DevicesDeviceIdUnitsUnitCodeAlertsAlertIdshowPost**](doc/AlertsServiceApi.md#apidashboardv1devicesdeviceidunitsunitcodealertsalertidshowpost) | **POST** /api/dashboard/v1/devices/{deviceId}/units/{unitCode}/alerts/{alertId}:show | Mark an alert as visible
 [*AlertsServiceApi*](doc/AlertsServiceApi.md) | [**apiDashboardV1DevicesDeviceIdUnitsUnitCodeAlertsGet**](doc/AlertsServiceApi.md#apidashboardv1devicesdeviceidunitsunitcodealertsget) | **GET** /api/dashboard/v1/devices/{deviceId}/units/{unitCode}/alerts | Lists alerts for a device unit.
 [*CommandRunnerApi*](doc/CommandRunnerApi.md) | [**apiDashboardV1CommandRunnerrunPost**](doc/CommandRunnerApi.md#apidashboardv1commandrunnerrunpost) | **POST** /api/dashboard/v1/command-runner:run | Runs a command payload on a target device.
+[*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsGet**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupsget) | **GET** /api/dashboard/v1/device-groups | Get a paged list of device groups
+[*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsGroupIdDelete**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupiddelete) | **DELETE** /api/dashboard/v1/device-groups/{groupId} | Delete a device group
+[*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsGroupIdGet**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupidget) | **GET** /api/dashboard/v1/device-groups/{groupId} | Get a device group by id
+[*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsGroupIdPut**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupidput) | **PUT** /api/dashboard/v1/device-groups/{groupId} | Update an existing device group
+[*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsGroupIdUnitsDeviceClientIdassignPost**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupidunitsdeviceclientidassignpost) | **POST** /api/dashboard/v1/device-groups/{groupId}/units/{deviceClientId}:assign | Assign a unit to a device group (creates or reassigns)
+[*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsGroupIdUnitsGet**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupidunitsget) | **GET** /api/dashboard/v1/device-groups/{groupId}/units | List unit IDs belonging to a device group
+[*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsGroupIdmovePost**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupidmovepost) | **POST** /api/dashboard/v1/device-groups/{groupId}:move | Move a device group under a new parent
+[*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsPost**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupspost) | **POST** /api/dashboard/v1/device-groups | Create a new device group
+[*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupssubtreeGet**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupssubtreeget) | **GET** /api/dashboard/v1/device-groups:subtree | Get the subtree of a device group
+[*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1UnitsDeviceClientIdDeviceGroupGet**](doc/DeviceGroupsServiceApi.md#apidashboardv1unitsdeviceclientiddevicegroupget) | **GET** /api/dashboard/v1/units/{deviceClientId}/device-group | Get the group a unit belongs to
+[*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1UnitsDeviceClientIdresetDeviceGroupPost**](doc/DeviceGroupsServiceApi.md#apidashboardv1unitsdeviceclientidresetdevicegrouppost) | **POST** /api/dashboard/v1/units/{deviceClientId}:reset-device-group | Reset a unit&#39;s group assignment back to the tenant root group
 [*EmployeesServiceApi*](doc/EmployeesServiceApi.md) | [**apiDashboardV1EmployeesEmployeeIdGet**](doc/EmployeesServiceApi.md#apidashboardv1employeesemployeeidget) | **GET** /api/dashboard/v1/employees/{employeeId} | Get detailed info on a specific employee
 [*EmployeesServiceApi*](doc/EmployeesServiceApi.md) | [**apiDashboardV1EmployeesEmployeeIdresetPasswordPost**](doc/EmployeesServiceApi.md#apidashboardv1employeesemployeeidresetpasswordpost) | **POST** /api/dashboard/v1/employees/{employeeId}:reset-password | Resets an employee password.
 [*EmployeesServiceApi*](doc/EmployeesServiceApi.md) | [**apiDashboardV1EmployeesGet**](doc/EmployeesServiceApi.md#apidashboardv1employeesget) | **GET** /api/dashboard/v1/employees | List all available employees
@@ -175,6 +186,8 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosAddScenarioResponse](doc/UtilitiesWebApiProtosAddScenarioResponse.md)
  - [UtilitiesWebApiProtosAddress](doc/UtilitiesWebApiProtosAddress.md)
  - [UtilitiesWebApiProtosAlert](doc/UtilitiesWebApiProtosAlert.md)
+ - [UtilitiesWebApiProtosAssignUnitToGroupRequest](doc/UtilitiesWebApiProtosAssignUnitToGroupRequest.md)
+ - [UtilitiesWebApiProtosAssignUnitToGroupResponse](doc/UtilitiesWebApiProtosAssignUnitToGroupResponse.md)
  - [UtilitiesWebApiProtosAttachDeviceRequest](doc/UtilitiesWebApiProtosAttachDeviceRequest.md)
  - [UtilitiesWebApiProtosAttachUnitRequest](doc/UtilitiesWebApiProtosAttachUnitRequest.md)
  - [UtilitiesWebApiProtosBuildReportRequest](doc/UtilitiesWebApiProtosBuildReportRequest.md)
@@ -185,10 +198,15 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosConnectInputResponse](doc/UtilitiesWebApiProtosConnectInputResponse.md)
  - [UtilitiesWebApiProtosContact](doc/UtilitiesWebApiProtosContact.md)
  - [UtilitiesWebApiProtosContactType](doc/UtilitiesWebApiProtosContactType.md)
+ - [UtilitiesWebApiProtosCreateGroupRequest](doc/UtilitiesWebApiProtosCreateGroupRequest.md)
+ - [UtilitiesWebApiProtosCreateGroupResponse](doc/UtilitiesWebApiProtosCreateGroupResponse.md)
  - [UtilitiesWebApiProtosCreateShareLinkRequest](doc/UtilitiesWebApiProtosCreateShareLinkRequest.md)
  - [UtilitiesWebApiProtosCreateShareLinkResponse](doc/UtilitiesWebApiProtosCreateShareLinkResponse.md)
  - [UtilitiesWebApiProtosDashboardDisplayMode](doc/UtilitiesWebApiProtosDashboardDisplayMode.md)
+ - [UtilitiesWebApiProtosDeleteGroupStrategy](doc/UtilitiesWebApiProtosDeleteGroupStrategy.md)
  - [UtilitiesWebApiProtosDetachUserFromUnitRequest](doc/UtilitiesWebApiProtosDetachUserFromUnitRequest.md)
+ - [UtilitiesWebApiProtosDeviceGroup](doc/UtilitiesWebApiProtosDeviceGroup.md)
+ - [UtilitiesWebApiProtosDeviceGroupTreeNode](doc/UtilitiesWebApiProtosDeviceGroupTreeNode.md)
  - [UtilitiesWebApiProtosDeviceModel](doc/UtilitiesWebApiProtosDeviceModel.md)
  - [UtilitiesWebApiProtosDeviceModelTypesAction](doc/UtilitiesWebApiProtosDeviceModelTypesAction.md)
  - [UtilitiesWebApiProtosDeviceModelTypesCommand](doc/UtilitiesWebApiProtosDeviceModelTypesCommand.md)
@@ -220,6 +238,8 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry](doc/UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry.md)
  - [UtilitiesWebApiProtosGetDistributionsResponseTypesItem](doc/UtilitiesWebApiProtosGetDistributionsResponseTypesItem.md)
  - [UtilitiesWebApiProtosGetEventTypeDetailsResponse](doc/UtilitiesWebApiProtosGetEventTypeDetailsResponse.md)
+ - [UtilitiesWebApiProtosGetGroupResponse](doc/UtilitiesWebApiProtosGetGroupResponse.md)
+ - [UtilitiesWebApiProtosGetGroupSubtreeResponse](doc/UtilitiesWebApiProtosGetGroupSubtreeResponse.md)
  - [UtilitiesWebApiProtosGetInputsResponse](doc/UtilitiesWebApiProtosGetInputsResponse.md)
  - [UtilitiesWebApiProtosGetInputsStatisticsRequest](doc/UtilitiesWebApiProtosGetInputsStatisticsRequest.md)
  - [UtilitiesWebApiProtosGetInputsStatisticsResponse](doc/UtilitiesWebApiProtosGetInputsStatisticsResponse.md)
@@ -229,8 +249,10 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosGetNotificationsResponse](doc/UtilitiesWebApiProtosGetNotificationsResponse.md)
  - [UtilitiesWebApiProtosGetProfileResponse](doc/UtilitiesWebApiProtosGetProfileResponse.md)
  - [UtilitiesWebApiProtosGetScenarioDetailsResponse](doc/UtilitiesWebApiProtosGetScenarioDetailsResponse.md)
+ - [UtilitiesWebApiProtosGetUnitGroupResponse](doc/UtilitiesWebApiProtosGetUnitGroupResponse.md)
  - [UtilitiesWebApiProtosGetUnitResponse](doc/UtilitiesWebApiProtosGetUnitResponse.md)
  - [UtilitiesWebApiProtosGetUsersResponse](doc/UtilitiesWebApiProtosGetUsersResponse.md)
+ - [UtilitiesWebApiProtosGroupDashboard](doc/UtilitiesWebApiProtosGroupDashboard.md)
  - [UtilitiesWebApiProtosHideAlertRequest](doc/UtilitiesWebApiProtosHideAlertRequest.md)
  - [UtilitiesWebApiProtosHideAlertResponse](doc/UtilitiesWebApiProtosHideAlertResponse.md)
  - [UtilitiesWebApiProtosImportance](doc/UtilitiesWebApiProtosImportance.md)
@@ -246,6 +268,8 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosListEmployeesResponse](doc/UtilitiesWebApiProtosListEmployeesResponse.md)
  - [UtilitiesWebApiProtosListEventTypesResponse](doc/UtilitiesWebApiProtosListEventTypesResponse.md)
  - [UtilitiesWebApiProtosListEventsResponse](doc/UtilitiesWebApiProtosListEventsResponse.md)
+ - [UtilitiesWebApiProtosListGroupUnitsResponse](doc/UtilitiesWebApiProtosListGroupUnitsResponse.md)
+ - [UtilitiesWebApiProtosListGroupsResponse](doc/UtilitiesWebApiProtosListGroupsResponse.md)
  - [UtilitiesWebApiProtosListIntegartionsResponse](doc/UtilitiesWebApiProtosListIntegartionsResponse.md)
  - [UtilitiesWebApiProtosListIntegrationModelsResponse](doc/UtilitiesWebApiProtosListIntegrationModelsResponse.md)
  - [UtilitiesWebApiProtosListMonitorsResponse](doc/UtilitiesWebApiProtosListMonitorsResponse.md)
@@ -258,6 +282,8 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosMaintainer](doc/UtilitiesWebApiProtosMaintainer.md)
  - [UtilitiesWebApiProtosMaintenanceAssignment](doc/UtilitiesWebApiProtosMaintenanceAssignment.md)
  - [UtilitiesWebApiProtosMonitor](doc/UtilitiesWebApiProtosMonitor.md)
+ - [UtilitiesWebApiProtosMoveGroupRequest](doc/UtilitiesWebApiProtosMoveGroupRequest.md)
+ - [UtilitiesWebApiProtosMoveGroupResponse](doc/UtilitiesWebApiProtosMoveGroupResponse.md)
  - [UtilitiesWebApiProtosNotification](doc/UtilitiesWebApiProtosNotification.md)
  - [UtilitiesWebApiProtosRefreshTokenRequest](doc/UtilitiesWebApiProtosRefreshTokenRequest.md)
  - [UtilitiesWebApiProtosRefreshTokenResponse](doc/UtilitiesWebApiProtosRefreshTokenResponse.md)
@@ -266,6 +292,8 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosResetEmployeePasswordRequest](doc/UtilitiesWebApiProtosResetEmployeePasswordRequest.md)
  - [UtilitiesWebApiProtosResetMonitorRequest](doc/UtilitiesWebApiProtosResetMonitorRequest.md)
  - [UtilitiesWebApiProtosResetPasswordRequest](doc/UtilitiesWebApiProtosResetPasswordRequest.md)
+ - [UtilitiesWebApiProtosResetUnitGroupRequest](doc/UtilitiesWebApiProtosResetUnitGroupRequest.md)
+ - [UtilitiesWebApiProtosResetUnitGroupResponse](doc/UtilitiesWebApiProtosResetUnitGroupResponse.md)
  - [UtilitiesWebApiProtosRole](doc/UtilitiesWebApiProtosRole.md)
  - [UtilitiesWebApiProtosRunRequest](doc/UtilitiesWebApiProtosRunRequest.md)
  - [UtilitiesWebApiProtosScenario](doc/UtilitiesWebApiProtosScenario.md)
@@ -302,6 +330,8 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosUpdateEmployeeRequest](doc/UtilitiesWebApiProtosUpdateEmployeeRequest.md)
  - [UtilitiesWebApiProtosUpdateEventTypeRequest](doc/UtilitiesWebApiProtosUpdateEventTypeRequest.md)
  - [UtilitiesWebApiProtosUpdateEventTypeResponse](doc/UtilitiesWebApiProtosUpdateEventTypeResponse.md)
+ - [UtilitiesWebApiProtosUpdateGroupRequest](doc/UtilitiesWebApiProtosUpdateGroupRequest.md)
+ - [UtilitiesWebApiProtosUpdateGroupResponse](doc/UtilitiesWebApiProtosUpdateGroupResponse.md)
  - [UtilitiesWebApiProtosUpdateMaintainerRequest](doc/UtilitiesWebApiProtosUpdateMaintainerRequest.md)
  - [UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest](doc/UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest.md)
  - [UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestTypesUpdateMaintenanceAssignmentsItem](doc/UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestTypesUpdateMaintenanceAssignmentsItem.md)

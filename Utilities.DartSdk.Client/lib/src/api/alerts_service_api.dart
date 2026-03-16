@@ -51,10 +51,16 @@ class AlertsServiceApi {
     final _path = r'/api/dashboard/v1/alerts';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -68,13 +74,14 @@ class AlertsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosAddAlertRequest);
       _bodyData = utilitiesWebApiProtosAddAlertRequest == null
           ? null
-          : _serializers.serialize(
-              utilitiesWebApiProtosAddAlertRequest,
-              specifiedType: _type,
-            );
+          : _serializers.serialize(utilitiesWebApiProtosAddAlertRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -97,10 +104,9 @@ class AlertsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(JsonObject),
-                )
-                as JsonObject;
+              rawResponse,
+              specifiedType: const FullType(JsonObject),
+            ) as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -141,12 +147,12 @@ class AlertsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosHideAlertResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosHideAlertResponse>>
-  apiDashboardV1DevicesDeviceIdUnitsUnitCodeAlertsAlertIdhidePost({
+      apiDashboardV1DevicesDeviceIdUnitsUnitCodeAlertsAlertIdhidePost({
     required String deviceId,
     required String unitCode,
     required String alertId,
     UtilitiesWebApiProtosHideAlertRequest?
-    utilitiesWebApiProtosHideAlertRequest,
+        utilitiesWebApiProtosHideAlertRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -157,41 +163,32 @@ class AlertsServiceApi {
     final _path =
         r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}/alerts/{alertId}:hide'
             .replaceAll(
-              '{'
-              r'deviceId'
-              '}',
-              encodeQueryParameter(
-                _serializers,
-                deviceId,
-                const FullType(String),
-              ).toString(),
-            )
+                '{' r'deviceId' '}',
+                encodeQueryParameter(
+                        _serializers, deviceId, const FullType(String))
+                    .toString())
             .replaceAll(
-              '{'
-              r'unitCode'
-              '}',
-              encodeQueryParameter(
-                _serializers,
-                unitCode,
-                const FullType(String),
-              ).toString(),
-            )
+                '{' r'unitCode' '}',
+                encodeQueryParameter(
+                        _serializers, unitCode, const FullType(String))
+                    .toString())
             .replaceAll(
-              '{'
-              r'alertId'
-              '}',
-              encodeQueryParameter(
-                _serializers,
-                alertId,
-                const FullType(String),
-              ).toString(),
-            );
+                '{' r'alertId' '}',
+                encodeQueryParameter(
+                        _serializers, alertId, const FullType(String))
+                    .toString());
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -205,13 +202,14 @@ class AlertsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosHideAlertRequest);
       _bodyData = utilitiesWebApiProtosHideAlertRequest == null
           ? null
-          : _serializers.serialize(
-              utilitiesWebApiProtosHideAlertRequest,
-              specifiedType: _type,
-            );
+          : _serializers.serialize(utilitiesWebApiProtosHideAlertRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -234,12 +232,10 @@ class AlertsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosHideAlertResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosHideAlertResponse;
+              rawResponse,
+              specifiedType:
+                  const FullType(UtilitiesWebApiProtosHideAlertResponse),
+            ) as UtilitiesWebApiProtosHideAlertResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -280,12 +276,12 @@ class AlertsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosShowAlertResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosShowAlertResponse>>
-  apiDashboardV1DevicesDeviceIdUnitsUnitCodeAlertsAlertIdshowPost({
+      apiDashboardV1DevicesDeviceIdUnitsUnitCodeAlertsAlertIdshowPost({
     required String deviceId,
     required String unitCode,
     required String alertId,
     UtilitiesWebApiProtosShowAlertRequest?
-    utilitiesWebApiProtosShowAlertRequest,
+        utilitiesWebApiProtosShowAlertRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -296,41 +292,32 @@ class AlertsServiceApi {
     final _path =
         r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}/alerts/{alertId}:show'
             .replaceAll(
-              '{'
-              r'deviceId'
-              '}',
-              encodeQueryParameter(
-                _serializers,
-                deviceId,
-                const FullType(String),
-              ).toString(),
-            )
+                '{' r'deviceId' '}',
+                encodeQueryParameter(
+                        _serializers, deviceId, const FullType(String))
+                    .toString())
             .replaceAll(
-              '{'
-              r'unitCode'
-              '}',
-              encodeQueryParameter(
-                _serializers,
-                unitCode,
-                const FullType(String),
-              ).toString(),
-            )
+                '{' r'unitCode' '}',
+                encodeQueryParameter(
+                        _serializers, unitCode, const FullType(String))
+                    .toString())
             .replaceAll(
-              '{'
-              r'alertId'
-              '}',
-              encodeQueryParameter(
-                _serializers,
-                alertId,
-                const FullType(String),
-              ).toString(),
-            );
+                '{' r'alertId' '}',
+                encodeQueryParameter(
+                        _serializers, alertId, const FullType(String))
+                    .toString());
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -344,13 +331,14 @@ class AlertsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosShowAlertRequest);
       _bodyData = utilitiesWebApiProtosShowAlertRequest == null
           ? null
-          : _serializers.serialize(
-              utilitiesWebApiProtosShowAlertRequest,
-              specifiedType: _type,
-            );
+          : _serializers.serialize(utilitiesWebApiProtosShowAlertRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -373,12 +361,10 @@ class AlertsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosShowAlertResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosShowAlertResponse;
+              rawResponse,
+              specifiedType:
+                  const FullType(UtilitiesWebApiProtosShowAlertResponse),
+            ) as UtilitiesWebApiProtosShowAlertResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -417,7 +403,7 @@ class AlertsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosListAlertsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosListAlertsResponse>>
-  apiDashboardV1DevicesDeviceIdUnitsUnitCodeAlertsGet({
+      apiDashboardV1DevicesDeviceIdUnitsUnitCodeAlertsGet({
     required String deviceId,
     required String unitCode,
     CancelToken? cancelToken,
@@ -430,31 +416,27 @@ class AlertsServiceApi {
     final _path =
         r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}/alerts'
             .replaceAll(
-              '{'
-              r'deviceId'
-              '}',
-              encodeQueryParameter(
-                _serializers,
-                deviceId,
-                const FullType(String),
-              ).toString(),
-            )
+                '{' r'deviceId' '}',
+                encodeQueryParameter(
+                        _serializers, deviceId, const FullType(String))
+                    .toString())
             .replaceAll(
-              '{'
-              r'unitCode'
-              '}',
-              encodeQueryParameter(
-                _serializers,
-                unitCode,
-                const FullType(String),
-              ).toString(),
-            );
+                '{' r'unitCode' '}',
+                encodeQueryParameter(
+                        _serializers, unitCode, const FullType(String))
+                    .toString());
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -476,12 +458,10 @@ class AlertsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosListAlertsResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosListAlertsResponse;
+              rawResponse,
+              specifiedType:
+                  const FullType(UtilitiesWebApiProtosListAlertsResponse),
+            ) as UtilitiesWebApiProtosListAlertsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

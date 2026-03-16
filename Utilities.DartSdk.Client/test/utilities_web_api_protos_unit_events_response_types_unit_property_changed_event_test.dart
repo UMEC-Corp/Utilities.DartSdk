@@ -7,7 +7,8 @@ void main() {
       UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventBuilder();
   // TODO add properties to the builder and call build()
 
-  group(UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent, () {
+  group(UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent,
+      () {
     // / Subject of the event.
     // String subject
     test('to test the property `subject`', () async {

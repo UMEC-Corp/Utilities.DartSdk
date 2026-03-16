@@ -16,10 +16,8 @@ part 'utilities_web_api_protos_refresh_token_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosRefreshTokenResponse
     implements
-        Built<
-          UtilitiesWebApiProtosRefreshTokenResponse,
-          UtilitiesWebApiProtosRefreshTokenResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosRefreshTokenResponse,
+            UtilitiesWebApiProtosRefreshTokenResponseBuilder> {
   /// The access token.
   @BuiltValueField(wireName: r'accessToken')
   String? get accessToken;
@@ -30,9 +28,9 @@ abstract class UtilitiesWebApiProtosRefreshTokenResponse
 
   UtilitiesWebApiProtosRefreshTokenResponse._();
 
-  factory UtilitiesWebApiProtosRefreshTokenResponse([
-    void updates(UtilitiesWebApiProtosRefreshTokenResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosRefreshTokenResponse;
+  factory UtilitiesWebApiProtosRefreshTokenResponse(
+          [void updates(UtilitiesWebApiProtosRefreshTokenResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosRefreshTokenResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosRefreshTokenResponseBuilder b) =>
@@ -48,7 +46,7 @@ class _$UtilitiesWebApiProtosRefreshTokenResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosRefreshTokenResponse,
-    _$UtilitiesWebApiProtosRefreshTokenResponse,
+    _$UtilitiesWebApiProtosRefreshTokenResponse
   ];
 
   @override
@@ -81,11 +79,9 @@ class _$UtilitiesWebApiProtosRefreshTokenResponseSerializer
     UtilitiesWebApiProtosRefreshTokenResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -101,21 +97,17 @@ class _$UtilitiesWebApiProtosRefreshTokenResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'accessToken':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.accessToken = valueDes;
           break;
         case r'refreshToken':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.refreshToken = valueDes;
           break;
         default:

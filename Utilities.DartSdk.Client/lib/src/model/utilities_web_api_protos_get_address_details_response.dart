@@ -16,28 +16,27 @@ part 'utilities_web_api_protos_get_address_details_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetAddressDetailsResponse
     implements
-        Built<
-          UtilitiesWebApiProtosGetAddressDetailsResponse,
-          UtilitiesWebApiProtosGetAddressDetailsResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosGetAddressDetailsResponse,
+            UtilitiesWebApiProtosGetAddressDetailsResponseBuilder> {
   @BuiltValueField(wireName: r'item')
   UtilitiesWebApiProtosAddress? get item;
 
   UtilitiesWebApiProtosGetAddressDetailsResponse._();
 
-  factory UtilitiesWebApiProtosGetAddressDetailsResponse([
-    void updates(UtilitiesWebApiProtosGetAddressDetailsResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosGetAddressDetailsResponse;
+  factory UtilitiesWebApiProtosGetAddressDetailsResponse(
+          [void updates(
+              UtilitiesWebApiProtosGetAddressDetailsResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosGetAddressDetailsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosGetAddressDetailsResponseBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosGetAddressDetailsResponseBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosGetAddressDetailsResponse>
-  get serializer =>
-      _$UtilitiesWebApiProtosGetAddressDetailsResponseSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosGetAddressDetailsResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetAddressDetailsResponseSerializer
@@ -46,7 +45,7 @@ class _$UtilitiesWebApiProtosGetAddressDetailsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetAddressDetailsResponse,
-    _$UtilitiesWebApiProtosGetAddressDetailsResponse,
+    _$UtilitiesWebApiProtosGetAddressDetailsResponse
   ];
 
   @override
@@ -72,11 +71,9 @@ class _$UtilitiesWebApiProtosGetAddressDetailsResponseSerializer
     UtilitiesWebApiProtosGetAddressDetailsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -92,12 +89,10 @@ class _$UtilitiesWebApiProtosGetAddressDetailsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'item':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(UtilitiesWebApiProtosAddress),
-                  )
-                  as UtilitiesWebApiProtosAddress;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UtilitiesWebApiProtosAddress),
+          ) as UtilitiesWebApiProtosAddress;
           result.item.replace(valueDes);
           break;
         default:

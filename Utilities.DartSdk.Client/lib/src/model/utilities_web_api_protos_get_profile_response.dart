@@ -27,10 +27,8 @@ part 'utilities_web_api_protos_get_profile_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetProfileResponse
     implements
-        Built<
-          UtilitiesWebApiProtosGetProfileResponse,
-          UtilitiesWebApiProtosGetProfileResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosGetProfileResponse,
+            UtilitiesWebApiProtosGetProfileResponseBuilder> {
   /// Id of the current user profile
   @BuiltValueField(wireName: r'id')
   String? get id;
@@ -73,9 +71,9 @@ abstract class UtilitiesWebApiProtosGetProfileResponse
 
   UtilitiesWebApiProtosGetProfileResponse._();
 
-  factory UtilitiesWebApiProtosGetProfileResponse([
-    void updates(UtilitiesWebApiProtosGetProfileResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosGetProfileResponse;
+  factory UtilitiesWebApiProtosGetProfileResponse(
+          [void updates(UtilitiesWebApiProtosGetProfileResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosGetProfileResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosGetProfileResponseBuilder b) => b;
@@ -90,7 +88,7 @@ class _$UtilitiesWebApiProtosGetProfileResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetProfileResponse,
-    _$UtilitiesWebApiProtosGetProfileResponse,
+    _$UtilitiesWebApiProtosGetProfileResponse
   ];
 
   @override
@@ -133,9 +131,8 @@ class _$UtilitiesWebApiProtosGetProfileResponseSerializer
       yield r'contacts';
       yield serializers.serialize(
         object.contacts,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosContact),
-        ]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
       );
     }
     if (object.roleId != null) {
@@ -170,9 +167,8 @@ class _$UtilitiesWebApiProtosGetProfileResponseSerializer
       yield r'dashboardDisplayMode';
       yield serializers.serialize(
         object.dashboardDisplayMode,
-        specifiedType: const FullType(
-          UtilitiesWebApiProtosDashboardDisplayMode,
-        ),
+        specifiedType:
+            const FullType(UtilitiesWebApiProtosDashboardDisplayMode),
       );
     }
   }
@@ -183,11 +179,9 @@ class _$UtilitiesWebApiProtosGetProfileResponseSerializer
     UtilitiesWebApiProtosGetProfileResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -203,99 +197,75 @@ class _$UtilitiesWebApiProtosGetProfileResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.id = valueDes;
           break;
         case r'name':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.name = valueDes;
           break;
         case r'position':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.position = valueDes;
           break;
         case r'avatarUrl':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.avatarUrl = valueDes;
           break;
         case r'contacts':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosContact),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosContact>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
+          ) as BuiltList<UtilitiesWebApiProtosContact>;
           result.contacts.replace(valueDes);
           break;
         case r'roleId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.roleId = valueDes;
           break;
         case r'roleSystemName':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.roleSystemName = valueDes;
           break;
         case r'permissions':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(String),
-                    ]),
-                  )
-                  as BuiltList<String>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
           result.permissions.replace(valueDes);
           break;
         case r'userName':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.userName = valueDes;
           break;
         case r'dashboardDisplayMode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosDashboardDisplayMode,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosDashboardDisplayMode;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(UtilitiesWebApiProtosDashboardDisplayMode),
+          ) as UtilitiesWebApiProtosDashboardDisplayMode;
           result.dashboardDisplayMode = valueDes;
           break;
         default:

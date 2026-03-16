@@ -23,9 +23,8 @@ part 'utilities_web_api_protos_list_addresses_response_types_list_addresses_resp
 abstract class UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
     implements
         Built<
-          UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem,
-          UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItemBuilder
-        > {
+            UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem,
+            UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItemBuilder> {
   /// Id of the address
   @BuiltValueField(wireName: r'id')
   String? get id;
@@ -41,7 +40,7 @@ abstract class UtilitiesWebApiProtosListAddressesResponseTypesListAddressesRespo
   /// List of clients for which the address is assigned
   @BuiltValueField(wireName: r'clients')
   BuiltList<UtilitiesWebApiProtosListAddressesResponseTypesAddressClient>?
-  get clients;
+      get clients;
 
   /// List of business contacts
   @BuiltValueField(wireName: r'contacts')
@@ -49,37 +48,33 @@ abstract class UtilitiesWebApiProtosListAddressesResponseTypesListAddressesRespo
 
   UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem._();
 
-  factory UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem([
-    void updates(
-      UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItemBuilder
-      b,
-    ),
-  ]) =
+  factory UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem(
+          [void updates(
+              UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItemBuilder
+                  b)]) =
       _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItemBuilder
-    b,
-  ) => b;
+          UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItemBuilder
+              b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<
-    UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
-  >
-  get serializer =>
-      _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItemSerializer();
+          UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem>
+      get serializer =>
+          _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItemSerializer();
 }
 
 class _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItemSerializer
     implements
         PrimitiveSerializer<
-          UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
-        > {
+            UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem> {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem,
-    _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem,
+    _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
   ];
 
   @override
@@ -89,7 +84,7 @@ class _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
     UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
-    object, {
+        object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.id != null) {
@@ -118,9 +113,7 @@ class _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
       yield serializers.serialize(
         object.clients,
         specifiedType: const FullType(BuiltList, [
-          FullType(
-            UtilitiesWebApiProtosListAddressesResponseTypesAddressClient,
-          ),
+          FullType(UtilitiesWebApiProtosListAddressesResponseTypesAddressClient)
         ]),
       );
     }
@@ -128,9 +121,8 @@ class _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
       yield r'contacts';
       yield serializers.serialize(
         object.contacts,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosContact),
-        ]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
       );
     }
   }
@@ -139,14 +131,12 @@ class _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
   Object serialize(
     Serializers serializers,
     UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
-    object, {
+        object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -155,7 +145,7 @@ class _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItemBuilder
-    result,
+        result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -163,56 +153,43 @@ class _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.id = valueDes;
           break;
         case r'text':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.text = valueDes;
           break;
         case r'comment':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.comment = valueDes;
           break;
         case r'clients':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(
-                        UtilitiesWebApiProtosListAddressesResponseTypesAddressClient,
-                      ),
-                    ]),
-                  )
-                  as BuiltList<
-                    UtilitiesWebApiProtosListAddressesResponseTypesAddressClient
-                  >;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [
+              FullType(
+                  UtilitiesWebApiProtosListAddressesResponseTypesAddressClient)
+            ]),
+          ) as BuiltList<
+              UtilitiesWebApiProtosListAddressesResponseTypesAddressClient>;
           result.clients.replace(valueDes);
           break;
         case r'contacts':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosContact),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosContact>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
+          ) as BuiltList<UtilitiesWebApiProtosContact>;
           result.contacts.replace(valueDes);
           break;
         default:
@@ -225,7 +202,7 @@ class _$UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
 
   @override
   UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
-  deserialize(
+      deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,

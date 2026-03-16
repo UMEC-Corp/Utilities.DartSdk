@@ -18,10 +18,8 @@ part 'utilities_web_api_protos_list_scenario_runs_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListScenarioRunsResponse
     implements
-        Built<
-          UtilitiesWebApiProtosListScenarioRunsResponse,
-          UtilitiesWebApiProtosListScenarioRunsResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosListScenarioRunsResponse,
+            UtilitiesWebApiProtosListScenarioRunsResponseBuilder> {
   /// Total number of runs
   @BuiltValueField(wireName: r'totalCount')
   int? get totalCount;
@@ -32,18 +30,20 @@ abstract class UtilitiesWebApiProtosListScenarioRunsResponse
 
   UtilitiesWebApiProtosListScenarioRunsResponse._();
 
-  factory UtilitiesWebApiProtosListScenarioRunsResponse([
-    void updates(UtilitiesWebApiProtosListScenarioRunsResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosListScenarioRunsResponse;
+  factory UtilitiesWebApiProtosListScenarioRunsResponse(
+          [void updates(
+              UtilitiesWebApiProtosListScenarioRunsResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosListScenarioRunsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosListScenarioRunsResponseBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosListScenarioRunsResponseBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosListScenarioRunsResponse>
-  get serializer => _$UtilitiesWebApiProtosListScenarioRunsResponseSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosListScenarioRunsResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosListScenarioRunsResponseSerializer
@@ -52,7 +52,7 @@ class _$UtilitiesWebApiProtosListScenarioRunsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListScenarioRunsResponse,
-    _$UtilitiesWebApiProtosListScenarioRunsResponse,
+    _$UtilitiesWebApiProtosListScenarioRunsResponse
   ];
 
   @override
@@ -74,9 +74,8 @@ class _$UtilitiesWebApiProtosListScenarioRunsResponseSerializer
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosScenarioRun),
-        ]),
+        specifiedType: const FullType(
+            BuiltList, [FullType(UtilitiesWebApiProtosScenarioRun)]),
       );
     }
   }
@@ -87,11 +86,9 @@ class _$UtilitiesWebApiProtosListScenarioRunsResponseSerializer
     UtilitiesWebApiProtosListScenarioRunsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -107,20 +104,18 @@ class _$UtilitiesWebApiProtosListScenarioRunsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'totalCount':
-          final valueDes =
-              serializers.deserialize(value, specifiedType: const FullType(int))
-                  as int;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
           result.totalCount = valueDes;
           break;
         case r'items':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosScenarioRun),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosScenarioRun>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(UtilitiesWebApiProtosScenarioRun)]),
+          ) as BuiltList<UtilitiesWebApiProtosScenarioRun>;
           result.items.replace(valueDes);
           break;
         default:

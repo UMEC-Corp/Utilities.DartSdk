@@ -15,18 +15,16 @@ part 'utilities_web_api_protos_attach_unit_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAttachUnitRequest
     implements
-        Built<
-          UtilitiesWebApiProtosAttachUnitRequest,
-          UtilitiesWebApiProtosAttachUnitRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosAttachUnitRequest,
+            UtilitiesWebApiProtosAttachUnitRequestBuilder> {
   @BuiltValueField(wireName: r'code')
   String? get code;
 
   UtilitiesWebApiProtosAttachUnitRequest._();
 
-  factory UtilitiesWebApiProtosAttachUnitRequest([
-    void updates(UtilitiesWebApiProtosAttachUnitRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosAttachUnitRequest;
+  factory UtilitiesWebApiProtosAttachUnitRequest(
+          [void updates(UtilitiesWebApiProtosAttachUnitRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosAttachUnitRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosAttachUnitRequestBuilder b) => b;
@@ -41,7 +39,7 @@ class _$UtilitiesWebApiProtosAttachUnitRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAttachUnitRequest,
-    _$UtilitiesWebApiProtosAttachUnitRequest,
+    _$UtilitiesWebApiProtosAttachUnitRequest
   ];
 
   @override
@@ -67,11 +65,9 @@ class _$UtilitiesWebApiProtosAttachUnitRequestSerializer
     UtilitiesWebApiProtosAttachUnitRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -87,12 +83,10 @@ class _$UtilitiesWebApiProtosAttachUnitRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.code = valueDes;
           break;
         default:

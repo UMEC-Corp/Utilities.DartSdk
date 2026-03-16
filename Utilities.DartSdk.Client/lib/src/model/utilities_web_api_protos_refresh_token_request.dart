@@ -15,19 +15,17 @@ part 'utilities_web_api_protos_refresh_token_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosRefreshTokenRequest
     implements
-        Built<
-          UtilitiesWebApiProtosRefreshTokenRequest,
-          UtilitiesWebApiProtosRefreshTokenRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosRefreshTokenRequest,
+            UtilitiesWebApiProtosRefreshTokenRequestBuilder> {
   /// The refresh token.
   @BuiltValueField(wireName: r'refreshToken')
   String? get refreshToken;
 
   UtilitiesWebApiProtosRefreshTokenRequest._();
 
-  factory UtilitiesWebApiProtosRefreshTokenRequest([
-    void updates(UtilitiesWebApiProtosRefreshTokenRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosRefreshTokenRequest;
+  factory UtilitiesWebApiProtosRefreshTokenRequest(
+          [void updates(UtilitiesWebApiProtosRefreshTokenRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosRefreshTokenRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosRefreshTokenRequestBuilder b) => b;
@@ -42,7 +40,7 @@ class _$UtilitiesWebApiProtosRefreshTokenRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosRefreshTokenRequest,
-    _$UtilitiesWebApiProtosRefreshTokenRequest,
+    _$UtilitiesWebApiProtosRefreshTokenRequest
   ];
 
   @override
@@ -68,11 +66,9 @@ class _$UtilitiesWebApiProtosRefreshTokenRequestSerializer
     UtilitiesWebApiProtosRefreshTokenRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -88,12 +84,10 @@ class _$UtilitiesWebApiProtosRefreshTokenRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'refreshToken':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.refreshToken = valueDes;
           break;
         default:

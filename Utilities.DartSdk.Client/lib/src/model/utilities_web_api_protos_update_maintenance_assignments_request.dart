@@ -18,10 +18,8 @@ part 'utilities_web_api_protos_update_maintenance_assignments_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest
     implements
-        Built<
-          UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest,
-          UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest,
+            UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestBuilder> {
   /// Id of the unit being maintained
   @BuiltValueField(wireName: r'unitId')
   String? get unitId;
@@ -29,38 +27,35 @@ abstract class UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest
   /// The list of employees
   @BuiltValueField(wireName: r'maintenanceAssignments')
   BuiltList<
-    UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestTypesUpdateMaintenanceAssignmentsItem
-  >?
-  get maintenanceAssignments;
+          UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestTypesUpdateMaintenanceAssignmentsItem>?
+      get maintenanceAssignments;
 
   UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest._();
 
-  factory UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest([
-    void updates(
-      UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestBuilder b,
-    ),
-  ]) = _$UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest;
+  factory UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest(
+      [void updates(
+          UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestBuilder
+              b)]) = _$UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest>
-  get serializer =>
-      _$UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestSerializer
     implements
         PrimitiveSerializer<
-          UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest
-        > {
+            UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest> {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest,
-    _$UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest,
+    _$UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest
   ];
 
   @override
@@ -85,8 +80,7 @@ class _$UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestSerializer
         object.maintenanceAssignments,
         specifiedType: const FullType(BuiltList, [
           FullType(
-            UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestTypesUpdateMaintenanceAssignmentsItem,
-          ),
+              UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestTypesUpdateMaintenanceAssignmentsItem)
         ]),
       );
     }
@@ -98,11 +92,9 @@ class _$UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestSerializer
     UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -111,7 +103,7 @@ class _$UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestSerializer
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestBuilder
-    result,
+        result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -119,27 +111,21 @@ class _$UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'unitId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitId = valueDes;
           break;
         case r'maintenanceAssignments':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(
-                        UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestTypesUpdateMaintenanceAssignmentsItem,
-                      ),
-                    ]),
-                  )
-                  as BuiltList<
-                    UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestTypesUpdateMaintenanceAssignmentsItem
-                  >;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [
+              FullType(
+                  UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestTypesUpdateMaintenanceAssignmentsItem)
+            ]),
+          ) as BuiltList<
+              UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequestTypesUpdateMaintenanceAssignmentsItem>;
           result.maintenanceAssignments.replace(valueDes);
           break;
         default:

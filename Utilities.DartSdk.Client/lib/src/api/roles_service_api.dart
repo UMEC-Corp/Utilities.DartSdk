@@ -35,7 +35,7 @@ class RolesServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosListRolesResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosListRolesResponse>>
-  apiDashboardV1RolesGet({
+      apiDashboardV1RolesGet({
     int? offset,
     int? limit,
     CancelToken? cancelToken,
@@ -48,10 +48,16 @@ class RolesServiceApi {
     final _path = r'/api/dashboard/v1/roles';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+          {
+            'type': 'http',
+            'scheme': 'Bearer',
+            'name': 'oauth2',
+          },
         ],
         ...?extra,
       },
@@ -60,17 +66,11 @@ class RolesServiceApi {
 
     final _queryParameters = <String, dynamic>{
       if (offset != null)
-        r'offset': encodeQueryParameter(
-          _serializers,
-          offset,
-          const FullType(int),
-        ),
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
       if (limit != null)
-        r'limit': encodeQueryParameter(
-          _serializers,
-          limit,
-          const FullType(int),
-        ),
+        r'limit':
+            encodeQueryParameter(_serializers, limit, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -89,12 +89,10 @@ class RolesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-                  rawResponse,
-                  specifiedType: const FullType(
-                    UtilitiesWebApiProtosListRolesResponse,
-                  ),
-                )
-                as UtilitiesWebApiProtosListRolesResponse;
+              rawResponse,
+              specifiedType:
+                  const FullType(UtilitiesWebApiProtosListRolesResponse),
+            ) as UtilitiesWebApiProtosListRolesResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

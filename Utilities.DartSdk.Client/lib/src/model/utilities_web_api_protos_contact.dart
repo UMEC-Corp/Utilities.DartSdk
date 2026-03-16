@@ -20,10 +20,8 @@ part 'utilities_web_api_protos_contact.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosContact
     implements
-        Built<
-          UtilitiesWebApiProtosContact,
-          UtilitiesWebApiProtosContactBuilder
-        > {
+        Built<UtilitiesWebApiProtosContact,
+            UtilitiesWebApiProtosContactBuilder> {
   @BuiltValueField(wireName: r'type')
   UtilitiesWebApiProtosContactType? get type;
   // enum typeEnum {  Unspecified,  Phone,  Telegram,  WhatsApp,  Email,  PersonalName,  DeviceName,  };
@@ -46,9 +44,9 @@ abstract class UtilitiesWebApiProtosContact
 
   UtilitiesWebApiProtosContact._();
 
-  factory UtilitiesWebApiProtosContact([
-    void updates(UtilitiesWebApiProtosContactBuilder b),
-  ]) = _$UtilitiesWebApiProtosContact;
+  factory UtilitiesWebApiProtosContact(
+          [void updates(UtilitiesWebApiProtosContactBuilder b)]) =
+      _$UtilitiesWebApiProtosContact;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosContactBuilder b) => b;
@@ -63,7 +61,7 @@ class _$UtilitiesWebApiProtosContactSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosContact,
-    _$UtilitiesWebApiProtosContact,
+    _$UtilitiesWebApiProtosContact
   ];
 
   @override
@@ -117,11 +115,9 @@ class _$UtilitiesWebApiProtosContactSerializer
     UtilitiesWebApiProtosContact object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -137,50 +133,38 @@ class _$UtilitiesWebApiProtosContactSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'type':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosContactType,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosContactType;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UtilitiesWebApiProtosContactType),
+          ) as UtilitiesWebApiProtosContactType;
           result.type = valueDes;
           break;
         case r'phoneNumber':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.phoneNumber = valueDes;
           break;
         case r'username':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.username = valueDes;
           break;
         case r'email':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.email = valueDes;
           break;
         case r'name':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.name = valueDes;
           break;
         default:

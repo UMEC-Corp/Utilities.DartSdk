@@ -17,39 +17,37 @@ part 'utilities_web_api_protos_device_model_types_lifecycle_event.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent
     implements
-        Built<
-          UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent,
-          UtilitiesWebApiProtosDeviceModelTypesLifecycleEventBuilder
-        > {
+        Built<UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent,
+            UtilitiesWebApiProtosDeviceModelTypesLifecycleEventBuilder> {
   @BuiltValueField(wireName: r'actions')
   BuiltList<UtilitiesWebApiProtosDeviceModelTypesAction>? get actions;
 
   UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent._();
 
-  factory UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent([
-    void updates(UtilitiesWebApiProtosDeviceModelTypesLifecycleEventBuilder b),
-  ]) = _$UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent;
+  factory UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent(
+          [void updates(
+              UtilitiesWebApiProtosDeviceModelTypesLifecycleEventBuilder b)]) =
+      _$UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-    UtilitiesWebApiProtosDeviceModelTypesLifecycleEventBuilder b,
-  ) => b;
+          UtilitiesWebApiProtosDeviceModelTypesLifecycleEventBuilder b) =>
+      b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent>
-  get serializer =>
-      _$UtilitiesWebApiProtosDeviceModelTypesLifecycleEventSerializer();
+      get serializer =>
+          _$UtilitiesWebApiProtosDeviceModelTypesLifecycleEventSerializer();
 }
 
 class _$UtilitiesWebApiProtosDeviceModelTypesLifecycleEventSerializer
     implements
         PrimitiveSerializer<
-          UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent
-        > {
+            UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent> {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent,
-    _$UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent,
+    _$UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent
   ];
 
   @override
@@ -65,9 +63,8 @@ class _$UtilitiesWebApiProtosDeviceModelTypesLifecycleEventSerializer
       yield r'actions';
       yield serializers.serialize(
         object.actions,
-        specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosDeviceModelTypesAction),
-        ]),
+        specifiedType: const FullType(
+            BuiltList, [FullType(UtilitiesWebApiProtosDeviceModelTypesAction)]),
       );
     }
   }
@@ -78,11 +75,9 @@ class _$UtilitiesWebApiProtosDeviceModelTypesLifecycleEventSerializer
     UtilitiesWebApiProtosDeviceModelTypesLifecycleEvent object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -98,14 +93,11 @@ class _$UtilitiesWebApiProtosDeviceModelTypesLifecycleEventSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'actions':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(BuiltList, [
-                      FullType(UtilitiesWebApiProtosDeviceModelTypesAction),
-                    ]),
-                  )
-                  as BuiltList<UtilitiesWebApiProtosDeviceModelTypesAction>;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList,
+                [FullType(UtilitiesWebApiProtosDeviceModelTypesAction)]),
+          ) as BuiltList<UtilitiesWebApiProtosDeviceModelTypesAction>;
           result.actions.replace(valueDes);
           break;
         default:

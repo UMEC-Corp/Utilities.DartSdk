@@ -16,18 +16,16 @@ part 'utilities_web_api_protos_add_scenario_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAddScenarioResponse
     implements
-        Built<
-          UtilitiesWebApiProtosAddScenarioResponse,
-          UtilitiesWebApiProtosAddScenarioResponseBuilder
-        > {
+        Built<UtilitiesWebApiProtosAddScenarioResponse,
+            UtilitiesWebApiProtosAddScenarioResponseBuilder> {
   @BuiltValueField(wireName: r'item')
   UtilitiesWebApiProtosScenario? get item;
 
   UtilitiesWebApiProtosAddScenarioResponse._();
 
-  factory UtilitiesWebApiProtosAddScenarioResponse([
-    void updates(UtilitiesWebApiProtosAddScenarioResponseBuilder b),
-  ]) = _$UtilitiesWebApiProtosAddScenarioResponse;
+  factory UtilitiesWebApiProtosAddScenarioResponse(
+          [void updates(UtilitiesWebApiProtosAddScenarioResponseBuilder b)]) =
+      _$UtilitiesWebApiProtosAddScenarioResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosAddScenarioResponseBuilder b) => b;
@@ -42,7 +40,7 @@ class _$UtilitiesWebApiProtosAddScenarioResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAddScenarioResponse,
-    _$UtilitiesWebApiProtosAddScenarioResponse,
+    _$UtilitiesWebApiProtosAddScenarioResponse
   ];
 
   @override
@@ -68,11 +66,9 @@ class _$UtilitiesWebApiProtosAddScenarioResponseSerializer
     UtilitiesWebApiProtosAddScenarioResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -88,14 +84,10 @@ class _$UtilitiesWebApiProtosAddScenarioResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'item':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(
-                      UtilitiesWebApiProtosScenario,
-                    ),
-                  )
-                  as UtilitiesWebApiProtosScenario;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UtilitiesWebApiProtosScenario),
+          ) as UtilitiesWebApiProtosScenario;
           result.item.replace(valueDes);
           break;
         default:

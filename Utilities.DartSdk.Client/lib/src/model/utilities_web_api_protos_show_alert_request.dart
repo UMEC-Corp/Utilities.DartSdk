@@ -17,10 +17,8 @@ part 'utilities_web_api_protos_show_alert_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosShowAlertRequest
     implements
-        Built<
-          UtilitiesWebApiProtosShowAlertRequest,
-          UtilitiesWebApiProtosShowAlertRequestBuilder
-        > {
+        Built<UtilitiesWebApiProtosShowAlertRequest,
+            UtilitiesWebApiProtosShowAlertRequestBuilder> {
   /// Id of the physical device
   @BuiltValueField(wireName: r'deviceId')
   String? get deviceId;
@@ -35,9 +33,9 @@ abstract class UtilitiesWebApiProtosShowAlertRequest
 
   UtilitiesWebApiProtosShowAlertRequest._();
 
-  factory UtilitiesWebApiProtosShowAlertRequest([
-    void updates(UtilitiesWebApiProtosShowAlertRequestBuilder b),
-  ]) = _$UtilitiesWebApiProtosShowAlertRequest;
+  factory UtilitiesWebApiProtosShowAlertRequest(
+          [void updates(UtilitiesWebApiProtosShowAlertRequestBuilder b)]) =
+      _$UtilitiesWebApiProtosShowAlertRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosShowAlertRequestBuilder b) => b;
@@ -52,7 +50,7 @@ class _$UtilitiesWebApiProtosShowAlertRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosShowAlertRequest,
-    _$UtilitiesWebApiProtosShowAlertRequest,
+    _$UtilitiesWebApiProtosShowAlertRequest
   ];
 
   @override
@@ -92,11 +90,9 @@ class _$UtilitiesWebApiProtosShowAlertRequestSerializer
     UtilitiesWebApiProtosShowAlertRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(
-      serializers,
-      object,
-      specifiedType: specifiedType,
-    ).toList();
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
   }
 
   void _deserializeProperties(
@@ -112,30 +108,24 @@ class _$UtilitiesWebApiProtosShowAlertRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'deviceId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.deviceId = valueDes;
           break;
         case r'unitCode':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.unitCode = valueDes;
           break;
         case r'alertId':
-          final valueDes =
-              serializers.deserialize(
-                    value,
-                    specifiedType: const FullType(String),
-                  )
-                  as String;
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
           result.alertId = valueDes;
           break;
         default:
