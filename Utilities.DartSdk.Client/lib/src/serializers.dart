@@ -76,6 +76,7 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_eve
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_address_details_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_auth_method_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_company_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_default_ui_setting_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_device_models_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_device_models_request_types_model_version.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_device_models_response.dart';
@@ -96,6 +97,8 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_notifications_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_profile_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_scenario_details_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_ui_setting_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_ui_settings_by_type_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_unit_group_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_unit_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_users_response.dart';
@@ -123,6 +126,7 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_lis
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_roles_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_scenario_runs_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_scenarios_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_ui_settings_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_units_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_units_response_types_list_units_response_item.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_units_response_types_list_units_response_sensor.dart';
@@ -162,6 +166,7 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_sho
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_sign_in_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_sign_in_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_start_scenario_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_ui_setting_item.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_command.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_events_response.dart';
@@ -193,6 +198,8 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_upd
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_scenario_request_types_update_scenario_condition_item.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_scenario_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_unit_firmware_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_upsert_ui_setting_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_upsert_ui_setting_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_user.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_user_role.dart';
 
@@ -261,6 +268,7 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosGetAddressDetailsResponse,
   UtilitiesWebApiProtosGetAuthMethodResponse,
   UtilitiesWebApiProtosGetCompanyResponse,
+  UtilitiesWebApiProtosGetDefaultUiSettingResponse,
   UtilitiesWebApiProtosGetDeviceModelsRequest,
   UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion,
   UtilitiesWebApiProtosGetDeviceModelsResponse,
@@ -281,6 +289,8 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosGetNotificationsResponse,
   UtilitiesWebApiProtosGetProfileResponse,
   UtilitiesWebApiProtosGetScenarioDetailsResponse,
+  UtilitiesWebApiProtosGetUiSettingResponse,
+  UtilitiesWebApiProtosGetUiSettingsByTypeResponse,
   UtilitiesWebApiProtosGetUnitGroupResponse,
   UtilitiesWebApiProtosGetUnitResponse,
   UtilitiesWebApiProtosGetUsersResponse,
@@ -308,6 +318,7 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosListRolesResponse,
   UtilitiesWebApiProtosListScenarioRunsResponse,
   UtilitiesWebApiProtosListScenariosResponse,
+  UtilitiesWebApiProtosListUiSettingsResponse,
   UtilitiesWebApiProtosListUnitsResponse,
   UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem,
   UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor,
@@ -347,6 +358,7 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosSignInRequest,
   UtilitiesWebApiProtosSignInResponse,
   UtilitiesWebApiProtosStartScenarioRequest,
+  UtilitiesWebApiProtosUiSettingItem,
   UtilitiesWebApiProtosUnit,
   UtilitiesWebApiProtosUnitCommand,
   UtilitiesWebApiProtosUnitEventsResponse,
@@ -378,6 +390,8 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosUpdateScenarioRequestTypesUpdateScenarioConditionItem,
   UtilitiesWebApiProtosUpdateScenarioResponse,
   UtilitiesWebApiProtosUpdateUnitFirmwareRequest,
+  UtilitiesWebApiProtosUpsertUiSettingRequest,
+  UtilitiesWebApiProtosUpsertUiSettingResponse,
   UtilitiesWebApiProtosUser,
   UtilitiesWebApiProtosUserRole,
 ])

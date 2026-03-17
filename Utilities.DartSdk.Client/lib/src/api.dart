@@ -25,6 +25,7 @@ import 'package:utilities_dart_sdk_client/src/api/roles_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/scenarios_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/statistics_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/streams_service_api.dart';
+import 'package:utilities_dart_sdk_client/src/api/ui_settings_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/units_service_api.dart';
 import 'package:utilities_dart_sdk_client/src/api/users_service_api.dart';
 
@@ -187,6 +188,12 @@ class UtilitiesDartSdkClient {
   /// by doing that all interceptors will not be executed
   StreamsServiceApi getStreamsServiceApi() {
     return StreamsServiceApi(dio, serializers);
+  }
+
+  /// Get UiSettingsServiceApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  UiSettingsServiceApi getUiSettingsServiceApi() {
+    return UiSettingsServiceApi(dio, serializers);
   }
 
   /// Get UnitsServiceApi instance, base route and serializer can be overridden by a given but be careful,

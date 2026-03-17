@@ -3139,6 +3139,336 @@
         }
       }
     },
+    "/api/dashboard/v1/ui-settings": {
+      "post": {
+        "tags": [
+          "UiSettingsService"
+        ],
+        "summary": "Create or update a UI setting at a specific scope",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UpsertUiSettingRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UpsertUiSettingResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UiSettingsService"
+        ],
+        "summary": "Delete a UI setting at a specific scope",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "deviceGroupId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "objectType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "objectKey",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeleteUiSettingResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UiSettingsService"
+        ],
+        "summary": "List UI settings for a specific scope with pagination (no resolution, exact scope)",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "deviceGroupId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "objectType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ListUiSettingsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/ui-settings/by-key": {
+      "get": {
+        "tags": [
+          "UiSettingsService"
+        ],
+        "summary": "Get a UI setting by object type and key, resolving up the group hierarchy",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "deviceGroupId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "objectType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "objectKey",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.GetUiSettingResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/ui-settings/by-type": {
+      "get": {
+        "tags": [
+          "UiSettingsService"
+        ],
+        "summary": "Get all UI settings of a given object type, resolving up the group hierarchy (narrowest scope per objectKey wins)",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "deviceGroupId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "objectType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.GetUiSettingsByTypeResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/ui-settings/default": {
+      "get": {
+        "tags": [
+          "UiSettingsService"
+        ],
+        "summary": "Get the default UI setting for a given object type, resolving up the group hierarchy",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "deviceGroupId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "objectType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.GetDefaultUiSettingResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/dashboard/v1/units/{unitId}:create-share-link": {
       "post": {
         "tags": [
@@ -5554,6 +5884,11 @@
         "description": "Strategy for deleting a group that has children",
         "format": "int32"
       },
+      "Utilities.Web.Api.Protos.DeleteUiSettingResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response after deleting a UI setting"
+      },
       "Utilities.Web.Api.Protos.DetachUnitResponse": {
         "type": "object",
         "additionalProperties": false,
@@ -6184,6 +6519,16 @@
         },
         "additionalProperties": false
       },
+      "Utilities.Web.Api.Protos.GetDefaultUiSettingResponse": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UiSettingItem"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response with the default UI setting"
+      },
       "Utilities.Web.Api.Protos.GetDeviceModelsRequest": {
         "type": "object",
         "properties": {
@@ -6603,6 +6948,30 @@
         },
         "additionalProperties": false,
         "description": "Scenario response"
+      },
+      "Utilities.Web.Api.Protos.GetUiSettingResponse": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UiSettingItem"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response with a UI setting"
+      },
+      "Utilities.Web.Api.Protos.GetUiSettingsByTypeResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UiSettingItem"
+            },
+            "description": "All settings of the requested type, with narrowest scope per objectKey"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response with all UI settings of the requested type (resolved per objectKey)"
       },
       "Utilities.Web.Api.Protos.GetUnitGroupResponse": {
         "type": "object",
@@ -7123,6 +7492,25 @@
         },
         "additionalProperties": false,
         "description": "Scenarios response"
+      },
+      "Utilities.Web.Api.Protos.ListUiSettingsResponse": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "description": "Total count of settings matching the filter",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UiSettingItem"
+            },
+            "description": "Paged list of settings"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response with a list of UI settings"
       },
       "Utilities.Web.Api.Protos.ListUnitsResponse": {
         "type": "object",
@@ -8134,6 +8522,46 @@
         "additionalProperties": false,
         "description": "Result of scenario start request"
       },
+      "Utilities.Web.Api.Protos.UiSettingItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Id of the setting"
+          },
+          "userId": {
+            "type": "string",
+            "description": "Id of the user (empty for tenant+group scope)"
+          },
+          "deviceGroupId": {
+            "type": "string",
+            "description": "Id of the device group (always set)"
+          },
+          "objectType": {
+            "type": "string",
+            "description": "The type of the stored object (e.g. \"dashboard\", \"layout\")"
+          },
+          "objectKey": {
+            "type": "string",
+            "description": "Unique key identifying the object within its type"
+          },
+          "isDefault": {
+            "type": "boolean",
+            "description": "Whether this object is the default for its type within the scope"
+          },
+          "value": {
+            "type": "string",
+            "description": "The JSON-encoded setting value"
+          },
+          "createdAt": {
+            "type": "integer",
+            "description": "Creation timestamp (unix ms)",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A UI setting scoped at a specific group, optionally for a specific user"
+      },
       "Utilities.Web.Api.Protos.Unit": {
         "type": "object",
         "properties": {
@@ -9048,6 +9476,47 @@
         "additionalProperties": false,
         "description": "Result of firmware update command sending"
       },
+      "Utilities.Web.Api.Protos.UpsertUiSettingRequest": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "description": "Id of the user (empty for tenant+group scope)"
+          },
+          "deviceGroupId": {
+            "type": "string",
+            "description": "Id of the device group (empty = root group)"
+          },
+          "objectType": {
+            "type": "string",
+            "description": "The type of the stored object"
+          },
+          "objectKey": {
+            "type": "string",
+            "description": "Unique key identifying the object within its type"
+          },
+          "isDefault": {
+            "type": "boolean",
+            "description": "Whether this object is the default for its type within the scope"
+          },
+          "value": {
+            "type": "string",
+            "description": "The JSON-encoded setting value"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request to create or update a UI setting at a specific scope"
+      },
+      "Utilities.Web.Api.Protos.UpsertUiSettingResponse": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UiSettingItem"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response after creating or updating a UI setting"
+      },
       "Utilities.Web.Api.Protos.User": {
         "type": "object",
         "properties": {
@@ -9178,6 +9647,10 @@
     {
       "name": "DeviceGroupsService",
       "description": "Proxy service that delegates device group operations to the Companies microservice"
+    },
+    {
+      "name": "UiSettingsService",
+      "description": "gRPC service for UI settings with hierarchical scope resolution.\r\nUnlike other services in Web.API, this service owns its data directly."
     }
   ]
 }

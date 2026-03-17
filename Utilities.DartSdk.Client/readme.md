@@ -132,6 +132,12 @@ Class | Method | HTTP request | Description
 [*StatisticsServiceApi*](doc/StatisticsServiceApi.md) | [**apiDashboardV1StatisticsInputsPost**](doc/StatisticsServiceApi.md#apidashboardv1statisticsinputspost) | **POST** /api/dashboard/v1/statistics/inputs | Gets input statistics for a time range.
 [*StreamsServiceApi*](doc/StreamsServiceApi.md) | [**apiDashboardV1StreamsMaintainerUnitEventsGet**](doc/StreamsServiceApi.md#apidashboardv1streamsmaintaineruniteventsget) | **GET** /api/dashboard/v1/streams/maintainer-unit-events | Streams unit events for maintainer-scoped unit identifiers.
 [*StreamsServiceApi*](doc/StreamsServiceApi.md) | [**apiDashboardV1StreamsUnitEventsGet**](doc/StreamsServiceApi.md#apidashboardv1streamsuniteventsget) | **GET** /api/dashboard/v1/streams/unit-events | Subscribe on a stream with unit-related events
+[*UiSettingsServiceApi*](doc/UiSettingsServiceApi.md) | [**apiDashboardV1UiSettingsByKeyGet**](doc/UiSettingsServiceApi.md#apidashboardv1uisettingsbykeyget) | **GET** /api/dashboard/v1/ui-settings/by-key | Get a UI setting by object type and key, resolving up the group hierarchy
+[*UiSettingsServiceApi*](doc/UiSettingsServiceApi.md) | [**apiDashboardV1UiSettingsByTypeGet**](doc/UiSettingsServiceApi.md#apidashboardv1uisettingsbytypeget) | **GET** /api/dashboard/v1/ui-settings/by-type | Get all UI settings of a given object type, resolving up the group hierarchy (narrowest scope per objectKey wins)
+[*UiSettingsServiceApi*](doc/UiSettingsServiceApi.md) | [**apiDashboardV1UiSettingsDefaultGet**](doc/UiSettingsServiceApi.md#apidashboardv1uisettingsdefaultget) | **GET** /api/dashboard/v1/ui-settings/default | Get the default UI setting for a given object type, resolving up the group hierarchy
+[*UiSettingsServiceApi*](doc/UiSettingsServiceApi.md) | [**apiDashboardV1UiSettingsDelete**](doc/UiSettingsServiceApi.md#apidashboardv1uisettingsdelete) | **DELETE** /api/dashboard/v1/ui-settings | Delete a UI setting at a specific scope
+[*UiSettingsServiceApi*](doc/UiSettingsServiceApi.md) | [**apiDashboardV1UiSettingsGet**](doc/UiSettingsServiceApi.md#apidashboardv1uisettingsget) | **GET** /api/dashboard/v1/ui-settings | List UI settings for a specific scope with pagination (no resolution, exact scope)
+[*UiSettingsServiceApi*](doc/UiSettingsServiceApi.md) | [**apiDashboardV1UiSettingsPost**](doc/UiSettingsServiceApi.md#apidashboardv1uisettingspost) | **POST** /api/dashboard/v1/ui-settings | Create or update a UI setting at a specific scope
 [*UnitsServiceApi*](doc/UnitsServiceApi.md) | [**apiDashboardV1ClientsClientIdAddressPut**](doc/UnitsServiceApi.md#apidashboardv1clientsclientidaddressput) | **PUT** /api/dashboard/v1/clients/{clientId}/address | Update an address of a specific unit
 [*UnitsServiceApi*](doc/UnitsServiceApi.md) | [**apiDashboardV1ClientsClientIdPinnedSensorsPut**](doc/UnitsServiceApi.md#apidashboardv1clientsclientidpinnedsensorsput) | **PUT** /api/dashboard/v1/clients/{clientId}/pinned-sensors | Upade list of sensors pinned on a dashboard
 [*UnitsServiceApi*](doc/UnitsServiceApi.md) | [**apiDashboardV1ClientsClientIdresetAddressPost**](doc/UnitsServiceApi.md#apidashboardv1clientsclientidresetaddresspost) | **POST** /api/dashboard/v1/clients/{clientId}:reset-address | Reset an address of a specific unit
@@ -229,6 +235,7 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosGetAddressDetailsResponse](doc/UtilitiesWebApiProtosGetAddressDetailsResponse.md)
  - [UtilitiesWebApiProtosGetAuthMethodResponse](doc/UtilitiesWebApiProtosGetAuthMethodResponse.md)
  - [UtilitiesWebApiProtosGetCompanyResponse](doc/UtilitiesWebApiProtosGetCompanyResponse.md)
+ - [UtilitiesWebApiProtosGetDefaultUiSettingResponse](doc/UtilitiesWebApiProtosGetDefaultUiSettingResponse.md)
  - [UtilitiesWebApiProtosGetDeviceModelsRequest](doc/UtilitiesWebApiProtosGetDeviceModelsRequest.md)
  - [UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion](doc/UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion.md)
  - [UtilitiesWebApiProtosGetDeviceModelsResponse](doc/UtilitiesWebApiProtosGetDeviceModelsResponse.md)
@@ -249,6 +256,8 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosGetNotificationsResponse](doc/UtilitiesWebApiProtosGetNotificationsResponse.md)
  - [UtilitiesWebApiProtosGetProfileResponse](doc/UtilitiesWebApiProtosGetProfileResponse.md)
  - [UtilitiesWebApiProtosGetScenarioDetailsResponse](doc/UtilitiesWebApiProtosGetScenarioDetailsResponse.md)
+ - [UtilitiesWebApiProtosGetUiSettingResponse](doc/UtilitiesWebApiProtosGetUiSettingResponse.md)
+ - [UtilitiesWebApiProtosGetUiSettingsByTypeResponse](doc/UtilitiesWebApiProtosGetUiSettingsByTypeResponse.md)
  - [UtilitiesWebApiProtosGetUnitGroupResponse](doc/UtilitiesWebApiProtosGetUnitGroupResponse.md)
  - [UtilitiesWebApiProtosGetUnitResponse](doc/UtilitiesWebApiProtosGetUnitResponse.md)
  - [UtilitiesWebApiProtosGetUsersResponse](doc/UtilitiesWebApiProtosGetUsersResponse.md)
@@ -276,6 +285,7 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosListRolesResponse](doc/UtilitiesWebApiProtosListRolesResponse.md)
  - [UtilitiesWebApiProtosListScenarioRunsResponse](doc/UtilitiesWebApiProtosListScenarioRunsResponse.md)
  - [UtilitiesWebApiProtosListScenariosResponse](doc/UtilitiesWebApiProtosListScenariosResponse.md)
+ - [UtilitiesWebApiProtosListUiSettingsResponse](doc/UtilitiesWebApiProtosListUiSettingsResponse.md)
  - [UtilitiesWebApiProtosListUnitsResponse](doc/UtilitiesWebApiProtosListUnitsResponse.md)
  - [UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem](doc/UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem.md)
  - [UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor](doc/UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor.md)
@@ -315,6 +325,7 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosSignInRequest](doc/UtilitiesWebApiProtosSignInRequest.md)
  - [UtilitiesWebApiProtosSignInResponse](doc/UtilitiesWebApiProtosSignInResponse.md)
  - [UtilitiesWebApiProtosStartScenarioRequest](doc/UtilitiesWebApiProtosStartScenarioRequest.md)
+ - [UtilitiesWebApiProtosUiSettingItem](doc/UtilitiesWebApiProtosUiSettingItem.md)
  - [UtilitiesWebApiProtosUnit](doc/UtilitiesWebApiProtosUnit.md)
  - [UtilitiesWebApiProtosUnitCommand](doc/UtilitiesWebApiProtosUnitCommand.md)
  - [UtilitiesWebApiProtosUnitEventsResponse](doc/UtilitiesWebApiProtosUnitEventsResponse.md)
@@ -346,6 +357,8 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosUpdateScenarioRequestTypesUpdateScenarioConditionItem](doc/UtilitiesWebApiProtosUpdateScenarioRequestTypesUpdateScenarioConditionItem.md)
  - [UtilitiesWebApiProtosUpdateScenarioResponse](doc/UtilitiesWebApiProtosUpdateScenarioResponse.md)
  - [UtilitiesWebApiProtosUpdateUnitFirmwareRequest](doc/UtilitiesWebApiProtosUpdateUnitFirmwareRequest.md)
+ - [UtilitiesWebApiProtosUpsertUiSettingRequest](doc/UtilitiesWebApiProtosUpsertUiSettingRequest.md)
+ - [UtilitiesWebApiProtosUpsertUiSettingResponse](doc/UtilitiesWebApiProtosUpsertUiSettingResponse.md)
  - [UtilitiesWebApiProtosUser](doc/UtilitiesWebApiProtosUser.md)
  - [UtilitiesWebApiProtosUserRole](doc/UtilitiesWebApiProtosUserRole.md)
 
