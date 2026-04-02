@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **apiDashboardV1DeviceGroupsGet**
-> UtilitiesWebApiProtosListGroupsResponse apiDashboardV1DeviceGroupsGet(offset, limit, parentGroupId)
+> UtilitiesWebApiProtosListGroupsResponse apiDashboardV1DeviceGroupsGet(offset, limit, parentGroupId, resolveFromParent)
 
 Get a paged list of device groups
 
@@ -35,9 +35,10 @@ final api = UtilitiesDartSdkClient().getDeviceGroupsServiceApi();
 final int offset = 56; // int | 
 final int limit = 56; // int | 
 final String parentGroupId = parentGroupId_example; // String | 
+final bool resolveFromParent = true; // bool | 
 
 try {
-    final response = api.apiDashboardV1DeviceGroupsGet(offset, limit, parentGroupId);
+    final response = api.apiDashboardV1DeviceGroupsGet(offset, limit, parentGroupId, resolveFromParent);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling DeviceGroupsServiceApi->apiDashboardV1DeviceGroupsGet: $e\n');
@@ -51,6 +52,7 @@ Name | Type | Description  | Notes
  **offset** | **int**|  | [optional] 
  **limit** | **int**|  | [optional] 
  **parentGroupId** | **String**|  | [optional] 
+ **resolveFromParent** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -111,7 +113,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiDashboardV1DeviceGroupsGroupIdGet**
-> UtilitiesWebApiProtosGetGroupResponse apiDashboardV1DeviceGroupsGroupIdGet(groupId)
+> UtilitiesWebApiProtosGetGroupResponse apiDashboardV1DeviceGroupsGroupIdGet(groupId, resolveFromParent)
 
 Get a device group by id
 
@@ -121,9 +123,10 @@ import 'package:utilities_dart_sdk_client/api.dart';
 
 final api = UtilitiesDartSdkClient().getDeviceGroupsServiceApi();
 final String groupId = groupId_example; // String | Id of the device group
+final bool resolveFromParent = true; // bool | 
 
 try {
-    final response = api.apiDashboardV1DeviceGroupsGroupIdGet(groupId);
+    final response = api.apiDashboardV1DeviceGroupsGroupIdGet(groupId, resolveFromParent);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling DeviceGroupsServiceApi->apiDashboardV1DeviceGroupsGroupIdGet: $e\n');
@@ -135,6 +138,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **String**| Id of the device group | 
+ **resolveFromParent** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -371,7 +375,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiDashboardV1DeviceGroupssubtreeGet**
-> UtilitiesWebApiProtosGetGroupSubtreeResponse apiDashboardV1DeviceGroupssubtreeGet(groupId)
+> UtilitiesWebApiProtosGetGroupSubtreeResponse apiDashboardV1DeviceGroupssubtreeGet(groupId, resolveFromParent)
 
 Get the subtree of a device group
 
@@ -381,9 +385,10 @@ import 'package:utilities_dart_sdk_client/api.dart';
 
 final api = UtilitiesDartSdkClient().getDeviceGroupsServiceApi();
 final String groupId = groupId_example; // String | 
+final bool resolveFromParent = true; // bool | 
 
 try {
-    final response = api.apiDashboardV1DeviceGroupssubtreeGet(groupId);
+    final response = api.apiDashboardV1DeviceGroupssubtreeGet(groupId, resolveFromParent);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling DeviceGroupsServiceApi->apiDashboardV1DeviceGroupssubtreeGet: $e\n');
@@ -395,6 +400,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **groupId** | **String**|  | [optional] 
+ **resolveFromParent** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -412,7 +418,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiDashboardV1UnitsDeviceClientIdDeviceGroupGet**
-> UtilitiesWebApiProtosGetUnitGroupResponse apiDashboardV1UnitsDeviceClientIdDeviceGroupGet(deviceClientId)
+> UtilitiesWebApiProtosGetUnitGroupResponse apiDashboardV1UnitsDeviceClientIdDeviceGroupGet(deviceClientId, resolveFromParent)
 
 Get the group a unit belongs to
 
@@ -422,9 +428,10 @@ import 'package:utilities_dart_sdk_client/api.dart';
 
 final api = UtilitiesDartSdkClient().getDeviceGroupsServiceApi();
 final String deviceClientId = deviceClientId_example; // String | Id of the device client
+final bool resolveFromParent = true; // bool | 
 
 try {
-    final response = api.apiDashboardV1UnitsDeviceClientIdDeviceGroupGet(deviceClientId);
+    final response = api.apiDashboardV1UnitsDeviceClientIdDeviceGroupGet(deviceClientId, resolveFromParent);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling DeviceGroupsServiceApi->apiDashboardV1UnitsDeviceClientIdDeviceGroupGet: $e\n');
@@ -436,6 +443,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deviceClientId** | **String**| Id of the device client | 
+ **resolveFromParent** | **bool**|  | [optional] 
 
 ### Return type
 

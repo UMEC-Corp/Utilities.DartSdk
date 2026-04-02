@@ -33,6 +33,7 @@ class UiSettingsServiceApi {
   /// * [deviceGroupId]
   /// * [objectType]
   /// * [objectKey]
+  /// * [resolveFromParent]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -48,6 +49,7 @@ class UiSettingsServiceApi {
     String? deviceGroupId,
     String? objectType,
     String? objectKey,
+    bool? resolveFromParent,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -87,6 +89,9 @@ class UiSettingsServiceApi {
       if (objectKey != null)
         r'objectKey': encodeQueryParameter(
             _serializers, objectKey, const FullType(String)),
+      if (resolveFromParent != null)
+        r'resolveFromParent': encodeQueryParameter(
+            _serializers, resolveFromParent, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -138,6 +143,7 @@ class UiSettingsServiceApi {
   /// * [userId]
   /// * [deviceGroupId]
   /// * [objectType]
+  /// * [resolveFromParent]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -152,6 +158,7 @@ class UiSettingsServiceApi {
     String? userId,
     String? deviceGroupId,
     String? objectType,
+    bool? resolveFromParent,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -188,6 +195,9 @@ class UiSettingsServiceApi {
       if (objectType != null)
         r'objectType': encodeQueryParameter(
             _serializers, objectType, const FullType(String)),
+      if (resolveFromParent != null)
+        r'resolveFromParent': encodeQueryParameter(
+            _serializers, resolveFromParent, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -239,6 +249,7 @@ class UiSettingsServiceApi {
   /// * [userId]
   /// * [deviceGroupId]
   /// * [objectType]
+  /// * [resolveFromParent]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -253,6 +264,7 @@ class UiSettingsServiceApi {
     String? userId,
     String? deviceGroupId,
     String? objectType,
+    bool? resolveFromParent,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -289,6 +301,9 @@ class UiSettingsServiceApi {
       if (objectType != null)
         r'objectType': encodeQueryParameter(
             _serializers, objectType, const FullType(String)),
+      if (resolveFromParent != null)
+        r'resolveFromParent': encodeQueryParameter(
+            _serializers, resolveFromParent, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -446,6 +461,7 @@ class UiSettingsServiceApi {
   /// * [objectType]
   /// * [offset]
   /// * [limit]
+  /// * [resolveFromParent]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -462,6 +478,7 @@ class UiSettingsServiceApi {
     String? objectType,
     int? offset,
     int? limit,
+    bool? resolveFromParent,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -504,6 +521,9 @@ class UiSettingsServiceApi {
       if (limit != null)
         r'limit':
             encodeQueryParameter(_serializers, limit, const FullType(int)),
+      if (resolveFromParent != null)
+        r'resolveFromParent': encodeQueryParameter(
+            _serializers, resolveFromParent, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(

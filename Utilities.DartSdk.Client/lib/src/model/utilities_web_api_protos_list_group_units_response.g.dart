@@ -11,7 +11,7 @@ class _$UtilitiesWebApiProtosListGroupUnitsResponse
   @override
   final int? totalCount;
   @override
-  final BuiltList<String>? deviceClientIds;
+  final BuiltList<UtilitiesWebApiProtosGroupUnitItem>? items;
 
   factory _$UtilitiesWebApiProtosListGroupUnitsResponse(
           [void Function(UtilitiesWebApiProtosListGroupUnitsResponseBuilder)?
@@ -19,8 +19,7 @@ class _$UtilitiesWebApiProtosListGroupUnitsResponse
       (UtilitiesWebApiProtosListGroupUnitsResponseBuilder()..update(updates))
           ._build();
 
-  _$UtilitiesWebApiProtosListGroupUnitsResponse._(
-      {this.totalCount, this.deviceClientIds})
+  _$UtilitiesWebApiProtosListGroupUnitsResponse._({this.totalCount, this.items})
       : super._();
   @override
   UtilitiesWebApiProtosListGroupUnitsResponse rebuild(
@@ -37,14 +36,14 @@ class _$UtilitiesWebApiProtosListGroupUnitsResponse
     if (identical(other, this)) return true;
     return other is UtilitiesWebApiProtosListGroupUnitsResponse &&
         totalCount == other.totalCount &&
-        deviceClientIds == other.deviceClientIds;
+        items == other.items;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, totalCount.hashCode);
-    _$hash = $jc(_$hash, deviceClientIds.hashCode);
+    _$hash = $jc(_$hash, items.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -54,7 +53,7 @@ class _$UtilitiesWebApiProtosListGroupUnitsResponse
     return (newBuiltValueToStringHelper(
             r'UtilitiesWebApiProtosListGroupUnitsResponse')
           ..add('totalCount', totalCount)
-          ..add('deviceClientIds', deviceClientIds))
+          ..add('items', items))
         .toString();
   }
 }
@@ -69,11 +68,11 @@ class UtilitiesWebApiProtosListGroupUnitsResponseBuilder
   int? get totalCount => _$this._totalCount;
   set totalCount(int? totalCount) => _$this._totalCount = totalCount;
 
-  ListBuilder<String>? _deviceClientIds;
-  ListBuilder<String> get deviceClientIds =>
-      _$this._deviceClientIds ??= ListBuilder<String>();
-  set deviceClientIds(ListBuilder<String>? deviceClientIds) =>
-      _$this._deviceClientIds = deviceClientIds;
+  ListBuilder<UtilitiesWebApiProtosGroupUnitItem>? _items;
+  ListBuilder<UtilitiesWebApiProtosGroupUnitItem> get items =>
+      _$this._items ??= ListBuilder<UtilitiesWebApiProtosGroupUnitItem>();
+  set items(ListBuilder<UtilitiesWebApiProtosGroupUnitItem>? items) =>
+      _$this._items = items;
 
   UtilitiesWebApiProtosListGroupUnitsResponseBuilder() {
     UtilitiesWebApiProtosListGroupUnitsResponse._defaults(this);
@@ -83,7 +82,7 @@ class UtilitiesWebApiProtosListGroupUnitsResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _totalCount = $v.totalCount;
-      _deviceClientIds = $v.deviceClientIds?.toBuilder();
+      _items = $v.items?.toBuilder();
       _$v = null;
     }
     return this;
@@ -110,13 +109,13 @@ class UtilitiesWebApiProtosListGroupUnitsResponseBuilder
       _$result = _$v ??
           _$UtilitiesWebApiProtosListGroupUnitsResponse._(
             totalCount: totalCount,
-            deviceClientIds: _deviceClientIds?.build(),
+            items: _items?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'deviceClientIds';
-        _deviceClientIds?.build();
+        _$failedField = 'items';
+        _items?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'UtilitiesWebApiProtosListGroupUnitsResponse',

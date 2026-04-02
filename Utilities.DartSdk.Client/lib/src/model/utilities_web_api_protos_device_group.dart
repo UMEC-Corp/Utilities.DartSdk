@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_group_dashboard.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_group_ui_setting.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -16,9 +16,8 @@ part 'utilities_web_api_protos_device_group.g.dart';
 /// * [id] - Id of the device group
 /// * [name] - Name of the device group
 /// * [parentGroupId] - Id of the parent group (empty for root)
-/// * [tenantId] - Id of the tenant this group belongs to
 /// * [createdAt] - Timestamp of creation (unix ms)
-/// * [dashboards] - Dashboards supported by this group
+/// * [uiSettings] - UI settings associated with this group
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDeviceGroup
     implements
@@ -36,17 +35,13 @@ abstract class UtilitiesWebApiProtosDeviceGroup
   @BuiltValueField(wireName: r'parentGroupId')
   String? get parentGroupId;
 
-  /// Id of the tenant this group belongs to
-  @BuiltValueField(wireName: r'tenantId')
-  String? get tenantId;
-
   /// Timestamp of creation (unix ms)
   @BuiltValueField(wireName: r'createdAt')
   int? get createdAt;
 
-  /// Dashboards supported by this group
-  @BuiltValueField(wireName: r'dashboards')
-  BuiltList<UtilitiesWebApiProtosGroupDashboard>? get dashboards;
+  /// UI settings associated with this group
+  @BuiltValueField(wireName: r'uiSettings')
+  BuiltList<UtilitiesWebApiProtosGroupUiSetting>? get uiSettings;
 
   UtilitiesWebApiProtosDeviceGroup._();
 
@@ -99,13 +94,6 @@ class _$UtilitiesWebApiProtosDeviceGroupSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.tenantId != null) {
-      yield r'tenantId';
-      yield serializers.serialize(
-        object.tenantId,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.createdAt != null) {
       yield r'createdAt';
       yield serializers.serialize(
@@ -113,12 +101,12 @@ class _$UtilitiesWebApiProtosDeviceGroupSerializer
         specifiedType: const FullType(int),
       );
     }
-    if (object.dashboards != null) {
-      yield r'dashboards';
+    if (object.uiSettings != null) {
+      yield r'uiSettings';
       yield serializers.serialize(
-        object.dashboards,
+        object.uiSettings,
         specifiedType: const FullType(
-            BuiltList, [FullType(UtilitiesWebApiProtosGroupDashboard)]),
+            BuiltList, [FullType(UtilitiesWebApiProtosGroupUiSetting)]),
       );
     }
   }
@@ -167,13 +155,6 @@ class _$UtilitiesWebApiProtosDeviceGroupSerializer
           ) as String;
           result.parentGroupId = valueDes;
           break;
-        case r'tenantId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.tenantId = valueDes;
-          break;
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
@@ -181,13 +162,13 @@ class _$UtilitiesWebApiProtosDeviceGroupSerializer
           ) as int;
           result.createdAt = valueDes;
           break;
-        case r'dashboards':
+        case r'uiSettings':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosGroupDashboard)]),
-          ) as BuiltList<UtilitiesWebApiProtosGroupDashboard>;
-          result.dashboards.replace(valueDes);
+                BuiltList, [FullType(UtilitiesWebApiProtosGroupUiSetting)]),
+          ) as BuiltList<UtilitiesWebApiProtosGroupUiSetting>;
+          result.uiSettings.replace(valueDes);
           break;
         default:
           unhandled.add(key);

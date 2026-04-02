@@ -565,6 +565,13 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "resolveFromParent",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -605,6 +612,13 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "resolveFromParent",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
             }
           }
         ],
@@ -789,6 +803,13 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "resolveFromParent",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -952,6 +973,13 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "resolveFromParent",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
             }
           }
         ],
@@ -3277,6 +3305,13 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "resolveFromParent",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -3337,6 +3372,13 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "resolveFromParent",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -3390,6 +3432,13 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "resolveFromParent",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -3442,6 +3491,13 @@
             "in": "query",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "resolveFromParent",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
             }
           }
         ],
@@ -3674,6 +3730,36 @@
             "in": "query",
             "schema": {
               "type": "boolean"
+            }
+          },
+          {
+            "name": "deviceGroupId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeDescendants",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
@@ -5930,21 +6016,17 @@
             "type": "string",
             "description": "Id of the parent group (empty for root)"
           },
-          "tenantId": {
-            "type": "string",
-            "description": "Id of the tenant this group belongs to"
-          },
           "createdAt": {
             "type": "integer",
             "description": "Timestamp of creation (unix ms)",
             "format": "int64"
           },
-          "dashboards": {
+          "uiSettings": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.GroupDashboard"
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.GroupUiSetting"
             },
-            "description": "Dashboards supported by this group"
+            "description": "UI settings associated with this group"
           }
         },
         "additionalProperties": false,
@@ -7033,24 +7115,43 @@
         "additionalProperties": false,
         "description": "Response message containing the users associated with a virtual device."
       },
-      "Utilities.Web.Api.Protos.GroupDashboard": {
+      "Utilities.Web.Api.Protos.GroupUiSetting": {
         "type": "object",
         "properties": {
-          "id": {
+          "objectKey": {
             "type": "string",
-            "description": "Id of the dashboard"
+            "description": "Unique key identifying the setting within its type"
           },
-          "name": {
+          "objectType": {
             "type": "string",
-            "description": "Display name of the dashboard"
+            "description": "The type of the setting (e.g. \"dashboard\", \"layout\")"
           },
           "isDefault": {
             "type": "boolean",
-            "description": "Whether this is the default dashboard for the group"
+            "description": "Whether this is the default setting for its type"
           }
         },
         "additionalProperties": false,
-        "description": "A dashboard associated with a device group"
+        "description": "A UI setting associated with a device group"
+      },
+      "Utilities.Web.Api.Protos.GroupUnitItem": {
+        "type": "object",
+        "properties": {
+          "deviceClientId": {
+            "type": "string",
+            "description": "Id of the device client"
+          },
+          "deviceId": {
+            "type": "string",
+            "description": "Id of the physical device"
+          },
+          "unitCode": {
+            "type": "string",
+            "description": "Code of the unit within the device"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A device client with its real device identifier"
       },
       "Utilities.Web.Api.Protos.HideAlertRequest": {
         "type": "object",
@@ -7365,16 +7466,16 @@
             "description": "Total count of device clients matching the filter",
             "format": "int32"
           },
-          "deviceClientIds": {
+          "items": {
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.GroupUnitItem"
             },
-            "description": "Device client IDs assigned to the group(s)"
+            "description": "Device clients with their real device identifiers"
           }
         },
         "additionalProperties": false,
-        "description": "Response with device client IDs belonging to a group"
+        "description": "Response with device clients belonging to a group"
       },
       "Utilities.Web.Api.Protos.ListGroupsResponse": {
         "type": "object",
