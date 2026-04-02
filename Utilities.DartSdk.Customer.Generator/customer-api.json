@@ -1,0 +1,5232 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Mobile V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/customer/v1/units/{unitId}/alerts": {
+      "get": {
+        "tags": [
+          "AlertsService"
+        ],
+        "summary": "List alerts for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "isHidden",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListAlertsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "AlertsService"
+        ],
+        "summary": "Add an alert to a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "message",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "severity",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "inputs",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddAlertResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/alerts/{alertId}": {
+      "put": {
+        "tags": [
+          "AlertsService"
+        ],
+        "summary": "Change the visibility of an alert for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "alertId",
+            "in": "path",
+            "description": "ID of the alert.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "isHidden",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChangeAlertVisibilityResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/alerts-count": {
+      "post": {
+        "tags": [
+          "AlertsService"
+        ],
+        "summary": "Get alerts count for specific units.",
+        "parameters": [
+          {
+            "name": "unitIds",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAlertsCountResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/scenarios": {
+      "get": {
+        "tags": [
+          "CustomerScenariosService"
+        ],
+        "summary": "Get a pged list of customer scenarios defined for given unit an list of sensor codes",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "Id of the unit",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "sensorCodes",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListCustomerScenariosResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/scenarios/{scenarioId}": {
+      "delete": {
+        "tags": [
+          "CustomerScenariosService"
+        ],
+        "summary": "Removes customer scenario",
+        "parameters": [
+          {
+            "name": "scenarioId",
+            "in": "path",
+            "description": "Id of the scenario to remove",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RemoveCustomerScenarioResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/scenarios/{scenarioId}/enable": {
+      "post": {
+        "tags": [
+          "CustomerScenariosService"
+        ],
+        "summary": "Enables customer scenario automatic execution",
+        "parameters": [
+          {
+            "name": "scenarioId",
+            "in": "path",
+            "description": "Id of the scenario to enable",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnableCustomerScenarioResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/scenarios/{scenarioId}/disable": {
+      "post": {
+        "tags": [
+          "CustomerScenariosService"
+        ],
+        "summary": "Disable scenario automatic execution",
+        "parameters": [
+          {
+            "name": "scenarioId",
+            "in": "path",
+            "description": "Id of the scenario to disable",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DisableCustomerScenarioResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/monitors": {
+      "get": {
+        "tags": [
+          "MonitorsService"
+        ],
+        "summary": "Retrieves monitors for a virtual device.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "The ID of the virtual device.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMonitorsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MonitorsService"
+        ],
+        "summary": "Adds a monitor for a virtual device.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "The ID of the virtual device.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "value",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "installation",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "lifespan",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "inputCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddMonitorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/monitors/{monitorId}": {
+      "get": {
+        "tags": [
+          "MonitorsService"
+        ],
+        "summary": "Retrieves the details of a specific monitor.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "The ID of the unit (virtual device) associated with the monitor.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "monitorId",
+            "in": "path",
+            "description": "The ID of the monitor to retrieve.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMonitorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "MonitorsService"
+        ],
+        "summary": "Updates a monitor for a virtual device.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "The ID of the virtual device.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "monitorId",
+            "in": "path",
+            "description": "The ID of the monitor.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "installed",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "lifespan",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "inputCode",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateMonitorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MonitorsService"
+        ],
+        "summary": "Removes a monitor for a virtual device.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "The ID of the virtual device.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "monitorId",
+            "in": "path",
+            "description": "The ID of the monitor.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RemoveMonitorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/monitors/{monitorId}/reset": {
+      "post": {
+        "tags": [
+          "MonitorsService"
+        ],
+        "summary": "Resets a monitor, restoring its resource and restarting its operational lifespan.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "The ID of the unit (virtual device) associated with the monitor.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "monitorId",
+            "in": "path",
+            "description": "The ID of the monitor to reset.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResetMonitorResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/preferences/notifications": {
+      "get": {
+        "tags": [
+          "NotificationPreferences"
+        ],
+        "summary": "Gets the notification preferences for a unit.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUnitNotificationPreferencesResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "NotificationPreferences"
+        ],
+        "summary": "Updates the notification preferences for a unit.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The request containing the unit ID and preferences.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUnitNotificationPreferencesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateUnitNotificationPreferencesResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/notifications": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetNotificationsSummaryResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/notifications/{unitId}": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUnitNotificationsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/notifications/mark-read/{notificationId}": {
+      "put": {
+        "tags": [
+          "Notifications"
+        ],
+        "parameters": [
+          {
+            "name": "notificationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarkAsReadResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/notifications/{unitId}/mark-read-all": {
+      "put": {
+        "tags": [
+          "Notifications"
+        ],
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarkAllAsReadResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/subscriptions": {
+      "post": {
+        "tags": [
+          "Notifications"
+        ],
+        "parameters": [
+          {
+            "name": "email.isEnabled",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "email.address",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "push.isEnabled",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "push.deviceToken",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "history.isEnabled",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubscribeToNotificationsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/bind": {
+      "post": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Binds device to the customer and adds device units to the customer profile.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BindRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BindResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units": {
+      "get": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Lists the units of the calling customer.",
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListUnitsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}": {
+      "delete": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Deletes the unit from the profile.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit to delete.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "resetDevice",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteUnitResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Returns details for the unit.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit to get details for.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUnitDetailsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Updates unit details.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetUnitDetailsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetUnitDetailsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/notes": {
+      "put": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Set maintainer notes for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetMaintainerNotesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetMaintainerNotesResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/parameters": {
+      "put": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Updates unit parameters.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetUnitParametersRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetUnitParametersResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/ticks": {
+      "get": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Returns historical values data for the given sensor codes.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "inputIds",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "begin",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "timeFrame",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "difference",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetInputTicksResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units-groups": {
+      "get": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Lists existing unit groups.",
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListUnitGroupsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Creates a new unit group.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUnitGroupRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateUnitGroupResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units-groups/{groupId}": {
+      "put": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Updates unit group details",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "ID of the unit group to update.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUnitGroupRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateUnitGroupResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Deletes existing unit group.",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "ID of the unit group to delete.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteUnitGroupResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/upgrade": {
+      "post": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Send upgrade command to the unit. Upgrade command will upgrade all units on the device. The user is required to be a member of the Administrator role.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit to upgrade.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpgradeUnitResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/users": {
+      "get": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "List all users of a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListUnitUsersResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Change the role of a user for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/UserRole"
+            }
+          },
+          {
+            "name": "begin",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "activations",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChangeUserRoleResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/links": {
+      "post": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Use shared link to get access to the unit",
+        "parameters": [
+          {
+            "name": "link",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AttachUserToUnitResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/users/{userId}": {
+      "delete": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Detach a user from a unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "ID of the user.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DetachUserFromUnitResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/links": {
+      "post": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Create a share link for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/UserRole"
+            }
+          },
+          {
+            "name": "begin",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "activations",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateShareLinkResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/commands": {
+      "post": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Send a command to a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SendCommandRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendCommandResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/express-codes": {
+      "post": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Create an express code for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "expires",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "activations",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateExpressCodeResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Delete all express codes for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "onlyMy",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteExpressCodesResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/express-codes/{code}": {
+      "put": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Update an express code for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "code",
+            "in": "path",
+            "description": "Code of the express code.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "expires",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "activations",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateExpressCodeResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Delete an express code for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "code",
+            "in": "path",
+            "description": "Code of the express code.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteExpressCodeResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/express-codes/guide": {
+      "post": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Send an express codes guide for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SendExpressCodesGuideResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/attachments/{unitId}/{key}": {
+      "get": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Get the attachment URL for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Key of the attachment.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAttachmentUrlResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/inputs/{code}": {
+      "put": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Update input details for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "code",
+            "in": "path",
+            "description": "Code of the input.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateInputDetailsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateInputDetailsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/inputs/{code}/connect": {
+      "post": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Connect an input for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "code",
+            "in": "path",
+            "description": "Code of the input.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectInputResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/inputs/{code}/disconnect": {
+      "post": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Disconnect an input for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "code",
+            "in": "path",
+            "description": "Code of the input.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DisconnectInputResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/state/{key}/{subkey}": {
+      "get": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Get the stored state of a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Key of the stored state.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subkey",
+            "in": "path",
+            "description": "Subkey of the stored state.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUnitStoredStateResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Set the stored state of a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Key of the stored state.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subkey",
+            "in": "path",
+            "description": "Subkey of the stored state.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetUnitStoredStateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetUnitStoredStateResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Delete the stored state of a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Key of the stored state.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subkey",
+            "in": "path",
+            "description": "Subkey of the stored state.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteUnitStoredStateResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/maintainer": {
+      "get": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Get maintainer details for a specific unit by its ID.",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetMaintainerDetailsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMaintainerDetailsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/units/{unitId}/schedule/{key}": {
+      "get": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Wrapper method that returns a schedule with the given key",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Key of the schedule.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetScheduleResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Wrapper method that assigns a schedule with the given key to the unit",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Key of the schedule.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetScheduleRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetScheduleResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Wrapper method tht clears selected schedule",
+        "parameters": [
+          {
+            "name": "unitId",
+            "in": "path",
+            "description": "ID of the unit.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "key",
+            "in": "path",
+            "description": "Key of the schedule.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteScheduleResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/signup": {
+      "post": {
+        "tags": [
+          "UsersService"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignUpRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignInResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/signin": {
+      "post": {
+        "tags": [
+          "UsersService"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignInRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignInResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/otp": {
+      "post": {
+        "tags": [
+          "UsersService"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmOtpRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignInResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/signout": {
+      "post": {
+        "tags": [
+          "UsersService"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignOutRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SignOutResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/refresh": {
+      "post": {
+        "tags": [
+          "UsersService"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RefreshTokenResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customer/v1/profile": {
+      "get": {
+        "tags": [
+          "UsersService"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUserProfileResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UsersService"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserProfileRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateUserProfileResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UsersService"
+        ],
+        "summary": "Deletes user profile from the database and deletes user account.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteUserProfileRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteUserProfileResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddAlertResponse": {
+        "type": "object",
+        "properties": {
+          "alertId": {
+            "type": "string",
+            "description": "ID of the alert."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for adding an alert to a unit."
+      },
+      "AddMonitorResponse": {
+        "type": "object",
+        "properties": {
+          "item": {
+            "$ref": "#/components/schemas/Monitor"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Alert": {
+        "type": "object",
+        "properties": {
+          "alertId": {
+            "type": "string",
+            "description": "ID of the alert."
+          },
+          "code": {
+            "type": "string",
+            "description": "Code of the alert."
+          },
+          "message": {
+            "type": "string",
+            "description": "Message of the alert."
+          },
+          "input": {
+            "type": "string",
+            "description": "Inputs related to the alert."
+          },
+          "reactions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AlertReaction"
+            },
+            "description": "List of reactions for the alert."
+          },
+          "isHidden": {
+            "type": "boolean",
+            "description": "Is alert hidden by the user"
+          },
+          "locale": {
+            "type": "string",
+            "description": "Locale of the message."
+          },
+          "importance": {
+            "$ref": "#/components/schemas/Importance"
+          },
+          "timestamp": {
+            "type": "integer",
+            "description": "The timestamp of the alert.",
+            "format": "int64"
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the alert."
+          },
+          "isDeleted": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of an alert for a unit."
+      },
+      "AlertReaction": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Code of the reaction."
+          },
+          "message": {
+            "type": "string",
+            "description": "Message of the reaction."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of a reaction for an alert."
+      },
+      "Any": {
+        "required": [
+          "@type"
+        ],
+        "type": "object",
+        "properties": {
+          "@type": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "AttachUserToUnitResponse": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "description": "ID of the unit.",
+            "format": "int64"
+          },
+          "model": {
+            "type": "string",
+            "description": "Model of the unit."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the unit."
+          },
+          "groupId": {
+            "type": "integer",
+            "description": "ID of the group the unit belongs to.",
+            "format": "int64"
+          },
+          "groupName": {
+            "type": "string",
+            "description": "Name of the group the unit belongs to."
+          },
+          "lastSeen": {
+            "type": "integer",
+            "description": "Last seen timestamp of the unit.",
+            "format": "int64"
+          },
+          "vendor": {
+            "type": "string",
+            "description": "Vendor of the unit."
+          },
+          "installedFirmware": {
+            "type": "string",
+            "description": "Installed firmware of the unit."
+          },
+          "deviceSerial": {
+            "type": "string",
+            "description": "Serial number of the device."
+          },
+          "availableFirmware": {
+            "type": "string",
+            "description": "Available firmware for the unit."
+          },
+          "firmwareUpdateStarted": {
+            "type": "integer",
+            "description": "Timestamp when firmware update started.",
+            "format": "int64"
+          },
+          "deviceMacAddress": {
+            "type": "string",
+            "description": "MAC address of the device."
+          },
+          "role": {
+            "$ref": "#/components/schemas/UserRole"
+          },
+          "begin": {
+            "type": "integer",
+            "description": "Begin timestamp for the role.",
+            "format": "int64"
+          },
+          "end": {
+            "type": "integer",
+            "description": "End timestamp for the role.",
+            "format": "int64"
+          },
+          "activations": {
+            "type": "integer",
+            "description": "Number of activations for the role.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for attaching a user to a unit."
+      },
+      "BindRequest": {
+        "type": "object",
+        "properties": {
+          "deviceSerial": {
+            "type": "string",
+            "description": "Serial number of the device."
+          },
+          "userCode": {
+            "type": "string",
+            "description": "User code for verification."
+          },
+          "verificationUrl": {
+            "type": "string",
+            "description": "URL for verification."
+          },
+          "firmware": {
+            "$ref": "#/components/schemas/DeviceFirmware"
+          },
+          "deviceMacAddress": {
+            "type": "string",
+            "description": "MAC address of the device."
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request message for binding a unit to the current user."
+      },
+      "BindResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UnitDetailsItem"
+            },
+            "description": "List of unit details items."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for binding a unit to the current user."
+      },
+      "ChangeAlertVisibilityResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for changing the visibility of an alert for a unit."
+      },
+      "ChangeUserRoleResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for changing the role of a user for a unit."
+      },
+      "ConfirmOtpRequest": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "otpToken": {
+            "type": "string"
+          },
+          "otpTokenProvider": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConnectInputResponse": {
+        "type": "object",
+        "properties": {
+          "isConnected": {
+            "type": "boolean",
+            "description": "Indicates if the input is connected."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for connecting an input for a unit."
+      },
+      "CreateExpressCodeResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for creating an express code for a unit."
+      },
+      "CreateShareLinkResponse": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string",
+            "description": "Share link for the unit."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for creating a share link for a unit."
+      },
+      "CreateUnitGroupRequest": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "description": "ID of the user creating the group."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the unit group."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request message for creating a unit group."
+      },
+      "CreateUnitGroupResponse": {
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "type": "integer",
+            "description": "ID of the created unit group.",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for creating a unit group."
+      },
+      "CustomerScenario": {
+        "type": "object",
+        "properties": {
+          "scenarioId": {
+            "type": "string",
+            "description": "Id of the scenario"
+          },
+          "scenarioName": {
+            "type": "string",
+            "description": "Customer-defined name of the scenario"
+          },
+          "triggeringUnitId": {
+            "type": "integer",
+            "description": "Id of the unit that triggers the scenario",
+            "format": "int64"
+          },
+          "triggeringSensor": {
+            "type": "string",
+            "description": "Id of the sensor that triggers the scenario"
+          },
+          "isEnabled": {
+            "type": "boolean",
+            "description": "Shows if scenario is enabled for automatic execution"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteExpressCodeResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for deleting an express code for a unit."
+      },
+      "DeleteExpressCodesResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for deleting all express codes for a unit."
+      },
+      "DeleteScheduleResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for deleting the schedule of a unit."
+      },
+      "DeleteUnitGroupResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for deleting a unit group."
+      },
+      "DeleteUnitResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for deleting a unit."
+      },
+      "DeleteUnitStoredStateResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for deleting the stored state of a unit."
+      },
+      "DeleteUserProfileRequest": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "DeleteUserProfileResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "DetachUserFromUnitResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for detaching a user from a unit."
+      },
+      "DeviceFirmware": {
+        "type": "object",
+        "properties": {
+          "vendorCode": {
+            "type": "string",
+            "description": "Vendor code of the firmware."
+          },
+          "modelCode": {
+            "type": "string",
+            "description": "Model code of the firmware."
+          },
+          "firmwareVersion": {
+            "type": "string",
+            "description": "Version of the firmware."
+          },
+          "hash": {
+            "type": "string",
+            "description": "Hash of the firmware."
+          },
+          "hardwareVersion": {
+            "type": "string",
+            "description": "Version of the hardware."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Firmware details of the device."
+      },
+      "DisableCustomerScenarioResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "DisconnectInputResponse": {
+        "type": "object",
+        "properties": {
+          "isConnected": {
+            "type": "boolean",
+            "description": "Indicates if the input is connected."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for disconnecting an input for a unit."
+      },
+      "EnableCustomerScenarioResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "GetAlertsCountResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": "key - unitId, value - alerts count"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for getting alerts count."
+      },
+      "GetAttachmentUrlResponse": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL of the attachment."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for getting the attachment URL for a unit."
+      },
+      "GetInputTicksResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetInputTicksResponseItem"
+            },
+            "description": "List of input ticks response items."
+          },
+          "totalCount": {
+            "type": "integer",
+            "description": "Total count of input ticks.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for getting input ticks for a unit."
+      },
+      "GetInputTicksResponseItem": {
+        "type": "object",
+        "properties": {
+          "inputId": {
+            "type": "integer",
+            "description": "ID of the input.",
+            "format": "int64"
+          },
+          "lastValue": {
+            "type": "number",
+            "description": "Last value of the input tick.",
+            "format": "double"
+          },
+          "begin": {
+            "type": "integer",
+            "description": "Begin timestamp for the input tick.",
+            "format": "int64"
+          },
+          "end": {
+            "type": "integer",
+            "description": "End timestamp for the input tick.",
+            "format": "int64"
+          },
+          "firstValue": {
+            "type": "number",
+            "description": "First value of the input tick.",
+            "format": "double"
+          },
+          "minValue": {
+            "type": "number",
+            "description": "Min value of the input tick.",
+            "format": "double"
+          },
+          "maxValue": {
+            "type": "number",
+            "description": "Max value of the input tick.",
+            "format": "double"
+          },
+          "meanValue": {
+            "type": "number",
+            "description": "Mean value of the input tick.",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of an input tick response item."
+      },
+      "GetMaintainerDetailsRequest": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "description": "ID of the unit.",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request message for getting maintainer details of a unit."
+      },
+      "GetMaintainerDetailsResponse": {
+        "type": "object",
+        "properties": {
+          "maintainer": {
+            "$ref": "#/components/schemas/MaintainerDetails"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for getting maintainer details of a unit."
+      },
+      "GetMonitorResponse": {
+        "type": "object",
+        "properties": {
+          "monitor": {
+            "$ref": "#/components/schemas/Monitor"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message containing the monitor details."
+      },
+      "GetMonitorsResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Monitor"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetNotificationsSummaryResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetNotificationsSummaryResponseItem"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetNotificationsSummaryResponseItem": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "unitName": {
+            "type": "string"
+          },
+          "groupId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "groupName": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "time": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "unreadCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unitModel": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetScheduleResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScheduleItem"
+            },
+            "description": "List of schedule items."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for getting the schedule of a unit."
+      },
+      "GetUnitDetailsResponse": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "description": "ID of the unit.",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the unit."
+          },
+          "model": {
+            "type": "string",
+            "description": "Model of the unit."
+          },
+          "groupId": {
+            "type": "integer",
+            "description": "ID of the group the unit belongs to.",
+            "format": "int64"
+          },
+          "groupName": {
+            "type": "string",
+            "description": "Name of the group the unit belongs to."
+          },
+          "lastSeen": {
+            "type": "integer",
+            "description": "Last seen timestamp of the unit.",
+            "format": "int64"
+          },
+          "vendor": {
+            "type": "string",
+            "description": "Vendor of the unit."
+          },
+          "installedFirmware": {
+            "type": "string",
+            "description": "Installed firmware of the unit."
+          },
+          "deviceSerial": {
+            "type": "string",
+            "description": "Serial number of the device."
+          },
+          "inputs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UnitDetailsInput"
+            },
+            "description": "List of inputs for the unit."
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UnitDetailsParameter"
+            },
+            "description": "List of parameters for the unit."
+          },
+          "availableFirmware": {
+            "type": "string",
+            "description": "Available firmware for the unit."
+          },
+          "deviceMacAddress": {
+            "type": "string",
+            "description": "MAC address of the device."
+          },
+          "firmwareUpdateStarted": {
+            "type": "integer",
+            "description": "Timestamp when firmware update started.",
+            "format": "int64"
+          },
+          "role": {
+            "$ref": "#/components/schemas/UserRole"
+          },
+          "begin": {
+            "type": "integer",
+            "description": "Begin timestamp for the role.",
+            "format": "int64"
+          },
+          "end": {
+            "type": "integer",
+            "description": "End timestamp for the role.",
+            "format": "int64"
+          },
+          "activations": {
+            "type": "integer",
+            "description": "Number of activations for the role.",
+            "format": "int32"
+          },
+          "commands": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UnitDetailsCommand"
+            },
+            "description": "List of commands for the unit."
+          },
+          "expressCodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UnitDetailsExpressCode"
+            },
+            "description": "List of express codes for the unit."
+          },
+          "isInAlert": {
+            "type": "boolean",
+            "description": "Indicates if the unit is in alert."
+          },
+          "hasMaintainer": {
+            "type": "boolean",
+            "description": "Indicates if the unit has a maintainer."
+          },
+          "isMaintained": {
+            "type": "boolean",
+            "description": "Indicates if the current user is a maintainer."
+          },
+          "maintainerNotes": {
+            "type": "string",
+            "description": "Maintainer notes for the unit."
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "hardwareVersion": {
+            "type": "string",
+            "description": "Hardware version of the unit."
+          },
+          "monitors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Monitor"
+            },
+            "description": "List of monitors for the unit."
+          },
+          "isConnected": {
+            "type": "boolean",
+            "description": "Indicates if the unit is connected."
+          },
+          "unitManuals": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "List of manuals for the unit. Key is the language code, value is the URL."
+          },
+          "ipv4Address": {
+            "type": "string",
+            "description": "IPv4 Address of the unit."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for getting details of a unit."
+      },
+      "GetUnitNotificationPreferencesResponse": {
+        "type": "object",
+        "properties": {
+          "preferences": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificationPreference"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetUnitNotificationsResponse": {
+        "type": "object",
+        "properties": {
+          "unitName": {
+            "type": "string"
+          },
+          "groupName": {
+            "type": "string"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unreadCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetUnitNotificationsResponseItem"
+            }
+          },
+          "unitModel": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetUnitNotificationsResponseItem": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "time": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "isRead": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "important": {
+            "type": "boolean"
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetUnitStoredStateResponse": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "Value of the stored state."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for getting the stored state of a unit."
+      },
+      "GetUserProfileResponse": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "nickname": {
+            "type": "string"
+          },
+          "avatarUrl": {
+            "type": "string"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "maintainer": {
+            "$ref": "#/components/schemas/MaintainerDetails"
+          },
+          "messaging": {
+            "$ref": "#/components/schemas/MessagingDetails"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Importance": {
+        "enum": [
+          "Normal",
+          "High"
+        ],
+        "type": "string"
+      },
+      "ListAlertsResponse": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Alert"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for listing alerts."
+      },
+      "ListCustomerScenariosResponse": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "description": "Total count of scenarios",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomerScenario"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "ListUnitGroupsResponse": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "description": "Total count of unit groups.",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListUnitGroupsResponseItem"
+            },
+            "description": "List of unit groups."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for listing unit groups."
+      },
+      "ListUnitGroupsResponseItem": {
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "type": "integer",
+            "description": "ID of the unit group.",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the unit group."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of a unit group."
+      },
+      "ListUnitUsersResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListUnitUsersResponseItem"
+            },
+            "description": "List of users of the unit."
+          },
+          "totalCount": {
+            "type": "integer",
+            "description": "Total count of users.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for listing users of a unit."
+      },
+      "ListUnitUsersResponseItem": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "description": "ID of the user.",
+            "format": "int64"
+          },
+          "userName": {
+            "type": "string",
+            "description": "Name of the user."
+          },
+          "nickname": {
+            "type": "string",
+            "description": "Nickname of the user."
+          },
+          "avatarUrl": {
+            "type": "string",
+            "description": "Avatar URL of the user."
+          },
+          "role": {
+            "$ref": "#/components/schemas/UserRole"
+          },
+          "begin": {
+            "type": "integer",
+            "description": "Begin timestamp for the role.",
+            "format": "int64"
+          },
+          "end": {
+            "type": "integer",
+            "description": "End timestamp for the role.",
+            "format": "int64"
+          },
+          "activations": {
+            "type": "integer",
+            "description": "Number of activations for the role.",
+            "format": "int32"
+          },
+          "isCurrentUser": {
+            "type": "boolean",
+            "description": "Indicates if the user is the current user."
+          },
+          "Maintainer": {
+            "$ref": "#/components/schemas/MaintainerDetails"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of a user of the unit."
+      },
+      "ListUnitsResponse": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "description": "Total count of units.",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListUnitsResponseItem"
+            },
+            "description": "List of units."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message for listing units."
+      },
+      "ListUnitsResponseItem": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "description": "ID of the unit.",
+            "format": "int64"
+          },
+          "model": {
+            "type": "string",
+            "description": "Model of the unit."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the unit."
+          },
+          "groupId": {
+            "type": "integer",
+            "description": "ID of the group the unit belongs to.",
+            "format": "int64"
+          },
+          "groupName": {
+            "type": "string",
+            "description": "Name of the group the unit belongs to."
+          },
+          "lastSeen": {
+            "type": "integer",
+            "description": "Last seen timestamp of the unit.",
+            "format": "int64"
+          },
+          "vendor": {
+            "type": "string",
+            "description": "Vendor of the unit."
+          },
+          "installedFirmware": {
+            "type": "string",
+            "description": "Installed firmware of the unit."
+          },
+          "deviceSerial": {
+            "type": "string",
+            "description": "Serial number of the device."
+          },
+          "availableFirmware": {
+            "type": "string",
+            "description": "Available firmware for the unit."
+          },
+          "firmwareUpdateStarted": {
+            "type": "integer",
+            "description": "Timestamp when firmware update started.",
+            "format": "int64"
+          },
+          "deviceMacAddress": {
+            "type": "string",
+            "description": "MAC address of the device."
+          },
+          "role": {
+            "$ref": "#/components/schemas/UserRole"
+          },
+          "begin": {
+            "type": "integer",
+            "description": "Begin timestamp for the role.",
+            "format": "int64"
+          },
+          "end": {
+            "type": "integer",
+            "description": "End timestamp for the role.",
+            "format": "int64"
+          },
+          "activations": {
+            "type": "integer",
+            "description": "Number of activations for the role.",
+            "format": "int32"
+          },
+          "isInAlert": {
+            "type": "boolean",
+            "description": "Indicates if the unit is in alert."
+          },
+          "hasMaintainer": {
+            "type": "boolean",
+            "description": "Indicates if the unit has a maintainer."
+          },
+          "isMaintained": {
+            "type": "boolean",
+            "description": "Indicates if the current user is a maintainer."
+          },
+          "maintainerNotes": {
+            "type": "string",
+            "description": "Maintainer notes for the unit."
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "hardwareVersion": {
+            "type": "string",
+            "description": "Hardware version of the unit."
+          },
+          "isConnected": {
+            "type": "boolean",
+            "description": " Count of alerts for the unit.\r\nmap<string,int32> alertsCount = 24;\r\n Indicates if the unit is connected."
+          },
+          "ipv4Address": {
+            "type": "string",
+            "description": "IPv4 Address of the unit."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of a unit in the list."
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "latitude": {
+            "type": "number",
+            "description": "Latitude of the location.",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "description": "Longitude of the location.",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Location details of the device."
+      },
+      "MaintainerDetails": {
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string"
+          },
+          "telegram": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "promo": {
+            "type": "string"
+          },
+          "nickname": {
+            "type": "string"
+          },
+          "avatarUrl": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MarkAllAsReadResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "MarkAsReadResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "MessagingDetails": {
+        "type": "object",
+        "properties": {
+          "telegram": {
+            "$ref": "#/components/schemas/TelegramNotifications"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Monitor": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "ID of the monitor.",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the monitor."
+          },
+          "value": {
+            "type": "number",
+            "description": "Value of the monitor.",
+            "format": "double"
+          },
+          "limit": {
+            "type": "number",
+            "description": "Limit for the monitor.",
+            "format": "double"
+          },
+          "installation": {
+            "type": "integer",
+            "description": "Installation timestamp of the monitor.",
+            "format": "int64"
+          },
+          "lifespan": {
+            "type": "integer",
+            "description": "Lifespan of the monitor.",
+            "format": "int64"
+          },
+          "inputCode": {
+            "type": "string",
+            "description": "Code of the input being monitored."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of a monitor for a unit."
+      },
+      "NotificationPreference": {
+        "type": "object",
+        "properties": {
+          "channel": {
+            "type": "string"
+          },
+          "importance": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefreshTokenRequest": {
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RefreshTokenResponse": {
+        "type": "object",
+        "properties": {
+          "accessToken": {
+            "type": "string"
+          },
+          "refreshToken": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RemoveCustomerScenarioResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "RemoveMonitorResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "ResetMonitorResponse": {
+        "type": "object",
+        "properties": {
+          "monitor": {
+            "$ref": "#/components/schemas/Monitor"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response message containing the reset monitor details."
+      },
+      "ScheduleItem": {
+        "type": "object",
+        "properties": {
+          "dayOfWeek": {
+            "type": "integer",
+            "description": "Day of the week for the schedule item.",
+            "format": "int32"
+          },
+          "minuteOfDay": {
+            "type": "integer",
+            "description": "Minute of the day for the schedule item.",
+            "format": "int32"
+          },
+          "setValue": {
+            "type": "string",
+            "description": "Value to set for the schedule item."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of a schedule item for a unit."
+      },
+      "SendCommandRequest": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "description": "ID of the unit.",
+            "format": "int64"
+          },
+          "command": {
+            "type": "string",
+            "description": "Command to send to the unit."
+          },
+          "arguments": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Arguments for the command."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request message for sending a command to a unit."
+      },
+      "SendCommandResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for sending a command to a unit."
+      },
+      "SendExpressCodesGuideResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for sending an express codes guide for a unit."
+      },
+      "SetMaintainerNotesRequest": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "description": "ID of the unit.",
+            "format": "int64"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Maintainer notes for the unit."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request message for setting maintainer notes for a unit."
+      },
+      "SetMaintainerNotesResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for setting maintainer notes for a unit."
+      },
+      "SetScheduleRequest": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "description": "ID of the unit.",
+            "format": "int64"
+          },
+          "key": {
+            "type": "string",
+            "description": "Key of the schedule."
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScheduleItem"
+            },
+            "description": "List of schedule items to set."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request message for setting the schedule of a unit."
+      },
+      "SetScheduleResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for setting the schedule of a unit."
+      },
+      "SetUnitDetailsRequest": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "description": "ID of the unit.",
+            "format": "int64"
+          },
+          "groupId": {
+            "type": "integer",
+            "description": "ID of the group the unit belongs to.",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the unit."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request message for setting unit details."
+      },
+      "SetUnitDetailsResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for setting unit details."
+      },
+      "SetUnitParametersRequest": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "description": "ID of the unit.",
+            "format": "int64"
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SetUnitParametersRequestItem"
+            },
+            "description": "List of parameters to set."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request message for setting unit parameters."
+      },
+      "SetUnitParametersRequestItem": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Code of the parameter."
+          },
+          "value": {
+            "type": "string",
+            "description": "Value of the parameter."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of a parameter to set."
+      },
+      "SetUnitParametersResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for setting unit parameters."
+      },
+      "SetUnitStoredStateRequest": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "description": "ID of the unit.",
+            "format": "int64"
+          },
+          "key": {
+            "type": "string",
+            "description": "Key of the stored state."
+          },
+          "subkey": {
+            "type": "string",
+            "description": "Subkey of the stored state."
+          },
+          "value": {
+            "type": "string",
+            "description": "Value of the stored state."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request message for setting the stored state of a unit."
+      },
+      "SetUnitStoredStateResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for setting the stored state of a unit."
+      },
+      "SignInRequest": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SignInResponse": {
+        "type": "object",
+        "properties": {
+          "accessToken": {
+            "type": "string"
+          },
+          "refreshToken": {
+            "type": "string"
+          },
+          "otpTokenProvider": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SignOutRequest": {
+        "type": "object",
+        "properties": {
+          "refreshToken": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SignOutResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "SignUpRequest": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "nickname": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "locale": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Status": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Any"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubscribeToNotificationsResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "TelegramNotifications": {
+        "type": "object",
+        "properties": {
+          "isConnected": {
+            "type": "boolean"
+          },
+          "chatLink": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UnitDetailsCommand": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Code of the command."
+          },
+          "arguments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of arguments for the command."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of a command for a unit."
+      },
+      "UnitDetailsExpressCode": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Code of the express code."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the express code."
+          },
+          "activations": {
+            "type": "integer",
+            "description": "Number of activations for the express code.",
+            "format": "int32"
+          },
+          "expires": {
+            "type": "integer",
+            "description": "Expiration timestamp for the express code.",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of an express code for a unit."
+      },
+      "UnitDetailsInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "ID of the input.",
+            "format": "int64"
+          },
+          "code": {
+            "type": "string",
+            "description": "Code of the input."
+          },
+          "value": {
+            "type": "number",
+            "description": "Value of the input.",
+            "format": "double"
+          },
+          "valueTime": {
+            "type": "integer",
+            "description": "Timestamp of the value.",
+            "format": "int64"
+          },
+          "unitOfMeasurement": {
+            "type": "string",
+            "description": "Unit of measurement for the input."
+          },
+          "alias": {
+            "type": "string",
+            "description": "Alias for the input."
+          },
+          "isConnected": {
+            "type": "boolean",
+            "description": "Indicates if the input is connected."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of an input for a unit."
+      },
+      "UnitDetailsItem": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "description": "ID of the unit.",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the unit."
+          },
+          "model": {
+            "type": "string",
+            "description": "Model of the unit."
+          },
+          "groupId": {
+            "type": "integer",
+            "description": "ID of the group the unit belongs to.",
+            "format": "int64"
+          },
+          "groupName": {
+            "type": "string",
+            "description": "Name of the group the unit belongs to."
+          },
+          "lastSeen": {
+            "type": "integer",
+            "description": "Last seen timestamp of the unit.",
+            "format": "int64"
+          },
+          "vendor": {
+            "type": "string",
+            "description": "Vendor of the unit."
+          },
+          "installedFirmware": {
+            "type": "string",
+            "description": "Installed firmware of the unit."
+          },
+          "deviceSerial": {
+            "type": "string",
+            "description": "Serial number of the device."
+          },
+          "inputs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UnitDetailsInput"
+            },
+            "description": "List of inputs for the unit."
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UnitDetailsParameter"
+            },
+            "description": "List of parameters for the unit."
+          },
+          "availableFirmware": {
+            "type": "string",
+            "description": "Available firmware for the unit."
+          },
+          "deviceMacAddress": {
+            "type": "string",
+            "description": "MAC address of the device."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of a unit."
+      },
+      "UnitDetailsParameter": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Code of the parameter."
+          },
+          "value": {
+            "type": "string",
+            "description": "Value of the parameter."
+          },
+          "isFixed": {
+            "type": "boolean",
+            "description": "Indicates if the parameter is fixed."
+          },
+          "isEncoded": {
+            "type": "boolean",
+            "description": "Indicates if the parameter is encoded."
+          },
+          "unitOfMeasurement": {
+            "type": "string",
+            "description": "Unit of measurement for the parameter."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Details of a parameter for a unit."
+      },
+      "UpdateExpressCodeResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for updating an express code for a unit."
+      },
+      "UpdateInputDetailsRequest": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "description": "ID of the unit.",
+            "format": "int64"
+          },
+          "code": {
+            "type": "string",
+            "description": "Code of the input."
+          },
+          "alias": {
+            "type": "string",
+            "description": "Alias of the input."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request message for updating input details for a unit."
+      },
+      "UpdateInputDetailsResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for updating input details for a unit."
+      },
+      "UpdateMonitorResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "UpdateUnitGroupRequest": {
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "type": "integer",
+            "description": "ID of the unit group to update.",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the unit group."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request message for updating a unit group."
+      },
+      "UpdateUnitGroupResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for updating a unit group."
+      },
+      "UpdateUnitNotificationPreferencesRequest": {
+        "type": "object",
+        "properties": {
+          "unitId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "preferences": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificationPreference"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateUnitNotificationPreferencesResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "UpdateUserProfileRequest": {
+        "type": "object",
+        "properties": {
+          "nickname": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "maintainer": {
+            "$ref": "#/components/schemas/MaintainerDetails"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateUserProfileResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "UpgradeUnitResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Response message for upgrading a unit."
+      },
+      "UserRole": {
+        "enum": [
+          "Owner",
+          "Admin",
+          "Editor",
+          "Reader"
+        ],
+        "type": "string",
+        "description": "Enum for user roles."
+      }
+    },
+    "securitySchemes": {
+      "oauth2": {
+        "type": "http",
+        "description": "Oauth2 Authorization Header.",
+        "scheme": "Bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2": [ ]
+    }
+  ],
+  "tags": [
+    {
+      "name": "UnitsService",
+      "description": "Service for managing units (virtual devices) that belong to a single customer."
+    },
+    {
+      "name": "NotificationPreferences",
+      "description": "Service for managing notification preferences of the user."
+    },
+    {
+      "name": "CustomerScenariosService",
+      "description": "Service for customer scenarios management"
+    }
+  ]
+}
