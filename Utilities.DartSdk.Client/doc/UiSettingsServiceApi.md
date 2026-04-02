@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **apiDashboardV1UiSettingsByKeyGet**
-> UtilitiesWebApiProtosGetUiSettingResponse apiDashboardV1UiSettingsByKeyGet(userId, deviceGroupId, objectType, objectKey)
+> UtilitiesWebApiProtosGetUiSettingResponse apiDashboardV1UiSettingsByKeyGet(userId, deviceGroupId, objectType, objectKey, resolveFromParent)
 
 Get a UI setting by object type and key, resolving up the group hierarchy
 
@@ -31,9 +31,10 @@ final String userId = userId_example; // String |
 final String deviceGroupId = deviceGroupId_example; // String | 
 final String objectType = objectType_example; // String | 
 final String objectKey = objectKey_example; // String | 
+final bool resolveFromParent = true; // bool | 
 
 try {
-    final response = api.apiDashboardV1UiSettingsByKeyGet(userId, deviceGroupId, objectType, objectKey);
+    final response = api.apiDashboardV1UiSettingsByKeyGet(userId, deviceGroupId, objectType, objectKey, resolveFromParent);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UiSettingsServiceApi->apiDashboardV1UiSettingsByKeyGet: $e\n');
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **deviceGroupId** | **String**|  | [optional] 
  **objectType** | **String**|  | [optional] 
  **objectKey** | **String**|  | [optional] 
+ **resolveFromParent** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -65,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiDashboardV1UiSettingsByTypeGet**
-> UtilitiesWebApiProtosGetUiSettingsByTypeResponse apiDashboardV1UiSettingsByTypeGet(userId, deviceGroupId, objectType)
+> UtilitiesWebApiProtosGetUiSettingsByTypeResponse apiDashboardV1UiSettingsByTypeGet(userId, deviceGroupId, objectType, resolveFromParent)
 
 Get all UI settings of a given object type, resolving up the group hierarchy (narrowest scope per objectKey wins)
 
@@ -77,9 +79,10 @@ final api = UtilitiesDartSdkClient().getUiSettingsServiceApi();
 final String userId = userId_example; // String | 
 final String deviceGroupId = deviceGroupId_example; // String | 
 final String objectType = objectType_example; // String | 
+final bool resolveFromParent = true; // bool | 
 
 try {
-    final response = api.apiDashboardV1UiSettingsByTypeGet(userId, deviceGroupId, objectType);
+    final response = api.apiDashboardV1UiSettingsByTypeGet(userId, deviceGroupId, objectType, resolveFromParent);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UiSettingsServiceApi->apiDashboardV1UiSettingsByTypeGet: $e\n');
@@ -93,6 +96,7 @@ Name | Type | Description  | Notes
  **userId** | **String**|  | [optional] 
  **deviceGroupId** | **String**|  | [optional] 
  **objectType** | **String**|  | [optional] 
+ **resolveFromParent** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -110,7 +114,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiDashboardV1UiSettingsDefaultGet**
-> UtilitiesWebApiProtosGetDefaultUiSettingResponse apiDashboardV1UiSettingsDefaultGet(userId, deviceGroupId, objectType)
+> UtilitiesWebApiProtosGetDefaultUiSettingResponse apiDashboardV1UiSettingsDefaultGet(userId, deviceGroupId, objectType, resolveFromParent)
 
 Get the default UI setting for a given object type, resolving up the group hierarchy
 
@@ -122,9 +126,10 @@ final api = UtilitiesDartSdkClient().getUiSettingsServiceApi();
 final String userId = userId_example; // String | 
 final String deviceGroupId = deviceGroupId_example; // String | 
 final String objectType = objectType_example; // String | 
+final bool resolveFromParent = true; // bool | 
 
 try {
-    final response = api.apiDashboardV1UiSettingsDefaultGet(userId, deviceGroupId, objectType);
+    final response = api.apiDashboardV1UiSettingsDefaultGet(userId, deviceGroupId, objectType, resolveFromParent);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UiSettingsServiceApi->apiDashboardV1UiSettingsDefaultGet: $e\n');
@@ -138,6 +143,7 @@ Name | Type | Description  | Notes
  **userId** | **String**|  | [optional] 
  **deviceGroupId** | **String**|  | [optional] 
  **objectType** | **String**|  | [optional] 
+ **resolveFromParent** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -202,7 +208,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiDashboardV1UiSettingsGet**
-> UtilitiesWebApiProtosListUiSettingsResponse apiDashboardV1UiSettingsGet(userId, deviceGroupId, objectType, offset, limit)
+> UtilitiesWebApiProtosListUiSettingsResponse apiDashboardV1UiSettingsGet(userId, deviceGroupId, objectType, offset, limit, resolveFromParent)
 
 List UI settings for a specific scope with pagination (no resolution, exact scope)
 
@@ -216,9 +222,10 @@ final String deviceGroupId = deviceGroupId_example; // String |
 final String objectType = objectType_example; // String | 
 final int offset = 56; // int | 
 final int limit = 56; // int | 
+final bool resolveFromParent = true; // bool | 
 
 try {
-    final response = api.apiDashboardV1UiSettingsGet(userId, deviceGroupId, objectType, offset, limit);
+    final response = api.apiDashboardV1UiSettingsGet(userId, deviceGroupId, objectType, offset, limit, resolveFromParent);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UiSettingsServiceApi->apiDashboardV1UiSettingsGet: $e\n');
@@ -234,6 +241,7 @@ Name | Type | Description  | Notes
  **objectType** | **String**|  | [optional] 
  **offset** | **int**|  | [optional] 
  **limit** | **int**|  | [optional] 
+ **resolveFromParent** | **bool**|  | [optional] 
 
 ### Return type
 

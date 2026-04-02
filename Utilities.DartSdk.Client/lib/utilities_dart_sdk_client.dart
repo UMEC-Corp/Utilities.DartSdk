@@ -118,7 +118,8 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_unit_group_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_unit_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_users_response.dart';
-export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_group_dashboard.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_group_ui_setting.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_group_unit_item.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_hide_alert_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_hide_alert_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_importance.dart';

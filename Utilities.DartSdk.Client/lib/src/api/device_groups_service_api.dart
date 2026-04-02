@@ -42,6 +42,7 @@ class DeviceGroupsServiceApi {
   /// * [offset]
   /// * [limit]
   /// * [parentGroupId]
+  /// * [resolveFromParent]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -56,6 +57,7 @@ class DeviceGroupsServiceApi {
     int? offset,
     int? limit,
     String? parentGroupId,
+    bool? resolveFromParent,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -92,6 +94,9 @@ class DeviceGroupsServiceApi {
       if (parentGroupId != null)
         r'parentGroupId': encodeQueryParameter(
             _serializers, parentGroupId, const FullType(String)),
+      if (resolveFromParent != null)
+        r'resolveFromParent': encodeQueryParameter(
+            _serializers, resolveFromParent, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -235,6 +240,7 @@ class DeviceGroupsServiceApi {
   ///
   /// Parameters:
   /// * [groupId] - Id of the device group
+  /// * [resolveFromParent]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -247,6 +253,7 @@ class DeviceGroupsServiceApi {
   Future<Response<UtilitiesWebApiProtosGetGroupResponse>>
       apiDashboardV1DeviceGroupsGroupIdGet({
     required String groupId,
+    bool? resolveFromParent,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -276,9 +283,16 @@ class DeviceGroupsServiceApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (resolveFromParent != null)
+        r'resolveFromParent': encodeQueryParameter(
+            _serializers, resolveFromParent, const FullType(bool)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -882,6 +896,7 @@ class DeviceGroupsServiceApi {
   ///
   /// Parameters:
   /// * [groupId]
+  /// * [resolveFromParent]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -894,6 +909,7 @@ class DeviceGroupsServiceApi {
   Future<Response<UtilitiesWebApiProtosGetGroupSubtreeResponse>>
       apiDashboardV1DeviceGroupssubtreeGet({
     String? groupId,
+    bool? resolveFromParent,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -924,6 +940,9 @@ class DeviceGroupsServiceApi {
       if (groupId != null)
         r'groupId':
             encodeQueryParameter(_serializers, groupId, const FullType(String)),
+      if (resolveFromParent != null)
+        r'resolveFromParent': encodeQueryParameter(
+            _serializers, resolveFromParent, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -973,6 +992,7 @@ class DeviceGroupsServiceApi {
   ///
   /// Parameters:
   /// * [deviceClientId] - Id of the device client
+  /// * [resolveFromParent]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -985,6 +1005,7 @@ class DeviceGroupsServiceApi {
   Future<Response<UtilitiesWebApiProtosGetUnitGroupResponse>>
       apiDashboardV1UnitsDeviceClientIdDeviceGroupGet({
     required String deviceClientId,
+    bool? resolveFromParent,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1016,9 +1037,16 @@ class DeviceGroupsServiceApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (resolveFromParent != null)
+        r'resolveFromParent': encodeQueryParameter(
+            _serializers, resolveFromParent, const FullType(bool)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

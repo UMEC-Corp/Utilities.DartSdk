@@ -102,7 +102,8 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_unit_group_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_unit_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_users_response.dart';
-import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_group_dashboard.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_group_ui_setting.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_group_unit_item.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_hide_alert_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_hide_alert_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_importance.dart';
@@ -294,7 +295,8 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosGetUnitGroupResponse,
   UtilitiesWebApiProtosGetUnitResponse,
   UtilitiesWebApiProtosGetUsersResponse,
-  UtilitiesWebApiProtosGroupDashboard,
+  UtilitiesWebApiProtosGroupUiSetting,
+  UtilitiesWebApiProtosGroupUnitItem,
   UtilitiesWebApiProtosHideAlertRequest,
   UtilitiesWebApiProtosHideAlertResponse,
   UtilitiesWebApiProtosImportance,

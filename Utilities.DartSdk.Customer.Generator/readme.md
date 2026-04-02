@@ -1,6 +1,6 @@
 # Utilities.DartSdk.Customer.Generator
 
-Purpose: host the OpenAPI source (`customer-api.json`) and generation configuration for the customer client library.
+Purpose: host the OpenAPI source (`customer-api.json`), which is the description for the Customer API (customer management of individual IoT devices), and generation configuration for the customer client library.
 
 ## Requirements
 

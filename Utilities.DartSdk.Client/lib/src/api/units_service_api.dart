@@ -1770,6 +1770,10 @@ class UnitsServiceApi {
   /// * [assignedEmployeeIds]
   /// * [addressIds]
   /// * [hasAddress]
+  /// * [deviceGroupId]
+  /// * [includeDescendants]
+  /// * [offset]
+  /// * [limit]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1786,6 +1790,10 @@ class UnitsServiceApi {
     BuiltList<String>? assignedEmployeeIds,
     BuiltList<String>? addressIds,
     bool? hasAddress,
+    String? deviceGroupId,
+    bool? includeDescendants,
+    int? offset,
+    int? limit,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1846,6 +1854,18 @@ class UnitsServiceApi {
       if (hasAddress != null)
         r'hasAddress': encodeQueryParameter(
             _serializers, hasAddress, const FullType(bool)),
+      if (deviceGroupId != null)
+        r'deviceGroupId': encodeQueryParameter(
+            _serializers, deviceGroupId, const FullType(String)),
+      if (includeDescendants != null)
+        r'includeDescendants': encodeQueryParameter(
+            _serializers, includeDescendants, const FullType(bool)),
+      if (offset != null)
+        r'offset':
+            encodeQueryParameter(_serializers, offset, const FullType(int)),
+      if (limit != null)
+        r'limit':
+            encodeQueryParameter(_serializers, limit, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(

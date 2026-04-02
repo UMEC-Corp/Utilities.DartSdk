@@ -709,7 +709,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiDashboardV1UnitsGet**
-> UtilitiesWebApiProtosListUnitsResponse apiDashboardV1UnitsGet(statuses, types, assignedEmployeeIds, addressIds, hasAddress)
+> UtilitiesWebApiProtosListUnitsResponse apiDashboardV1UnitsGet(statuses, types, assignedEmployeeIds, addressIds, hasAddress, deviceGroupId, includeDescendants, offset, limit)
 
 Get a list of units by a specific criterias
 
@@ -723,9 +723,13 @@ final BuiltList<String> types = ; // BuiltList<String> |
 final BuiltList<String> assignedEmployeeIds = ; // BuiltList<String> | 
 final BuiltList<String> addressIds = ; // BuiltList<String> | 
 final bool hasAddress = true; // bool | 
+final String deviceGroupId = deviceGroupId_example; // String | 
+final bool includeDescendants = true; // bool | 
+final int offset = 56; // int | 
+final int limit = 56; // int | 
 
 try {
-    final response = api.apiDashboardV1UnitsGet(statuses, types, assignedEmployeeIds, addressIds, hasAddress);
+    final response = api.apiDashboardV1UnitsGet(statuses, types, assignedEmployeeIds, addressIds, hasAddress, deviceGroupId, includeDescendants, offset, limit);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UnitsServiceApi->apiDashboardV1UnitsGet: $e\n');
@@ -741,6 +745,10 @@ Name | Type | Description  | Notes
  **assignedEmployeeIds** | [**BuiltList&lt;String&gt;**](String.md)|  | [optional] 
  **addressIds** | [**BuiltList&lt;String&gt;**](String.md)|  | [optional] 
  **hasAddress** | **bool**|  | [optional] 
+ **deviceGroupId** | **String**|  | [optional] 
+ **includeDescendants** | **bool**|  | [optional] 
+ **offset** | **int**|  | [optional] 
+ **limit** | **int**|  | [optional] 
 
 ### Return type
 

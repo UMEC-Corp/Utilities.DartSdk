@@ -101,7 +101,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosGetUnitGroupResponse.serializer)
       ..add(UtilitiesWebApiProtosGetUnitResponse.serializer)
       ..add(UtilitiesWebApiProtosGetUsersResponse.serializer)
-      ..add(UtilitiesWebApiProtosGroupDashboard.serializer)
+      ..add(UtilitiesWebApiProtosGroupUiSetting.serializer)
+      ..add(UtilitiesWebApiProtosGroupUnitItem.serializer)
       ..add(UtilitiesWebApiProtosHideAlertRequest.serializer)
       ..add(UtilitiesWebApiProtosHideAlertResponse.serializer)
       ..add(UtilitiesWebApiProtosImportance.serializer)
@@ -222,9 +223,6 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GoogleProtobufWellKnownTypesAny)]),
           () => ListBuilder<GoogleProtobufWellKnownTypesAny>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())
@@ -404,8 +402,12 @@ Serializers _$serializers = (Serializers().toBuilder()
               UtilitiesWebApiProtosGetInputsStatisticsResponseTypesGetInputsStatisticsResponseItem>())
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(UtilitiesWebApiProtosGroupDashboard)]),
-          () => ListBuilder<UtilitiesWebApiProtosGroupDashboard>())
+              const [const FullType(UtilitiesWebApiProtosGroupUiSetting)]),
+          () => ListBuilder<UtilitiesWebApiProtosGroupUiSetting>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(UtilitiesWebApiProtosGroupUnitItem)]),
+          () => ListBuilder<UtilitiesWebApiProtosGroupUnitItem>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(UtilitiesWebApiProtosInput)]),

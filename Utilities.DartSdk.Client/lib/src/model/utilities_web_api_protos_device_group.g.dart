@@ -15,23 +15,16 @@ class _$UtilitiesWebApiProtosDeviceGroup
   @override
   final String? parentGroupId;
   @override
-  final String? tenantId;
-  @override
   final int? createdAt;
   @override
-  final BuiltList<UtilitiesWebApiProtosGroupDashboard>? dashboards;
+  final BuiltList<UtilitiesWebApiProtosGroupUiSetting>? uiSettings;
 
   factory _$UtilitiesWebApiProtosDeviceGroup(
           [void Function(UtilitiesWebApiProtosDeviceGroupBuilder)? updates]) =>
       (UtilitiesWebApiProtosDeviceGroupBuilder()..update(updates))._build();
 
   _$UtilitiesWebApiProtosDeviceGroup._(
-      {this.id,
-      this.name,
-      this.parentGroupId,
-      this.tenantId,
-      this.createdAt,
-      this.dashboards})
+      {this.id, this.name, this.parentGroupId, this.createdAt, this.uiSettings})
       : super._();
   @override
   UtilitiesWebApiProtosDeviceGroup rebuild(
@@ -49,9 +42,8 @@ class _$UtilitiesWebApiProtosDeviceGroup
         id == other.id &&
         name == other.name &&
         parentGroupId == other.parentGroupId &&
-        tenantId == other.tenantId &&
         createdAt == other.createdAt &&
-        dashboards == other.dashboards;
+        uiSettings == other.uiSettings;
   }
 
   @override
@@ -60,9 +52,8 @@ class _$UtilitiesWebApiProtosDeviceGroup
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, parentGroupId.hashCode);
-    _$hash = $jc(_$hash, tenantId.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, dashboards.hashCode);
+    _$hash = $jc(_$hash, uiSettings.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -73,9 +64,8 @@ class _$UtilitiesWebApiProtosDeviceGroup
           ..add('id', id)
           ..add('name', name)
           ..add('parentGroupId', parentGroupId)
-          ..add('tenantId', tenantId)
           ..add('createdAt', createdAt)
-          ..add('dashboards', dashboards))
+          ..add('uiSettings', uiSettings))
         .toString();
   }
 }
@@ -99,20 +89,16 @@ class UtilitiesWebApiProtosDeviceGroupBuilder
   set parentGroupId(String? parentGroupId) =>
       _$this._parentGroupId = parentGroupId;
 
-  String? _tenantId;
-  String? get tenantId => _$this._tenantId;
-  set tenantId(String? tenantId) => _$this._tenantId = tenantId;
-
   int? _createdAt;
   int? get createdAt => _$this._createdAt;
   set createdAt(int? createdAt) => _$this._createdAt = createdAt;
 
-  ListBuilder<UtilitiesWebApiProtosGroupDashboard>? _dashboards;
-  ListBuilder<UtilitiesWebApiProtosGroupDashboard> get dashboards =>
-      _$this._dashboards ??= ListBuilder<UtilitiesWebApiProtosGroupDashboard>();
-  set dashboards(
-          ListBuilder<UtilitiesWebApiProtosGroupDashboard>? dashboards) =>
-      _$this._dashboards = dashboards;
+  ListBuilder<UtilitiesWebApiProtosGroupUiSetting>? _uiSettings;
+  ListBuilder<UtilitiesWebApiProtosGroupUiSetting> get uiSettings =>
+      _$this._uiSettings ??= ListBuilder<UtilitiesWebApiProtosGroupUiSetting>();
+  set uiSettings(
+          ListBuilder<UtilitiesWebApiProtosGroupUiSetting>? uiSettings) =>
+      _$this._uiSettings = uiSettings;
 
   UtilitiesWebApiProtosDeviceGroupBuilder() {
     UtilitiesWebApiProtosDeviceGroup._defaults(this);
@@ -124,9 +110,8 @@ class UtilitiesWebApiProtosDeviceGroupBuilder
       _id = $v.id;
       _name = $v.name;
       _parentGroupId = $v.parentGroupId;
-      _tenantId = $v.tenantId;
       _createdAt = $v.createdAt;
-      _dashboards = $v.dashboards?.toBuilder();
+      _uiSettings = $v.uiSettings?.toBuilder();
       _$v = null;
     }
     return this;
@@ -153,15 +138,14 @@ class UtilitiesWebApiProtosDeviceGroupBuilder
             id: id,
             name: name,
             parentGroupId: parentGroupId,
-            tenantId: tenantId,
             createdAt: createdAt,
-            dashboards: _dashboards?.build(),
+            uiSettings: _uiSettings?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'dashboards';
-        _dashboards?.build();
+        _$failedField = 'uiSettings';
+        _uiSettings?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'UtilitiesWebApiProtosDeviceGroup', _$failedField, e.toString());

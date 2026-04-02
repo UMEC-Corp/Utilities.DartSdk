@@ -4,16 +4,17 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_group_unit_item.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'utilities_web_api_protos_list_group_units_response.g.dart';
 
-/// Response with device client IDs belonging to a group
+/// Response with device clients belonging to a group
 ///
 /// Properties:
 /// * [totalCount] - Total count of device clients matching the filter
-/// * [deviceClientIds] - Device client IDs assigned to the group(s)
+/// * [items] - Device clients with their real device identifiers
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListGroupUnitsResponse
     implements
@@ -23,9 +24,9 @@ abstract class UtilitiesWebApiProtosListGroupUnitsResponse
   @BuiltValueField(wireName: r'totalCount')
   int? get totalCount;
 
-  /// Device client IDs assigned to the group(s)
-  @BuiltValueField(wireName: r'deviceClientIds')
-  BuiltList<String>? get deviceClientIds;
+  /// Device clients with their real device identifiers
+  @BuiltValueField(wireName: r'items')
+  BuiltList<UtilitiesWebApiProtosGroupUnitItem>? get items;
 
   UtilitiesWebApiProtosListGroupUnitsResponse._();
 
@@ -68,11 +69,12 @@ class _$UtilitiesWebApiProtosListGroupUnitsResponseSerializer
         specifiedType: const FullType(int),
       );
     }
-    if (object.deviceClientIds != null) {
-      yield r'deviceClientIds';
+    if (object.items != null) {
+      yield r'items';
       yield serializers.serialize(
-        object.deviceClientIds,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
+        object.items,
+        specifiedType: const FullType(
+            BuiltList, [FullType(UtilitiesWebApiProtosGroupUnitItem)]),
       );
     }
   }
@@ -107,12 +109,13 @@ class _$UtilitiesWebApiProtosListGroupUnitsResponseSerializer
           ) as int;
           result.totalCount = valueDes;
           break;
-        case r'deviceClientIds':
+        case r'items':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.deviceClientIds.replace(valueDes);
+            specifiedType: const FullType(
+                BuiltList, [FullType(UtilitiesWebApiProtosGroupUnitItem)]),
+          ) as BuiltList<UtilitiesWebApiProtosGroupUnitItem>;
+          result.items.replace(valueDes);
           break;
         default:
           unhandled.add(key);

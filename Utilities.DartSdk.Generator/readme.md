@@ -1,6 +1,6 @@
 # Utilities.DartSdk.Generator
 
-Purpose: host the OpenAPI source (`dashboard-api.json`) and generation configuration for the client library.
+Purpose: host the OpenAPI source (`dashboard-api.json`), which is the description for the Maintainer API, and generation configuration for the client library.
 
 ## Requirements
 
