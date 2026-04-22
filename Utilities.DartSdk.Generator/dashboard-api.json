@@ -1057,6 +1057,70 @@
         }
       }
     },
+    "/api/dashboard/v1/device-groups/{groupId}/alerts": {
+      "get": {
+        "tags": [
+          "DeviceGroupsService"
+        ],
+        "summary": "List alerts for all units in a device group (including descendants)",
+        "parameters": [
+          {
+            "name": "groupId",
+            "in": "path",
+            "description": "Id of the device group",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "isHidden",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ListGroupAlertsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/dashboard/v1/employees": {
       "get": {
         "tags": [
@@ -5656,6 +5720,14 @@
           "title": {
             "type": "string",
             "description": "Title for the alert"
+          },
+          "deviceId": {
+            "type": "string",
+            "description": "Id of the physical device this alert belongs to."
+          },
+          "unitCode": {
+            "type": "string",
+            "description": "Code of the unit within the device."
           }
         },
         "additionalProperties": false,
@@ -7457,6 +7529,25 @@
           }
         },
         "additionalProperties": false
+      },
+      "Utilities.Web.Api.Protos.ListGroupAlertsResponse": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "description": "Total count of alerts matching the filter (before pagination)",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.Alert"
+            },
+            "description": "Paged list of alerts with device context"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Response with alerts from all units in the device group"
       },
       "Utilities.Web.Api.Protos.ListGroupUnitsResponse": {
         "type": "object",

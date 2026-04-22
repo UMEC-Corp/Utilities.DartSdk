@@ -10,6 +10,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiDashboardV1DeviceGroupsGet**](DeviceGroupsServiceApi.md#apidashboardv1devicegroupsget) | **GET** /api/dashboard/v1/device-groups | Get a paged list of device groups
+[**apiDashboardV1DeviceGroupsGroupIdAlertsGet**](DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupidalertsget) | **GET** /api/dashboard/v1/device-groups/{groupId}/alerts | List alerts for all units in a device group (including descendants)
 [**apiDashboardV1DeviceGroupsGroupIdDelete**](DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupiddelete) | **DELETE** /api/dashboard/v1/device-groups/{groupId} | Delete a device group
 [**apiDashboardV1DeviceGroupsGroupIdGet**](DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupidget) | **GET** /api/dashboard/v1/device-groups/{groupId} | Get a device group by id
 [**apiDashboardV1DeviceGroupsGroupIdPut**](DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupidput) | **PUT** /api/dashboard/v1/device-groups/{groupId} | Update an existing device group
@@ -57,6 +58,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UtilitiesWebApiProtosListGroupsResponse**](UtilitiesWebApiProtosListGroupsResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiDashboardV1DeviceGroupsGroupIdAlertsGet**
+> UtilitiesWebApiProtosListGroupAlertsResponse apiDashboardV1DeviceGroupsGroupIdAlertsGet(groupId, offset, limit, isHidden)
+
+List alerts for all units in a device group (including descendants)
+
+### Example
+```dart
+import 'package:utilities_dart_sdk_client/api.dart';
+
+final api = UtilitiesDartSdkClient().getDeviceGroupsServiceApi();
+final String groupId = groupId_example; // String | Id of the device group
+final int offset = 56; // int | 
+final int limit = 56; // int | 
+final bool isHidden = true; // bool | 
+
+try {
+    final response = api.apiDashboardV1DeviceGroupsGroupIdAlertsGet(groupId, offset, limit, isHidden);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling DeviceGroupsServiceApi->apiDashboardV1DeviceGroupsGroupIdAlertsGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **groupId** | **String**| Id of the device group | 
+ **offset** | **int**|  | [optional] 
+ **limit** | **int**|  | [optional] 
+ **isHidden** | **bool**|  | [optional] 
+
+### Return type
+
+[**UtilitiesWebApiProtosListGroupAlertsResponse**](UtilitiesWebApiProtosListGroupAlertsResponse.md)
 
 ### Authorization
 

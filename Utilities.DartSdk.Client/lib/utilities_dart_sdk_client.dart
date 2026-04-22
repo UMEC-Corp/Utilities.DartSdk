@@ -135,6 +135,7 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_lis
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_employees_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_event_types_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_events_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_group_alerts_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_group_units_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_groups_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_integartions_response.dart';

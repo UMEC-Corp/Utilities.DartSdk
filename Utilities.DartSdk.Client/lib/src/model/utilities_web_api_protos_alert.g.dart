@@ -23,6 +23,10 @@ class _$UtilitiesWebApiProtosAlert extends UtilitiesWebApiProtosAlert {
   final int? timestamp;
   @override
   final String? title;
+  @override
+  final String? deviceId;
+  @override
+  final String? unitCode;
 
   factory _$UtilitiesWebApiProtosAlert(
           [void Function(UtilitiesWebApiProtosAlertBuilder)? updates]) =>
@@ -36,7 +40,9 @@ class _$UtilitiesWebApiProtosAlert extends UtilitiesWebApiProtosAlert {
       this.isHidden,
       this.importance,
       this.timestamp,
-      this.title})
+      this.title,
+      this.deviceId,
+      this.unitCode})
       : super._();
   @override
   UtilitiesWebApiProtosAlert rebuild(
@@ -58,7 +64,9 @@ class _$UtilitiesWebApiProtosAlert extends UtilitiesWebApiProtosAlert {
         isHidden == other.isHidden &&
         importance == other.importance &&
         timestamp == other.timestamp &&
-        title == other.title;
+        title == other.title &&
+        deviceId == other.deviceId &&
+        unitCode == other.unitCode;
   }
 
   @override
@@ -72,6 +80,8 @@ class _$UtilitiesWebApiProtosAlert extends UtilitiesWebApiProtosAlert {
     _$hash = $jc(_$hash, importance.hashCode);
     _$hash = $jc(_$hash, timestamp.hashCode);
     _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, deviceId.hashCode);
+    _$hash = $jc(_$hash, unitCode.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -86,7 +96,9 @@ class _$UtilitiesWebApiProtosAlert extends UtilitiesWebApiProtosAlert {
           ..add('isHidden', isHidden)
           ..add('importance', importance)
           ..add('timestamp', timestamp)
-          ..add('title', title))
+          ..add('title', title)
+          ..add('deviceId', deviceId)
+          ..add('unitCode', unitCode))
         .toString();
   }
 }
@@ -129,6 +141,14 @@ class UtilitiesWebApiProtosAlertBuilder
   String? get title => _$this._title;
   set title(String? title) => _$this._title = title;
 
+  String? _deviceId;
+  String? get deviceId => _$this._deviceId;
+  set deviceId(String? deviceId) => _$this._deviceId = deviceId;
+
+  String? _unitCode;
+  String? get unitCode => _$this._unitCode;
+  set unitCode(String? unitCode) => _$this._unitCode = unitCode;
+
   UtilitiesWebApiProtosAlertBuilder() {
     UtilitiesWebApiProtosAlert._defaults(this);
   }
@@ -144,6 +164,8 @@ class UtilitiesWebApiProtosAlertBuilder
       _importance = $v.importance;
       _timestamp = $v.timestamp;
       _title = $v.title;
+      _deviceId = $v.deviceId;
+      _unitCode = $v.unitCode;
       _$v = null;
     }
     return this;
@@ -173,6 +195,8 @@ class UtilitiesWebApiProtosAlertBuilder
           importance: importance,
           timestamp: timestamp,
           title: title,
+          deviceId: deviceId,
+          unitCode: unitCode,
         );
     replace(_$result);
     return _$result;

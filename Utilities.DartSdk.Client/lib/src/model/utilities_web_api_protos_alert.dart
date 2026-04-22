@@ -20,6 +20,8 @@ part 'utilities_web_api_protos_alert.g.dart';
 /// * [importance]
 /// * [timestamp] - Timestamp of creation
 /// * [title] - Title for the alert
+/// * [deviceId] - Id of the physical device this alert belongs to.
+/// * [unitCode] - Code of the unit within the device.
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAlert
     implements
@@ -55,6 +57,14 @@ abstract class UtilitiesWebApiProtosAlert
   /// Title for the alert
   @BuiltValueField(wireName: r'title')
   String? get title;
+
+  /// Id of the physical device this alert belongs to.
+  @BuiltValueField(wireName: r'deviceId')
+  String? get deviceId;
+
+  /// Code of the unit within the device.
+  @BuiltValueField(wireName: r'unitCode')
+  String? get unitCode;
 
   UtilitiesWebApiProtosAlert._();
 
@@ -142,6 +152,20 @@ class _$UtilitiesWebApiProtosAlertSerializer
         specifiedType: const FullType(String),
       );
     }
+    if (object.deviceId != null) {
+      yield r'deviceId';
+      yield serializers.serialize(
+        object.deviceId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.unitCode != null) {
+      yield r'unitCode';
+      yield serializers.serialize(
+        object.unitCode,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -222,6 +246,20 @@ class _$UtilitiesWebApiProtosAlertSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.title = valueDes;
+          break;
+        case r'deviceId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.deviceId = valueDes;
+          break;
+        case r'unitCode':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.unitCode = valueDes;
           break;
         default:
           unhandled.add(key);

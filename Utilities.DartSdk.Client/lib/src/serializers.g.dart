@@ -123,6 +123,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosListEmployeesResponse.serializer)
       ..add(UtilitiesWebApiProtosListEventTypesResponse.serializer)
       ..add(UtilitiesWebApiProtosListEventsResponse.serializer)
+      ..add(UtilitiesWebApiProtosListGroupAlertsResponse.serializer)
       ..add(UtilitiesWebApiProtosListGroupUnitsResponse.serializer)
       ..add(UtilitiesWebApiProtosListGroupsResponse.serializer)
       ..add(UtilitiesWebApiProtosListIntegartionsResponse.serializer)
@@ -249,6 +250,10 @@ Serializers _$serializers = (Serializers().toBuilder()
           ]),
           () => ListBuilder<
               UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioConditionItem>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(UtilitiesWebApiProtosAlert)]),
+          () => ListBuilder<UtilitiesWebApiProtosAlert>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(UtilitiesWebApiProtosAlert)]),

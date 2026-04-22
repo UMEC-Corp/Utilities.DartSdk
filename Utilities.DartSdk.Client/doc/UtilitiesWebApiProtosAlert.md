@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **importance** | [**UtilitiesWebApiProtosImportance**](UtilitiesWebApiProtosImportance.md) |  | [optional] 
 **timestamp** | **int** | Timestamp of creation | [optional] 
 **title** | **String** | Title for the alert | [optional] 
+**deviceId** | **String** | Id of the physical device this alert belongs to. | [optional] 
+**unitCode** | **String** | Code of the unit within the device. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

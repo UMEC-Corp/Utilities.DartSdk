@@ -76,6 +76,7 @@ Class | Method | HTTP request | Description
 [*AlertsServiceApi*](doc/AlertsServiceApi.md) | [**apiDashboardV1DevicesDeviceIdUnitsUnitCodeAlertsGet**](doc/AlertsServiceApi.md#apidashboardv1devicesdeviceidunitsunitcodealertsget) | **GET** /api/dashboard/v1/devices/{deviceId}/units/{unitCode}/alerts | Lists alerts for a device unit.
 [*CommandRunnerApi*](doc/CommandRunnerApi.md) | [**apiDashboardV1CommandRunnerrunPost**](doc/CommandRunnerApi.md#apidashboardv1commandrunnerrunpost) | **POST** /api/dashboard/v1/command-runner:run | Runs a command payload on a target device.
 [*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsGet**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupsget) | **GET** /api/dashboard/v1/device-groups | Get a paged list of device groups
+[*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsGroupIdAlertsGet**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupidalertsget) | **GET** /api/dashboard/v1/device-groups/{groupId}/alerts | List alerts for all units in a device group (including descendants)
 [*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsGroupIdDelete**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupiddelete) | **DELETE** /api/dashboard/v1/device-groups/{groupId} | Delete a device group
 [*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsGroupIdGet**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupidget) | **GET** /api/dashboard/v1/device-groups/{groupId} | Get a device group by id
 [*DeviceGroupsServiceApi*](doc/DeviceGroupsServiceApi.md) | [**apiDashboardV1DeviceGroupsGroupIdPut**](doc/DeviceGroupsServiceApi.md#apidashboardv1devicegroupsgroupidput) | **PUT** /api/dashboard/v1/device-groups/{groupId} | Update an existing device group
@@ -278,6 +279,7 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosListEmployeesResponse](doc/UtilitiesWebApiProtosListEmployeesResponse.md)
  - [UtilitiesWebApiProtosListEventTypesResponse](doc/UtilitiesWebApiProtosListEventTypesResponse.md)
  - [UtilitiesWebApiProtosListEventsResponse](doc/UtilitiesWebApiProtosListEventsResponse.md)
+ - [UtilitiesWebApiProtosListGroupAlertsResponse](doc/UtilitiesWebApiProtosListGroupAlertsResponse.md)
  - [UtilitiesWebApiProtosListGroupUnitsResponse](doc/UtilitiesWebApiProtosListGroupUnitsResponse.md)
  - [UtilitiesWebApiProtosListGroupsResponse](doc/UtilitiesWebApiProtosListGroupsResponse.md)
  - [UtilitiesWebApiProtosListIntegartionsResponse](doc/UtilitiesWebApiProtosListIntegartionsResponse.md)

@@ -125,6 +125,7 @@ doc/UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem.
 doc/UtilitiesWebApiProtosListEmployeesResponse.md
 doc/UtilitiesWebApiProtosListEventTypesResponse.md
 doc/UtilitiesWebApiProtosListEventsResponse.md
+doc/UtilitiesWebApiProtosListGroupAlertsResponse.md
 doc/UtilitiesWebApiProtosListGroupUnitsResponse.md
 doc/UtilitiesWebApiProtosListGroupsResponse.md
 doc/UtilitiesWebApiProtosListIntegartionsResponse.md
@@ -342,6 +343,7 @@ lib/src/model/utilities_web_api_protos_list_available_models_response_types_list
 lib/src/model/utilities_web_api_protos_list_employees_response.dart
 lib/src/model/utilities_web_api_protos_list_event_types_response.dart
 lib/src/model/utilities_web_api_protos_list_events_response.dart
+lib/src/model/utilities_web_api_protos_list_group_alerts_response.dart
 lib/src/model/utilities_web_api_protos_list_group_units_response.dart
 lib/src/model/utilities_web_api_protos_list_groups_response.dart
 lib/src/model/utilities_web_api_protos_list_integartions_response.dart
@@ -429,5 +431,4 @@ lib/src/model/utilities_web_api_protos_user_role.dart
 lib/src/serializers.dart
 lib/utilities_dart_sdk_client.dart
 pubspec.yaml
-test/utilities_web_api_protos_group_ui_setting_test.dart
-test/utilities_web_api_protos_group_unit_item_test.dart
+test/utilities_web_api_protos_list_group_alerts_response_test.dart

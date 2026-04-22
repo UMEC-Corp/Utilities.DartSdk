@@ -119,6 +119,7 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_lis
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_employees_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_event_types_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_events_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_group_alerts_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_group_units_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_groups_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_integartions_response.dart';
@@ -312,6 +313,7 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosListEmployeesResponse,
   UtilitiesWebApiProtosListEventTypesResponse,
   UtilitiesWebApiProtosListEventsResponse,
+  UtilitiesWebApiProtosListGroupAlertsResponse,
   UtilitiesWebApiProtosListGroupUnitsResponse,
   UtilitiesWebApiProtosListGroupsResponse,
   UtilitiesWebApiProtosListIntegartionsResponse,
