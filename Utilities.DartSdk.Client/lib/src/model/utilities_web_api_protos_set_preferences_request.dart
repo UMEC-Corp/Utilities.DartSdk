@@ -20,7 +20,7 @@ abstract class UtilitiesWebApiProtosSetPreferencesRequest
             UtilitiesWebApiProtosSetPreferencesRequestBuilder> {
   @BuiltValueField(wireName: r'dashboardDisplayMode')
   UtilitiesWebApiProtosDashboardDisplayMode? get dashboardDisplayMode;
-  // enum dashboardDisplayModeEnum {  Table,  Grid,  };
+  // enum dashboardDisplayModeEnum {  Table,  Grid,  GroupDashboard,  };
 
   UtilitiesWebApiProtosSetPreferencesRequest._();
 

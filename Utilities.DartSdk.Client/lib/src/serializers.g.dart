@@ -68,10 +68,13 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosEvent.serializer)
       ..add(UtilitiesWebApiProtosEventClass.serializer)
       ..add(UtilitiesWebApiProtosEventType.serializer)
+      ..add(UtilitiesWebApiProtosExportDeviceModelRequest.serializer)
+      ..add(UtilitiesWebApiProtosExportDeviceModelResponse.serializer)
       ..add(UtilitiesWebApiProtosGetAddressDetailsResponse.serializer)
       ..add(UtilitiesWebApiProtosGetAuthMethodResponse.serializer)
       ..add(UtilitiesWebApiProtosGetCompanyResponse.serializer)
       ..add(UtilitiesWebApiProtosGetDefaultUiSettingResponse.serializer)
+      ..add(UtilitiesWebApiProtosGetDeviceModelDetailsResponse.serializer)
       ..add(UtilitiesWebApiProtosGetDeviceModelsRequest.serializer)
       ..add(UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion
           .serializer)
@@ -105,6 +108,9 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosGroupUnitItem.serializer)
       ..add(UtilitiesWebApiProtosHideAlertRequest.serializer)
       ..add(UtilitiesWebApiProtosHideAlertResponse.serializer)
+      ..add(UtilitiesWebApiProtosImportDeviceModelRequest.serializer)
+      ..add(UtilitiesWebApiProtosImportDeviceModelResponse.serializer)
+      ..add(UtilitiesWebApiProtosImportWarning.serializer)
       ..add(UtilitiesWebApiProtosImportance.serializer)
       ..add(UtilitiesWebApiProtosInput.serializer)
       ..add(UtilitiesWebApiProtosIntegration.serializer)
@@ -120,6 +126,10 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(
           UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem
               .serializer)
+      ..add(UtilitiesWebApiProtosListDeviceModelsRequest.serializer)
+      ..add(UtilitiesWebApiProtosListDeviceModelsResponse.serializer)
+      ..add(UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem
+          .serializer)
       ..add(UtilitiesWebApiProtosListEmployeesResponse.serializer)
       ..add(UtilitiesWebApiProtosListEventTypesResponse.serializer)
       ..add(UtilitiesWebApiProtosListEventsResponse.serializer)
@@ -132,6 +142,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosListRolesResponse.serializer)
       ..add(UtilitiesWebApiProtosListScenarioRunsResponse.serializer)
       ..add(UtilitiesWebApiProtosListScenariosResponse.serializer)
+      ..add(UtilitiesWebApiProtosListSupportedFormatsResponse.serializer)
       ..add(UtilitiesWebApiProtosListUiSettingsResponse.serializer)
       ..add(UtilitiesWebApiProtosListUnitsResponse.serializer)
       ..add(UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem
@@ -140,6 +151,7 @@ Serializers _$serializers = (Serializers().toBuilder()
           .serializer)
       ..add(UtilitiesWebApiProtosMaintainer.serializer)
       ..add(UtilitiesWebApiProtosMaintenanceAssignment.serializer)
+      ..add(UtilitiesWebApiProtosModelScope.serializer)
       ..add(UtilitiesWebApiProtosMonitor.serializer)
       ..add(UtilitiesWebApiProtosMoveGroupRequest.serializer)
       ..add(UtilitiesWebApiProtosMoveGroupResponse.serializer)
@@ -174,6 +186,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosSignInRequest.serializer)
       ..add(UtilitiesWebApiProtosSignInResponse.serializer)
       ..add(UtilitiesWebApiProtosStartScenarioRequest.serializer)
+      ..add(UtilitiesWebApiProtosSupportedFormat.serializer)
       ..add(UtilitiesWebApiProtosUiSettingItem.serializer)
       ..add(UtilitiesWebApiProtosUnit.serializer)
       ..add(UtilitiesWebApiProtosUnitCommand.serializer)
@@ -224,6 +237,9 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(GoogleProtobufWellKnownTypesAny)]),
           () => ListBuilder<GoogleProtobufWellKnownTypesAny>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())
@@ -414,6 +430,10 @@ Serializers _$serializers = (Serializers().toBuilder()
               const [const FullType(UtilitiesWebApiProtosGroupUnitItem)]),
           () => ListBuilder<UtilitiesWebApiProtosGroupUnitItem>())
       ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(UtilitiesWebApiProtosImportWarning)]),
+          () => ListBuilder<UtilitiesWebApiProtosImportWarning>())
+      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(UtilitiesWebApiProtosInput)]),
           () => ListBuilder<UtilitiesWebApiProtosInput>())
@@ -469,6 +489,13 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(
+                UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem)
+          ]),
+          () => ListBuilder<
+              UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
                 UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem)
           ]),
           () => ListBuilder<
@@ -501,6 +528,10 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(UtilitiesWebApiProtosScenarioRun)]),
           () => ListBuilder<UtilitiesWebApiProtosScenarioRun>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(UtilitiesWebApiProtosSupportedFormat)]),
+          () => ListBuilder<UtilitiesWebApiProtosSupportedFormat>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(UtilitiesWebApiProtosUiSettingItem)]),

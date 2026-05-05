@@ -18,6 +18,11 @@ class UtilitiesWebApiProtosDashboardDisplayMode extends EnumClass {
   @BuiltValueEnumConst(wireName: r'Grid')
   static const UtilitiesWebApiProtosDashboardDisplayMode grid = _$grid;
 
+  /// The way list of devices is displayed on dasboard  Dashboard device list display mode.
+  @BuiltValueEnumConst(wireName: r'GroupDashboard')
+  static const UtilitiesWebApiProtosDashboardDisplayMode groupDashboard =
+      _$groupDashboard;
+
   static Serializer<UtilitiesWebApiProtosDashboardDisplayMode> get serializer =>
       _$utilitiesWebApiProtosDashboardDisplayModeSerializer;
 

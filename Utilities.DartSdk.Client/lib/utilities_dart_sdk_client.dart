@@ -89,10 +89,13 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_ena
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_event.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_event_class.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_event_type.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_export_device_model_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_export_device_model_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_address_details_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_auth_method_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_company_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_default_ui_setting_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_device_model_details_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_device_models_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_device_models_request_types_model_version.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_get_device_models_response.dart';
@@ -122,6 +125,9 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_gro
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_group_unit_item.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_hide_alert_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_hide_alert_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_import_device_model_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_import_device_model_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_import_warning.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_importance.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_input.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_integration.dart';
@@ -132,6 +138,9 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_lis
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_alerts_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_available_models_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_available_models_response_types_list_available_model_item.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_device_models_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_device_models_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_device_models_response_types_model_list_item.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_employees_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_event_types_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_events_response.dart';
@@ -144,12 +153,14 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_lis
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_roles_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_scenario_runs_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_scenarios_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_supported_formats_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_ui_settings_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_units_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_units_response_types_list_units_response_item.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_list_units_response_types_list_units_response_sensor.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_maintainer.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_maintenance_assignment.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_model_scope.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_monitor.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_move_group_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_move_group_response.dart';
@@ -184,6 +195,7 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_sho
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_sign_in_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_sign_in_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_start_scenario_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_supported_format.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_ui_setting_item.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_command.dart';

@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **errors** | [**BuiltMap&lt;String, UtilitiesWebApiProtosDeviceModelTypesDeviceError&gt;**](UtilitiesWebApiProtosDeviceModelTypesDeviceError.md) |  | [optional] 
 **manuals** | [**BuiltList&lt;UtilitiesWebApiProtosDeviceModelTypesDeviceManual&gt;**](UtilitiesWebApiProtosDeviceModelTypesDeviceManual.md) |  | [optional] 
 **vendorName** | **String** | Vendor display name. | [optional] 
+**scope** | [**UtilitiesWebApiProtosModelScope**](UtilitiesWebApiProtosModelScope.md) |  | [optional] 
+**createdBy** | **String** | Identifier of the user that imported this model. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
