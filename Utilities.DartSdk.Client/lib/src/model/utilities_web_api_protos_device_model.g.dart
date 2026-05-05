@@ -38,6 +38,10 @@ class _$UtilitiesWebApiProtosDeviceModel
   final BuiltList<UtilitiesWebApiProtosDeviceModelTypesDeviceManual>? manuals;
   @override
   final String? vendorName;
+  @override
+  final UtilitiesWebApiProtosModelScope? scope;
+  @override
+  final String? createdBy;
 
   factory _$UtilitiesWebApiProtosDeviceModel(
           [void Function(UtilitiesWebApiProtosDeviceModelBuilder)? updates]) =>
@@ -57,7 +61,9 @@ class _$UtilitiesWebApiProtosDeviceModel
       this.events,
       this.errors,
       this.manuals,
-      this.vendorName})
+      this.vendorName,
+      this.scope,
+      this.createdBy})
       : super._();
   @override
   UtilitiesWebApiProtosDeviceModel rebuild(
@@ -85,7 +91,9 @@ class _$UtilitiesWebApiProtosDeviceModel
         events == other.events &&
         errors == other.errors &&
         manuals == other.manuals &&
-        vendorName == other.vendorName;
+        vendorName == other.vendorName &&
+        scope == other.scope &&
+        createdBy == other.createdBy;
   }
 
   @override
@@ -105,6 +113,8 @@ class _$UtilitiesWebApiProtosDeviceModel
     _$hash = $jc(_$hash, errors.hashCode);
     _$hash = $jc(_$hash, manuals.hashCode);
     _$hash = $jc(_$hash, vendorName.hashCode);
+    _$hash = $jc(_$hash, scope.hashCode);
+    _$hash = $jc(_$hash, createdBy.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -125,7 +135,9 @@ class _$UtilitiesWebApiProtosDeviceModel
           ..add('events', events)
           ..add('errors', errors)
           ..add('manuals', manuals)
-          ..add('vendorName', vendorName))
+          ..add('vendorName', vendorName)
+          ..add('scope', scope)
+          ..add('createdBy', createdBy))
         .toString();
   }
 }
@@ -218,6 +230,14 @@ class UtilitiesWebApiProtosDeviceModelBuilder
   String? get vendorName => _$this._vendorName;
   set vendorName(String? vendorName) => _$this._vendorName = vendorName;
 
+  UtilitiesWebApiProtosModelScope? _scope;
+  UtilitiesWebApiProtosModelScope? get scope => _$this._scope;
+  set scope(UtilitiesWebApiProtosModelScope? scope) => _$this._scope = scope;
+
+  String? _createdBy;
+  String? get createdBy => _$this._createdBy;
+  set createdBy(String? createdBy) => _$this._createdBy = createdBy;
+
   UtilitiesWebApiProtosDeviceModelBuilder() {
     UtilitiesWebApiProtosDeviceModel._defaults(this);
   }
@@ -239,6 +259,8 @@ class UtilitiesWebApiProtosDeviceModelBuilder
       _errors = $v.errors?.toBuilder();
       _manuals = $v.manuals?.toBuilder();
       _vendorName = $v.vendorName;
+      _scope = $v.scope;
+      _createdBy = $v.createdBy;
       _$v = null;
     }
     return this;
@@ -276,6 +298,8 @@ class UtilitiesWebApiProtosDeviceModelBuilder
             errors: _errors?.build(),
             manuals: _manuals?.build(),
             vendorName: vendorName,
+            scope: scope,
+            createdBy: createdBy,
           );
     } catch (_) {
       late String _$failedField;

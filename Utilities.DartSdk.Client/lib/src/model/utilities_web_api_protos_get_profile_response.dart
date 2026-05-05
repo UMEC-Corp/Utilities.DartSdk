@@ -67,7 +67,7 @@ abstract class UtilitiesWebApiProtosGetProfileResponse
 
   @BuiltValueField(wireName: r'dashboardDisplayMode')
   UtilitiesWebApiProtosDashboardDisplayMode? get dashboardDisplayMode;
-  // enum dashboardDisplayModeEnum {  Table,  Grid,  };
+  // enum dashboardDisplayModeEnum {  Table,  Grid,  GroupDashboard,  };
 
   UtilitiesWebApiProtosGetProfileResponse._();
 

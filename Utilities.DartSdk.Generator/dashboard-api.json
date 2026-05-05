@@ -2010,6 +2010,205 @@
         }
       }
     },
+    "/api/dashboard/v1/models:list": {
+      "post": {
+        "tags": [
+          "ModelsService"
+        ],
+        "summary": "List device models with tenant isolation, scope filter and free-text search.\r\nForwards to the upstream service which extracts the caller's TenantId from the\r\nJWT and applies platform-or-own filtering.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ListDeviceModelsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ListDeviceModelsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/models/{modelId}": {
+      "get": {
+        "tags": [
+          "ModelsService"
+        ],
+        "summary": "Load a single model with full units/events/errors/manuals payload.",
+        "parameters": [
+          {
+            "name": "modelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.GetDeviceModelDetailsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/models:import": {
+      "post": {
+        "tags": [
+          "ModelsService"
+        ],
+        "summary": "Translate the REST-friendly single-shot import request into the upstream's\r\nclient-streaming gRPC contract: send the init message, then push the file\r\nbytes as one or more chunks before completing the stream.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ImportDeviceModelRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ImportDeviceModelResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/models/{modelId}:export": {
+      "post": {
+        "tags": [
+          "ModelsService"
+        ],
+        "summary": "Pass through to upstream Export. The upstream returns FailedPrecondition with\r\n'no_exporter_for_format' until an exporter ships, which is propagated to the\r\nREST caller as a 400-class status by gRPC HTTP transcoding.",
+        "parameters": [
+          {
+            "name": "modelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ExportDeviceModelRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ExportDeviceModelResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/dashboard/v1/models/formats": {
+      "get": {
+        "tags": [
+          "ModelsService"
+        ],
+        "summary": "Return the catalog of import/export-capable formats as advertised by the\r\nupstream registry.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ListSupportedFormatsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/dashboard/v1/units/{unitId}/monitors": {
       "get": {
         "tags": [
@@ -6019,7 +6218,8 @@
       "Utilities.Web.Api.Protos.DashboardDisplayMode": {
         "enum": [
           "Table",
-          "Grid"
+          "Grid",
+          "GroupDashboard"
         ],
         "type": "string",
         "description": "The way list of devices is displayed on dasboard\r\nDashboard device list display mode."
@@ -6182,6 +6382,13 @@
           "vendorName": {
             "type": "string",
             "description": "Vendor display name."
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ModelScope"
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Identifier of the user that imported this model."
           }
         },
         "additionalProperties": false,
@@ -6620,6 +6827,34 @@
         },
         "additionalProperties": false
       },
+      "Utilities.Web.Api.Protos.ExportDeviceModelRequest": {
+        "type": "object",
+        "properties": {
+          "modelId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "formatCode": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Utilities.Web.Api.Protos.ExportDeviceModelResponse": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "fileName": {
+            "type": "string"
+          },
+          "mimeType": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
       "Utilities.Web.Api.Protos.GetAddressDetailsResponse": {
         "type": "object",
         "properties": {
@@ -6682,6 +6917,15 @@
         },
         "additionalProperties": false,
         "description": "Response with the default UI setting"
+      },
+      "Utilities.Web.Api.Protos.GetDeviceModelDetailsResponse": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceModel"
+          }
+        },
+        "additionalProperties": false
       },
       "Utilities.Web.Api.Protos.GetDeviceModelsRequest": {
         "type": "object",
@@ -7253,6 +7497,56 @@
         },
         "additionalProperties": false
       },
+      "Utilities.Web.Api.Protos.ImportDeviceModelRequest": {
+        "type": "object",
+        "properties": {
+          "formatCode": {
+            "type": "string"
+          },
+          "contents": {
+            "type": "string"
+          },
+          "overrideName": {
+            "type": "string"
+          },
+          "replaceModelId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Import payload. The contents field carries the raw file bytes; the REST\r\ngateway accepts a base64-encoded string in JSON for the same field."
+      },
+      "Utilities.Web.Api.Protos.ImportDeviceModelResponse": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceModel"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ImportWarning"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "Utilities.Web.Api.Protos.ImportWarning": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fieldPath": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
       "Utilities.Web.Api.Protos.Importance": {
         "enum": [
           "Normal",
@@ -7476,6 +7770,80 @@
         },
         "additionalProperties": false
       },
+      "Utilities.Web.Api.Protos.ListDeviceModelsRequest": {
+        "type": "object",
+        "properties": {
+          "offset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scopeFilter": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ModelScope"
+          },
+          "searchText": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request to list device models visible to the calling tenant. Filters and\r\npagination travel in the body so the existing GET endpoint's response shape\r\nis preserved."
+      },
+      "Utilities.Web.Api.Protos.ListDeviceModelsResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ListDeviceModelsResponse.Types.ModelListItem"
+            }
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Utilities.Web.Api.Protos.ListDeviceModelsResponse.Types.ModelListItem": {
+        "type": "object",
+        "properties": {
+          "modelId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "vendorId": {
+            "type": "string"
+          },
+          "vendorCode": {
+            "type": "string"
+          },
+          "vendorName": {
+            "type": "string"
+          },
+          "modelCode": {
+            "type": "string"
+          },
+          "modelName": {
+            "type": "string"
+          },
+          "modelVersion": {
+            "type": "string"
+          },
+          "modelFirmwareUrl": {
+            "type": "string"
+          },
+          "hardwareVersion": {
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.ModelScope"
+          }
+        },
+        "additionalProperties": false
+      },
       "Utilities.Web.Api.Protos.ListEmployeesResponse": {
         "type": "object",
         "properties": {
@@ -7684,6 +8052,18 @@
         },
         "additionalProperties": false,
         "description": "Scenarios response"
+      },
+      "Utilities.Web.Api.Protos.ListSupportedFormatsResponse": {
+        "type": "object",
+        "properties": {
+          "formats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.SupportedFormat"
+            }
+          }
+        },
+        "additionalProperties": false
       },
       "Utilities.Web.Api.Protos.ListUiSettingsResponse": {
         "type": "object",
@@ -7916,6 +8296,15 @@
         },
         "additionalProperties": false,
         "description": "Employee assigned to unit"
+      },
+      "Utilities.Web.Api.Protos.ModelScope": {
+        "enum": [
+          "MODEL_SCOPE_UNSPECIFIED",
+          "MODEL_SCOPE_PLATFORM",
+          "MODEL_SCOPE_CUSTOMER"
+        ],
+        "type": "string",
+        "description": "Visibility scope for a device model."
       },
       "Utilities.Web.Api.Protos.Monitor": {
         "type": "object",
@@ -8713,6 +9102,33 @@
         "type": "object",
         "additionalProperties": false,
         "description": "Result of scenario start request"
+      },
+      "Utilities.Web.Api.Protos.SupportedFormat": {
+        "type": "object",
+        "properties": {
+          "formatCode": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "fileExtensions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mimeType": {
+            "type": "string"
+          },
+          "canImport": {
+            "type": "boolean"
+          },
+          "canExport": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
       },
       "Utilities.Web.Api.Protos.UiSettingItem": {
         "type": "object",

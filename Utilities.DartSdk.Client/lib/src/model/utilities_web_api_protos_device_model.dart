@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_model_scope.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_device_model_types_device_error.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_device_model_types_lifecycle_event.dart';
@@ -30,6 +31,8 @@ part 'utilities_web_api_protos_device_model.g.dart';
 /// * [errors]
 /// * [manuals]
 /// * [vendorName] - Vendor display name.
+/// * [scope]
+/// * [createdBy] - Identifier of the user that imported this model.
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDeviceModel
     implements
@@ -82,6 +85,14 @@ abstract class UtilitiesWebApiProtosDeviceModel
   /// Vendor display name.
   @BuiltValueField(wireName: r'vendorName')
   String? get vendorName;
+
+  @BuiltValueField(wireName: r'scope')
+  UtilitiesWebApiProtosModelScope? get scope;
+  // enum scopeEnum {  MODEL_SCOPE_UNSPECIFIED,  MODEL_SCOPE_PLATFORM,  MODEL_SCOPE_CUSTOMER,  };
+
+  /// Identifier of the user that imported this model.
+  @BuiltValueField(wireName: r'createdBy')
+  String? get createdBy;
 
   UtilitiesWebApiProtosDeviceModel._();
 
@@ -221,6 +232,20 @@ class _$UtilitiesWebApiProtosDeviceModelSerializer
         specifiedType: const FullType(String),
       );
     }
+    if (object.scope != null) {
+      yield r'scope';
+      yield serializers.serialize(
+        object.scope,
+        specifiedType: const FullType(UtilitiesWebApiProtosModelScope),
+      );
+    }
+    if (object.createdBy != null) {
+      yield r'createdBy';
+      yield serializers.serialize(
+        object.createdBy,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -355,6 +380,20 @@ class _$UtilitiesWebApiProtosDeviceModelSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.vendorName = valueDes;
+          break;
+        case r'scope':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UtilitiesWebApiProtosModelScope),
+          ) as UtilitiesWebApiProtosModelScope;
+          result.scope = valueDes;
+          break;
+        case r'createdBy':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.createdBy = valueDes;
           break;
         default:
           unhandled.add(key);

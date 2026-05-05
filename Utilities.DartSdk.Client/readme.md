@@ -105,8 +105,13 @@ Class | Method | HTTP request | Description
 [*MaintainersServiceApi*](doc/MaintainersServiceApi.md) | [**apiDashboardV1MaintainersGet**](doc/MaintainersServiceApi.md#apidashboardv1maintainersget) | **GET** /api/dashboard/v1/maintainers | Get current maintainer company profile
 [*MaintainersServiceApi*](doc/MaintainersServiceApi.md) | [**apiDashboardV1MaintainersPost**](doc/MaintainersServiceApi.md#apidashboardv1maintainerspost) | **POST** /api/dashboard/v1/maintainers | Create new maintainer
 [*MaintainersServiceApi*](doc/MaintainersServiceApi.md) | [**apiDashboardV1MaintainersPut**](doc/MaintainersServiceApi.md#apidashboardv1maintainersput) | **PUT** /api/dashboard/v1/maintainers | Update current maintainer company profile
+[*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsFormatsGet**](doc/ModelsServiceApi.md#apidashboardv1modelsformatsget) | **GET** /api/dashboard/v1/models/formats | Return the catalog of import/export-capable formats as advertised by the  upstream registry.
 [*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsGet**](doc/ModelsServiceApi.md#apidashboardv1modelsget) | **GET** /api/dashboard/v1/models | Get a list of available models
+[*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsModelIdGet**](doc/ModelsServiceApi.md#apidashboardv1modelsmodelidget) | **GET** /api/dashboard/v1/models/{modelId} | Load a single model with full units/events/errors/manuals payload.
+[*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsModelIdexportPost**](doc/ModelsServiceApi.md#apidashboardv1modelsmodelidexportpost) | **POST** /api/dashboard/v1/models/{modelId}:export | Pass through to upstream Export. The upstream returns FailedPrecondition with  &#39;no_exporter_for_format&#39; until an exporter ships, which is propagated to the  REST caller as a 400-class status by gRPC HTTP transcoding.
 [*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsbatchGetPost**](doc/ModelsServiceApi.md#apidashboardv1modelsbatchgetpost) | **POST** /api/dashboard/v1/models:batch-get | Get information for provded models
+[*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsimportPost**](doc/ModelsServiceApi.md#apidashboardv1modelsimportpost) | **POST** /api/dashboard/v1/models:import | Translate the REST-friendly single-shot import request into the upstream&#39;s  client-streaming gRPC contract: send the init message, then push the file  bytes as one or more chunks before completing the stream.
+[*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelslistPost**](doc/ModelsServiceApi.md#apidashboardv1modelslistpost) | **POST** /api/dashboard/v1/models:list | List device models with tenant isolation, scope filter and free-text search.  Forwards to the upstream service which extracts the caller&#39;s TenantId from the  JWT and applies platform-or-own filtering.
 [*MonitorsServiceApi*](doc/MonitorsServiceApi.md) | [**apiDashboardV1UnitsUnitIdMonitorsGet**](doc/MonitorsServiceApi.md#apidashboardv1unitsunitidmonitorsget) | **GET** /api/dashboard/v1/units/{unitId}/monitors | Lists monitors for a virtual device.
 [*MonitorsServiceApi*](doc/MonitorsServiceApi.md) | [**apiDashboardV1UnitsUnitIdMonitorsMonitorIdDelete**](doc/MonitorsServiceApi.md#apidashboardv1unitsunitidmonitorsmonitoriddelete) | **DELETE** /api/dashboard/v1/units/{unitId}/monitors/{monitorId} | Removes a monitor from a virtual device.
 [*MonitorsServiceApi*](doc/MonitorsServiceApi.md) | [**apiDashboardV1UnitsUnitIdMonitorsMonitorIdGet**](doc/MonitorsServiceApi.md#apidashboardv1unitsunitidmonitorsmonitoridget) | **GET** /api/dashboard/v1/units/{unitId}/monitors/{monitorId} | Gets a monitor by unit and monitor identifiers.
@@ -233,10 +238,13 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosEvent](doc/UtilitiesWebApiProtosEvent.md)
  - [UtilitiesWebApiProtosEventClass](doc/UtilitiesWebApiProtosEventClass.md)
  - [UtilitiesWebApiProtosEventType](doc/UtilitiesWebApiProtosEventType.md)
+ - [UtilitiesWebApiProtosExportDeviceModelRequest](doc/UtilitiesWebApiProtosExportDeviceModelRequest.md)
+ - [UtilitiesWebApiProtosExportDeviceModelResponse](doc/UtilitiesWebApiProtosExportDeviceModelResponse.md)
  - [UtilitiesWebApiProtosGetAddressDetailsResponse](doc/UtilitiesWebApiProtosGetAddressDetailsResponse.md)
  - [UtilitiesWebApiProtosGetAuthMethodResponse](doc/UtilitiesWebApiProtosGetAuthMethodResponse.md)
  - [UtilitiesWebApiProtosGetCompanyResponse](doc/UtilitiesWebApiProtosGetCompanyResponse.md)
  - [UtilitiesWebApiProtosGetDefaultUiSettingResponse](doc/UtilitiesWebApiProtosGetDefaultUiSettingResponse.md)
+ - [UtilitiesWebApiProtosGetDeviceModelDetailsResponse](doc/UtilitiesWebApiProtosGetDeviceModelDetailsResponse.md)
  - [UtilitiesWebApiProtosGetDeviceModelsRequest](doc/UtilitiesWebApiProtosGetDeviceModelsRequest.md)
  - [UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion](doc/UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion.md)
  - [UtilitiesWebApiProtosGetDeviceModelsResponse](doc/UtilitiesWebApiProtosGetDeviceModelsResponse.md)
@@ -266,6 +274,9 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosGroupUnitItem](doc/UtilitiesWebApiProtosGroupUnitItem.md)
  - [UtilitiesWebApiProtosHideAlertRequest](doc/UtilitiesWebApiProtosHideAlertRequest.md)
  - [UtilitiesWebApiProtosHideAlertResponse](doc/UtilitiesWebApiProtosHideAlertResponse.md)
+ - [UtilitiesWebApiProtosImportDeviceModelRequest](doc/UtilitiesWebApiProtosImportDeviceModelRequest.md)
+ - [UtilitiesWebApiProtosImportDeviceModelResponse](doc/UtilitiesWebApiProtosImportDeviceModelResponse.md)
+ - [UtilitiesWebApiProtosImportWarning](doc/UtilitiesWebApiProtosImportWarning.md)
  - [UtilitiesWebApiProtosImportance](doc/UtilitiesWebApiProtosImportance.md)
  - [UtilitiesWebApiProtosInput](doc/UtilitiesWebApiProtosInput.md)
  - [UtilitiesWebApiProtosIntegration](doc/UtilitiesWebApiProtosIntegration.md)
@@ -276,6 +287,9 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosListAlertsResponse](doc/UtilitiesWebApiProtosListAlertsResponse.md)
  - [UtilitiesWebApiProtosListAvailableModelsResponse](doc/UtilitiesWebApiProtosListAvailableModelsResponse.md)
  - [UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem](doc/UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem.md)
+ - [UtilitiesWebApiProtosListDeviceModelsRequest](doc/UtilitiesWebApiProtosListDeviceModelsRequest.md)
+ - [UtilitiesWebApiProtosListDeviceModelsResponse](doc/UtilitiesWebApiProtosListDeviceModelsResponse.md)
+ - [UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem](doc/UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem.md)
  - [UtilitiesWebApiProtosListEmployeesResponse](doc/UtilitiesWebApiProtosListEmployeesResponse.md)
  - [UtilitiesWebApiProtosListEventTypesResponse](doc/UtilitiesWebApiProtosListEventTypesResponse.md)
  - [UtilitiesWebApiProtosListEventsResponse](doc/UtilitiesWebApiProtosListEventsResponse.md)
@@ -288,12 +302,14 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosListRolesResponse](doc/UtilitiesWebApiProtosListRolesResponse.md)
  - [UtilitiesWebApiProtosListScenarioRunsResponse](doc/UtilitiesWebApiProtosListScenarioRunsResponse.md)
  - [UtilitiesWebApiProtosListScenariosResponse](doc/UtilitiesWebApiProtosListScenariosResponse.md)
+ - [UtilitiesWebApiProtosListSupportedFormatsResponse](doc/UtilitiesWebApiProtosListSupportedFormatsResponse.md)
  - [UtilitiesWebApiProtosListUiSettingsResponse](doc/UtilitiesWebApiProtosListUiSettingsResponse.md)
  - [UtilitiesWebApiProtosListUnitsResponse](doc/UtilitiesWebApiProtosListUnitsResponse.md)
  - [UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem](doc/UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem.md)
  - [UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor](doc/UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor.md)
  - [UtilitiesWebApiProtosMaintainer](doc/UtilitiesWebApiProtosMaintainer.md)
  - [UtilitiesWebApiProtosMaintenanceAssignment](doc/UtilitiesWebApiProtosMaintenanceAssignment.md)
+ - [UtilitiesWebApiProtosModelScope](doc/UtilitiesWebApiProtosModelScope.md)
  - [UtilitiesWebApiProtosMonitor](doc/UtilitiesWebApiProtosMonitor.md)
  - [UtilitiesWebApiProtosMoveGroupRequest](doc/UtilitiesWebApiProtosMoveGroupRequest.md)
  - [UtilitiesWebApiProtosMoveGroupResponse](doc/UtilitiesWebApiProtosMoveGroupResponse.md)
@@ -328,6 +344,7 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosSignInRequest](doc/UtilitiesWebApiProtosSignInRequest.md)
  - [UtilitiesWebApiProtosSignInResponse](doc/UtilitiesWebApiProtosSignInResponse.md)
  - [UtilitiesWebApiProtosStartScenarioRequest](doc/UtilitiesWebApiProtosStartScenarioRequest.md)
+ - [UtilitiesWebApiProtosSupportedFormat](doc/UtilitiesWebApiProtosSupportedFormat.md)
  - [UtilitiesWebApiProtosUiSettingItem](doc/UtilitiesWebApiProtosUiSettingItem.md)
  - [UtilitiesWebApiProtosUnit](doc/UtilitiesWebApiProtosUnit.md)
  - [UtilitiesWebApiProtosUnitCommand](doc/UtilitiesWebApiProtosUnitCommand.md)

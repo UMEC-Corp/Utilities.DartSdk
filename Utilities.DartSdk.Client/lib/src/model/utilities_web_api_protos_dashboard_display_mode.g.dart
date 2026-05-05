@@ -10,6 +10,8 @@ const UtilitiesWebApiProtosDashboardDisplayMode _$table =
     const UtilitiesWebApiProtosDashboardDisplayMode._('table');
 const UtilitiesWebApiProtosDashboardDisplayMode _$grid =
     const UtilitiesWebApiProtosDashboardDisplayMode._('grid');
+const UtilitiesWebApiProtosDashboardDisplayMode _$groupDashboard =
+    const UtilitiesWebApiProtosDashboardDisplayMode._('groupDashboard');
 
 UtilitiesWebApiProtosDashboardDisplayMode _$valueOf(String name) {
   switch (name) {
@@ -17,6 +19,8 @@ UtilitiesWebApiProtosDashboardDisplayMode _$valueOf(String name) {
       return _$table;
     case 'grid':
       return _$grid;
+    case 'groupDashboard':
+      return _$groupDashboard;
     default:
       throw ArgumentError(name);
   }
@@ -26,12 +30,15 @@ final BuiltSet<UtilitiesWebApiProtosDashboardDisplayMode> _$values = BuiltSet<
     UtilitiesWebApiProtosDashboardDisplayMode>(const <UtilitiesWebApiProtosDashboardDisplayMode>[
   _$table,
   _$grid,
+  _$groupDashboard,
 ]);
 
 class _$UtilitiesWebApiProtosDashboardDisplayModeMeta {
   const _$UtilitiesWebApiProtosDashboardDisplayModeMeta();
   UtilitiesWebApiProtosDashboardDisplayMode get table => _$table;
   UtilitiesWebApiProtosDashboardDisplayMode get grid => _$grid;
+  UtilitiesWebApiProtosDashboardDisplayMode get groupDashboard =>
+      _$groupDashboard;
   UtilitiesWebApiProtosDashboardDisplayMode valueOf(String name) =>
       _$valueOf(name);
   BuiltSet<UtilitiesWebApiProtosDashboardDisplayMode> get values => _$values;
@@ -53,10 +60,12 @@ class _$UtilitiesWebApiProtosDashboardDisplayModeSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'table': 'Table',
     'grid': 'Grid',
+    'groupDashboard': 'GroupDashboard',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'Table': 'table',
     'Grid': 'grid',
+    'GroupDashboard': 'groupDashboard',
   };
 
   @override
