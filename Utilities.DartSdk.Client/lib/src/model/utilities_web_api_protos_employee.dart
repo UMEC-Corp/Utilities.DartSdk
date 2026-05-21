@@ -24,8 +24,10 @@ part 'utilities_web_api_protos_employee.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosEmployee
     implements
-        Built<UtilitiesWebApiProtosEmployee,
-            UtilitiesWebApiProtosEmployeeBuilder> {
+        Built<
+          UtilitiesWebApiProtosEmployee,
+          UtilitiesWebApiProtosEmployeeBuilder
+        > {
   /// The ID of the employee.
   @BuiltValueField(wireName: r'id')
   String? get id;
@@ -60,9 +62,9 @@ abstract class UtilitiesWebApiProtosEmployee
 
   UtilitiesWebApiProtosEmployee._();
 
-  factory UtilitiesWebApiProtosEmployee(
-          [void updates(UtilitiesWebApiProtosEmployeeBuilder b)]) =
-      _$UtilitiesWebApiProtosEmployee;
+  factory UtilitiesWebApiProtosEmployee([
+    void updates(UtilitiesWebApiProtosEmployeeBuilder b),
+  ]) = _$UtilitiesWebApiProtosEmployee;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosEmployeeBuilder b) => b;
@@ -77,7 +79,7 @@ class _$UtilitiesWebApiProtosEmployeeSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosEmployee,
-    _$UtilitiesWebApiProtosEmployee
+    _$UtilitiesWebApiProtosEmployee,
   ];
 
   @override
@@ -127,8 +129,9 @@ class _$UtilitiesWebApiProtosEmployeeSerializer
       yield r'contacts';
       yield serializers.serialize(
         object.contacts,
-        specifiedType:
-            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosContact),
+        ]),
       );
     }
     if (object.roleId != null) {
@@ -153,9 +156,11 @@ class _$UtilitiesWebApiProtosEmployeeSerializer
     UtilitiesWebApiProtosEmployee object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -171,60 +176,77 @@ class _$UtilitiesWebApiProtosEmployeeSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'userName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.userName = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'position':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.position = valueDes;
           break;
         case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.comment = valueDes;
           break;
         case r'contacts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
-          ) as BuiltList<UtilitiesWebApiProtosContact>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosContact),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosContact>;
           result.contacts.replace(valueDes);
           break;
         case r'roleId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.roleId = valueDes;
           break;
         case r'roleSystemName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.roleSystemName = valueDes;
           break;
         default:

@@ -15,17 +15,19 @@ part 'utilities_web_api_protos_enable_scenario_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosEnableScenarioRequest
     implements
-        Built<UtilitiesWebApiProtosEnableScenarioRequest,
-            UtilitiesWebApiProtosEnableScenarioRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosEnableScenarioRequest,
+          UtilitiesWebApiProtosEnableScenarioRequestBuilder
+        > {
   /// Id of the scenario
   @BuiltValueField(wireName: r'scenarioId')
   String? get scenarioId;
 
   UtilitiesWebApiProtosEnableScenarioRequest._();
 
-  factory UtilitiesWebApiProtosEnableScenarioRequest(
-          [void updates(UtilitiesWebApiProtosEnableScenarioRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosEnableScenarioRequest;
+  factory UtilitiesWebApiProtosEnableScenarioRequest([
+    void updates(UtilitiesWebApiProtosEnableScenarioRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosEnableScenarioRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosEnableScenarioRequestBuilder b) =>
@@ -33,8 +35,7 @@ abstract class UtilitiesWebApiProtosEnableScenarioRequest
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosEnableScenarioRequest>
-      get serializer =>
-          _$UtilitiesWebApiProtosEnableScenarioRequestSerializer();
+  get serializer => _$UtilitiesWebApiProtosEnableScenarioRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosEnableScenarioRequestSerializer
@@ -42,7 +43,7 @@ class _$UtilitiesWebApiProtosEnableScenarioRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosEnableScenarioRequest,
-    _$UtilitiesWebApiProtosEnableScenarioRequest
+    _$UtilitiesWebApiProtosEnableScenarioRequest,
   ];
 
   @override
@@ -68,9 +69,11 @@ class _$UtilitiesWebApiProtosEnableScenarioRequestSerializer
     UtilitiesWebApiProtosEnableScenarioRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -86,10 +89,12 @@ class _$UtilitiesWebApiProtosEnableScenarioRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'scenarioId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.scenarioId = valueDes;
           break;
         default:

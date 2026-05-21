@@ -16,27 +16,27 @@ part 'utilities_web_api_protos_upsert_ui_setting_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpsertUiSettingResponse
     implements
-        Built<UtilitiesWebApiProtosUpsertUiSettingResponse,
-            UtilitiesWebApiProtosUpsertUiSettingResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosUpsertUiSettingResponse,
+          UtilitiesWebApiProtosUpsertUiSettingResponseBuilder
+        > {
   @BuiltValueField(wireName: r'item')
   UtilitiesWebApiProtosUiSettingItem? get item;
 
   UtilitiesWebApiProtosUpsertUiSettingResponse._();
 
-  factory UtilitiesWebApiProtosUpsertUiSettingResponse(
-          [void updates(
-              UtilitiesWebApiProtosUpsertUiSettingResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosUpsertUiSettingResponse;
+  factory UtilitiesWebApiProtosUpsertUiSettingResponse([
+    void updates(UtilitiesWebApiProtosUpsertUiSettingResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosUpsertUiSettingResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosUpsertUiSettingResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosUpsertUiSettingResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosUpsertUiSettingResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosUpsertUiSettingResponseSerializer();
+  get serializer => _$UtilitiesWebApiProtosUpsertUiSettingResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosUpsertUiSettingResponseSerializer
@@ -45,7 +45,7 @@ class _$UtilitiesWebApiProtosUpsertUiSettingResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpsertUiSettingResponse,
-    _$UtilitiesWebApiProtosUpsertUiSettingResponse
+    _$UtilitiesWebApiProtosUpsertUiSettingResponse,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$UtilitiesWebApiProtosUpsertUiSettingResponseSerializer
     UtilitiesWebApiProtosUpsertUiSettingResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,10 +91,14 @@ class _$UtilitiesWebApiProtosUpsertUiSettingResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'item':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UtilitiesWebApiProtosUiSettingItem),
-          ) as UtilitiesWebApiProtosUiSettingItem;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      UtilitiesWebApiProtosUiSettingItem,
+                    ),
+                  )
+                  as UtilitiesWebApiProtosUiSettingItem;
           result.item.replace(valueDes);
           break;
         default:

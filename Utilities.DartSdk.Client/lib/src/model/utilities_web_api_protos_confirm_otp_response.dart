@@ -17,8 +17,10 @@ part 'utilities_web_api_protos_confirm_otp_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosConfirmOtpResponse
     implements
-        Built<UtilitiesWebApiProtosConfirmOtpResponse,
-            UtilitiesWebApiProtosConfirmOtpResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosConfirmOtpResponse,
+          UtilitiesWebApiProtosConfirmOtpResponseBuilder
+        > {
   /// The access token.
   @BuiltValueField(wireName: r'accessToken')
   String? get accessToken;
@@ -33,9 +35,9 @@ abstract class UtilitiesWebApiProtosConfirmOtpResponse
 
   UtilitiesWebApiProtosConfirmOtpResponse._();
 
-  factory UtilitiesWebApiProtosConfirmOtpResponse(
-          [void updates(UtilitiesWebApiProtosConfirmOtpResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosConfirmOtpResponse;
+  factory UtilitiesWebApiProtosConfirmOtpResponse([
+    void updates(UtilitiesWebApiProtosConfirmOtpResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosConfirmOtpResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosConfirmOtpResponseBuilder b) => b;
@@ -50,7 +52,7 @@ class _$UtilitiesWebApiProtosConfirmOtpResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosConfirmOtpResponse,
-    _$UtilitiesWebApiProtosConfirmOtpResponse
+    _$UtilitiesWebApiProtosConfirmOtpResponse,
   ];
 
   @override
@@ -90,9 +92,11 @@ class _$UtilitiesWebApiProtosConfirmOtpResponseSerializer
     UtilitiesWebApiProtosConfirmOtpResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,24 +112,30 @@ class _$UtilitiesWebApiProtosConfirmOtpResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'accessToken':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.accessToken = valueDes;
           break;
         case r'refreshToken':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.refreshToken = valueDes;
           break;
         case r'otpTokenProvider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.otpTokenProvider = valueDes;
           break;
         default:

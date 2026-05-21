@@ -31,7 +31,7 @@ class UtilitiesWebApiProtosScenarioConditionType extends EnumClass {
       _$parameterEmptyCheck;
 
   static Serializer<UtilitiesWebApiProtosScenarioConditionType>
-      get serializer => _$utilitiesWebApiProtosScenarioConditionTypeSerializer;
+  get serializer => _$utilitiesWebApiProtosScenarioConditionTypeSerializer;
 
   const UtilitiesWebApiProtosScenarioConditionType._(String name) : super(name);
 

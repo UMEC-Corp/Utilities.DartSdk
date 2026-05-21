@@ -16,8 +16,10 @@ part 'utilities_web_api_protos_update_note_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpdateNoteRequest
     implements
-        Built<UtilitiesWebApiProtosUpdateNoteRequest,
-            UtilitiesWebApiProtosUpdateNoteRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosUpdateNoteRequest,
+          UtilitiesWebApiProtosUpdateNoteRequestBuilder
+        > {
   /// Id of the virtual device
   @BuiltValueField(wireName: r'unitId')
   String? get unitId;
@@ -28,9 +30,9 @@ abstract class UtilitiesWebApiProtosUpdateNoteRequest
 
   UtilitiesWebApiProtosUpdateNoteRequest._();
 
-  factory UtilitiesWebApiProtosUpdateNoteRequest(
-          [void updates(UtilitiesWebApiProtosUpdateNoteRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosUpdateNoteRequest;
+  factory UtilitiesWebApiProtosUpdateNoteRequest([
+    void updates(UtilitiesWebApiProtosUpdateNoteRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosUpdateNoteRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosUpdateNoteRequestBuilder b) => b;
@@ -45,7 +47,7 @@ class _$UtilitiesWebApiProtosUpdateNoteRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdateNoteRequest,
-    _$UtilitiesWebApiProtosUpdateNoteRequest
+    _$UtilitiesWebApiProtosUpdateNoteRequest,
   ];
 
   @override
@@ -78,9 +80,11 @@ class _$UtilitiesWebApiProtosUpdateNoteRequestSerializer
     UtilitiesWebApiProtosUpdateNoteRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,17 +100,21 @@ class _$UtilitiesWebApiProtosUpdateNoteRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'unitId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.unitId = valueDes;
           break;
         case r'note':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.note = valueDes;
           break;
         default:

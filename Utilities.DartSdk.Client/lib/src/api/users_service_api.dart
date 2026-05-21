@@ -43,9 +43,9 @@ class UsersServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosConfirmOtpResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosConfirmOtpResponse>>
-      apiDashboardV1AuthConfirmOtpPost({
+  apiDashboardV1AuthConfirmOtpPost({
     UtilitiesWebApiProtosConfirmOtpRequest?
-        utilitiesWebApiProtosConfirmOtpRequest,
+    utilitiesWebApiProtosConfirmOtpRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -56,16 +56,10 @@ class UsersServiceApi {
     final _path = r'/api/dashboard/v1/auth/confirm-otp';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -79,14 +73,13 @@ class UsersServiceApi {
       const _type = FullType(UtilitiesWebApiProtosConfirmOtpRequest);
       _bodyData = utilitiesWebApiProtosConfirmOtpRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosConfirmOtpRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosConfirmOtpRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -109,10 +102,12 @@ class UsersServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosConfirmOtpResponse),
-            ) as UtilitiesWebApiProtosConfirmOtpResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosConfirmOtpResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosConfirmOtpResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -150,7 +145,7 @@ class UsersServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetAuthMethodResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetAuthMethodResponse>>
-      apiDashboardV1AuthMethodsUserNameGet({
+  apiDashboardV1AuthMethodsUserNameGet({
     required String userName,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -160,21 +155,21 @@ class UsersServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/auth/methods/{userName}'.replaceAll(
-        '{' r'userName' '}',
-        encodeQueryParameter(_serializers, userName, const FullType(String))
-            .toString());
+      '{'
+      r'userName'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        userName,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -196,10 +191,12 @@ class UsersServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosGetAuthMethodResponse),
-            ) as UtilitiesWebApiProtosGetAuthMethodResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetAuthMethodResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetAuthMethodResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -237,9 +234,9 @@ class UsersServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosRefreshTokenResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosRefreshTokenResponse>>
-      apiDashboardV1AuthRefreshTokenPost({
+  apiDashboardV1AuthRefreshTokenPost({
     UtilitiesWebApiProtosRefreshTokenRequest?
-        utilitiesWebApiProtosRefreshTokenRequest,
+    utilitiesWebApiProtosRefreshTokenRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -250,16 +247,10 @@ class UsersServiceApi {
     final _path = r'/api/dashboard/v1/auth/refresh-token';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -273,14 +264,13 @@ class UsersServiceApi {
       const _type = FullType(UtilitiesWebApiProtosRefreshTokenRequest);
       _bodyData = utilitiesWebApiProtosRefreshTokenRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosRefreshTokenRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosRefreshTokenRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -303,10 +293,12 @@ class UsersServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosRefreshTokenResponse),
-            ) as UtilitiesWebApiProtosRefreshTokenResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosRefreshTokenResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosRefreshTokenResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -345,7 +337,7 @@ class UsersServiceApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>> apiDashboardV1AuthRequestPasswordResetPost({
     UtilitiesWebApiProtosRequestPasswordResetRequest?
-        utilitiesWebApiProtosRequestPasswordResetRequest,
+    utilitiesWebApiProtosRequestPasswordResetRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -356,16 +348,10 @@ class UsersServiceApi {
     final _path = r'/api/dashboard/v1/auth/request-password-reset';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -381,13 +367,11 @@ class UsersServiceApi {
           ? null
           : _serializers.serialize(
               utilitiesWebApiProtosRequestPasswordResetRequest,
-              specifiedType: _type);
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -410,9 +394,10 @@ class UsersServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -451,7 +436,7 @@ class UsersServiceApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>> apiDashboardV1AuthResetPasswordPost({
     UtilitiesWebApiProtosResetPasswordRequest?
-        utilitiesWebApiProtosResetPasswordRequest,
+    utilitiesWebApiProtosResetPasswordRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -462,16 +447,10 @@ class UsersServiceApi {
     final _path = r'/api/dashboard/v1/auth/reset-password';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -485,14 +464,13 @@ class UsersServiceApi {
       const _type = FullType(UtilitiesWebApiProtosResetPasswordRequest);
       _bodyData = utilitiesWebApiProtosResetPasswordRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosResetPasswordRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosResetPasswordRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -515,9 +493,10 @@ class UsersServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -555,7 +534,7 @@ class UsersServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosSignInResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosSignInResponse>>
-      apiDashboardV1AuthSignInPost({
+  apiDashboardV1AuthSignInPost({
     UtilitiesWebApiProtosSignInRequest? utilitiesWebApiProtosSignInRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -567,16 +546,10 @@ class UsersServiceApi {
     final _path = r'/api/dashboard/v1/auth/sign-in';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -590,14 +563,13 @@ class UsersServiceApi {
       const _type = FullType(UtilitiesWebApiProtosSignInRequest);
       _bodyData = utilitiesWebApiProtosSignInRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosSignInRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosSignInRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -620,10 +592,12 @@ class UsersServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosSignInResponse),
-            ) as UtilitiesWebApiProtosSignInResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosSignInResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosSignInResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -672,16 +646,10 @@ class UsersServiceApi {
     final _path = r'/api/dashboard/v1/auth/sign-out';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -695,10 +663,7 @@ class UsersServiceApi {
       _bodyData = body;
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -721,9 +686,10 @@ class UsersServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

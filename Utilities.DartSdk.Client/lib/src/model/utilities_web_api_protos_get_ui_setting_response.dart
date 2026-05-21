@@ -16,16 +16,18 @@ part 'utilities_web_api_protos_get_ui_setting_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetUiSettingResponse
     implements
-        Built<UtilitiesWebApiProtosGetUiSettingResponse,
-            UtilitiesWebApiProtosGetUiSettingResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosGetUiSettingResponse,
+          UtilitiesWebApiProtosGetUiSettingResponseBuilder
+        > {
   @BuiltValueField(wireName: r'item')
   UtilitiesWebApiProtosUiSettingItem? get item;
 
   UtilitiesWebApiProtosGetUiSettingResponse._();
 
-  factory UtilitiesWebApiProtosGetUiSettingResponse(
-          [void updates(UtilitiesWebApiProtosGetUiSettingResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosGetUiSettingResponse;
+  factory UtilitiesWebApiProtosGetUiSettingResponse([
+    void updates(UtilitiesWebApiProtosGetUiSettingResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosGetUiSettingResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosGetUiSettingResponseBuilder b) =>
@@ -41,7 +43,7 @@ class _$UtilitiesWebApiProtosGetUiSettingResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetUiSettingResponse,
-    _$UtilitiesWebApiProtosGetUiSettingResponse
+    _$UtilitiesWebApiProtosGetUiSettingResponse,
   ];
 
   @override
@@ -67,9 +69,11 @@ class _$UtilitiesWebApiProtosGetUiSettingResponseSerializer
     UtilitiesWebApiProtosGetUiSettingResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -85,10 +89,14 @@ class _$UtilitiesWebApiProtosGetUiSettingResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'item':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UtilitiesWebApiProtosUiSettingItem),
-          ) as UtilitiesWebApiProtosUiSettingItem;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      UtilitiesWebApiProtosUiSettingItem,
+                    ),
+                  )
+                  as UtilitiesWebApiProtosUiSettingItem;
           result.item.replace(valueDes);
           break;
         default:

@@ -19,8 +19,10 @@ part 'utilities_web_api_protos_import_device_model_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosImportDeviceModelResponse
     implements
-        Built<UtilitiesWebApiProtosImportDeviceModelResponse,
-            UtilitiesWebApiProtosImportDeviceModelResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosImportDeviceModelResponse,
+          UtilitiesWebApiProtosImportDeviceModelResponseBuilder
+        > {
   @BuiltValueField(wireName: r'model')
   UtilitiesWebApiProtosDeviceModel? get model;
 
@@ -29,20 +31,19 @@ abstract class UtilitiesWebApiProtosImportDeviceModelResponse
 
   UtilitiesWebApiProtosImportDeviceModelResponse._();
 
-  factory UtilitiesWebApiProtosImportDeviceModelResponse(
-          [void updates(
-              UtilitiesWebApiProtosImportDeviceModelResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosImportDeviceModelResponse;
+  factory UtilitiesWebApiProtosImportDeviceModelResponse([
+    void updates(UtilitiesWebApiProtosImportDeviceModelResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosImportDeviceModelResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosImportDeviceModelResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosImportDeviceModelResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosImportDeviceModelResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosImportDeviceModelResponseSerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosImportDeviceModelResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosImportDeviceModelResponseSerializer
@@ -51,7 +52,7 @@ class _$UtilitiesWebApiProtosImportDeviceModelResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosImportDeviceModelResponse,
-    _$UtilitiesWebApiProtosImportDeviceModelResponse
+    _$UtilitiesWebApiProtosImportDeviceModelResponse,
   ];
 
   @override
@@ -73,8 +74,9 @@ class _$UtilitiesWebApiProtosImportDeviceModelResponseSerializer
       yield r'warnings';
       yield serializers.serialize(
         object.warnings,
-        specifiedType: const FullType(
-            BuiltList, [FullType(UtilitiesWebApiProtosImportWarning)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosImportWarning),
+        ]),
       );
     }
   }
@@ -85,9 +87,11 @@ class _$UtilitiesWebApiProtosImportDeviceModelResponseSerializer
     UtilitiesWebApiProtosImportDeviceModelResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -103,18 +107,25 @@ class _$UtilitiesWebApiProtosImportDeviceModelResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'model':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UtilitiesWebApiProtosDeviceModel),
-          ) as UtilitiesWebApiProtosDeviceModel;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      UtilitiesWebApiProtosDeviceModel,
+                    ),
+                  )
+                  as UtilitiesWebApiProtosDeviceModel;
           result.model.replace(valueDes);
           break;
         case r'warnings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosImportWarning)]),
-          ) as BuiltList<UtilitiesWebApiProtosImportWarning>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosImportWarning),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosImportWarning>;
           result.warnings.replace(valueDes);
           break;
         default:

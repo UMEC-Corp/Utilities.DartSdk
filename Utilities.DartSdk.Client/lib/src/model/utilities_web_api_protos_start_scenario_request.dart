@@ -15,17 +15,19 @@ part 'utilities_web_api_protos_start_scenario_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosStartScenarioRequest
     implements
-        Built<UtilitiesWebApiProtosStartScenarioRequest,
-            UtilitiesWebApiProtosStartScenarioRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosStartScenarioRequest,
+          UtilitiesWebApiProtosStartScenarioRequestBuilder
+        > {
   /// Id of the scenario
   @BuiltValueField(wireName: r'scenarioId')
   String? get scenarioId;
 
   UtilitiesWebApiProtosStartScenarioRequest._();
 
-  factory UtilitiesWebApiProtosStartScenarioRequest(
-          [void updates(UtilitiesWebApiProtosStartScenarioRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosStartScenarioRequest;
+  factory UtilitiesWebApiProtosStartScenarioRequest([
+    void updates(UtilitiesWebApiProtosStartScenarioRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosStartScenarioRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosStartScenarioRequestBuilder b) =>
@@ -41,7 +43,7 @@ class _$UtilitiesWebApiProtosStartScenarioRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosStartScenarioRequest,
-    _$UtilitiesWebApiProtosStartScenarioRequest
+    _$UtilitiesWebApiProtosStartScenarioRequest,
   ];
 
   @override
@@ -67,9 +69,11 @@ class _$UtilitiesWebApiProtosStartScenarioRequestSerializer
     UtilitiesWebApiProtosStartScenarioRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -85,10 +89,12 @@ class _$UtilitiesWebApiProtosStartScenarioRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'scenarioId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.scenarioId = valueDes;
           break;
         default:

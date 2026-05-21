@@ -16,8 +16,10 @@ part 'utilities_web_api_protos_sign_in_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosSignInRequest
     implements
-        Built<UtilitiesWebApiProtosSignInRequest,
-            UtilitiesWebApiProtosSignInRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosSignInRequest,
+          UtilitiesWebApiProtosSignInRequestBuilder
+        > {
   /// The username of the user.
   @BuiltValueField(wireName: r'userName')
   String? get userName;
@@ -28,9 +30,9 @@ abstract class UtilitiesWebApiProtosSignInRequest
 
   UtilitiesWebApiProtosSignInRequest._();
 
-  factory UtilitiesWebApiProtosSignInRequest(
-          [void updates(UtilitiesWebApiProtosSignInRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosSignInRequest;
+  factory UtilitiesWebApiProtosSignInRequest([
+    void updates(UtilitiesWebApiProtosSignInRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosSignInRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosSignInRequestBuilder b) => b;
@@ -45,7 +47,7 @@ class _$UtilitiesWebApiProtosSignInRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosSignInRequest,
-    _$UtilitiesWebApiProtosSignInRequest
+    _$UtilitiesWebApiProtosSignInRequest,
   ];
 
   @override
@@ -78,9 +80,11 @@ class _$UtilitiesWebApiProtosSignInRequestSerializer
     UtilitiesWebApiProtosSignInRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,17 +100,21 @@ class _$UtilitiesWebApiProtosSignInRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'userName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.userName = valueDes;
           break;
         case r'password':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.password = valueDes;
           break;
         default:

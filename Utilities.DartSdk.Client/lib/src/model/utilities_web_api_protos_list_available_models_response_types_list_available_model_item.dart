@@ -20,8 +20,9 @@ part 'utilities_web_api_protos_list_available_models_response_types_list_availab
 abstract class UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem
     implements
         Built<
-            UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem,
-            UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItemBuilder> {
+          UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem,
+          UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItemBuilder
+        > {
   @BuiltValueField(wireName: r'vendorCode')
   String? get vendorCode;
 
@@ -39,33 +40,37 @@ abstract class UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailabl
 
   UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem._();
 
-  factory UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem(
-          [void updates(
-              UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItemBuilder
-                  b)]) =
+  factory UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem([
+    void updates(
+      UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItemBuilder
+      b,
+    ),
+  ]) =
       _$UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItemBuilder
-              b) =>
-      b;
+    UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItemBuilder
+    b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<
-          UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem>
-      get serializer =>
-          _$UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItemSerializer();
+    UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem
+  >
+  get serializer =>
+      _$UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItemSerializer();
 }
 
 class _$UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItemSerializer
     implements
         PrimitiveSerializer<
-            UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem> {
+          UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem
+        > {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem,
-    _$UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem
+    _$UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem,
   ];
 
   @override
@@ -75,7 +80,7 @@ class _$UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelI
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
     UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem
-        object, {
+    object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.vendorCode != null) {
@@ -119,12 +124,14 @@ class _$UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelI
   Object serialize(
     Serializers serializers,
     UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem
-        object, {
+    object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -133,7 +140,7 @@ class _$UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelI
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItemBuilder
-        result,
+    result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -141,38 +148,48 @@ class _$UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelI
       final value = serializedList[i + 1];
       switch (key) {
         case r'vendorCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.vendorCode = valueDes;
           break;
         case r'vendorName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.vendorName = valueDes;
           break;
         case r'modelCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.modelCode = valueDes;
           break;
         case r'modelName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.modelName = valueDes;
           break;
         case r'hardwareVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.hardwareVersion = valueDes;
           break;
         default:
@@ -185,7 +202,7 @@ class _$UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelI
 
   @override
   UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem
-      deserialize(
+  deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,

@@ -16,6 +16,8 @@ class _$UtilitiesWebApiProtosGetUnitResponse
   final BuiltList<UtilitiesWebApiProtosUnitParameter>? parameters;
   @override
   final BuiltList<UtilitiesWebApiProtosUnitCommand>? commands;
+  @override
+  final BuiltList<UtilitiesWebApiProtosUnitCondition>? conditions;
 
   factory _$UtilitiesWebApiProtosGetUnitResponse(
           [void Function(UtilitiesWebApiProtosGetUnitResponseBuilder)?
@@ -23,7 +25,7 @@ class _$UtilitiesWebApiProtosGetUnitResponse
       (UtilitiesWebApiProtosGetUnitResponseBuilder()..update(updates))._build();
 
   _$UtilitiesWebApiProtosGetUnitResponse._(
-      {this.unit, this.inputs, this.parameters, this.commands})
+      {this.unit, this.inputs, this.parameters, this.commands, this.conditions})
       : super._();
   @override
   UtilitiesWebApiProtosGetUnitResponse rebuild(
@@ -41,7 +43,8 @@ class _$UtilitiesWebApiProtosGetUnitResponse
         unit == other.unit &&
         inputs == other.inputs &&
         parameters == other.parameters &&
-        commands == other.commands;
+        commands == other.commands &&
+        conditions == other.conditions;
   }
 
   @override
@@ -51,6 +54,7 @@ class _$UtilitiesWebApiProtosGetUnitResponse
     _$hash = $jc(_$hash, inputs.hashCode);
     _$hash = $jc(_$hash, parameters.hashCode);
     _$hash = $jc(_$hash, commands.hashCode);
+    _$hash = $jc(_$hash, conditions.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,7 +65,8 @@ class _$UtilitiesWebApiProtosGetUnitResponse
           ..add('unit', unit)
           ..add('inputs', inputs)
           ..add('parameters', parameters)
-          ..add('commands', commands))
+          ..add('commands', commands)
+          ..add('conditions', conditions))
         .toString();
   }
 }
@@ -95,6 +100,12 @@ class UtilitiesWebApiProtosGetUnitResponseBuilder
   set commands(ListBuilder<UtilitiesWebApiProtosUnitCommand>? commands) =>
       _$this._commands = commands;
 
+  ListBuilder<UtilitiesWebApiProtosUnitCondition>? _conditions;
+  ListBuilder<UtilitiesWebApiProtosUnitCondition> get conditions =>
+      _$this._conditions ??= ListBuilder<UtilitiesWebApiProtosUnitCondition>();
+  set conditions(ListBuilder<UtilitiesWebApiProtosUnitCondition>? conditions) =>
+      _$this._conditions = conditions;
+
   UtilitiesWebApiProtosGetUnitResponseBuilder() {
     UtilitiesWebApiProtosGetUnitResponse._defaults(this);
   }
@@ -106,6 +117,7 @@ class UtilitiesWebApiProtosGetUnitResponseBuilder
       _inputs = $v.inputs?.toBuilder();
       _parameters = $v.parameters?.toBuilder();
       _commands = $v.commands?.toBuilder();
+      _conditions = $v.conditions?.toBuilder();
       _$v = null;
     }
     return this;
@@ -134,6 +146,7 @@ class UtilitiesWebApiProtosGetUnitResponseBuilder
             inputs: _inputs?.build(),
             parameters: _parameters?.build(),
             commands: _commands?.build(),
+            conditions: _conditions?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -146,6 +159,8 @@ class UtilitiesWebApiProtosGetUnitResponseBuilder
         _parameters?.build();
         _$failedField = 'commands';
         _commands?.build();
+        _$failedField = 'conditions';
+        _conditions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'UtilitiesWebApiProtosGetUnitResponse',

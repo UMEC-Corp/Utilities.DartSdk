@@ -15,17 +15,19 @@ part 'utilities_web_api_protos_hide_alert_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosHideAlertResponse
     implements
-        Built<UtilitiesWebApiProtosHideAlertResponse,
-            UtilitiesWebApiProtosHideAlertResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosHideAlertResponse,
+          UtilitiesWebApiProtosHideAlertResponseBuilder
+        > {
   /// Updated status of the alert
   @BuiltValueField(wireName: r'isHidden')
   bool? get isHidden;
 
   UtilitiesWebApiProtosHideAlertResponse._();
 
-  factory UtilitiesWebApiProtosHideAlertResponse(
-          [void updates(UtilitiesWebApiProtosHideAlertResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosHideAlertResponse;
+  factory UtilitiesWebApiProtosHideAlertResponse([
+    void updates(UtilitiesWebApiProtosHideAlertResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosHideAlertResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosHideAlertResponseBuilder b) => b;
@@ -40,7 +42,7 @@ class _$UtilitiesWebApiProtosHideAlertResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosHideAlertResponse,
-    _$UtilitiesWebApiProtosHideAlertResponse
+    _$UtilitiesWebApiProtosHideAlertResponse,
   ];
 
   @override
@@ -66,9 +68,11 @@ class _$UtilitiesWebApiProtosHideAlertResponseSerializer
     UtilitiesWebApiProtosHideAlertResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -84,10 +88,12 @@ class _$UtilitiesWebApiProtosHideAlertResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'isHidden':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.isHidden = valueDes;
           break;
         default:

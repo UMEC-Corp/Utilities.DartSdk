@@ -17,27 +17,28 @@ part 'utilities_web_api_protos_list_supported_formats_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListSupportedFormatsResponse
     implements
-        Built<UtilitiesWebApiProtosListSupportedFormatsResponse,
-            UtilitiesWebApiProtosListSupportedFormatsResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosListSupportedFormatsResponse,
+          UtilitiesWebApiProtosListSupportedFormatsResponseBuilder
+        > {
   @BuiltValueField(wireName: r'formats')
   BuiltList<UtilitiesWebApiProtosSupportedFormat>? get formats;
 
   UtilitiesWebApiProtosListSupportedFormatsResponse._();
 
-  factory UtilitiesWebApiProtosListSupportedFormatsResponse(
-          [void updates(
-              UtilitiesWebApiProtosListSupportedFormatsResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosListSupportedFormatsResponse;
+  factory UtilitiesWebApiProtosListSupportedFormatsResponse([
+    void updates(UtilitiesWebApiProtosListSupportedFormatsResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosListSupportedFormatsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosListSupportedFormatsResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosListSupportedFormatsResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosListSupportedFormatsResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosListSupportedFormatsResponseSerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosListSupportedFormatsResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosListSupportedFormatsResponseSerializer
@@ -46,7 +47,7 @@ class _$UtilitiesWebApiProtosListSupportedFormatsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListSupportedFormatsResponse,
-    _$UtilitiesWebApiProtosListSupportedFormatsResponse
+    _$UtilitiesWebApiProtosListSupportedFormatsResponse,
   ];
 
   @override
@@ -61,8 +62,9 @@ class _$UtilitiesWebApiProtosListSupportedFormatsResponseSerializer
       yield r'formats';
       yield serializers.serialize(
         object.formats,
-        specifiedType: const FullType(
-            BuiltList, [FullType(UtilitiesWebApiProtosSupportedFormat)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosSupportedFormat),
+        ]),
       );
     }
   }
@@ -73,9 +75,11 @@ class _$UtilitiesWebApiProtosListSupportedFormatsResponseSerializer
     UtilitiesWebApiProtosListSupportedFormatsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,11 +95,14 @@ class _$UtilitiesWebApiProtosListSupportedFormatsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'formats':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosSupportedFormat)]),
-          ) as BuiltList<UtilitiesWebApiProtosSupportedFormat>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosSupportedFormat),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosSupportedFormat>;
           result.formats.replace(valueDes);
           break;
         default:

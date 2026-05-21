@@ -17,8 +17,9 @@ part 'utilities_web_api_protos_update_pinned_sensors_request_types_update_pinned
 abstract class UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem
     implements
         Built<
-            UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem,
-            UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItemBuilder> {
+          UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem,
+          UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItemBuilder
+        > {
   /// Code of the sensor
   @BuiltValueField(wireName: r'code')
   String? get code;
@@ -29,33 +30,37 @@ abstract class UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedS
 
   UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem._();
 
-  factory UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem(
-          [void updates(
-              UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItemBuilder
-                  b)]) =
+  factory UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem([
+    void updates(
+      UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItemBuilder
+      b,
+    ),
+  ]) =
       _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItemBuilder
-              b) =>
-      b;
+    UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItemBuilder
+    b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<
-          UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem>
-      get serializer =>
-          _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItemSerializer();
+    UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem
+  >
+  get serializer =>
+      _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItemSerializer();
 }
 
 class _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItemSerializer
     implements
         PrimitiveSerializer<
-            UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem> {
+          UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem
+        > {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem,
-    _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem
+    _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem,
   ];
 
   @override
@@ -65,7 +70,7 @@ class _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsI
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
     UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem
-        object, {
+    object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.code != null) {
@@ -88,12 +93,14 @@ class _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsI
   Object serialize(
     Serializers serializers,
     UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem
-        object, {
+    object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,7 +109,7 @@ class _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsI
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItemBuilder
-        result,
+    result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -110,17 +117,18 @@ class _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsI
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.code = valueDes;
           break;
         case r'index':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.index = valueDes;
           break;
         default:
@@ -133,7 +141,7 @@ class _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsI
 
   @override
   UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem
-      deserialize(
+  deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,

@@ -18,8 +18,10 @@ part 'utilities_web_api_protos_change_user_role_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosChangeUserRoleRequest
     implements
-        Built<UtilitiesWebApiProtosChangeUserRoleRequest,
-            UtilitiesWebApiProtosChangeUserRoleRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosChangeUserRoleRequest,
+          UtilitiesWebApiProtosChangeUserRoleRequestBuilder
+        > {
   /// The ID of the unit.
   @BuiltValueField(wireName: r'unitId')
   String? get unitId;
@@ -34,9 +36,9 @@ abstract class UtilitiesWebApiProtosChangeUserRoleRequest
 
   UtilitiesWebApiProtosChangeUserRoleRequest._();
 
-  factory UtilitiesWebApiProtosChangeUserRoleRequest(
-          [void updates(UtilitiesWebApiProtosChangeUserRoleRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosChangeUserRoleRequest;
+  factory UtilitiesWebApiProtosChangeUserRoleRequest([
+    void updates(UtilitiesWebApiProtosChangeUserRoleRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosChangeUserRoleRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosChangeUserRoleRequestBuilder b) =>
@@ -44,8 +46,7 @@ abstract class UtilitiesWebApiProtosChangeUserRoleRequest
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosChangeUserRoleRequest>
-      get serializer =>
-          _$UtilitiesWebApiProtosChangeUserRoleRequestSerializer();
+  get serializer => _$UtilitiesWebApiProtosChangeUserRoleRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosChangeUserRoleRequestSerializer
@@ -53,7 +54,7 @@ class _$UtilitiesWebApiProtosChangeUserRoleRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosChangeUserRoleRequest,
-    _$UtilitiesWebApiProtosChangeUserRoleRequest
+    _$UtilitiesWebApiProtosChangeUserRoleRequest,
   ];
 
   @override
@@ -93,9 +94,11 @@ class _$UtilitiesWebApiProtosChangeUserRoleRequestSerializer
     UtilitiesWebApiProtosChangeUserRoleRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -111,24 +114,29 @@ class _$UtilitiesWebApiProtosChangeUserRoleRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'unitId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.unitId = valueDes;
           break;
         case r'userId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.userId = valueDes;
           break;
         case r'newRole':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UtilitiesWebApiProtosUserRole),
-          ) as UtilitiesWebApiProtosUserRole;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      UtilitiesWebApiProtosUserRole,
+                    ),
+                  )
+                  as UtilitiesWebApiProtosUserRole;
           result.newRole = valueDes;
           break;
         default:

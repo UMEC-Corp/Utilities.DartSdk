@@ -19,8 +19,10 @@ part 'utilities_web_api_protos_list_device_models_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListDeviceModelsRequest
     implements
-        Built<UtilitiesWebApiProtosListDeviceModelsRequest,
-            UtilitiesWebApiProtosListDeviceModelsRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosListDeviceModelsRequest,
+          UtilitiesWebApiProtosListDeviceModelsRequestBuilder
+        > {
   @BuiltValueField(wireName: r'offset')
   int? get offset;
 
@@ -36,20 +38,18 @@ abstract class UtilitiesWebApiProtosListDeviceModelsRequest
 
   UtilitiesWebApiProtosListDeviceModelsRequest._();
 
-  factory UtilitiesWebApiProtosListDeviceModelsRequest(
-          [void updates(
-              UtilitiesWebApiProtosListDeviceModelsRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosListDeviceModelsRequest;
+  factory UtilitiesWebApiProtosListDeviceModelsRequest([
+    void updates(UtilitiesWebApiProtosListDeviceModelsRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosListDeviceModelsRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosListDeviceModelsRequestBuilder b) =>
-      b;
+    UtilitiesWebApiProtosListDeviceModelsRequestBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosListDeviceModelsRequest>
-      get serializer =>
-          _$UtilitiesWebApiProtosListDeviceModelsRequestSerializer();
+  get serializer => _$UtilitiesWebApiProtosListDeviceModelsRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosListDeviceModelsRequestSerializer
@@ -58,7 +58,7 @@ class _$UtilitiesWebApiProtosListDeviceModelsRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListDeviceModelsRequest,
-    _$UtilitiesWebApiProtosListDeviceModelsRequest
+    _$UtilitiesWebApiProtosListDeviceModelsRequest,
   ];
 
   @override
@@ -105,9 +105,11 @@ class _$UtilitiesWebApiProtosListDeviceModelsRequestSerializer
     UtilitiesWebApiProtosListDeviceModelsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -123,31 +125,35 @@ class _$UtilitiesWebApiProtosListDeviceModelsRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'offset':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.offset = valueDes;
           break;
         case r'limit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.limit = valueDes;
           break;
         case r'scopeFilter':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UtilitiesWebApiProtosModelScope),
-          ) as UtilitiesWebApiProtosModelScope;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      UtilitiesWebApiProtosModelScope,
+                    ),
+                  )
+                  as UtilitiesWebApiProtosModelScope;
           result.scopeFilter = valueDes;
           break;
         case r'searchText':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.searchText = valueDes;
           break;
         default:

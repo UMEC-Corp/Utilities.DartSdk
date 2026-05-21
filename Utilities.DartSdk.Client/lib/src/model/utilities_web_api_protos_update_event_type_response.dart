@@ -16,27 +16,27 @@ part 'utilities_web_api_protos_update_event_type_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpdateEventTypeResponse
     implements
-        Built<UtilitiesWebApiProtosUpdateEventTypeResponse,
-            UtilitiesWebApiProtosUpdateEventTypeResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosUpdateEventTypeResponse,
+          UtilitiesWebApiProtosUpdateEventTypeResponseBuilder
+        > {
   @BuiltValueField(wireName: r'item')
   UtilitiesWebApiProtosEventType? get item;
 
   UtilitiesWebApiProtosUpdateEventTypeResponse._();
 
-  factory UtilitiesWebApiProtosUpdateEventTypeResponse(
-          [void updates(
-              UtilitiesWebApiProtosUpdateEventTypeResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosUpdateEventTypeResponse;
+  factory UtilitiesWebApiProtosUpdateEventTypeResponse([
+    void updates(UtilitiesWebApiProtosUpdateEventTypeResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosUpdateEventTypeResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosUpdateEventTypeResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosUpdateEventTypeResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosUpdateEventTypeResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosUpdateEventTypeResponseSerializer();
+  get serializer => _$UtilitiesWebApiProtosUpdateEventTypeResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosUpdateEventTypeResponseSerializer
@@ -45,7 +45,7 @@ class _$UtilitiesWebApiProtosUpdateEventTypeResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdateEventTypeResponse,
-    _$UtilitiesWebApiProtosUpdateEventTypeResponse
+    _$UtilitiesWebApiProtosUpdateEventTypeResponse,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$UtilitiesWebApiProtosUpdateEventTypeResponseSerializer
     UtilitiesWebApiProtosUpdateEventTypeResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,10 +91,14 @@ class _$UtilitiesWebApiProtosUpdateEventTypeResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'item':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UtilitiesWebApiProtosEventType),
-          ) as UtilitiesWebApiProtosEventType;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      UtilitiesWebApiProtosEventType,
+                    ),
+                  )
+                  as UtilitiesWebApiProtosEventType;
           result.item.replace(valueDes);
           break;
         default:

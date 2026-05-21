@@ -15,28 +15,28 @@ part 'utilities_web_api_protos_create_share_link_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosCreateShareLinkResponse
     implements
-        Built<UtilitiesWebApiProtosCreateShareLinkResponse,
-            UtilitiesWebApiProtosCreateShareLinkResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosCreateShareLinkResponse,
+          UtilitiesWebApiProtosCreateShareLinkResponseBuilder
+        > {
   /// The generated shareable link for the unit.
   @BuiltValueField(wireName: r'shareLink')
   String? get shareLink;
 
   UtilitiesWebApiProtosCreateShareLinkResponse._();
 
-  factory UtilitiesWebApiProtosCreateShareLinkResponse(
-          [void updates(
-              UtilitiesWebApiProtosCreateShareLinkResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosCreateShareLinkResponse;
+  factory UtilitiesWebApiProtosCreateShareLinkResponse([
+    void updates(UtilitiesWebApiProtosCreateShareLinkResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosCreateShareLinkResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosCreateShareLinkResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosCreateShareLinkResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosCreateShareLinkResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosCreateShareLinkResponseSerializer();
+  get serializer => _$UtilitiesWebApiProtosCreateShareLinkResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosCreateShareLinkResponseSerializer
@@ -45,7 +45,7 @@ class _$UtilitiesWebApiProtosCreateShareLinkResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosCreateShareLinkResponse,
-    _$UtilitiesWebApiProtosCreateShareLinkResponse
+    _$UtilitiesWebApiProtosCreateShareLinkResponse,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$UtilitiesWebApiProtosCreateShareLinkResponseSerializer
     UtilitiesWebApiProtosCreateShareLinkResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,10 +91,12 @@ class _$UtilitiesWebApiProtosCreateShareLinkResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'shareLink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.shareLink = valueDes;
           break;
         default:

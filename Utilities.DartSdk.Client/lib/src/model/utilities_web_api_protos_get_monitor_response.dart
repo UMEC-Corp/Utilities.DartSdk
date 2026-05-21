@@ -16,16 +16,18 @@ part 'utilities_web_api_protos_get_monitor_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetMonitorResponse
     implements
-        Built<UtilitiesWebApiProtosGetMonitorResponse,
-            UtilitiesWebApiProtosGetMonitorResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosGetMonitorResponse,
+          UtilitiesWebApiProtosGetMonitorResponseBuilder
+        > {
   @BuiltValueField(wireName: r'monitor')
   UtilitiesWebApiProtosMonitor? get monitor;
 
   UtilitiesWebApiProtosGetMonitorResponse._();
 
-  factory UtilitiesWebApiProtosGetMonitorResponse(
-          [void updates(UtilitiesWebApiProtosGetMonitorResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosGetMonitorResponse;
+  factory UtilitiesWebApiProtosGetMonitorResponse([
+    void updates(UtilitiesWebApiProtosGetMonitorResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosGetMonitorResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosGetMonitorResponseBuilder b) => b;
@@ -40,7 +42,7 @@ class _$UtilitiesWebApiProtosGetMonitorResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetMonitorResponse,
-    _$UtilitiesWebApiProtosGetMonitorResponse
+    _$UtilitiesWebApiProtosGetMonitorResponse,
   ];
 
   @override
@@ -66,9 +68,11 @@ class _$UtilitiesWebApiProtosGetMonitorResponseSerializer
     UtilitiesWebApiProtosGetMonitorResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -84,10 +88,12 @@ class _$UtilitiesWebApiProtosGetMonitorResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'monitor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UtilitiesWebApiProtosMonitor),
-          ) as UtilitiesWebApiProtosMonitor;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(UtilitiesWebApiProtosMonitor),
+                  )
+                  as UtilitiesWebApiProtosMonitor;
           result.monitor.replace(valueDes);
           break;
         default:

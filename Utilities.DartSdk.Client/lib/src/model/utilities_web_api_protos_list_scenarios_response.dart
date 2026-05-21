@@ -18,8 +18,10 @@ part 'utilities_web_api_protos_list_scenarios_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListScenariosResponse
     implements
-        Built<UtilitiesWebApiProtosListScenariosResponse,
-            UtilitiesWebApiProtosListScenariosResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosListScenariosResponse,
+          UtilitiesWebApiProtosListScenariosResponseBuilder
+        > {
   /// Total count of scenarios
   @BuiltValueField(wireName: r'totalCount')
   int? get totalCount;
@@ -30,9 +32,9 @@ abstract class UtilitiesWebApiProtosListScenariosResponse
 
   UtilitiesWebApiProtosListScenariosResponse._();
 
-  factory UtilitiesWebApiProtosListScenariosResponse(
-          [void updates(UtilitiesWebApiProtosListScenariosResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosListScenariosResponse;
+  factory UtilitiesWebApiProtosListScenariosResponse([
+    void updates(UtilitiesWebApiProtosListScenariosResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosListScenariosResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosListScenariosResponseBuilder b) =>
@@ -40,8 +42,7 @@ abstract class UtilitiesWebApiProtosListScenariosResponse
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosListScenariosResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosListScenariosResponseSerializer();
+  get serializer => _$UtilitiesWebApiProtosListScenariosResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosListScenariosResponseSerializer
@@ -49,7 +50,7 @@ class _$UtilitiesWebApiProtosListScenariosResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListScenariosResponse,
-    _$UtilitiesWebApiProtosListScenariosResponse
+    _$UtilitiesWebApiProtosListScenariosResponse,
   ];
 
   @override
@@ -71,8 +72,9 @@ class _$UtilitiesWebApiProtosListScenariosResponseSerializer
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType: const FullType(
-            BuiltList, [FullType(UtilitiesWebApiProtosScenario)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosScenario),
+        ]),
       );
     }
   }
@@ -83,9 +85,11 @@ class _$UtilitiesWebApiProtosListScenariosResponseSerializer
     UtilitiesWebApiProtosListScenariosResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,18 +105,20 @@ class _$UtilitiesWebApiProtosListScenariosResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'totalCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.totalCount = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosScenario)]),
-          ) as BuiltList<UtilitiesWebApiProtosScenario>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosScenario),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosScenario>;
           result.items.replace(valueDes);
           break;
         default:

@@ -16,16 +16,18 @@ part 'utilities_web_api_protos_update_group_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpdateGroupResponse
     implements
-        Built<UtilitiesWebApiProtosUpdateGroupResponse,
-            UtilitiesWebApiProtosUpdateGroupResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosUpdateGroupResponse,
+          UtilitiesWebApiProtosUpdateGroupResponseBuilder
+        > {
   @BuiltValueField(wireName: r'item')
   UtilitiesWebApiProtosDeviceGroup? get item;
 
   UtilitiesWebApiProtosUpdateGroupResponse._();
 
-  factory UtilitiesWebApiProtosUpdateGroupResponse(
-          [void updates(UtilitiesWebApiProtosUpdateGroupResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosUpdateGroupResponse;
+  factory UtilitiesWebApiProtosUpdateGroupResponse([
+    void updates(UtilitiesWebApiProtosUpdateGroupResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosUpdateGroupResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosUpdateGroupResponseBuilder b) => b;
@@ -40,7 +42,7 @@ class _$UtilitiesWebApiProtosUpdateGroupResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdateGroupResponse,
-    _$UtilitiesWebApiProtosUpdateGroupResponse
+    _$UtilitiesWebApiProtosUpdateGroupResponse,
   ];
 
   @override
@@ -66,9 +68,11 @@ class _$UtilitiesWebApiProtosUpdateGroupResponseSerializer
     UtilitiesWebApiProtosUpdateGroupResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -84,10 +88,14 @@ class _$UtilitiesWebApiProtosUpdateGroupResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'item':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UtilitiesWebApiProtosDeviceGroup),
-          ) as UtilitiesWebApiProtosDeviceGroup;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      UtilitiesWebApiProtosDeviceGroup,
+                    ),
+                  )
+                  as UtilitiesWebApiProtosDeviceGroup;
           result.item.replace(valueDes);
           break;
         default:

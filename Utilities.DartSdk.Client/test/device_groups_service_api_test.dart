@@ -37,10 +37,12 @@ void main() {
     // Assign a unit to a device group (creates or reassigns)
     //
     //Future<UtilitiesWebApiProtosAssignUnitToGroupResponse> apiDashboardV1DeviceGroupsGroupIdUnitsDeviceClientIdassignPost(String groupId, String deviceClientId, { UtilitiesWebApiProtosAssignUnitToGroupRequest utilitiesWebApiProtosAssignUnitToGroupRequest }) async
-    test('test apiDashboardV1DeviceGroupsGroupIdUnitsDeviceClientIdassignPost',
-        () async {
-      // TODO
-    });
+    test(
+      'test apiDashboardV1DeviceGroupsGroupIdUnitsDeviceClientIdassignPost',
+      () async {
+        // TODO
+      },
+    );
 
     // List unit IDs belonging to a device group
     //
@@ -80,9 +82,11 @@ void main() {
     // Reset a unit's group assignment back to the tenant root group
     //
     //Future<UtilitiesWebApiProtosResetUnitGroupResponse> apiDashboardV1UnitsDeviceClientIdresetDeviceGroupPost(String deviceClientId, { UtilitiesWebApiProtosResetUnitGroupRequest utilitiesWebApiProtosResetUnitGroupRequest }) async
-    test('test apiDashboardV1UnitsDeviceClientIdresetDeviceGroupPost',
-        () async {
-      // TODO
-    });
+    test(
+      'test apiDashboardV1UnitsDeviceClientIdresetDeviceGroupPost',
+      () async {
+        // TODO
+      },
+    );
   });
 }

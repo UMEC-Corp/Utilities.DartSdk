@@ -18,8 +18,10 @@ part 'utilities_web_api_protos_device_group_tree_node.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDeviceGroupTreeNode
     implements
-        Built<UtilitiesWebApiProtosDeviceGroupTreeNode,
-            UtilitiesWebApiProtosDeviceGroupTreeNodeBuilder> {
+        Built<
+          UtilitiesWebApiProtosDeviceGroupTreeNode,
+          UtilitiesWebApiProtosDeviceGroupTreeNodeBuilder
+        > {
   @BuiltValueField(wireName: r'group')
   UtilitiesWebApiProtosDeviceGroup? get group;
 
@@ -29,9 +31,9 @@ abstract class UtilitiesWebApiProtosDeviceGroupTreeNode
 
   UtilitiesWebApiProtosDeviceGroupTreeNode._();
 
-  factory UtilitiesWebApiProtosDeviceGroupTreeNode(
-          [void updates(UtilitiesWebApiProtosDeviceGroupTreeNodeBuilder b)]) =
-      _$UtilitiesWebApiProtosDeviceGroupTreeNode;
+  factory UtilitiesWebApiProtosDeviceGroupTreeNode([
+    void updates(UtilitiesWebApiProtosDeviceGroupTreeNodeBuilder b),
+  ]) = _$UtilitiesWebApiProtosDeviceGroupTreeNode;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosDeviceGroupTreeNodeBuilder b) => b;
@@ -46,7 +48,7 @@ class _$UtilitiesWebApiProtosDeviceGroupTreeNodeSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosDeviceGroupTreeNode,
-    _$UtilitiesWebApiProtosDeviceGroupTreeNode
+    _$UtilitiesWebApiProtosDeviceGroupTreeNode,
   ];
 
   @override
@@ -68,8 +70,9 @@ class _$UtilitiesWebApiProtosDeviceGroupTreeNodeSerializer
       yield r'children';
       yield serializers.serialize(
         object.children,
-        specifiedType: const FullType(
-            BuiltList, [FullType(UtilitiesWebApiProtosDeviceGroupTreeNode)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosDeviceGroupTreeNode),
+        ]),
       );
     }
   }
@@ -80,9 +83,11 @@ class _$UtilitiesWebApiProtosDeviceGroupTreeNodeSerializer
     UtilitiesWebApiProtosDeviceGroupTreeNode object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,18 +103,25 @@ class _$UtilitiesWebApiProtosDeviceGroupTreeNodeSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'group':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UtilitiesWebApiProtosDeviceGroup),
-          ) as UtilitiesWebApiProtosDeviceGroup;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      UtilitiesWebApiProtosDeviceGroup,
+                    ),
+                  )
+                  as UtilitiesWebApiProtosDeviceGroup;
           result.group.replace(valueDes);
           break;
         case r'children':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList,
-                [FullType(UtilitiesWebApiProtosDeviceGroupTreeNode)]),
-          ) as BuiltList<UtilitiesWebApiProtosDeviceGroupTreeNode>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosDeviceGroupTreeNode),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosDeviceGroupTreeNode>;
           result.children.replace(valueDes);
           break;
         default:

@@ -16,8 +16,10 @@ part 'utilities_web_api_protos_assign_unit_to_group_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAssignUnitToGroupResponse
     implements
-        Built<UtilitiesWebApiProtosAssignUnitToGroupResponse,
-            UtilitiesWebApiProtosAssignUnitToGroupResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosAssignUnitToGroupResponse,
+          UtilitiesWebApiProtosAssignUnitToGroupResponseBuilder
+        > {
   /// The device client id that was assigned
   @BuiltValueField(wireName: r'deviceClientId')
   String? get deviceClientId;
@@ -28,20 +30,19 @@ abstract class UtilitiesWebApiProtosAssignUnitToGroupResponse
 
   UtilitiesWebApiProtosAssignUnitToGroupResponse._();
 
-  factory UtilitiesWebApiProtosAssignUnitToGroupResponse(
-          [void updates(
-              UtilitiesWebApiProtosAssignUnitToGroupResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosAssignUnitToGroupResponse;
+  factory UtilitiesWebApiProtosAssignUnitToGroupResponse([
+    void updates(UtilitiesWebApiProtosAssignUnitToGroupResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosAssignUnitToGroupResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosAssignUnitToGroupResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosAssignUnitToGroupResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosAssignUnitToGroupResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosAssignUnitToGroupResponseSerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosAssignUnitToGroupResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosAssignUnitToGroupResponseSerializer
@@ -50,7 +51,7 @@ class _$UtilitiesWebApiProtosAssignUnitToGroupResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAssignUnitToGroupResponse,
-    _$UtilitiesWebApiProtosAssignUnitToGroupResponse
+    _$UtilitiesWebApiProtosAssignUnitToGroupResponse,
   ];
 
   @override
@@ -83,9 +84,11 @@ class _$UtilitiesWebApiProtosAssignUnitToGroupResponseSerializer
     UtilitiesWebApiProtosAssignUnitToGroupResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,17 +104,21 @@ class _$UtilitiesWebApiProtosAssignUnitToGroupResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'deviceClientId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.deviceClientId = valueDes;
           break;
         case r'groupId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.groupId = valueDes;
           break;
         default:

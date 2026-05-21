@@ -15,17 +15,19 @@ part 'utilities_web_api_protos_reset_unit_group_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosResetUnitGroupRequest
     implements
-        Built<UtilitiesWebApiProtosResetUnitGroupRequest,
-            UtilitiesWebApiProtosResetUnitGroupRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosResetUnitGroupRequest,
+          UtilitiesWebApiProtosResetUnitGroupRequestBuilder
+        > {
   /// Id of the device client to reset
   @BuiltValueField(wireName: r'deviceClientId')
   String? get deviceClientId;
 
   UtilitiesWebApiProtosResetUnitGroupRequest._();
 
-  factory UtilitiesWebApiProtosResetUnitGroupRequest(
-          [void updates(UtilitiesWebApiProtosResetUnitGroupRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosResetUnitGroupRequest;
+  factory UtilitiesWebApiProtosResetUnitGroupRequest([
+    void updates(UtilitiesWebApiProtosResetUnitGroupRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosResetUnitGroupRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosResetUnitGroupRequestBuilder b) =>
@@ -33,8 +35,7 @@ abstract class UtilitiesWebApiProtosResetUnitGroupRequest
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosResetUnitGroupRequest>
-      get serializer =>
-          _$UtilitiesWebApiProtosResetUnitGroupRequestSerializer();
+  get serializer => _$UtilitiesWebApiProtosResetUnitGroupRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosResetUnitGroupRequestSerializer
@@ -42,7 +43,7 @@ class _$UtilitiesWebApiProtosResetUnitGroupRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosResetUnitGroupRequest,
-    _$UtilitiesWebApiProtosResetUnitGroupRequest
+    _$UtilitiesWebApiProtosResetUnitGroupRequest,
   ];
 
   @override
@@ -68,9 +69,11 @@ class _$UtilitiesWebApiProtosResetUnitGroupRequestSerializer
     UtilitiesWebApiProtosResetUnitGroupRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -86,10 +89,12 @@ class _$UtilitiesWebApiProtosResetUnitGroupRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'deviceClientId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.deviceClientId = valueDes;
           break;
         default:

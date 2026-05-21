@@ -20,8 +20,9 @@ part 'utilities_web_api_protos_list_units_response_types_list_units_response_sen
 abstract class UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor
     implements
         Built<
-            UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor,
-            UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorBuilder> {
+          UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor,
+          UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorBuilder
+        > {
   /// Code of the sensor
   @BuiltValueField(wireName: r'code')
   String? get code;
@@ -44,33 +45,35 @@ abstract class UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSenso
 
   UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor._();
 
-  factory UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor(
-          [void updates(
-              UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorBuilder
-                  b)]) =
-      _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor;
+  factory UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor([
+    void updates(
+      UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorBuilder
+      b,
+    ),
+  ]) = _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorBuilder
-              b) =>
-      b;
+    UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<
-          UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor>
-      get serializer =>
-          _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorSerializer();
+    UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor
+  >
+  get serializer =>
+      _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorSerializer();
 }
 
 class _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorSerializer
     implements
         PrimitiveSerializer<
-            UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor> {
+          UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor
+        > {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor,
-    _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor
+    _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor,
   ];
 
   @override
@@ -125,9 +128,11 @@ class _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorSerial
     UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -136,7 +141,7 @@ class _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorSerial
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorBuilder
-        result,
+    result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -144,38 +149,45 @@ class _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorSerial
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.code = valueDes;
           break;
         case r'dashboardDisplayIndex':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.dashboardDisplayIndex = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(double),
-          ) as double;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(double),
+                  )
+                  as double;
           result.value = valueDes;
           break;
         case r'unitsOfMeasurement':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.unitsOfMeasurement = valueDes;
           break;
         case r'isConnected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.isConnected = valueDes;
           break;
         default:
@@ -188,7 +200,7 @@ class _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensorSerial
 
   @override
   UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor
-      deserialize(
+  deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,

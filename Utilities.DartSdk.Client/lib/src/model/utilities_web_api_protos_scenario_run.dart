@@ -20,8 +20,10 @@ part 'utilities_web_api_protos_scenario_run.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosScenarioRun
     implements
-        Built<UtilitiesWebApiProtosScenarioRun,
-            UtilitiesWebApiProtosScenarioRunBuilder> {
+        Built<
+          UtilitiesWebApiProtosScenarioRun,
+          UtilitiesWebApiProtosScenarioRunBuilder
+        > {
   /// Id of the run
   @BuiltValueField(wireName: r'id')
   String? get id;
@@ -44,9 +46,9 @@ abstract class UtilitiesWebApiProtosScenarioRun
 
   UtilitiesWebApiProtosScenarioRun._();
 
-  factory UtilitiesWebApiProtosScenarioRun(
-          [void updates(UtilitiesWebApiProtosScenarioRunBuilder b)]) =
-      _$UtilitiesWebApiProtosScenarioRun;
+  factory UtilitiesWebApiProtosScenarioRun([
+    void updates(UtilitiesWebApiProtosScenarioRunBuilder b),
+  ]) = _$UtilitiesWebApiProtosScenarioRun;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosScenarioRunBuilder b) => b;
@@ -61,7 +63,7 @@ class _$UtilitiesWebApiProtosScenarioRunSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosScenarioRun,
-    _$UtilitiesWebApiProtosScenarioRun
+    _$UtilitiesWebApiProtosScenarioRun,
   ];
 
   @override
@@ -115,9 +117,11 @@ class _$UtilitiesWebApiProtosScenarioRunSerializer
     UtilitiesWebApiProtosScenarioRun object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -133,39 +137,44 @@ class _$UtilitiesWebApiProtosScenarioRunSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'scenarioId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.scenarioId = valueDes;
           break;
         case r'startedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.startedAt = valueDes;
           break;
         case r'finishedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.finishedAt = valueDes;
           break;
         case r'status':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(UtilitiesWebApiProtosScenarioRunStatus),
-          ) as UtilitiesWebApiProtosScenarioRunStatus;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      UtilitiesWebApiProtosScenarioRunStatus,
+                    ),
+                  )
+                  as UtilitiesWebApiProtosScenarioRunStatus;
           result.status = valueDes;
           break;
         default:

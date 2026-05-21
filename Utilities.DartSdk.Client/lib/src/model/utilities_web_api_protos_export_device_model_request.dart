@@ -16,8 +16,10 @@ part 'utilities_web_api_protos_export_device_model_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosExportDeviceModelRequest
     implements
-        Built<UtilitiesWebApiProtosExportDeviceModelRequest,
-            UtilitiesWebApiProtosExportDeviceModelRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosExportDeviceModelRequest,
+          UtilitiesWebApiProtosExportDeviceModelRequestBuilder
+        > {
   @BuiltValueField(wireName: r'modelId')
   int? get modelId;
 
@@ -26,20 +28,18 @@ abstract class UtilitiesWebApiProtosExportDeviceModelRequest
 
   UtilitiesWebApiProtosExportDeviceModelRequest._();
 
-  factory UtilitiesWebApiProtosExportDeviceModelRequest(
-          [void updates(
-              UtilitiesWebApiProtosExportDeviceModelRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosExportDeviceModelRequest;
+  factory UtilitiesWebApiProtosExportDeviceModelRequest([
+    void updates(UtilitiesWebApiProtosExportDeviceModelRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosExportDeviceModelRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosExportDeviceModelRequestBuilder b) =>
-      b;
+    UtilitiesWebApiProtosExportDeviceModelRequestBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosExportDeviceModelRequest>
-      get serializer =>
-          _$UtilitiesWebApiProtosExportDeviceModelRequestSerializer();
+  get serializer => _$UtilitiesWebApiProtosExportDeviceModelRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosExportDeviceModelRequestSerializer
@@ -48,7 +48,7 @@ class _$UtilitiesWebApiProtosExportDeviceModelRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosExportDeviceModelRequest,
-    _$UtilitiesWebApiProtosExportDeviceModelRequest
+    _$UtilitiesWebApiProtosExportDeviceModelRequest,
   ];
 
   @override
@@ -81,9 +81,11 @@ class _$UtilitiesWebApiProtosExportDeviceModelRequestSerializer
     UtilitiesWebApiProtosExportDeviceModelRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,17 +101,18 @@ class _$UtilitiesWebApiProtosExportDeviceModelRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'modelId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.modelId = valueDes;
           break;
         case r'formatCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.formatCode = valueDes;
           break;
         default:

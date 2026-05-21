@@ -21,24 +21,26 @@ part 'utilities_web_api_protos_device_model_types_unit.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDeviceModelTypesUnit
     implements
-        Built<UtilitiesWebApiProtosDeviceModelTypesUnit,
-            UtilitiesWebApiProtosDeviceModelTypesUnitBuilder> {
+        Built<
+          UtilitiesWebApiProtosDeviceModelTypesUnit,
+          UtilitiesWebApiProtosDeviceModelTypesUnitBuilder
+        > {
   @BuiltValueField(wireName: r'sensors')
   BuiltMap<String, UtilitiesWebApiProtosDeviceModelTypesSensorConnection>?
-      get sensors;
+  get sensors;
 
   @BuiltValueField(wireName: r'commands')
   BuiltMap<String, UtilitiesWebApiProtosDeviceModelTypesCommand>? get commands;
 
   @BuiltValueField(wireName: r'parameters')
   BuiltMap<String, UtilitiesWebApiProtosDeviceModelTypesParameter>?
-      get parameters;
+  get parameters;
 
   UtilitiesWebApiProtosDeviceModelTypesUnit._();
 
-  factory UtilitiesWebApiProtosDeviceModelTypesUnit(
-          [void updates(UtilitiesWebApiProtosDeviceModelTypesUnitBuilder b)]) =
-      _$UtilitiesWebApiProtosDeviceModelTypesUnit;
+  factory UtilitiesWebApiProtosDeviceModelTypesUnit([
+    void updates(UtilitiesWebApiProtosDeviceModelTypesUnitBuilder b),
+  ]) = _$UtilitiesWebApiProtosDeviceModelTypesUnit;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosDeviceModelTypesUnitBuilder b) =>
@@ -54,7 +56,7 @@ class _$UtilitiesWebApiProtosDeviceModelTypesUnitSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosDeviceModelTypesUnit,
-    _$UtilitiesWebApiProtosDeviceModelTypesUnit
+    _$UtilitiesWebApiProtosDeviceModelTypesUnit,
   ];
 
   @override
@@ -71,7 +73,7 @@ class _$UtilitiesWebApiProtosDeviceModelTypesUnitSerializer
         object.sensors,
         specifiedType: const FullType(BuiltMap, [
           FullType(String),
-          FullType(UtilitiesWebApiProtosDeviceModelTypesSensorConnection)
+          FullType(UtilitiesWebApiProtosDeviceModelTypesSensorConnection),
         ]),
       );
     }
@@ -81,7 +83,7 @@ class _$UtilitiesWebApiProtosDeviceModelTypesUnitSerializer
         object.commands,
         specifiedType: const FullType(BuiltMap, [
           FullType(String),
-          FullType(UtilitiesWebApiProtosDeviceModelTypesCommand)
+          FullType(UtilitiesWebApiProtosDeviceModelTypesCommand),
         ]),
       );
     }
@@ -91,7 +93,7 @@ class _$UtilitiesWebApiProtosDeviceModelTypesUnitSerializer
         object.parameters,
         specifiedType: const FullType(BuiltMap, [
           FullType(String),
-          FullType(UtilitiesWebApiProtosDeviceModelTypesParameter)
+          FullType(UtilitiesWebApiProtosDeviceModelTypesParameter),
         ]),
       );
     }
@@ -103,9 +105,11 @@ class _$UtilitiesWebApiProtosDeviceModelTypesUnitSerializer
     UtilitiesWebApiProtosDeviceModelTypesUnit object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -121,34 +125,50 @@ class _$UtilitiesWebApiProtosDeviceModelTypesUnitSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'sensors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [
-              FullType(String),
-              FullType(UtilitiesWebApiProtosDeviceModelTypesSensorConnection)
-            ]),
-          ) as BuiltMap<String,
-              UtilitiesWebApiProtosDeviceModelTypesSensorConnection>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(
+                        UtilitiesWebApiProtosDeviceModelTypesSensorConnection,
+                      ),
+                    ]),
+                  )
+                  as BuiltMap<
+                    String,
+                    UtilitiesWebApiProtosDeviceModelTypesSensorConnection
+                  >;
           result.sensors.replace(valueDes);
           break;
         case r'commands':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [
-              FullType(String),
-              FullType(UtilitiesWebApiProtosDeviceModelTypesCommand)
-            ]),
-          ) as BuiltMap<String, UtilitiesWebApiProtosDeviceModelTypesCommand>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(UtilitiesWebApiProtosDeviceModelTypesCommand),
+                    ]),
+                  )
+                  as BuiltMap<
+                    String,
+                    UtilitiesWebApiProtosDeviceModelTypesCommand
+                  >;
           result.commands.replace(valueDes);
           break;
         case r'parameters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [
-              FullType(String),
-              FullType(UtilitiesWebApiProtosDeviceModelTypesParameter)
-            ]),
-          ) as BuiltMap<String, UtilitiesWebApiProtosDeviceModelTypesParameter>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(UtilitiesWebApiProtosDeviceModelTypesParameter),
+                    ]),
+                  )
+                  as BuiltMap<
+                    String,
+                    UtilitiesWebApiProtosDeviceModelTypesParameter
+                  >;
           result.parameters.replace(valueDes);
           break;
         default:

@@ -19,8 +19,10 @@ part 'utilities_web_api_protos_add_maintainer_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAddMaintainerRequest
     implements
-        Built<UtilitiesWebApiProtosAddMaintainerRequest,
-            UtilitiesWebApiProtosAddMaintainerRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosAddMaintainerRequest,
+          UtilitiesWebApiProtosAddMaintainerRequestBuilder
+        > {
   /// The name of the company to create
   @BuiltValueField(wireName: r'maintainerName')
   String? get maintainerName;
@@ -43,9 +45,9 @@ abstract class UtilitiesWebApiProtosAddMaintainerRequest
 
   UtilitiesWebApiProtosAddMaintainerRequest._();
 
-  factory UtilitiesWebApiProtosAddMaintainerRequest(
-          [void updates(UtilitiesWebApiProtosAddMaintainerRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosAddMaintainerRequest;
+  factory UtilitiesWebApiProtosAddMaintainerRequest([
+    void updates(UtilitiesWebApiProtosAddMaintainerRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosAddMaintainerRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosAddMaintainerRequestBuilder b) =>
@@ -61,7 +63,7 @@ class _$UtilitiesWebApiProtosAddMaintainerRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAddMaintainerRequest,
-    _$UtilitiesWebApiProtosAddMaintainerRequest
+    _$UtilitiesWebApiProtosAddMaintainerRequest,
   ];
 
   @override
@@ -115,9 +117,11 @@ class _$UtilitiesWebApiProtosAddMaintainerRequestSerializer
     UtilitiesWebApiProtosAddMaintainerRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -133,38 +137,48 @@ class _$UtilitiesWebApiProtosAddMaintainerRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'maintainerName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.maintainerName = valueDes;
           break;
         case r'employeeName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.employeeName = valueDes;
           break;
         case r'username':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.username = valueDes;
           break;
         case r'password':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.password = valueDes;
           break;
         case r'locale':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.locale = valueDes;
           break;
         default:

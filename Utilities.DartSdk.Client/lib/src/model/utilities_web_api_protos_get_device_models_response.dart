@@ -17,27 +17,27 @@ part 'utilities_web_api_protos_get_device_models_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetDeviceModelsResponse
     implements
-        Built<UtilitiesWebApiProtosGetDeviceModelsResponse,
-            UtilitiesWebApiProtosGetDeviceModelsResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosGetDeviceModelsResponse,
+          UtilitiesWebApiProtosGetDeviceModelsResponseBuilder
+        > {
   @BuiltValueField(wireName: r'items')
   BuiltList<UtilitiesWebApiProtosDeviceModel>? get items;
 
   UtilitiesWebApiProtosGetDeviceModelsResponse._();
 
-  factory UtilitiesWebApiProtosGetDeviceModelsResponse(
-          [void updates(
-              UtilitiesWebApiProtosGetDeviceModelsResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosGetDeviceModelsResponse;
+  factory UtilitiesWebApiProtosGetDeviceModelsResponse([
+    void updates(UtilitiesWebApiProtosGetDeviceModelsResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosGetDeviceModelsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosGetDeviceModelsResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosGetDeviceModelsResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosGetDeviceModelsResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosGetDeviceModelsResponseSerializer();
+  get serializer => _$UtilitiesWebApiProtosGetDeviceModelsResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetDeviceModelsResponseSerializer
@@ -46,7 +46,7 @@ class _$UtilitiesWebApiProtosGetDeviceModelsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetDeviceModelsResponse,
-    _$UtilitiesWebApiProtosGetDeviceModelsResponse
+    _$UtilitiesWebApiProtosGetDeviceModelsResponse,
   ];
 
   @override
@@ -61,8 +61,9 @@ class _$UtilitiesWebApiProtosGetDeviceModelsResponseSerializer
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType: const FullType(
-            BuiltList, [FullType(UtilitiesWebApiProtosDeviceModel)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosDeviceModel),
+        ]),
       );
     }
   }
@@ -73,9 +74,11 @@ class _$UtilitiesWebApiProtosGetDeviceModelsResponseSerializer
     UtilitiesWebApiProtosGetDeviceModelsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -91,11 +94,14 @@ class _$UtilitiesWebApiProtosGetDeviceModelsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosDeviceModel)]),
-          ) as BuiltList<UtilitiesWebApiProtosDeviceModel>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosDeviceModel),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosDeviceModel>;
           result.items.replace(valueDes);
           break;
         default:

@@ -18,8 +18,10 @@ part 'utilities_web_api_protos_get_notifications_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetNotificationsResponse
     implements
-        Built<UtilitiesWebApiProtosGetNotificationsResponse,
-            UtilitiesWebApiProtosGetNotificationsResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosGetNotificationsResponse,
+          UtilitiesWebApiProtosGetNotificationsResponseBuilder
+        > {
   /// The total count of notifications.
   @BuiltValueField(wireName: r'totalCount')
   int? get totalCount;
@@ -30,20 +32,18 @@ abstract class UtilitiesWebApiProtosGetNotificationsResponse
 
   UtilitiesWebApiProtosGetNotificationsResponse._();
 
-  factory UtilitiesWebApiProtosGetNotificationsResponse(
-          [void updates(
-              UtilitiesWebApiProtosGetNotificationsResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosGetNotificationsResponse;
+  factory UtilitiesWebApiProtosGetNotificationsResponse([
+    void updates(UtilitiesWebApiProtosGetNotificationsResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosGetNotificationsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosGetNotificationsResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosGetNotificationsResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosGetNotificationsResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosGetNotificationsResponseSerializer();
+  get serializer => _$UtilitiesWebApiProtosGetNotificationsResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetNotificationsResponseSerializer
@@ -52,7 +52,7 @@ class _$UtilitiesWebApiProtosGetNotificationsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetNotificationsResponse,
-    _$UtilitiesWebApiProtosGetNotificationsResponse
+    _$UtilitiesWebApiProtosGetNotificationsResponse,
   ];
 
   @override
@@ -74,8 +74,9 @@ class _$UtilitiesWebApiProtosGetNotificationsResponseSerializer
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType: const FullType(
-            BuiltList, [FullType(UtilitiesWebApiProtosNotification)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosNotification),
+        ]),
       );
     }
   }
@@ -86,9 +87,11 @@ class _$UtilitiesWebApiProtosGetNotificationsResponseSerializer
     UtilitiesWebApiProtosGetNotificationsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -104,18 +107,20 @@ class _$UtilitiesWebApiProtosGetNotificationsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'totalCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.totalCount = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosNotification)]),
-          ) as BuiltList<UtilitiesWebApiProtosNotification>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosNotification),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosNotification>;
           result.items.replace(valueDes);
           break;
         default:

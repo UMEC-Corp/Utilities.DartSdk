@@ -16,8 +16,10 @@ part 'utilities_web_api_protos_get_auth_method_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetAuthMethodResponse
     implements
-        Built<UtilitiesWebApiProtosGetAuthMethodResponse,
-            UtilitiesWebApiProtosGetAuthMethodResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosGetAuthMethodResponse,
+          UtilitiesWebApiProtosGetAuthMethodResponseBuilder
+        > {
   /// Name of the method
   @BuiltValueField(wireName: r'method')
   String? get method;
@@ -28,9 +30,9 @@ abstract class UtilitiesWebApiProtosGetAuthMethodResponse
 
   UtilitiesWebApiProtosGetAuthMethodResponse._();
 
-  factory UtilitiesWebApiProtosGetAuthMethodResponse(
-          [void updates(UtilitiesWebApiProtosGetAuthMethodResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosGetAuthMethodResponse;
+  factory UtilitiesWebApiProtosGetAuthMethodResponse([
+    void updates(UtilitiesWebApiProtosGetAuthMethodResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosGetAuthMethodResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosGetAuthMethodResponseBuilder b) =>
@@ -38,8 +40,7 @@ abstract class UtilitiesWebApiProtosGetAuthMethodResponse
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosGetAuthMethodResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosGetAuthMethodResponseSerializer();
+  get serializer => _$UtilitiesWebApiProtosGetAuthMethodResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetAuthMethodResponseSerializer
@@ -47,7 +48,7 @@ class _$UtilitiesWebApiProtosGetAuthMethodResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetAuthMethodResponse,
-    _$UtilitiesWebApiProtosGetAuthMethodResponse
+    _$UtilitiesWebApiProtosGetAuthMethodResponse,
   ];
 
   @override
@@ -80,9 +81,11 @@ class _$UtilitiesWebApiProtosGetAuthMethodResponseSerializer
     UtilitiesWebApiProtosGetAuthMethodResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,17 +101,21 @@ class _$UtilitiesWebApiProtosGetAuthMethodResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'method':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.method = valueDes;
           break;
         case r'provider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.provider = valueDes;
           break;
         default:

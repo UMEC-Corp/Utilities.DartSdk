@@ -34,7 +34,7 @@ class IntegrationsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosListIntegartionsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosListIntegartionsResponse>>
-      apiDashboardV1IntegrationsGet({
+  apiDashboardV1IntegrationsGet({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -45,16 +45,10 @@ class IntegrationsServiceApi {
     final _path = r'/api/dashboard/v1/integrations';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -76,10 +70,12 @@ class IntegrationsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosListIntegartionsResponse),
-            ) as UtilitiesWebApiProtosListIntegartionsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosListIntegartionsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosListIntegartionsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -117,7 +113,7 @@ class IntegrationsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosListIntegrationModelsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosListIntegrationModelsResponse>>
-      apiDashboardV1IntegrationsIntegrationIdModelsGet({
+  apiDashboardV1IntegrationsIntegrationIdModelsGet({
     required String integrationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -128,22 +124,21 @@ class IntegrationsServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/integrations/{integrationId}/models'
         .replaceAll(
-            '{' r'integrationId' '}',
-            encodeQueryParameter(
-                    _serializers, integrationId, const FullType(String))
-                .toString());
+          '{'
+          r'integrationId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            integrationId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -165,10 +160,12 @@ class IntegrationsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(
-                  UtilitiesWebApiProtosListIntegrationModelsResponse),
-            ) as UtilitiesWebApiProtosListIntegrationModelsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosListIntegrationModelsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosListIntegrationModelsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

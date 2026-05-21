@@ -21,8 +21,10 @@ part 'utilities_web_api_protos_add_monitor_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAddMonitorRequest
     implements
-        Built<UtilitiesWebApiProtosAddMonitorRequest,
-            UtilitiesWebApiProtosAddMonitorRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosAddMonitorRequest,
+          UtilitiesWebApiProtosAddMonitorRequestBuilder
+        > {
   /// The ID of the virtual device.
   @BuiltValueField(wireName: r'unitId')
   String? get unitId;
@@ -53,9 +55,9 @@ abstract class UtilitiesWebApiProtosAddMonitorRequest
 
   UtilitiesWebApiProtosAddMonitorRequest._();
 
-  factory UtilitiesWebApiProtosAddMonitorRequest(
-          [void updates(UtilitiesWebApiProtosAddMonitorRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosAddMonitorRequest;
+  factory UtilitiesWebApiProtosAddMonitorRequest([
+    void updates(UtilitiesWebApiProtosAddMonitorRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosAddMonitorRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosAddMonitorRequestBuilder b) => b;
@@ -70,7 +72,7 @@ class _$UtilitiesWebApiProtosAddMonitorRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAddMonitorRequest,
-    _$UtilitiesWebApiProtosAddMonitorRequest
+    _$UtilitiesWebApiProtosAddMonitorRequest,
   ];
 
   @override
@@ -138,9 +140,11 @@ class _$UtilitiesWebApiProtosAddMonitorRequestSerializer
     UtilitiesWebApiProtosAddMonitorRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -156,52 +160,60 @@ class _$UtilitiesWebApiProtosAddMonitorRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'unitId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.unitId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(double),
-          ) as double;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(double),
+                  )
+                  as double;
           result.value = valueDes;
           break;
         case r'limit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(double),
-          ) as double;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(double),
+                  )
+                  as double;
           result.limit = valueDes;
           break;
         case r'installed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.installed = valueDes;
           break;
         case r'lifespan':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.lifespan = valueDes;
           break;
         case r'inputCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.inputCode = valueDes;
           break;
         default:

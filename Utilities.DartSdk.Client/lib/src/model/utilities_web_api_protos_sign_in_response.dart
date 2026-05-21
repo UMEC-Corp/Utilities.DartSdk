@@ -17,8 +17,10 @@ part 'utilities_web_api_protos_sign_in_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosSignInResponse
     implements
-        Built<UtilitiesWebApiProtosSignInResponse,
-            UtilitiesWebApiProtosSignInResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosSignInResponse,
+          UtilitiesWebApiProtosSignInResponseBuilder
+        > {
   /// The access token.
   @BuiltValueField(wireName: r'accessToken')
   String? get accessToken;
@@ -33,9 +35,9 @@ abstract class UtilitiesWebApiProtosSignInResponse
 
   UtilitiesWebApiProtosSignInResponse._();
 
-  factory UtilitiesWebApiProtosSignInResponse(
-          [void updates(UtilitiesWebApiProtosSignInResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosSignInResponse;
+  factory UtilitiesWebApiProtosSignInResponse([
+    void updates(UtilitiesWebApiProtosSignInResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosSignInResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosSignInResponseBuilder b) => b;
@@ -50,7 +52,7 @@ class _$UtilitiesWebApiProtosSignInResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosSignInResponse,
-    _$UtilitiesWebApiProtosSignInResponse
+    _$UtilitiesWebApiProtosSignInResponse,
   ];
 
   @override
@@ -90,9 +92,11 @@ class _$UtilitiesWebApiProtosSignInResponseSerializer
     UtilitiesWebApiProtosSignInResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,24 +112,30 @@ class _$UtilitiesWebApiProtosSignInResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'accessToken':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.accessToken = valueDes;
           break;
         case r'refreshToken':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.refreshToken = valueDes;
           break;
         case r'otpTokenProvider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.otpTokenProvider = valueDes;
           break;
         default:

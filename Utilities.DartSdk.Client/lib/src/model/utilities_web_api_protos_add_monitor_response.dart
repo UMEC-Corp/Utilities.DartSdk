@@ -15,17 +15,19 @@ part 'utilities_web_api_protos_add_monitor_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAddMonitorResponse
     implements
-        Built<UtilitiesWebApiProtosAddMonitorResponse,
-            UtilitiesWebApiProtosAddMonitorResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosAddMonitorResponse,
+          UtilitiesWebApiProtosAddMonitorResponseBuilder
+        > {
   /// Id of the created monitor.
   @BuiltValueField(wireName: r'monitorId')
   int? get monitorId;
 
   UtilitiesWebApiProtosAddMonitorResponse._();
 
-  factory UtilitiesWebApiProtosAddMonitorResponse(
-          [void updates(UtilitiesWebApiProtosAddMonitorResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosAddMonitorResponse;
+  factory UtilitiesWebApiProtosAddMonitorResponse([
+    void updates(UtilitiesWebApiProtosAddMonitorResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosAddMonitorResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosAddMonitorResponseBuilder b) => b;
@@ -40,7 +42,7 @@ class _$UtilitiesWebApiProtosAddMonitorResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAddMonitorResponse,
-    _$UtilitiesWebApiProtosAddMonitorResponse
+    _$UtilitiesWebApiProtosAddMonitorResponse,
   ];
 
   @override
@@ -66,9 +68,11 @@ class _$UtilitiesWebApiProtosAddMonitorResponseSerializer
     UtilitiesWebApiProtosAddMonitorResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -84,10 +88,9 @@ class _$UtilitiesWebApiProtosAddMonitorResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'monitorId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.monitorId = valueDes;
           break;
         default:

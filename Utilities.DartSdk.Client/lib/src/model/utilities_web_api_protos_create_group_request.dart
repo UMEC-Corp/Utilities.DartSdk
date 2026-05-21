@@ -16,8 +16,10 @@ part 'utilities_web_api_protos_create_group_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosCreateGroupRequest
     implements
-        Built<UtilitiesWebApiProtosCreateGroupRequest,
-            UtilitiesWebApiProtosCreateGroupRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosCreateGroupRequest,
+          UtilitiesWebApiProtosCreateGroupRequestBuilder
+        > {
   /// Name of the device group
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -28,9 +30,9 @@ abstract class UtilitiesWebApiProtosCreateGroupRequest
 
   UtilitiesWebApiProtosCreateGroupRequest._();
 
-  factory UtilitiesWebApiProtosCreateGroupRequest(
-          [void updates(UtilitiesWebApiProtosCreateGroupRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosCreateGroupRequest;
+  factory UtilitiesWebApiProtosCreateGroupRequest([
+    void updates(UtilitiesWebApiProtosCreateGroupRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosCreateGroupRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosCreateGroupRequestBuilder b) => b;
@@ -45,7 +47,7 @@ class _$UtilitiesWebApiProtosCreateGroupRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosCreateGroupRequest,
-    _$UtilitiesWebApiProtosCreateGroupRequest
+    _$UtilitiesWebApiProtosCreateGroupRequest,
   ];
 
   @override
@@ -78,9 +80,11 @@ class _$UtilitiesWebApiProtosCreateGroupRequestSerializer
     UtilitiesWebApiProtosCreateGroupRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,17 +100,21 @@ class _$UtilitiesWebApiProtosCreateGroupRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'parentGroupId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.parentGroupId = valueDes;
           break;
         default:

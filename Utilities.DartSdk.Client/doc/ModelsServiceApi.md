@@ -11,8 +11,11 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiDashboardV1ModelsFormatsGet**](ModelsServiceApi.md#apidashboardv1modelsformatsget) | **GET** /api/dashboard/v1/models/formats | Return the catalog of import/export-capable formats as advertised by the  upstream registry.
 [**apiDashboardV1ModelsGet**](ModelsServiceApi.md#apidashboardv1modelsget) | **GET** /api/dashboard/v1/models | Get a list of available models
+[**apiDashboardV1ModelsModelIdDelete**](ModelsServiceApi.md#apidashboardv1modelsmodeliddelete) | **DELETE** /api/dashboard/v1/models/{modelId} | Soft-delete an existing customer-scope device model. Tenant isolation  is enforced upstream from the JWT-derived TenantId.
 [**apiDashboardV1ModelsModelIdGet**](ModelsServiceApi.md#apidashboardv1modelsmodelidget) | **GET** /api/dashboard/v1/models/{modelId} | Load a single model with full units/events/errors/manuals payload.
+[**apiDashboardV1ModelsModelIdPut**](ModelsServiceApi.md#apidashboardv1modelsmodelidput) | **PUT** /api/dashboard/v1/models/{modelId} | Update an existing customer-scope device model in place. Tenant  isolation is enforced upstream from the JWT-derived TenantId.
 [**apiDashboardV1ModelsModelIdexportPost**](ModelsServiceApi.md#apidashboardv1modelsmodelidexportpost) | **POST** /api/dashboard/v1/models/{modelId}:export | Pass through to upstream Export. The upstream returns FailedPrecondition with  &#39;no_exporter_for_format&#39; until an exporter ships, which is propagated to the  REST caller as a 400-class status by gRPC HTTP transcoding.
+[**apiDashboardV1ModelsPost**](ModelsServiceApi.md#apidashboardv1modelspost) | **POST** /api/dashboard/v1/models | Create a customer-scope device model from scratch. The gateway pulls  TenantId / UserId from the user JWT (downstream gRPC clients  authenticate as the service and do not see user claims).
 [**apiDashboardV1ModelsbatchGetPost**](ModelsServiceApi.md#apidashboardv1modelsbatchgetpost) | **POST** /api/dashboard/v1/models:batch-get | Get information for provded models
 [**apiDashboardV1ModelsimportPost**](ModelsServiceApi.md#apidashboardv1modelsimportpost) | **POST** /api/dashboard/v1/models:import | Translate the REST-friendly single-shot import request into the upstream&#39;s  client-streaming gRPC contract: send the init message, then push the file  bytes as one or more chunks before completing the stream.
 [**apiDashboardV1ModelslistPost**](ModelsServiceApi.md#apidashboardv1modelslistpost) | **POST** /api/dashboard/v1/models:list | List device models with tenant isolation, scope filter and free-text search.  Forwards to the upstream service which extracts the caller&#39;s TenantId from the  JWT and applies platform-or-own filtering.
@@ -92,6 +95,47 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **apiDashboardV1ModelsModelIdDelete**
+> JsonObject apiDashboardV1ModelsModelIdDelete(modelId)
+
+Soft-delete an existing customer-scope device model. Tenant isolation  is enforced upstream from the JWT-derived TenantId.
+
+### Example
+```dart
+import 'package:utilities_dart_sdk_client/api.dart';
+
+final api = UtilitiesDartSdkClient().getModelsServiceApi();
+final int modelId = 789; // int | 
+
+try {
+    final response = api.apiDashboardV1ModelsModelIdDelete(modelId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling ModelsServiceApi->apiDashboardV1ModelsModelIdDelete: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **modelId** | **int**|  | 
+
+### Return type
+
+[**JsonObject**](JsonObject.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **apiDashboardV1ModelsModelIdGet**
 > UtilitiesWebApiProtosGetDeviceModelDetailsResponse apiDashboardV1ModelsModelIdGet(modelId)
 
@@ -133,6 +177,49 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **apiDashboardV1ModelsModelIdPut**
+> UtilitiesWebApiProtosUpdateDeviceModelResponse apiDashboardV1ModelsModelIdPut(modelId, utilitiesWebApiProtosUpdateDeviceModelRequest)
+
+Update an existing customer-scope device model in place. Tenant  isolation is enforced upstream from the JWT-derived TenantId.
+
+### Example
+```dart
+import 'package:utilities_dart_sdk_client/api.dart';
+
+final api = UtilitiesDartSdkClient().getModelsServiceApi();
+final int modelId = 789; // int | 
+final UtilitiesWebApiProtosUpdateDeviceModelRequest utilitiesWebApiProtosUpdateDeviceModelRequest = ; // UtilitiesWebApiProtosUpdateDeviceModelRequest | 
+
+try {
+    final response = api.apiDashboardV1ModelsModelIdPut(modelId, utilitiesWebApiProtosUpdateDeviceModelRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling ModelsServiceApi->apiDashboardV1ModelsModelIdPut: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **modelId** | **int**|  | 
+ **utilitiesWebApiProtosUpdateDeviceModelRequest** | [**UtilitiesWebApiProtosUpdateDeviceModelRequest**](UtilitiesWebApiProtosUpdateDeviceModelRequest.md)|  | [optional] 
+
+### Return type
+
+[**UtilitiesWebApiProtosUpdateDeviceModelResponse**](UtilitiesWebApiProtosUpdateDeviceModelResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **apiDashboardV1ModelsModelIdexportPost**
 > UtilitiesWebApiProtosExportDeviceModelResponse apiDashboardV1ModelsModelIdexportPost(modelId, utilitiesWebApiProtosExportDeviceModelRequest)
 
@@ -164,6 +251,47 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UtilitiesWebApiProtosExportDeviceModelResponse**](UtilitiesWebApiProtosExportDeviceModelResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiDashboardV1ModelsPost**
+> UtilitiesWebApiProtosCreateDeviceModelResponse apiDashboardV1ModelsPost(utilitiesWebApiProtosCreateDeviceModelRequest)
+
+Create a customer-scope device model from scratch. The gateway pulls  TenantId / UserId from the user JWT (downstream gRPC clients  authenticate as the service and do not see user claims).
+
+### Example
+```dart
+import 'package:utilities_dart_sdk_client/api.dart';
+
+final api = UtilitiesDartSdkClient().getModelsServiceApi();
+final UtilitiesWebApiProtosCreateDeviceModelRequest utilitiesWebApiProtosCreateDeviceModelRequest = ; // UtilitiesWebApiProtosCreateDeviceModelRequest | 
+
+try {
+    final response = api.apiDashboardV1ModelsPost(utilitiesWebApiProtosCreateDeviceModelRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling ModelsServiceApi->apiDashboardV1ModelsPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **utilitiesWebApiProtosCreateDeviceModelRequest** | [**UtilitiesWebApiProtosCreateDeviceModelRequest**](UtilitiesWebApiProtosCreateDeviceModelRequest.md)|  | [optional] 
+
+### Return type
+
+[**UtilitiesWebApiProtosCreateDeviceModelResponse**](UtilitiesWebApiProtosCreateDeviceModelResponse.md)
 
 ### Authorization
 

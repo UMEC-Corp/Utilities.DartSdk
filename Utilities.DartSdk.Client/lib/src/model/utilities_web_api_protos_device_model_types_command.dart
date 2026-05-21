@@ -16,27 +16,27 @@ part 'utilities_web_api_protos_device_model_types_command.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDeviceModelTypesCommand
     implements
-        Built<UtilitiesWebApiProtosDeviceModelTypesCommand,
-            UtilitiesWebApiProtosDeviceModelTypesCommandBuilder> {
+        Built<
+          UtilitiesWebApiProtosDeviceModelTypesCommand,
+          UtilitiesWebApiProtosDeviceModelTypesCommandBuilder
+        > {
   @BuiltValueField(wireName: r'arguments')
   BuiltMap<String, String>? get arguments;
 
   UtilitiesWebApiProtosDeviceModelTypesCommand._();
 
-  factory UtilitiesWebApiProtosDeviceModelTypesCommand(
-          [void updates(
-              UtilitiesWebApiProtosDeviceModelTypesCommandBuilder b)]) =
-      _$UtilitiesWebApiProtosDeviceModelTypesCommand;
+  factory UtilitiesWebApiProtosDeviceModelTypesCommand([
+    void updates(UtilitiesWebApiProtosDeviceModelTypesCommandBuilder b),
+  ]) = _$UtilitiesWebApiProtosDeviceModelTypesCommand;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosDeviceModelTypesCommandBuilder b) =>
-      b;
+    UtilitiesWebApiProtosDeviceModelTypesCommandBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosDeviceModelTypesCommand>
-      get serializer =>
-          _$UtilitiesWebApiProtosDeviceModelTypesCommandSerializer();
+  get serializer => _$UtilitiesWebApiProtosDeviceModelTypesCommandSerializer();
 }
 
 class _$UtilitiesWebApiProtosDeviceModelTypesCommandSerializer
@@ -45,7 +45,7 @@ class _$UtilitiesWebApiProtosDeviceModelTypesCommandSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosDeviceModelTypesCommand,
-    _$UtilitiesWebApiProtosDeviceModelTypesCommand
+    _$UtilitiesWebApiProtosDeviceModelTypesCommand,
   ];
 
   @override
@@ -60,8 +60,10 @@ class _$UtilitiesWebApiProtosDeviceModelTypesCommandSerializer
       yield r'arguments';
       yield serializers.serialize(
         object.arguments,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType(BuiltMap, [
+          FullType(String),
+          FullType(String),
+        ]),
       );
     }
   }
@@ -72,9 +74,11 @@ class _$UtilitiesWebApiProtosDeviceModelTypesCommandSerializer
     UtilitiesWebApiProtosDeviceModelTypesCommand object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,11 +94,15 @@ class _$UtilitiesWebApiProtosDeviceModelTypesCommandSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'arguments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltMap, [
+                      FullType(String),
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltMap<String, String>;
           result.arguments.replace(valueDes);
           break;
         default:

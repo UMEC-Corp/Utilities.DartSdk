@@ -16,8 +16,10 @@ part 'utilities_web_api_protos_unit_events_response_types_event_property.g.dart'
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty
     implements
-        Built<UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty,
-            UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertyBuilder> {
+        Built<
+          UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty,
+          UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertyBuilder
+        > {
   /// / Code of the property.
   @BuiltValueField(wireName: r'code')
   String? get code;
@@ -28,31 +30,32 @@ abstract class UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty
 
   UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty._();
 
-  factory UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty(
-          [void updates(
-              UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertyBuilder
-                  b)]) =
-      _$UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty;
+  factory UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty([
+    void updates(
+      UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertyBuilder b,
+    ),
+  ]) = _$UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertyBuilder b) =>
-      b;
+    UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertyBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty>
-      get serializer =>
-          _$UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertySerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertySerializer();
 }
 
 class _$UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertySerializer
     implements
         PrimitiveSerializer<
-            UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty> {
+          UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty
+        > {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty,
-    _$UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty
+    _$UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty,
   ];
 
   @override
@@ -86,9 +89,11 @@ class _$UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertySerializer
     UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -97,7 +102,7 @@ class _$UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertySerializer
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertyBuilder
-        result,
+    result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -105,17 +110,21 @@ class _$UtilitiesWebApiProtosUnitEventsResponseTypesEventPropertySerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.code = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(double),
-          ) as double;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(double),
+                  )
+                  as double;
           result.value = valueDes;
           break;
         default:

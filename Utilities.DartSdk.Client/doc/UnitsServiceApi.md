@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**apiDashboardV1DevicesDeviceIdUnitsUnitCodesendPingPost**](UnitsServiceApi.md#apidashboardv1devicesdeviceidunitsunitcodesendpingpost) | **POST** /api/dashboard/v1/devices/{deviceId}/units/{unitCode}:send-ping | Send ping command to a unit
 [**apiDashboardV1DevicesDeviceIdUnitsUnitCodeupdateFirmwarePost**](UnitsServiceApi.md#apidashboardv1devicesdeviceidunitsunitcodeupdatefirmwarepost) | **POST** /api/dashboard/v1/devices/{deviceId}/units/{unitCode}:update-firmware | Start unit firmware update
 [**apiDashboardV1DevicesattachPost**](UnitsServiceApi.md#apidashboardv1devicesattachpost) | **POST** /api/dashboard/v1/devices:attach | Attaches device to the current company
+[**apiDashboardV1DevicesbindPost**](UnitsServiceApi.md#apidashboardv1devicesbindpost) | **POST** /api/dashboard/v1/devices:bind | Binds a physical device to the current maintainer (BLE onboarding entry point).
 [**apiDashboardV1UnitsGet**](UnitsServiceApi.md#apidashboardv1unitsget) | **GET** /api/dashboard/v1/units | Get a list of units by a specific criterias
 [**apiDashboardV1UnitsUnitIdContactsPut**](UnitsServiceApi.md#apidashboardv1unitsunitidcontactsput) | **PUT** /api/dashboard/v1/units/{unitId}/contacts | Update a list of business contacts for a unit
 [**apiDashboardV1UnitsUnitIdDelete**](UnitsServiceApi.md#apidashboardv1unitsunitiddelete) | **DELETE** /api/dashboard/v1/units/{unitId} | Detaches a virtual device from the current maintainer.
@@ -696,6 +697,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**JsonObject**](JsonObject.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiDashboardV1DevicesbindPost**
+> UtilitiesWebApiProtosBindDeviceResponse apiDashboardV1DevicesbindPost(utilitiesWebApiProtosBindDeviceRequest)
+
+Binds a physical device to the current maintainer (BLE onboarding entry point).
+
+Returns the bound device id together with the provisioned units so the  client can deep-link to the device page using the {deviceId}/{unitCode}  subscription key, without an extra round-trip.
+
+### Example
+```dart
+import 'package:utilities_dart_sdk_client/api.dart';
+
+final api = UtilitiesDartSdkClient().getUnitsServiceApi();
+final UtilitiesWebApiProtosBindDeviceRequest utilitiesWebApiProtosBindDeviceRequest = ; // UtilitiesWebApiProtosBindDeviceRequest | 
+
+try {
+    final response = api.apiDashboardV1DevicesbindPost(utilitiesWebApiProtosBindDeviceRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UnitsServiceApi->apiDashboardV1DevicesbindPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **utilitiesWebApiProtosBindDeviceRequest** | [**UtilitiesWebApiProtosBindDeviceRequest**](UtilitiesWebApiProtosBindDeviceRequest.md)|  | [optional] 
+
+### Return type
+
+[**UtilitiesWebApiProtosBindDeviceResponse**](UtilitiesWebApiProtosBindDeviceResponse.md)
 
 ### Authorization
 

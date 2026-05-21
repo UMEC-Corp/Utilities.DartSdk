@@ -20,8 +20,10 @@ part 'utilities_web_api_protos_address.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAddress
     implements
-        Built<UtilitiesWebApiProtosAddress,
-            UtilitiesWebApiProtosAddressBuilder> {
+        Built<
+          UtilitiesWebApiProtosAddress,
+          UtilitiesWebApiProtosAddressBuilder
+        > {
   /// Id of the address
   @BuiltValueField(wireName: r'id')
   String? get id;
@@ -40,9 +42,9 @@ abstract class UtilitiesWebApiProtosAddress
 
   UtilitiesWebApiProtosAddress._();
 
-  factory UtilitiesWebApiProtosAddress(
-          [void updates(UtilitiesWebApiProtosAddressBuilder b)]) =
-      _$UtilitiesWebApiProtosAddress;
+  factory UtilitiesWebApiProtosAddress([
+    void updates(UtilitiesWebApiProtosAddressBuilder b),
+  ]) = _$UtilitiesWebApiProtosAddress;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosAddressBuilder b) => b;
@@ -57,7 +59,7 @@ class _$UtilitiesWebApiProtosAddressSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAddress,
-    _$UtilitiesWebApiProtosAddress
+    _$UtilitiesWebApiProtosAddress,
   ];
 
   @override
@@ -93,8 +95,9 @@ class _$UtilitiesWebApiProtosAddressSerializer
       yield r'contacts';
       yield serializers.serialize(
         object.contacts,
-        specifiedType:
-            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosContact),
+        ]),
       );
     }
   }
@@ -105,9 +108,11 @@ class _$UtilitiesWebApiProtosAddressSerializer
     UtilitiesWebApiProtosAddress object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -123,32 +128,41 @@ class _$UtilitiesWebApiProtosAddressSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'text':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.text = valueDes;
           break;
         case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.comment = valueDes;
           break;
         case r'contacts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
-          ) as BuiltList<UtilitiesWebApiProtosContact>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosContact),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosContact>;
           result.contacts.replace(valueDes);
           break;
         default:

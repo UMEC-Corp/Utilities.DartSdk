@@ -27,8 +27,9 @@ part 'utilities_web_api_protos_unit_events_response_types_unit_property_changed_
 abstract class UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent
     implements
         Built<
-            UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent,
-            UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventBuilder> {
+          UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent,
+          UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventBuilder
+        > {
   /// / Subject of the event.
   @BuiltValueField(wireName: r'subject')
   String? get subject;
@@ -48,7 +49,7 @@ abstract class UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEv
   /// / List of properties changed in the event.
   @BuiltValueField(wireName: r'properties')
   BuiltList<UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty>?
-      get properties;
+  get properties;
 
   /// / List of monitors related to the event.
   @BuiltValueField(wireName: r'monitors')
@@ -64,33 +65,36 @@ abstract class UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEv
 
   UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent._();
 
-  factory UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent(
-          [void updates(
-              UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventBuilder
-                  b)]) =
-      _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent;
+  factory UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent([
+    void updates(
+      UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventBuilder
+      b,
+    ),
+  ]) = _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventBuilder
-              b) =>
-      b;
+    UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventBuilder
+    b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<
-          UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent>
-      get serializer =>
-          _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventSerializer();
+    UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent
+  >
+  get serializer =>
+      _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventSerializer();
 }
 
 class _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventSerializer
     implements
         PrimitiveSerializer<
-            UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent> {
+          UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent
+        > {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent,
-    _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent
+    _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent,
   ];
 
   @override
@@ -100,7 +104,7 @@ class _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventSeri
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
     UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent
-        object, {
+    object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.subject != null) {
@@ -136,7 +140,7 @@ class _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventSeri
       yield serializers.serialize(
         object.properties,
         specifiedType: const FullType(BuiltList, [
-          FullType(UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty)
+          FullType(UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty),
         ]),
       );
     }
@@ -144,16 +148,18 @@ class _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventSeri
       yield r'monitors';
       yield serializers.serialize(
         object.monitors,
-        specifiedType:
-            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosMonitor)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosMonitor),
+        ]),
       );
     }
     if (object.alerts != null) {
       yield r'alerts';
       yield serializers.serialize(
         object.alerts,
-        specifiedType:
-            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosAlert)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosAlert),
+        ]),
       );
     }
     if (object.text != null) {
@@ -169,12 +175,14 @@ class _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventSeri
   Object serialize(
     Serializers serializers,
     UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent
-        object, {
+    object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -183,7 +191,7 @@ class _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventSeri
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventBuilder
-        result,
+    result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -191,65 +199,82 @@ class _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventSeri
       final value = serializedList[i + 1];
       switch (key) {
         case r'subject':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.subject = valueDes;
           break;
         case r'deviceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.deviceId = valueDes;
           break;
         case r'unitCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.unitCode = valueDes;
           break;
         case r'timestamp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.timestamp = valueDes;
           break;
         case r'properties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(
-                  UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty)
-            ]),
-          ) as BuiltList<
-              UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(
+                        UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty
+                  >;
           result.properties.replace(valueDes);
           break;
         case r'monitors':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosMonitor)]),
-          ) as BuiltList<UtilitiesWebApiProtosMonitor>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosMonitor),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosMonitor>;
           result.monitors.replace(valueDes);
           break;
         case r'alerts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosAlert)]),
-          ) as BuiltList<UtilitiesWebApiProtosAlert>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosAlert),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosAlert>;
           result.alerts.replace(valueDes);
           break;
         case r'text':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.text = valueDes;
           break;
         default:
@@ -262,7 +287,7 @@ class _$UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEventSeri
 
   @override
   UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent
-      deserialize(
+  deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,

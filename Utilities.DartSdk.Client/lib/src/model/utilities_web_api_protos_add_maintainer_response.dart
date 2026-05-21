@@ -16,8 +16,10 @@ part 'utilities_web_api_protos_add_maintainer_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAddMaintainerResponse
     implements
-        Built<UtilitiesWebApiProtosAddMaintainerResponse,
-            UtilitiesWebApiProtosAddMaintainerResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosAddMaintainerResponse,
+          UtilitiesWebApiProtosAddMaintainerResponseBuilder
+        > {
   /// Id of the created company
   @BuiltValueField(wireName: r'maintainerId')
   String? get maintainerId;
@@ -28,9 +30,9 @@ abstract class UtilitiesWebApiProtosAddMaintainerResponse
 
   UtilitiesWebApiProtosAddMaintainerResponse._();
 
-  factory UtilitiesWebApiProtosAddMaintainerResponse(
-          [void updates(UtilitiesWebApiProtosAddMaintainerResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosAddMaintainerResponse;
+  factory UtilitiesWebApiProtosAddMaintainerResponse([
+    void updates(UtilitiesWebApiProtosAddMaintainerResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosAddMaintainerResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosAddMaintainerResponseBuilder b) =>
@@ -38,8 +40,7 @@ abstract class UtilitiesWebApiProtosAddMaintainerResponse
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosAddMaintainerResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosAddMaintainerResponseSerializer();
+  get serializer => _$UtilitiesWebApiProtosAddMaintainerResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosAddMaintainerResponseSerializer
@@ -47,7 +48,7 @@ class _$UtilitiesWebApiProtosAddMaintainerResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAddMaintainerResponse,
-    _$UtilitiesWebApiProtosAddMaintainerResponse
+    _$UtilitiesWebApiProtosAddMaintainerResponse,
   ];
 
   @override
@@ -80,9 +81,11 @@ class _$UtilitiesWebApiProtosAddMaintainerResponseSerializer
     UtilitiesWebApiProtosAddMaintainerResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -98,17 +101,21 @@ class _$UtilitiesWebApiProtosAddMaintainerResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'maintainerId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.maintainerId = valueDes;
           break;
         case r'employeeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.employeeId = valueDes;
           break;
         default:

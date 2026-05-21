@@ -16,8 +16,10 @@ part 'utilities_web_api_protos_detach_user_from_unit_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDetachUserFromUnitRequest
     implements
-        Built<UtilitiesWebApiProtosDetachUserFromUnitRequest,
-            UtilitiesWebApiProtosDetachUserFromUnitRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosDetachUserFromUnitRequest,
+          UtilitiesWebApiProtosDetachUserFromUnitRequestBuilder
+        > {
   /// The ID of the unit.
   @BuiltValueField(wireName: r'unitId')
   String? get unitId;
@@ -28,20 +30,19 @@ abstract class UtilitiesWebApiProtosDetachUserFromUnitRequest
 
   UtilitiesWebApiProtosDetachUserFromUnitRequest._();
 
-  factory UtilitiesWebApiProtosDetachUserFromUnitRequest(
-          [void updates(
-              UtilitiesWebApiProtosDetachUserFromUnitRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosDetachUserFromUnitRequest;
+  factory UtilitiesWebApiProtosDetachUserFromUnitRequest([
+    void updates(UtilitiesWebApiProtosDetachUserFromUnitRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosDetachUserFromUnitRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosDetachUserFromUnitRequestBuilder b) =>
-      b;
+    UtilitiesWebApiProtosDetachUserFromUnitRequestBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosDetachUserFromUnitRequest>
-      get serializer =>
-          _$UtilitiesWebApiProtosDetachUserFromUnitRequestSerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosDetachUserFromUnitRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosDetachUserFromUnitRequestSerializer
@@ -50,7 +51,7 @@ class _$UtilitiesWebApiProtosDetachUserFromUnitRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosDetachUserFromUnitRequest,
-    _$UtilitiesWebApiProtosDetachUserFromUnitRequest
+    _$UtilitiesWebApiProtosDetachUserFromUnitRequest,
   ];
 
   @override
@@ -83,9 +84,11 @@ class _$UtilitiesWebApiProtosDetachUserFromUnitRequestSerializer
     UtilitiesWebApiProtosDetachUserFromUnitRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,17 +104,18 @@ class _$UtilitiesWebApiProtosDetachUserFromUnitRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'unitId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.unitId = valueDes;
           break;
         case r'userId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.userId = valueDes;
           break;
         default:

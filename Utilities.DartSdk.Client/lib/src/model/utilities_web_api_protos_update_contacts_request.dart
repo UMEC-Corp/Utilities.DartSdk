@@ -18,8 +18,10 @@ part 'utilities_web_api_protos_update_contacts_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpdateContactsRequest
     implements
-        Built<UtilitiesWebApiProtosUpdateContactsRequest,
-            UtilitiesWebApiProtosUpdateContactsRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosUpdateContactsRequest,
+          UtilitiesWebApiProtosUpdateContactsRequestBuilder
+        > {
   /// The ID of the virtual device.
   @BuiltValueField(wireName: r'unitId')
   String? get unitId;
@@ -30,9 +32,9 @@ abstract class UtilitiesWebApiProtosUpdateContactsRequest
 
   UtilitiesWebApiProtosUpdateContactsRequest._();
 
-  factory UtilitiesWebApiProtosUpdateContactsRequest(
-          [void updates(UtilitiesWebApiProtosUpdateContactsRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosUpdateContactsRequest;
+  factory UtilitiesWebApiProtosUpdateContactsRequest([
+    void updates(UtilitiesWebApiProtosUpdateContactsRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosUpdateContactsRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosUpdateContactsRequestBuilder b) =>
@@ -40,8 +42,7 @@ abstract class UtilitiesWebApiProtosUpdateContactsRequest
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosUpdateContactsRequest>
-      get serializer =>
-          _$UtilitiesWebApiProtosUpdateContactsRequestSerializer();
+  get serializer => _$UtilitiesWebApiProtosUpdateContactsRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosUpdateContactsRequestSerializer
@@ -49,7 +50,7 @@ class _$UtilitiesWebApiProtosUpdateContactsRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdateContactsRequest,
-    _$UtilitiesWebApiProtosUpdateContactsRequest
+    _$UtilitiesWebApiProtosUpdateContactsRequest,
   ];
 
   @override
@@ -71,8 +72,9 @@ class _$UtilitiesWebApiProtosUpdateContactsRequestSerializer
       yield r'contacts';
       yield serializers.serialize(
         object.contacts,
-        specifiedType:
-            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosContact),
+        ]),
       );
     }
   }
@@ -83,9 +85,11 @@ class _$UtilitiesWebApiProtosUpdateContactsRequestSerializer
     UtilitiesWebApiProtosUpdateContactsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,18 +105,23 @@ class _$UtilitiesWebApiProtosUpdateContactsRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'unitId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.unitId = valueDes;
           break;
         case r'contacts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
-          ) as BuiltList<UtilitiesWebApiProtosContact>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosContact),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosContact>;
           result.contacts.replace(valueDes);
           break;
         default:

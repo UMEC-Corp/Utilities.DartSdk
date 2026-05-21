@@ -21,8 +21,10 @@ part 'utilities_web_api_protos_device_model_types_device_error.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDeviceModelTypesDeviceError
     implements
-        Built<UtilitiesWebApiProtosDeviceModelTypesDeviceError,
-            UtilitiesWebApiProtosDeviceModelTypesDeviceErrorBuilder> {
+        Built<
+          UtilitiesWebApiProtosDeviceModelTypesDeviceError,
+          UtilitiesWebApiProtosDeviceModelTypesDeviceErrorBuilder
+        > {
   @BuiltValueField(wireName: r'code')
   String? get code;
 
@@ -40,20 +42,19 @@ abstract class UtilitiesWebApiProtosDeviceModelTypesDeviceError
 
   UtilitiesWebApiProtosDeviceModelTypesDeviceError._();
 
-  factory UtilitiesWebApiProtosDeviceModelTypesDeviceError(
-          [void updates(
-              UtilitiesWebApiProtosDeviceModelTypesDeviceErrorBuilder b)]) =
-      _$UtilitiesWebApiProtosDeviceModelTypesDeviceError;
+  factory UtilitiesWebApiProtosDeviceModelTypesDeviceError([
+    void updates(UtilitiesWebApiProtosDeviceModelTypesDeviceErrorBuilder b),
+  ]) = _$UtilitiesWebApiProtosDeviceModelTypesDeviceError;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosDeviceModelTypesDeviceErrorBuilder b) =>
-      b;
+    UtilitiesWebApiProtosDeviceModelTypesDeviceErrorBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosDeviceModelTypesDeviceError>
-      get serializer =>
-          _$UtilitiesWebApiProtosDeviceModelTypesDeviceErrorSerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosDeviceModelTypesDeviceErrorSerializer();
 }
 
 class _$UtilitiesWebApiProtosDeviceModelTypesDeviceErrorSerializer
@@ -62,7 +63,7 @@ class _$UtilitiesWebApiProtosDeviceModelTypesDeviceErrorSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosDeviceModelTypesDeviceError,
-    _$UtilitiesWebApiProtosDeviceModelTypesDeviceError
+    _$UtilitiesWebApiProtosDeviceModelTypesDeviceError,
   ];
 
   @override
@@ -105,8 +106,9 @@ class _$UtilitiesWebApiProtosDeviceModelTypesDeviceErrorSerializer
       yield r'actions';
       yield serializers.serialize(
         object.actions,
-        specifiedType: const FullType(
-            BuiltList, [FullType(UtilitiesWebApiProtosDeviceModelTypesAction)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosDeviceModelTypesAction),
+        ]),
       );
     }
   }
@@ -117,9 +119,11 @@ class _$UtilitiesWebApiProtosDeviceModelTypesDeviceErrorSerializer
     UtilitiesWebApiProtosDeviceModelTypesDeviceError object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -135,39 +139,50 @@ class _$UtilitiesWebApiProtosDeviceModelTypesDeviceErrorSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.code = valueDes;
           break;
         case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.title = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.message = valueDes;
           break;
         case r'severity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.severity = valueDes;
           break;
         case r'actions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList,
-                [FullType(UtilitiesWebApiProtosDeviceModelTypesAction)]),
-          ) as BuiltList<UtilitiesWebApiProtosDeviceModelTypesAction>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosDeviceModelTypesAction),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosDeviceModelTypesAction>;
           result.actions.replace(valueDes);
           break;
         default:

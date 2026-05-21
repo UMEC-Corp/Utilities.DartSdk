@@ -53,6 +53,9 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_ass
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_assign_unit_to_group_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_attach_device_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_attach_unit_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_bind_device_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_bind_device_response.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_bind_device_unit.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_build_report_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_change_user_role_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_confirm_otp_request.dart';
@@ -61,6 +64,8 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_con
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_connect_input_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_contact.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_contact_type.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_device_model_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_device_model_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_group_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_group_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_share_link_request.dart';
@@ -199,6 +204,7 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_sup
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_ui_setting_item.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_command.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_condition.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_events_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_events_response_types_event_property.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_events_response_types_unit_property_changed_event.dart';
@@ -209,6 +215,8 @@ export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_upd
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_client_address_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_company_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_contacts_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_device_model_request.dart';
+export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_device_model_response.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_employee_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_event_type_request.dart';
 export 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_event_type_response.dart';

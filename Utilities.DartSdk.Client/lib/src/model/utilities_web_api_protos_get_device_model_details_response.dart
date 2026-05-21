@@ -16,37 +16,39 @@ part 'utilities_web_api_protos_get_device_model_details_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetDeviceModelDetailsResponse
     implements
-        Built<UtilitiesWebApiProtosGetDeviceModelDetailsResponse,
-            UtilitiesWebApiProtosGetDeviceModelDetailsResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosGetDeviceModelDetailsResponse,
+          UtilitiesWebApiProtosGetDeviceModelDetailsResponseBuilder
+        > {
   @BuiltValueField(wireName: r'model')
   UtilitiesWebApiProtosDeviceModel? get model;
 
   UtilitiesWebApiProtosGetDeviceModelDetailsResponse._();
 
-  factory UtilitiesWebApiProtosGetDeviceModelDetailsResponse(
-          [void updates(
-              UtilitiesWebApiProtosGetDeviceModelDetailsResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosGetDeviceModelDetailsResponse;
+  factory UtilitiesWebApiProtosGetDeviceModelDetailsResponse([
+    void updates(UtilitiesWebApiProtosGetDeviceModelDetailsResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosGetDeviceModelDetailsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosGetDeviceModelDetailsResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosGetDeviceModelDetailsResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosGetDeviceModelDetailsResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosGetDeviceModelDetailsResponseSerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosGetDeviceModelDetailsResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetDeviceModelDetailsResponseSerializer
     implements
         PrimitiveSerializer<
-            UtilitiesWebApiProtosGetDeviceModelDetailsResponse> {
+          UtilitiesWebApiProtosGetDeviceModelDetailsResponse
+        > {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetDeviceModelDetailsResponse,
-    _$UtilitiesWebApiProtosGetDeviceModelDetailsResponse
+    _$UtilitiesWebApiProtosGetDeviceModelDetailsResponse,
   ];
 
   @override
@@ -72,9 +74,11 @@ class _$UtilitiesWebApiProtosGetDeviceModelDetailsResponseSerializer
     UtilitiesWebApiProtosGetDeviceModelDetailsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -90,10 +94,14 @@ class _$UtilitiesWebApiProtosGetDeviceModelDetailsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'model':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UtilitiesWebApiProtosDeviceModel),
-          ) as UtilitiesWebApiProtosDeviceModel;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      UtilitiesWebApiProtosDeviceModel,
+                    ),
+                  )
+                  as UtilitiesWebApiProtosDeviceModel;
           result.model.replace(valueDes);
           break;
         default:

@@ -17,8 +17,10 @@ part 'utilities_web_api_protos_export_device_model_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosExportDeviceModelResponse
     implements
-        Built<UtilitiesWebApiProtosExportDeviceModelResponse,
-            UtilitiesWebApiProtosExportDeviceModelResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosExportDeviceModelResponse,
+          UtilitiesWebApiProtosExportDeviceModelResponseBuilder
+        > {
   @BuiltValueField(wireName: r'content')
   String? get content;
 
@@ -30,20 +32,19 @@ abstract class UtilitiesWebApiProtosExportDeviceModelResponse
 
   UtilitiesWebApiProtosExportDeviceModelResponse._();
 
-  factory UtilitiesWebApiProtosExportDeviceModelResponse(
-          [void updates(
-              UtilitiesWebApiProtosExportDeviceModelResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosExportDeviceModelResponse;
+  factory UtilitiesWebApiProtosExportDeviceModelResponse([
+    void updates(UtilitiesWebApiProtosExportDeviceModelResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosExportDeviceModelResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosExportDeviceModelResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosExportDeviceModelResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosExportDeviceModelResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosExportDeviceModelResponseSerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosExportDeviceModelResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosExportDeviceModelResponseSerializer
@@ -52,7 +53,7 @@ class _$UtilitiesWebApiProtosExportDeviceModelResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosExportDeviceModelResponse,
-    _$UtilitiesWebApiProtosExportDeviceModelResponse
+    _$UtilitiesWebApiProtosExportDeviceModelResponse,
   ];
 
   @override
@@ -92,9 +93,11 @@ class _$UtilitiesWebApiProtosExportDeviceModelResponseSerializer
     UtilitiesWebApiProtosExportDeviceModelResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -110,24 +113,30 @@ class _$UtilitiesWebApiProtosExportDeviceModelResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'content':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.content = valueDes;
           break;
         case r'fileName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.fileName = valueDes;
           break;
         case r'mimeType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.mimeType = valueDes;
           break;
         default:

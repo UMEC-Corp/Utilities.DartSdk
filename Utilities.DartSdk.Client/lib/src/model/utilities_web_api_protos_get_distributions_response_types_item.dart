@@ -21,8 +21,10 @@ part 'utilities_web_api_protos_get_distributions_response_types_item.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetDistributionsResponseTypesItem
     implements
-        Built<UtilitiesWebApiProtosGetDistributionsResponseTypesItem,
-            UtilitiesWebApiProtosGetDistributionsResponseTypesItemBuilder> {
+        Built<
+          UtilitiesWebApiProtosGetDistributionsResponseTypesItem,
+          UtilitiesWebApiProtosGetDistributionsResponseTypesItemBuilder
+        > {
   /// Id of the physical device.
   @BuiltValueField(wireName: r'deviceId')
   String? get deviceId;
@@ -38,35 +40,38 @@ abstract class UtilitiesWebApiProtosGetDistributionsResponseTypesItem
 
   @BuiltValueField(wireName: r'distribution')
   BuiltList<
-          UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry>?
-      get distribution;
+    UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry
+  >?
+  get distribution;
 
   UtilitiesWebApiProtosGetDistributionsResponseTypesItem._();
 
-  factory UtilitiesWebApiProtosGetDistributionsResponseTypesItem(
-      [void updates(
-          UtilitiesWebApiProtosGetDistributionsResponseTypesItemBuilder
-              b)]) = _$UtilitiesWebApiProtosGetDistributionsResponseTypesItem;
+  factory UtilitiesWebApiProtosGetDistributionsResponseTypesItem([
+    void updates(
+      UtilitiesWebApiProtosGetDistributionsResponseTypesItemBuilder b,
+    ),
+  ]) = _$UtilitiesWebApiProtosGetDistributionsResponseTypesItem;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosGetDistributionsResponseTypesItemBuilder b) =>
-      b;
+    UtilitiesWebApiProtosGetDistributionsResponseTypesItemBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosGetDistributionsResponseTypesItem>
-      get serializer =>
-          _$UtilitiesWebApiProtosGetDistributionsResponseTypesItemSerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosGetDistributionsResponseTypesItemSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetDistributionsResponseTypesItemSerializer
     implements
         PrimitiveSerializer<
-            UtilitiesWebApiProtosGetDistributionsResponseTypesItem> {
+          UtilitiesWebApiProtosGetDistributionsResponseTypesItem
+        > {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetDistributionsResponseTypesItem,
-    _$UtilitiesWebApiProtosGetDistributionsResponseTypesItem
+    _$UtilitiesWebApiProtosGetDistributionsResponseTypesItem,
   ];
 
   @override
@@ -112,7 +117,8 @@ class _$UtilitiesWebApiProtosGetDistributionsResponseTypesItemSerializer
         object.distribution,
         specifiedType: const FullType(BuiltList, [
           FullType(
-              UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry)
+            UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry,
+          ),
         ]),
       );
     }
@@ -124,9 +130,11 @@ class _$UtilitiesWebApiProtosGetDistributionsResponseTypesItemSerializer
     UtilitiesWebApiProtosGetDistributionsResponseTypesItem object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -135,7 +143,7 @@ class _$UtilitiesWebApiProtosGetDistributionsResponseTypesItemSerializer
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosGetDistributionsResponseTypesItemBuilder
-        result,
+    result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -143,42 +151,48 @@ class _$UtilitiesWebApiProtosGetDistributionsResponseTypesItemSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'deviceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.deviceId = valueDes;
           break;
         case r'inputCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.inputCode = valueDes;
           break;
         case r'begin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.begin = valueDes;
           break;
         case r'end':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.end = valueDes;
           break;
         case r'distribution':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(
-                  UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry)
-            ]),
-          ) as BuiltList<
-              UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(
+                        UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    UtilitiesWebApiProtosGetDistributionsResponseTypesDistributionEntry
+                  >;
           result.distribution.replace(valueDes);
           break;
         default:

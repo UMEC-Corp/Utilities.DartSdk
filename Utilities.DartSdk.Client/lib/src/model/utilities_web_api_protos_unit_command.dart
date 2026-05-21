@@ -17,8 +17,10 @@ part 'utilities_web_api_protos_unit_command.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUnitCommand
     implements
-        Built<UtilitiesWebApiProtosUnitCommand,
-            UtilitiesWebApiProtosUnitCommandBuilder> {
+        Built<
+          UtilitiesWebApiProtosUnitCommand,
+          UtilitiesWebApiProtosUnitCommandBuilder
+        > {
   /// Code of the command
   @BuiltValueField(wireName: r'code')
   String? get code;
@@ -29,9 +31,9 @@ abstract class UtilitiesWebApiProtosUnitCommand
 
   UtilitiesWebApiProtosUnitCommand._();
 
-  factory UtilitiesWebApiProtosUnitCommand(
-          [void updates(UtilitiesWebApiProtosUnitCommandBuilder b)]) =
-      _$UtilitiesWebApiProtosUnitCommand;
+  factory UtilitiesWebApiProtosUnitCommand([
+    void updates(UtilitiesWebApiProtosUnitCommandBuilder b),
+  ]) = _$UtilitiesWebApiProtosUnitCommand;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosUnitCommandBuilder b) => b;
@@ -46,7 +48,7 @@ class _$UtilitiesWebApiProtosUnitCommandSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUnitCommand,
-    _$UtilitiesWebApiProtosUnitCommand
+    _$UtilitiesWebApiProtosUnitCommand,
   ];
 
   @override
@@ -79,9 +81,11 @@ class _$UtilitiesWebApiProtosUnitCommandSerializer
     UtilitiesWebApiProtosUnitCommand object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -97,17 +101,23 @@ class _$UtilitiesWebApiProtosUnitCommandSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.code = valueDes;
           break;
         case r'arguments':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.arguments.replace(valueDes);
           break;
         default:

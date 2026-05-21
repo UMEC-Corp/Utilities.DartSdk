@@ -16,8 +16,10 @@ part 'utilities_web_api_protos_update_client_address_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpdateClientAddressRequest
     implements
-        Built<UtilitiesWebApiProtosUpdateClientAddressRequest,
-            UtilitiesWebApiProtosUpdateClientAddressRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosUpdateClientAddressRequest,
+          UtilitiesWebApiProtosUpdateClientAddressRequestBuilder
+        > {
   /// Id of the client to update address for
   @BuiltValueField(wireName: r'clientId')
   String? get clientId;
@@ -28,20 +30,19 @@ abstract class UtilitiesWebApiProtosUpdateClientAddressRequest
 
   UtilitiesWebApiProtosUpdateClientAddressRequest._();
 
-  factory UtilitiesWebApiProtosUpdateClientAddressRequest(
-          [void updates(
-              UtilitiesWebApiProtosUpdateClientAddressRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosUpdateClientAddressRequest;
+  factory UtilitiesWebApiProtosUpdateClientAddressRequest([
+    void updates(UtilitiesWebApiProtosUpdateClientAddressRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosUpdateClientAddressRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosUpdateClientAddressRequestBuilder b) =>
-      b;
+    UtilitiesWebApiProtosUpdateClientAddressRequestBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosUpdateClientAddressRequest>
-      get serializer =>
-          _$UtilitiesWebApiProtosUpdateClientAddressRequestSerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosUpdateClientAddressRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosUpdateClientAddressRequestSerializer
@@ -50,7 +51,7 @@ class _$UtilitiesWebApiProtosUpdateClientAddressRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdateClientAddressRequest,
-    _$UtilitiesWebApiProtosUpdateClientAddressRequest
+    _$UtilitiesWebApiProtosUpdateClientAddressRequest,
   ];
 
   @override
@@ -83,9 +84,11 @@ class _$UtilitiesWebApiProtosUpdateClientAddressRequestSerializer
     UtilitiesWebApiProtosUpdateClientAddressRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -101,17 +104,21 @@ class _$UtilitiesWebApiProtosUpdateClientAddressRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'clientId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.clientId = valueDes;
           break;
         case r'addressId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.addressId = valueDes;
           break;
         default:

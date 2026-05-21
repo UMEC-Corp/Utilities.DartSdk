@@ -18,8 +18,10 @@ part 'utilities_web_api_protos_get_inputs_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetInputsResponse
     implements
-        Built<UtilitiesWebApiProtosGetInputsResponse,
-            UtilitiesWebApiProtosGetInputsResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosGetInputsResponse,
+          UtilitiesWebApiProtosGetInputsResponseBuilder
+        > {
   /// The total count of sensors.
   @BuiltValueField(wireName: r'totalCount')
   int? get totalCount;
@@ -30,9 +32,9 @@ abstract class UtilitiesWebApiProtosGetInputsResponse
 
   UtilitiesWebApiProtosGetInputsResponse._();
 
-  factory UtilitiesWebApiProtosGetInputsResponse(
-          [void updates(UtilitiesWebApiProtosGetInputsResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosGetInputsResponse;
+  factory UtilitiesWebApiProtosGetInputsResponse([
+    void updates(UtilitiesWebApiProtosGetInputsResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosGetInputsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosGetInputsResponseBuilder b) => b;
@@ -47,7 +49,7 @@ class _$UtilitiesWebApiProtosGetInputsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetInputsResponse,
-    _$UtilitiesWebApiProtosGetInputsResponse
+    _$UtilitiesWebApiProtosGetInputsResponse,
   ];
 
   @override
@@ -69,8 +71,9 @@ class _$UtilitiesWebApiProtosGetInputsResponseSerializer
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType:
-            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosInput)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosInput),
+        ]),
       );
     }
   }
@@ -81,9 +84,11 @@ class _$UtilitiesWebApiProtosGetInputsResponseSerializer
     UtilitiesWebApiProtosGetInputsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -99,18 +104,20 @@ class _$UtilitiesWebApiProtosGetInputsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'totalCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.totalCount = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosInput)]),
-          ) as BuiltList<UtilitiesWebApiProtosInput>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosInput),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosInput>;
           result.items.replace(valueDes);
           break;
         default:

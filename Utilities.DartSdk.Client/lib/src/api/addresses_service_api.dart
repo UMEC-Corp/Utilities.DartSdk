@@ -40,7 +40,7 @@ class AddressesServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetAddressDetailsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetAddressDetailsResponse>>
-      apiDashboardV1AddressesAddressIdGet({
+  apiDashboardV1AddressesAddressIdGet({
     required String addressId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -50,21 +50,21 @@ class AddressesServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/addresses/{addressId}'.replaceAll(
-        '{' r'addressId' '}',
-        encodeQueryParameter(_serializers, addressId, const FullType(String))
-            .toString());
+      '{'
+      r'addressId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        addressId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -86,10 +86,12 @@ class AddressesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(
-                  UtilitiesWebApiProtosGetAddressDetailsResponse),
-            ) as UtilitiesWebApiProtosGetAddressDetailsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetAddressDetailsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetAddressDetailsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -129,7 +131,7 @@ class AddressesServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosListAddressesResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosListAddressesResponse>>
-      apiDashboardV1AddressesGet({
+  apiDashboardV1AddressesGet({
     int? offset,
     int? limit,
     BuiltList<String>? ids,
@@ -143,16 +145,10 @@ class AddressesServiceApi {
     final _path = r'/api/dashboard/v1/addresses';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -161,11 +157,17 @@ class AddressesServiceApi {
 
     final _queryParameters = <String, dynamic>{
       if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
+        r'offset': encodeQueryParameter(
+          _serializers,
+          offset,
+          const FullType(int),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (ids != null)
         r'ids': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -191,10 +193,12 @@ class AddressesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosListAddressesResponse),
-            ) as UtilitiesWebApiProtosListAddressesResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosListAddressesResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosListAddressesResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -241,21 +245,17 @@ class AddressesServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/addresses/{id}'.replaceAll(
-        '{' r'id' '}',
-        encodeQueryParameter(_serializers, id, const FullType(String))
-            .toString());
+      '{'
+      r'id'
+      '}',
+      encodeQueryParameter(_serializers, id, const FullType(String)).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -277,9 +277,10 @@ class AddressesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -320,7 +321,7 @@ class AddressesServiceApi {
   Future<Response<JsonObject>> apiDashboardV1AddressesIdPut({
     required String id,
     UtilitiesWebApiProtosUpdateAddressRequest?
-        utilitiesWebApiProtosUpdateAddressRequest,
+    utilitiesWebApiProtosUpdateAddressRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -329,21 +330,17 @@ class AddressesServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/addresses/{id}'.replaceAll(
-        '{' r'id' '}',
-        encodeQueryParameter(_serializers, id, const FullType(String))
-            .toString());
+      '{'
+      r'id'
+      '}',
+      encodeQueryParameter(_serializers, id, const FullType(String)).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -357,14 +354,13 @@ class AddressesServiceApi {
       const _type = FullType(UtilitiesWebApiProtosUpdateAddressRequest);
       _bodyData = utilitiesWebApiProtosUpdateAddressRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosUpdateAddressRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosUpdateAddressRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -387,9 +383,10 @@ class AddressesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -427,9 +424,9 @@ class AddressesServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosAddAddressResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosAddAddressResponse>>
-      apiDashboardV1AddressesPost({
+  apiDashboardV1AddressesPost({
     UtilitiesWebApiProtosAddAddressRequest?
-        utilitiesWebApiProtosAddAddressRequest,
+    utilitiesWebApiProtosAddAddressRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -440,16 +437,10 @@ class AddressesServiceApi {
     final _path = r'/api/dashboard/v1/addresses';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -463,14 +454,13 @@ class AddressesServiceApi {
       const _type = FullType(UtilitiesWebApiProtosAddAddressRequest);
       _bodyData = utilitiesWebApiProtosAddAddressRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosAddAddressRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosAddAddressRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -493,10 +483,12 @@ class AddressesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosAddAddressResponse),
-            ) as UtilitiesWebApiProtosAddAddressResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosAddAddressResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosAddAddressResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

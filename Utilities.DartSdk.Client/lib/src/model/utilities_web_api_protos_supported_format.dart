@@ -21,8 +21,10 @@ part 'utilities_web_api_protos_supported_format.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosSupportedFormat
     implements
-        Built<UtilitiesWebApiProtosSupportedFormat,
-            UtilitiesWebApiProtosSupportedFormatBuilder> {
+        Built<
+          UtilitiesWebApiProtosSupportedFormat,
+          UtilitiesWebApiProtosSupportedFormatBuilder
+        > {
   @BuiltValueField(wireName: r'formatCode')
   String? get formatCode;
 
@@ -43,9 +45,9 @@ abstract class UtilitiesWebApiProtosSupportedFormat
 
   UtilitiesWebApiProtosSupportedFormat._();
 
-  factory UtilitiesWebApiProtosSupportedFormat(
-          [void updates(UtilitiesWebApiProtosSupportedFormatBuilder b)]) =
-      _$UtilitiesWebApiProtosSupportedFormat;
+  factory UtilitiesWebApiProtosSupportedFormat([
+    void updates(UtilitiesWebApiProtosSupportedFormatBuilder b),
+  ]) = _$UtilitiesWebApiProtosSupportedFormat;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosSupportedFormatBuilder b) => b;
@@ -60,7 +62,7 @@ class _$UtilitiesWebApiProtosSupportedFormatSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosSupportedFormat,
-    _$UtilitiesWebApiProtosSupportedFormat
+    _$UtilitiesWebApiProtosSupportedFormat,
   ];
 
   @override
@@ -121,9 +123,11 @@ class _$UtilitiesWebApiProtosSupportedFormatSerializer
     UtilitiesWebApiProtosSupportedFormat object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -139,45 +143,59 @@ class _$UtilitiesWebApiProtosSupportedFormatSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'formatCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.formatCode = valueDes;
           break;
         case r'displayName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.displayName = valueDes;
           break;
         case r'fileExtensions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.fileExtensions.replace(valueDes);
           break;
         case r'mimeType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.mimeType = valueDes;
           break;
         case r'canImport':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.canImport = valueDes;
           break;
         case r'canExport':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.canExport = valueDes;
           break;
         default:

@@ -65,6 +65,8 @@ class _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem
   final int? lastSeen;
   @override
   final String? deviceGroupId;
+  @override
+  final BuiltList<UtilitiesWebApiProtosUnitCondition>? conditions;
 
   factory _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem(
           [void Function(
@@ -101,7 +103,8 @@ class _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem
       this.sensors,
       this.isInWarning,
       this.lastSeen,
-      this.deviceGroupId})
+      this.deviceGroupId,
+      this.conditions})
       : super._();
   @override
   UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem rebuild(
@@ -147,7 +150,8 @@ class _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem
         sensors == other.sensors &&
         isInWarning == other.isInWarning &&
         lastSeen == other.lastSeen &&
-        deviceGroupId == other.deviceGroupId;
+        deviceGroupId == other.deviceGroupId &&
+        conditions == other.conditions;
   }
 
   @override
@@ -180,6 +184,7 @@ class _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem
     _$hash = $jc(_$hash, isInWarning.hashCode);
     _$hash = $jc(_$hash, lastSeen.hashCode);
     _$hash = $jc(_$hash, deviceGroupId.hashCode);
+    _$hash = $jc(_$hash, conditions.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -214,7 +219,8 @@ class _$UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem
           ..add('sensors', sensors)
           ..add('isInWarning', isInWarning)
           ..add('lastSeen', lastSeen)
-          ..add('deviceGroupId', deviceGroupId))
+          ..add('deviceGroupId', deviceGroupId)
+          ..add('conditions', conditions))
         .toString();
   }
 }
@@ -359,6 +365,12 @@ class UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItemBuilder
   set deviceGroupId(String? deviceGroupId) =>
       _$this._deviceGroupId = deviceGroupId;
 
+  ListBuilder<UtilitiesWebApiProtosUnitCondition>? _conditions;
+  ListBuilder<UtilitiesWebApiProtosUnitCondition> get conditions =>
+      _$this._conditions ??= ListBuilder<UtilitiesWebApiProtosUnitCondition>();
+  set conditions(ListBuilder<UtilitiesWebApiProtosUnitCondition>? conditions) =>
+      _$this._conditions = conditions;
+
   UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItemBuilder() {
     UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem._defaults(
         this);
@@ -395,6 +407,7 @@ class UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItemBuilder
       _isInWarning = $v.isInWarning;
       _lastSeen = $v.lastSeen;
       _deviceGroupId = $v.deviceGroupId;
+      _conditions = $v.conditions?.toBuilder();
       _$v = null;
     }
     return this;
@@ -451,6 +464,7 @@ class UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItemBuilder
             isInWarning: isInWarning,
             lastSeen: lastSeen,
             deviceGroupId: deviceGroupId,
+            conditions: _conditions?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -465,6 +479,9 @@ class UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItemBuilder
 
         _$failedField = 'sensors';
         _sensors?.build();
+
+        _$failedField = 'conditions';
+        _conditions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem',

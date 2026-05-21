@@ -27,8 +27,10 @@ part 'utilities_web_api_protos_scenario_action_argument.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosScenarioActionArgument
     implements
-        Built<UtilitiesWebApiProtosScenarioActionArgument,
-            UtilitiesWebApiProtosScenarioActionArgumentBuilder> {
+        Built<
+          UtilitiesWebApiProtosScenarioActionArgument,
+          UtilitiesWebApiProtosScenarioActionArgumentBuilder
+        > {
   /// Name of the argument
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -79,10 +81,9 @@ abstract class UtilitiesWebApiProtosScenarioActionArgument
 
   UtilitiesWebApiProtosScenarioActionArgument._();
 
-  factory UtilitiesWebApiProtosScenarioActionArgument(
-          [void updates(
-              UtilitiesWebApiProtosScenarioActionArgumentBuilder b)]) =
-      _$UtilitiesWebApiProtosScenarioActionArgument;
+  factory UtilitiesWebApiProtosScenarioActionArgument([
+    void updates(UtilitiesWebApiProtosScenarioActionArgumentBuilder b),
+  ]) = _$UtilitiesWebApiProtosScenarioActionArgument;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosScenarioActionArgumentBuilder b) =>
@@ -90,8 +91,7 @@ abstract class UtilitiesWebApiProtosScenarioActionArgument
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosScenarioActionArgument>
-      get serializer =>
-          _$UtilitiesWebApiProtosScenarioActionArgumentSerializer();
+  get serializer => _$UtilitiesWebApiProtosScenarioActionArgumentSerializer();
 }
 
 class _$UtilitiesWebApiProtosScenarioActionArgumentSerializer
@@ -100,7 +100,7 @@ class _$UtilitiesWebApiProtosScenarioActionArgumentSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosScenarioActionArgument,
-    _$UtilitiesWebApiProtosScenarioActionArgument
+    _$UtilitiesWebApiProtosScenarioActionArgument,
   ];
 
   @override
@@ -203,9 +203,11 @@ class _$UtilitiesWebApiProtosScenarioActionArgumentSerializer
     UtilitiesWebApiProtosScenarioActionArgument object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -221,88 +223,113 @@ class _$UtilitiesWebApiProtosScenarioActionArgumentSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'valueType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(UtilitiesWebApiProtosScenarioValueType),
-          ) as UtilitiesWebApiProtosScenarioValueType;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      UtilitiesWebApiProtosScenarioValueType,
+                    ),
+                  )
+                  as UtilitiesWebApiProtosScenarioValueType;
           result.valueType = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.value = valueDes;
           break;
         case r'sourceDeviceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceDeviceId = valueDes;
           break;
         case r'sourceUnitCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceUnitCode = valueDes;
           break;
         case r'sourceSensorCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceSensorCode = valueDes;
           break;
         case r'sourceParameterCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceParameterCode = valueDes;
           break;
         case r'sourceDeviceName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceDeviceName = valueDes;
           break;
         case r'sourceDeviceModel':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceDeviceModel = valueDes;
           break;
         case r'sourceDeviceSerial':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceDeviceSerial = valueDes;
           break;
         case r'sourceExpression':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceExpression = valueDes;
           break;
         case r'sourceDeviceVendorCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.sourceDeviceVendorCode = valueDes;
           break;
         default:

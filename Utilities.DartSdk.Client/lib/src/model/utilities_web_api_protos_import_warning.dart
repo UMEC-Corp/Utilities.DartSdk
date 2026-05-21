@@ -17,8 +17,10 @@ part 'utilities_web_api_protos_import_warning.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosImportWarning
     implements
-        Built<UtilitiesWebApiProtosImportWarning,
-            UtilitiesWebApiProtosImportWarningBuilder> {
+        Built<
+          UtilitiesWebApiProtosImportWarning,
+          UtilitiesWebApiProtosImportWarningBuilder
+        > {
   @BuiltValueField(wireName: r'code')
   String? get code;
 
@@ -30,9 +32,9 @@ abstract class UtilitiesWebApiProtosImportWarning
 
   UtilitiesWebApiProtosImportWarning._();
 
-  factory UtilitiesWebApiProtosImportWarning(
-          [void updates(UtilitiesWebApiProtosImportWarningBuilder b)]) =
-      _$UtilitiesWebApiProtosImportWarning;
+  factory UtilitiesWebApiProtosImportWarning([
+    void updates(UtilitiesWebApiProtosImportWarningBuilder b),
+  ]) = _$UtilitiesWebApiProtosImportWarning;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosImportWarningBuilder b) => b;
@@ -47,7 +49,7 @@ class _$UtilitiesWebApiProtosImportWarningSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosImportWarning,
-    _$UtilitiesWebApiProtosImportWarning
+    _$UtilitiesWebApiProtosImportWarning,
   ];
 
   @override
@@ -87,9 +89,11 @@ class _$UtilitiesWebApiProtosImportWarningSerializer
     UtilitiesWebApiProtosImportWarning object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,24 +109,30 @@ class _$UtilitiesWebApiProtosImportWarningSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.code = valueDes;
           break;
         case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.message = valueDes;
           break;
         case r'fieldPath':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.fieldPath = valueDes;
           break;
         default:

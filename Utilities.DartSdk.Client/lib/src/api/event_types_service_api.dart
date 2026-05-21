@@ -52,21 +52,21 @@ class EventTypesServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/event-types/{eventTypeId}'.replaceAll(
-        '{' r'eventTypeId' '}',
-        encodeQueryParameter(_serializers, eventTypeId, const FullType(String))
-            .toString());
+      '{'
+      r'eventTypeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        eventTypeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -88,9 +88,10 @@ class EventTypesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -128,7 +129,7 @@ class EventTypesServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetEventTypeDetailsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetEventTypeDetailsResponse>>
-      apiDashboardV1EventTypesEventTypeIdGet({
+  apiDashboardV1EventTypesEventTypeIdGet({
     required String eventTypeId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -138,21 +139,21 @@ class EventTypesServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/event-types/{eventTypeId}'.replaceAll(
-        '{' r'eventTypeId' '}',
-        encodeQueryParameter(_serializers, eventTypeId, const FullType(String))
-            .toString());
+      '{'
+      r'eventTypeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        eventTypeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -174,10 +175,12 @@ class EventTypesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(
-                  UtilitiesWebApiProtosGetEventTypeDetailsResponse),
-            ) as UtilitiesWebApiProtosGetEventTypeDetailsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetEventTypeDetailsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetEventTypeDetailsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -216,10 +219,10 @@ class EventTypesServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosUpdateEventTypeResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosUpdateEventTypeResponse>>
-      apiDashboardV1EventTypesEventTypeIdPut({
+  apiDashboardV1EventTypesEventTypeIdPut({
     required String eventTypeId,
     UtilitiesWebApiProtosUpdateEventTypeRequest?
-        utilitiesWebApiProtosUpdateEventTypeRequest,
+    utilitiesWebApiProtosUpdateEventTypeRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -228,21 +231,21 @@ class EventTypesServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/event-types/{eventTypeId}'.replaceAll(
-        '{' r'eventTypeId' '}',
-        encodeQueryParameter(_serializers, eventTypeId, const FullType(String))
-            .toString());
+      '{'
+      r'eventTypeId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        eventTypeId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -256,14 +259,13 @@ class EventTypesServiceApi {
       const _type = FullType(UtilitiesWebApiProtosUpdateEventTypeRequest);
       _bodyData = utilitiesWebApiProtosUpdateEventTypeRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosUpdateEventTypeRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosUpdateEventTypeRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -286,10 +288,12 @@ class EventTypesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosUpdateEventTypeResponse),
-            ) as UtilitiesWebApiProtosUpdateEventTypeResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosUpdateEventTypeResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosUpdateEventTypeResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -330,7 +334,7 @@ class EventTypesServiceApi {
   Future<Response<JsonObject>> apiDashboardV1EventTypesEventTypeIddispatchPost({
     required String eventTypeId,
     UtilitiesWebApiProtosDispatchEventRequest?
-        utilitiesWebApiProtosDispatchEventRequest,
+    utilitiesWebApiProtosDispatchEventRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -340,22 +344,21 @@ class EventTypesServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/event-types/{eventTypeId}:dispatch'
         .replaceAll(
-            '{' r'eventTypeId' '}',
-            encodeQueryParameter(
-                    _serializers, eventTypeId, const FullType(String))
-                .toString());
+          '{'
+          r'eventTypeId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            eventTypeId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -369,14 +372,13 @@ class EventTypesServiceApi {
       const _type = FullType(UtilitiesWebApiProtosDispatchEventRequest);
       _bodyData = utilitiesWebApiProtosDispatchEventRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosDispatchEventRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosDispatchEventRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -399,9 +401,10 @@ class EventTypesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -441,7 +444,7 @@ class EventTypesServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosListEventTypesResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosListEventTypesResponse>>
-      apiDashboardV1EventTypesGet({
+  apiDashboardV1EventTypesGet({
     int? offset,
     int? limit,
     BuiltList<String>? ids,
@@ -455,16 +458,10 @@ class EventTypesServiceApi {
     final _path = r'/api/dashboard/v1/event-types';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -473,11 +470,17 @@ class EventTypesServiceApi {
 
     final _queryParameters = <String, dynamic>{
       if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
+        r'offset': encodeQueryParameter(
+          _serializers,
+          offset,
+          const FullType(int),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (ids != null)
         r'ids': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -503,10 +506,12 @@ class EventTypesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosListEventTypesResponse),
-            ) as UtilitiesWebApiProtosListEventTypesResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosListEventTypesResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosListEventTypesResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -544,9 +549,9 @@ class EventTypesServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosAddEventTypeResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosAddEventTypeResponse>>
-      apiDashboardV1EventTypesPost({
+  apiDashboardV1EventTypesPost({
     UtilitiesWebApiProtosAddEventTypeRequest?
-        utilitiesWebApiProtosAddEventTypeRequest,
+    utilitiesWebApiProtosAddEventTypeRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -557,16 +562,10 @@ class EventTypesServiceApi {
     final _path = r'/api/dashboard/v1/event-types';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -580,14 +579,13 @@ class EventTypesServiceApi {
       const _type = FullType(UtilitiesWebApiProtosAddEventTypeRequest);
       _bodyData = utilitiesWebApiProtosAddEventTypeRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosAddEventTypeRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosAddEventTypeRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -610,10 +608,12 @@ class EventTypesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosAddEventTypeResponse),
-            ) as UtilitiesWebApiProtosAddEventTypeResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosAddEventTypeResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosAddEventTypeResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -658,7 +658,7 @@ class EventTypesServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosListEventsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosListEventsResponse>>
-      apiDashboardV1EventsGet({
+  apiDashboardV1EventsGet({
     int? offset,
     int? limit,
     BuiltList<String>? eventTypeIds,
@@ -677,16 +677,10 @@ class EventTypesServiceApi {
     final _path = r'/api/dashboard/v1/events';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -695,11 +689,17 @@ class EventTypesServiceApi {
 
     final _queryParameters = <String, dynamic>{
       if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
+        r'offset': encodeQueryParameter(
+          _serializers,
+          offset,
+          const FullType(int),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (eventTypeIds != null)
         r'eventTypeIds': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -709,10 +709,16 @@ class EventTypesServiceApi {
         ),
       if (fromTimestamp != null)
         r'fromTimestamp': encodeQueryParameter(
-            _serializers, fromTimestamp, const FullType(int)),
+          _serializers,
+          fromTimestamp,
+          const FullType(int),
+        ),
       if (toTimestamp != null)
         r'toTimestamp': encodeQueryParameter(
-            _serializers, toTimestamp, const FullType(int)),
+          _serializers,
+          toTimestamp,
+          const FullType(int),
+        ),
       if (addressIds != null)
         r'addressIds': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -722,10 +728,16 @@ class EventTypesServiceApi {
         ),
       if (deviceId != null)
         r'deviceId': encodeQueryParameter(
-            _serializers, deviceId, const FullType(String)),
+          _serializers,
+          deviceId,
+          const FullType(String),
+        ),
       if (unitCode != null)
         r'unitCode': encodeQueryParameter(
-            _serializers, unitCode, const FullType(String)),
+          _serializers,
+          unitCode,
+          const FullType(String),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -744,10 +756,12 @@ class EventTypesServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosListEventsResponse),
-            ) as UtilitiesWebApiProtosListEventsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosListEventsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosListEventsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

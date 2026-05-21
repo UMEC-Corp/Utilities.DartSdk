@@ -18,8 +18,10 @@ part 'utilities_web_api_protos_list_units_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListUnitsResponse
     implements
-        Built<UtilitiesWebApiProtosListUnitsResponse,
-            UtilitiesWebApiProtosListUnitsResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosListUnitsResponse,
+          UtilitiesWebApiProtosListUnitsResponseBuilder
+        > {
   /// The total count of virtual devices.
   @BuiltValueField(wireName: r'totalCount')
   int? get totalCount;
@@ -27,13 +29,13 @@ abstract class UtilitiesWebApiProtosListUnitsResponse
   /// The list of virtual devices.
   @BuiltValueField(wireName: r'items')
   BuiltList<UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem>?
-      get items;
+  get items;
 
   UtilitiesWebApiProtosListUnitsResponse._();
 
-  factory UtilitiesWebApiProtosListUnitsResponse(
-          [void updates(UtilitiesWebApiProtosListUnitsResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosListUnitsResponse;
+  factory UtilitiesWebApiProtosListUnitsResponse([
+    void updates(UtilitiesWebApiProtosListUnitsResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosListUnitsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosListUnitsResponseBuilder b) => b;
@@ -48,7 +50,7 @@ class _$UtilitiesWebApiProtosListUnitsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListUnitsResponse,
-    _$UtilitiesWebApiProtosListUnitsResponse
+    _$UtilitiesWebApiProtosListUnitsResponse,
   ];
 
   @override
@@ -72,7 +74,8 @@ class _$UtilitiesWebApiProtosListUnitsResponseSerializer
         object.items,
         specifiedType: const FullType(BuiltList, [
           FullType(
-              UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem)
+            UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem,
+          ),
         ]),
       );
     }
@@ -84,9 +87,11 @@ class _$UtilitiesWebApiProtosListUnitsResponseSerializer
     UtilitiesWebApiProtosListUnitsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -102,21 +107,24 @@ class _$UtilitiesWebApiProtosListUnitsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'totalCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.totalCount = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(
-                  UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem)
-            ]),
-          ) as BuiltList<
-              UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(
+                        UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseItem
+                  >;
           result.items.replace(valueDes);
           break;
         default:

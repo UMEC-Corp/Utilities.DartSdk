@@ -17,28 +17,28 @@ part 'utilities_web_api_protos_get_group_subtree_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetGroupSubtreeResponse
     implements
-        Built<UtilitiesWebApiProtosGetGroupSubtreeResponse,
-            UtilitiesWebApiProtosGetGroupSubtreeResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosGetGroupSubtreeResponse,
+          UtilitiesWebApiProtosGetGroupSubtreeResponseBuilder
+        > {
   /// The root nodes of the subtree
   @BuiltValueField(wireName: r'items')
   BuiltList<UtilitiesWebApiProtosDeviceGroupTreeNode>? get items;
 
   UtilitiesWebApiProtosGetGroupSubtreeResponse._();
 
-  factory UtilitiesWebApiProtosGetGroupSubtreeResponse(
-          [void updates(
-              UtilitiesWebApiProtosGetGroupSubtreeResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosGetGroupSubtreeResponse;
+  factory UtilitiesWebApiProtosGetGroupSubtreeResponse([
+    void updates(UtilitiesWebApiProtosGetGroupSubtreeResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosGetGroupSubtreeResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosGetGroupSubtreeResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosGetGroupSubtreeResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosGetGroupSubtreeResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosGetGroupSubtreeResponseSerializer();
+  get serializer => _$UtilitiesWebApiProtosGetGroupSubtreeResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetGroupSubtreeResponseSerializer
@@ -47,7 +47,7 @@ class _$UtilitiesWebApiProtosGetGroupSubtreeResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetGroupSubtreeResponse,
-    _$UtilitiesWebApiProtosGetGroupSubtreeResponse
+    _$UtilitiesWebApiProtosGetGroupSubtreeResponse,
   ];
 
   @override
@@ -62,8 +62,9 @@ class _$UtilitiesWebApiProtosGetGroupSubtreeResponseSerializer
       yield r'items';
       yield serializers.serialize(
         object.items,
-        specifiedType: const FullType(
-            BuiltList, [FullType(UtilitiesWebApiProtosDeviceGroupTreeNode)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosDeviceGroupTreeNode),
+        ]),
       );
     }
   }
@@ -74,9 +75,11 @@ class _$UtilitiesWebApiProtosGetGroupSubtreeResponseSerializer
     UtilitiesWebApiProtosGetGroupSubtreeResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -92,11 +95,14 @@ class _$UtilitiesWebApiProtosGetGroupSubtreeResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList,
-                [FullType(UtilitiesWebApiProtosDeviceGroupTreeNode)]),
-          ) as BuiltList<UtilitiesWebApiProtosDeviceGroupTreeNode>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosDeviceGroupTreeNode),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosDeviceGroupTreeNode>;
           result.items.replace(valueDes);
           break;
         default:

@@ -18,8 +18,10 @@ part 'utilities_web_api_protos_get_device_models_request_types_model_version.g.d
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion
     implements
-        Built<UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion,
-            UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionBuilder> {
+        Built<
+          UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion,
+          UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionBuilder
+        > {
   @BuiltValueField(wireName: r'vendorCode')
   String? get vendorCode;
 
@@ -34,33 +36,34 @@ abstract class UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion
 
   UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion._();
 
-  factory UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion(
-          [void updates(
-              UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionBuilder
-                  b)]) =
-      _$UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion;
+  factory UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion([
+    void updates(
+      UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionBuilder b,
+    ),
+  ]) = _$UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionBuilder
-              b) =>
-      b;
+    UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<
-          UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion>
-      get serializer =>
-          _$UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionSerializer();
+    UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion
+  >
+  get serializer =>
+      _$UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionSerializer
     implements
         PrimitiveSerializer<
-            UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion> {
+          UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion
+        > {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion,
-    _$UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion
+    _$UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion,
   ];
 
   @override
@@ -108,9 +111,11 @@ class _$UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionSerializer
     UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersion object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -119,7 +124,7 @@ class _$UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionSerializer
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionBuilder
-        result,
+    result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -127,31 +132,39 @@ class _$UtilitiesWebApiProtosGetDeviceModelsRequestTypesModelVersionSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'vendorCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.vendorCode = valueDes;
           break;
         case r'modelCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.modelCode = valueDes;
           break;
         case r'firmwareVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.firmwareVersion = valueDes;
           break;
         case r'hardwareVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.hardwareVersion = valueDes;
           break;
         default:

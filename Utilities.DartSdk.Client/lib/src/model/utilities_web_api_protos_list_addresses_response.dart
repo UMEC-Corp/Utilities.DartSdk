@@ -18,8 +18,10 @@ part 'utilities_web_api_protos_list_addresses_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListAddressesResponse
     implements
-        Built<UtilitiesWebApiProtosListAddressesResponse,
-            UtilitiesWebApiProtosListAddressesResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosListAddressesResponse,
+          UtilitiesWebApiProtosListAddressesResponseBuilder
+        > {
   /// The total count of addresses
   @BuiltValueField(wireName: r'totalCount')
   int? get totalCount;
@@ -27,14 +29,15 @@ abstract class UtilitiesWebApiProtosListAddressesResponse
   /// The list of addresses
   @BuiltValueField(wireName: r'items')
   BuiltList<
-          UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem>?
-      get items;
+    UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
+  >?
+  get items;
 
   UtilitiesWebApiProtosListAddressesResponse._();
 
-  factory UtilitiesWebApiProtosListAddressesResponse(
-          [void updates(UtilitiesWebApiProtosListAddressesResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosListAddressesResponse;
+  factory UtilitiesWebApiProtosListAddressesResponse([
+    void updates(UtilitiesWebApiProtosListAddressesResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosListAddressesResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosListAddressesResponseBuilder b) =>
@@ -42,8 +45,7 @@ abstract class UtilitiesWebApiProtosListAddressesResponse
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosListAddressesResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosListAddressesResponseSerializer();
+  get serializer => _$UtilitiesWebApiProtosListAddressesResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosListAddressesResponseSerializer
@@ -51,7 +53,7 @@ class _$UtilitiesWebApiProtosListAddressesResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListAddressesResponse,
-    _$UtilitiesWebApiProtosListAddressesResponse
+    _$UtilitiesWebApiProtosListAddressesResponse,
   ];
 
   @override
@@ -75,7 +77,8 @@ class _$UtilitiesWebApiProtosListAddressesResponseSerializer
         object.items,
         specifiedType: const FullType(BuiltList, [
           FullType(
-              UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem)
+            UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem,
+          ),
         ]),
       );
     }
@@ -87,9 +90,11 @@ class _$UtilitiesWebApiProtosListAddressesResponseSerializer
     UtilitiesWebApiProtosListAddressesResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,21 +110,24 @@ class _$UtilitiesWebApiProtosListAddressesResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'totalCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.totalCount = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(
-                  UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem)
-            ]),
-          ) as BuiltList<
-              UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(
+                        UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    UtilitiesWebApiProtosListAddressesResponseTypesListAddressesResponseItem
+                  >;
           result.items.replace(valueDes);
           break;
         default:

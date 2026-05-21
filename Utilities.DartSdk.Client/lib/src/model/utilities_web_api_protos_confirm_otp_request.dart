@@ -17,8 +17,10 @@ part 'utilities_web_api_protos_confirm_otp_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosConfirmOtpRequest
     implements
-        Built<UtilitiesWebApiProtosConfirmOtpRequest,
-            UtilitiesWebApiProtosConfirmOtpRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosConfirmOtpRequest,
+          UtilitiesWebApiProtosConfirmOtpRequestBuilder
+        > {
   /// The username of the user.
   @BuiltValueField(wireName: r'userName')
   String? get userName;
@@ -33,9 +35,9 @@ abstract class UtilitiesWebApiProtosConfirmOtpRequest
 
   UtilitiesWebApiProtosConfirmOtpRequest._();
 
-  factory UtilitiesWebApiProtosConfirmOtpRequest(
-          [void updates(UtilitiesWebApiProtosConfirmOtpRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosConfirmOtpRequest;
+  factory UtilitiesWebApiProtosConfirmOtpRequest([
+    void updates(UtilitiesWebApiProtosConfirmOtpRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosConfirmOtpRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosConfirmOtpRequestBuilder b) => b;
@@ -50,7 +52,7 @@ class _$UtilitiesWebApiProtosConfirmOtpRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosConfirmOtpRequest,
-    _$UtilitiesWebApiProtosConfirmOtpRequest
+    _$UtilitiesWebApiProtosConfirmOtpRequest,
   ];
 
   @override
@@ -90,9 +92,11 @@ class _$UtilitiesWebApiProtosConfirmOtpRequestSerializer
     UtilitiesWebApiProtosConfirmOtpRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,24 +112,30 @@ class _$UtilitiesWebApiProtosConfirmOtpRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'userName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.userName = valueDes;
           break;
         case r'otpToken':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.otpToken = valueDes;
           break;
         case r'otpTokenProvider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.otpTokenProvider = valueDes;
           break;
         default:

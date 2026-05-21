@@ -2008,6 +2008,43 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "ModelsService"
+        ],
+        "summary": "Create a customer-scope device model from scratch. The gateway pulls\r\nTenantId / UserId from the user JWT (downstream gRPC clients\r\nauthenticate as the service and do not see user claims).",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utilities.Web.Api.Protos.CreateDeviceModelRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.CreateDeviceModelResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/dashboard/v1/models:list": {
@@ -2073,6 +2110,93 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Utilities.Web.Api.Protos.GetDeviceModelDetailsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ModelsService"
+        ],
+        "summary": "Update an existing customer-scope device model in place. Tenant\r\nisolation is enforced upstream from the JWT-derived TenantId.",
+        "parameters": [
+          {
+            "name": "modelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UpdateDeviceModelRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UpdateDeviceModelResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ModelsService"
+        ],
+        "summary": "Soft-delete an existing customer-scope device model. Tenant isolation\r\nis enforced upstream from the JWT-derived TenantId.",
+        "parameters": [
+          {
+            "name": "modelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeleteDeviceModelResponse"
                 }
               }
             }
@@ -4520,6 +4644,46 @@
         }
       }
     },
+    "/api/dashboard/v1/devices:bind": {
+      "post": {
+        "tags": [
+          "UnitsService"
+        ],
+        "summary": "Binds a physical device to the current maintainer (BLE onboarding entry point).",
+        "description": "Returns the bound device id together with the provisioned units so the\r\nclient can deep-link to the device page using the {deviceId}/{unitCode}\r\nsubscription key, without an extra round-trip.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utilities.Web.Api.Protos.BindDeviceRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utilities.Web.Api.Protos.BindDeviceResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Google.Rpc.Status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/dashboard/v1/units/{unitId}/maintenance-assignments": {
       "put": {
         "tags": [
@@ -6019,6 +6183,80 @@
         "additionalProperties": false,
         "description": "Response message for attaching a virtual device to the current user."
       },
+      "Utilities.Web.Api.Protos.BindDeviceRequest": {
+        "type": "object",
+        "properties": {
+          "deviceSerial": {
+            "type": "string",
+            "description": "Serial number of the physical device."
+          },
+          "vendorCode": {
+            "type": "string",
+            "description": "Vendor code of the physical device."
+          },
+          "modelCode": {
+            "type": "string",
+            "description": "Model code of the physical device."
+          },
+          "firmwareVersion": {
+            "type": "string",
+            "description": "Installed firmware version."
+          },
+          "hardwareVersion": {
+            "type": "string",
+            "description": "Installed hardware version."
+          },
+          "latitude": {
+            "type": "number",
+            "description": "Latitude of the device location.",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "description": "Longitude of the device location.",
+            "format": "double"
+          },
+          "userCode": {
+            "type": "string",
+            "description": "Optional user code captured during BLE onboarding.\r\nWhen provided, the workflow generates a device token."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Request to bind a physical device to the current maintainer."
+      },
+      "Utilities.Web.Api.Protos.BindDeviceResponse": {
+        "type": "object",
+        "properties": {
+          "deviceId": {
+            "type": "string",
+            "description": "GUID of the bound physical device."
+          },
+          "units": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.BindDeviceUnit"
+            },
+            "description": "Virtual devices (units) provisioned by the bind. The pair\r\n{deviceId}/{unitCode} forms the WebSocket subscription key\r\nand the device page deep-link."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Result of binding a physical device to the current maintainer."
+      },
+      "Utilities.Web.Api.Protos.BindDeviceUnit": {
+        "type": "object",
+        "properties": {
+          "deviceId": {
+            "type": "string",
+            "description": "GUID of the physical device that hosts the unit."
+          },
+          "unitCode": {
+            "type": "string",
+            "description": "Code of the unit within the device."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Identifies a virtual device provisioned by BindDevice."
+      },
       "Utilities.Web.Api.Protos.BuildReportRequest": {
         "type": "object",
         "properties": {
@@ -6165,6 +6403,25 @@
         "type": "string",
         "description": "Type of contact value."
       },
+      "Utilities.Web.Api.Protos.CreateDeviceModelRequest": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceModel"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Create a customer-scope model. The server ignores any caller-supplied values\r\nfor `id`, `scope` and `createdBy` and stamps them itself; `vendorCode` is also\r\nserver-set from the caller's tenant. Required: `modelCode` and `name`."
+      },
+      "Utilities.Web.Api.Protos.CreateDeviceModelResponse": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceModel"
+          }
+        },
+        "additionalProperties": false
+      },
       "Utilities.Web.Api.Protos.CreateGroupRequest": {
         "type": "object",
         "properties": {
@@ -6225,6 +6482,10 @@
         "description": "The way list of devices is displayed on dasboard\r\nDashboard device list display mode."
       },
       "Utilities.Web.Api.Protos.DeleteAddressResponse": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Utilities.Web.Api.Protos.DeleteDeviceModelResponse": {
         "type": "object",
         "additionalProperties": false
       },
@@ -7407,6 +7668,13 @@
               "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UnitCommand"
             },
             "description": "List of supported commands"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UnitCondition"
+            },
+            "description": "Non-fatal status signals (see UnitCondition in common.proto)."
           }
         },
         "additionalProperties": false,
@@ -8221,6 +8489,13 @@
           "deviceGroupId": {
             "type": "string",
             "description": "Id of the device group this unit belongs to"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Utilities.Web.Api.Protos.UnitCondition"
+            },
+            "description": "Non-fatal status signals (see UnitCondition in common.proto)."
           }
         },
         "additionalProperties": false,
@@ -9340,6 +9615,25 @@
         "additionalProperties": false,
         "description": "Command available for a unit."
       },
+      "Utilities.Web.Api.Protos.UnitCondition": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Non-fatal per-unit status signal. Modeled after the Kubernetes\r\nstatus.conditions[] convention. Type and reason are opaque PascalCase\r\nidentifiers that clients map to localized strings via their own i18n\r\nbundle. Message is an optional English debug string for server logs only."
+      },
       "Utilities.Web.Api.Protos.UnitEventsResponse": {
         "type": "object",
         "properties": {
@@ -9591,6 +9885,29 @@
         "type": "object",
         "additionalProperties": false,
         "description": "Response message for updating the contacts for a virtual device."
+      },
+      "Utilities.Web.Api.Protos.UpdateDeviceModelRequest": {
+        "type": "object",
+        "properties": {
+          "modelId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "model": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceModel"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Update an existing customer-scope model. The `modelId` from the URL is\r\nauthoritative; `model.id`, `model.vendorCode`, `model.scope` and\r\n`model.createdBy` are server-ignored. The server replaces Units / Events /\r\nErrors / Manuals with the supplied collections (soft-deleting removed rows)."
+      },
+      "Utilities.Web.Api.Protos.UpdateDeviceModelResponse": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "$ref": "#/components/schemas/Utilities.Web.Api.Protos.DeviceModel"
+          }
+        },
+        "additionalProperties": false
       },
       "Utilities.Web.Api.Protos.UpdateEmployeeRequest": {
         "type": "object",

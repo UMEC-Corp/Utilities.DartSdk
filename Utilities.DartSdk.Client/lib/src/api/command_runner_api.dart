@@ -45,16 +45,10 @@ class CommandRunnerApi {
     final _path = r'/api/dashboard/v1/command-runner:run';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -68,14 +62,13 @@ class CommandRunnerApi {
       const _type = FullType(UtilitiesWebApiProtosRunRequest);
       _bodyData = utilitiesWebApiProtosRunRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosRunRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosRunRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -98,9 +91,10 @@ class CommandRunnerApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

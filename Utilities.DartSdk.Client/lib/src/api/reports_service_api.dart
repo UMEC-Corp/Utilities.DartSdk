@@ -35,7 +35,7 @@ class ReportsServiceApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>> apiDashboardV1ReportsbuildPost({
     UtilitiesWebApiProtosBuildReportRequest?
-        utilitiesWebApiProtosBuildReportRequest,
+    utilitiesWebApiProtosBuildReportRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -46,16 +46,10 @@ class ReportsServiceApi {
     final _path = r'/api/dashboard/v1/reports:build';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -69,14 +63,13 @@ class ReportsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosBuildReportRequest);
       _bodyData = utilitiesWebApiProtosBuildReportRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosBuildReportRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosBuildReportRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -99,9 +92,10 @@ class ReportsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

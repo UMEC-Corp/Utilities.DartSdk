@@ -18,8 +18,10 @@ part 'utilities_web_api_protos_import_device_model_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosImportDeviceModelRequest
     implements
-        Built<UtilitiesWebApiProtosImportDeviceModelRequest,
-            UtilitiesWebApiProtosImportDeviceModelRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosImportDeviceModelRequest,
+          UtilitiesWebApiProtosImportDeviceModelRequestBuilder
+        > {
   @BuiltValueField(wireName: r'formatCode')
   String? get formatCode;
 
@@ -34,20 +36,18 @@ abstract class UtilitiesWebApiProtosImportDeviceModelRequest
 
   UtilitiesWebApiProtosImportDeviceModelRequest._();
 
-  factory UtilitiesWebApiProtosImportDeviceModelRequest(
-          [void updates(
-              UtilitiesWebApiProtosImportDeviceModelRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosImportDeviceModelRequest;
+  factory UtilitiesWebApiProtosImportDeviceModelRequest([
+    void updates(UtilitiesWebApiProtosImportDeviceModelRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosImportDeviceModelRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosImportDeviceModelRequestBuilder b) =>
-      b;
+    UtilitiesWebApiProtosImportDeviceModelRequestBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosImportDeviceModelRequest>
-      get serializer =>
-          _$UtilitiesWebApiProtosImportDeviceModelRequestSerializer();
+  get serializer => _$UtilitiesWebApiProtosImportDeviceModelRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosImportDeviceModelRequestSerializer
@@ -56,7 +56,7 @@ class _$UtilitiesWebApiProtosImportDeviceModelRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosImportDeviceModelRequest,
-    _$UtilitiesWebApiProtosImportDeviceModelRequest
+    _$UtilitiesWebApiProtosImportDeviceModelRequest,
   ];
 
   @override
@@ -103,9 +103,11 @@ class _$UtilitiesWebApiProtosImportDeviceModelRequestSerializer
     UtilitiesWebApiProtosImportDeviceModelRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -121,31 +123,36 @@ class _$UtilitiesWebApiProtosImportDeviceModelRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'formatCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.formatCode = valueDes;
           break;
         case r'contents':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.contents = valueDes;
           break;
         case r'overrideName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.overrideName = valueDes;
           break;
         case r'replaceModelId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.replaceModelId = valueDes;
           break;
         default:

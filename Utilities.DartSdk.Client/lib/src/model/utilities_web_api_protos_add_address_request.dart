@@ -19,8 +19,10 @@ part 'utilities_web_api_protos_add_address_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAddAddressRequest
     implements
-        Built<UtilitiesWebApiProtosAddAddressRequest,
-            UtilitiesWebApiProtosAddAddressRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosAddAddressRequest,
+          UtilitiesWebApiProtosAddAddressRequestBuilder
+        > {
   /// String representation of the address
   @BuiltValueField(wireName: r'text')
   String? get text;
@@ -35,9 +37,9 @@ abstract class UtilitiesWebApiProtosAddAddressRequest
 
   UtilitiesWebApiProtosAddAddressRequest._();
 
-  factory UtilitiesWebApiProtosAddAddressRequest(
-          [void updates(UtilitiesWebApiProtosAddAddressRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosAddAddressRequest;
+  factory UtilitiesWebApiProtosAddAddressRequest([
+    void updates(UtilitiesWebApiProtosAddAddressRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosAddAddressRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosAddAddressRequestBuilder b) => b;
@@ -52,7 +54,7 @@ class _$UtilitiesWebApiProtosAddAddressRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAddAddressRequest,
-    _$UtilitiesWebApiProtosAddAddressRequest
+    _$UtilitiesWebApiProtosAddAddressRequest,
   ];
 
   @override
@@ -81,8 +83,9 @@ class _$UtilitiesWebApiProtosAddAddressRequestSerializer
       yield r'contacts';
       yield serializers.serialize(
         object.contacts,
-        specifiedType:
-            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosContact),
+        ]),
       );
     }
   }
@@ -93,9 +96,11 @@ class _$UtilitiesWebApiProtosAddAddressRequestSerializer
     UtilitiesWebApiProtosAddAddressRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -111,25 +116,32 @@ class _$UtilitiesWebApiProtosAddAddressRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'text':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.text = valueDes;
           break;
         case r'comment':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.comment = valueDes;
           break;
         case r'contacts':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosContact)]),
-          ) as BuiltList<UtilitiesWebApiProtosContact>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosContact),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosContact>;
           result.contacts.replace(valueDes);
           break;
         default:

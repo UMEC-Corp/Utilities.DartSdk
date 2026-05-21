@@ -107,8 +107,11 @@ Class | Method | HTTP request | Description
 [*MaintainersServiceApi*](doc/MaintainersServiceApi.md) | [**apiDashboardV1MaintainersPut**](doc/MaintainersServiceApi.md#apidashboardv1maintainersput) | **PUT** /api/dashboard/v1/maintainers | Update current maintainer company profile
 [*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsFormatsGet**](doc/ModelsServiceApi.md#apidashboardv1modelsformatsget) | **GET** /api/dashboard/v1/models/formats | Return the catalog of import/export-capable formats as advertised by the  upstream registry.
 [*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsGet**](doc/ModelsServiceApi.md#apidashboardv1modelsget) | **GET** /api/dashboard/v1/models | Get a list of available models
+[*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsModelIdDelete**](doc/ModelsServiceApi.md#apidashboardv1modelsmodeliddelete) | **DELETE** /api/dashboard/v1/models/{modelId} | Soft-delete an existing customer-scope device model. Tenant isolation  is enforced upstream from the JWT-derived TenantId.
 [*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsModelIdGet**](doc/ModelsServiceApi.md#apidashboardv1modelsmodelidget) | **GET** /api/dashboard/v1/models/{modelId} | Load a single model with full units/events/errors/manuals payload.
+[*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsModelIdPut**](doc/ModelsServiceApi.md#apidashboardv1modelsmodelidput) | **PUT** /api/dashboard/v1/models/{modelId} | Update an existing customer-scope device model in place. Tenant  isolation is enforced upstream from the JWT-derived TenantId.
 [*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsModelIdexportPost**](doc/ModelsServiceApi.md#apidashboardv1modelsmodelidexportpost) | **POST** /api/dashboard/v1/models/{modelId}:export | Pass through to upstream Export. The upstream returns FailedPrecondition with  &#39;no_exporter_for_format&#39; until an exporter ships, which is propagated to the  REST caller as a 400-class status by gRPC HTTP transcoding.
+[*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsPost**](doc/ModelsServiceApi.md#apidashboardv1modelspost) | **POST** /api/dashboard/v1/models | Create a customer-scope device model from scratch. The gateway pulls  TenantId / UserId from the user JWT (downstream gRPC clients  authenticate as the service and do not see user claims).
 [*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsbatchGetPost**](doc/ModelsServiceApi.md#apidashboardv1modelsbatchgetpost) | **POST** /api/dashboard/v1/models:batch-get | Get information for provded models
 [*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelsimportPost**](doc/ModelsServiceApi.md#apidashboardv1modelsimportpost) | **POST** /api/dashboard/v1/models:import | Translate the REST-friendly single-shot import request into the upstream&#39;s  client-streaming gRPC contract: send the init message, then push the file  bytes as one or more chunks before completing the stream.
 [*ModelsServiceApi*](doc/ModelsServiceApi.md) | [**apiDashboardV1ModelslistPost**](doc/ModelsServiceApi.md#apidashboardv1modelslistpost) | **POST** /api/dashboard/v1/models:list | List device models with tenant isolation, scope filter and free-text search.  Forwards to the upstream service which extracts the caller&#39;s TenantId from the  JWT and applies platform-or-own filtering.
@@ -159,6 +162,7 @@ Class | Method | HTTP request | Description
 [*UnitsServiceApi*](doc/UnitsServiceApi.md) | [**apiDashboardV1DevicesDeviceIdUnitsUnitCodesendPingPost**](doc/UnitsServiceApi.md#apidashboardv1devicesdeviceidunitsunitcodesendpingpost) | **POST** /api/dashboard/v1/devices/{deviceId}/units/{unitCode}:send-ping | Send ping command to a unit
 [*UnitsServiceApi*](doc/UnitsServiceApi.md) | [**apiDashboardV1DevicesDeviceIdUnitsUnitCodeupdateFirmwarePost**](doc/UnitsServiceApi.md#apidashboardv1devicesdeviceidunitsunitcodeupdatefirmwarepost) | **POST** /api/dashboard/v1/devices/{deviceId}/units/{unitCode}:update-firmware | Start unit firmware update
 [*UnitsServiceApi*](doc/UnitsServiceApi.md) | [**apiDashboardV1DevicesattachPost**](doc/UnitsServiceApi.md#apidashboardv1devicesattachpost) | **POST** /api/dashboard/v1/devices:attach | Attaches device to the current company
+[*UnitsServiceApi*](doc/UnitsServiceApi.md) | [**apiDashboardV1DevicesbindPost**](doc/UnitsServiceApi.md#apidashboardv1devicesbindpost) | **POST** /api/dashboard/v1/devices:bind | Binds a physical device to the current maintainer (BLE onboarding entry point).
 [*UnitsServiceApi*](doc/UnitsServiceApi.md) | [**apiDashboardV1UnitsGet**](doc/UnitsServiceApi.md#apidashboardv1unitsget) | **GET** /api/dashboard/v1/units | Get a list of units by a specific criterias
 [*UnitsServiceApi*](doc/UnitsServiceApi.md) | [**apiDashboardV1UnitsUnitIdContactsPut**](doc/UnitsServiceApi.md#apidashboardv1unitsunitidcontactsput) | **PUT** /api/dashboard/v1/units/{unitId}/contacts | Update a list of business contacts for a unit
 [*UnitsServiceApi*](doc/UnitsServiceApi.md) | [**apiDashboardV1UnitsUnitIdDelete**](doc/UnitsServiceApi.md#apidashboardv1unitsunitiddelete) | **DELETE** /api/dashboard/v1/units/{unitId} | Detaches a virtual device from the current maintainer.
@@ -202,6 +206,9 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosAssignUnitToGroupResponse](doc/UtilitiesWebApiProtosAssignUnitToGroupResponse.md)
  - [UtilitiesWebApiProtosAttachDeviceRequest](doc/UtilitiesWebApiProtosAttachDeviceRequest.md)
  - [UtilitiesWebApiProtosAttachUnitRequest](doc/UtilitiesWebApiProtosAttachUnitRequest.md)
+ - [UtilitiesWebApiProtosBindDeviceRequest](doc/UtilitiesWebApiProtosBindDeviceRequest.md)
+ - [UtilitiesWebApiProtosBindDeviceResponse](doc/UtilitiesWebApiProtosBindDeviceResponse.md)
+ - [UtilitiesWebApiProtosBindDeviceUnit](doc/UtilitiesWebApiProtosBindDeviceUnit.md)
  - [UtilitiesWebApiProtosBuildReportRequest](doc/UtilitiesWebApiProtosBuildReportRequest.md)
  - [UtilitiesWebApiProtosChangeUserRoleRequest](doc/UtilitiesWebApiProtosChangeUserRoleRequest.md)
  - [UtilitiesWebApiProtosConfirmOtpRequest](doc/UtilitiesWebApiProtosConfirmOtpRequest.md)
@@ -210,6 +217,8 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosConnectInputResponse](doc/UtilitiesWebApiProtosConnectInputResponse.md)
  - [UtilitiesWebApiProtosContact](doc/UtilitiesWebApiProtosContact.md)
  - [UtilitiesWebApiProtosContactType](doc/UtilitiesWebApiProtosContactType.md)
+ - [UtilitiesWebApiProtosCreateDeviceModelRequest](doc/UtilitiesWebApiProtosCreateDeviceModelRequest.md)
+ - [UtilitiesWebApiProtosCreateDeviceModelResponse](doc/UtilitiesWebApiProtosCreateDeviceModelResponse.md)
  - [UtilitiesWebApiProtosCreateGroupRequest](doc/UtilitiesWebApiProtosCreateGroupRequest.md)
  - [UtilitiesWebApiProtosCreateGroupResponse](doc/UtilitiesWebApiProtosCreateGroupResponse.md)
  - [UtilitiesWebApiProtosCreateShareLinkRequest](doc/UtilitiesWebApiProtosCreateShareLinkRequest.md)
@@ -348,6 +357,7 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosUiSettingItem](doc/UtilitiesWebApiProtosUiSettingItem.md)
  - [UtilitiesWebApiProtosUnit](doc/UtilitiesWebApiProtosUnit.md)
  - [UtilitiesWebApiProtosUnitCommand](doc/UtilitiesWebApiProtosUnitCommand.md)
+ - [UtilitiesWebApiProtosUnitCondition](doc/UtilitiesWebApiProtosUnitCondition.md)
  - [UtilitiesWebApiProtosUnitEventsResponse](doc/UtilitiesWebApiProtosUnitEventsResponse.md)
  - [UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty](doc/UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty.md)
  - [UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent](doc/UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent.md)
@@ -358,6 +368,8 @@ Class | Method | HTTP request | Description
  - [UtilitiesWebApiProtosUpdateClientAddressRequest](doc/UtilitiesWebApiProtosUpdateClientAddressRequest.md)
  - [UtilitiesWebApiProtosUpdateCompanyRequest](doc/UtilitiesWebApiProtosUpdateCompanyRequest.md)
  - [UtilitiesWebApiProtosUpdateContactsRequest](doc/UtilitiesWebApiProtosUpdateContactsRequest.md)
+ - [UtilitiesWebApiProtosUpdateDeviceModelRequest](doc/UtilitiesWebApiProtosUpdateDeviceModelRequest.md)
+ - [UtilitiesWebApiProtosUpdateDeviceModelResponse](doc/UtilitiesWebApiProtosUpdateDeviceModelResponse.md)
  - [UtilitiesWebApiProtosUpdateEmployeeRequest](doc/UtilitiesWebApiProtosUpdateEmployeeRequest.md)
  - [UtilitiesWebApiProtosUpdateEventTypeRequest](doc/UtilitiesWebApiProtosUpdateEventTypeRequest.md)
  - [UtilitiesWebApiProtosUpdateEventTypeResponse](doc/UtilitiesWebApiProtosUpdateEventTypeResponse.md)

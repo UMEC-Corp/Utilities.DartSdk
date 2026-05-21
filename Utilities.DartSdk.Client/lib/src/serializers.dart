@@ -37,6 +37,9 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_ass
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_assign_unit_to_group_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_attach_device_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_attach_unit_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_bind_device_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_bind_device_response.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_bind_device_unit.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_build_report_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_change_user_role_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_confirm_otp_request.dart';
@@ -45,6 +48,8 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_con
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_connect_input_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_contact.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_contact_type.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_device_model_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_device_model_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_group_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_group_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_create_share_link_request.dart';
@@ -183,6 +188,7 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_sup
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_ui_setting_item.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_command.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_condition.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_events_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_events_response_types_event_property.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_events_response_types_unit_property_changed_event.dart';
@@ -193,6 +199,8 @@ import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_upd
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_client_address_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_company_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_contacts_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_device_model_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_device_model_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_employee_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_event_type_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_update_event_type_response.dart';
@@ -243,6 +251,9 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosAssignUnitToGroupResponse,
   UtilitiesWebApiProtosAttachDeviceRequest,
   UtilitiesWebApiProtosAttachUnitRequest,
+  UtilitiesWebApiProtosBindDeviceRequest,
+  UtilitiesWebApiProtosBindDeviceResponse,
+  UtilitiesWebApiProtosBindDeviceUnit,
   UtilitiesWebApiProtosBuildReportRequest,
   UtilitiesWebApiProtosChangeUserRoleRequest,
   UtilitiesWebApiProtosConfirmOtpRequest,
@@ -251,6 +262,8 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosConnectInputResponse,
   UtilitiesWebApiProtosContact,
   UtilitiesWebApiProtosContactType,
+  UtilitiesWebApiProtosCreateDeviceModelRequest,
+  UtilitiesWebApiProtosCreateDeviceModelResponse,
   UtilitiesWebApiProtosCreateGroupRequest,
   UtilitiesWebApiProtosCreateGroupResponse,
   UtilitiesWebApiProtosCreateShareLinkRequest,
@@ -389,6 +402,7 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosUiSettingItem,
   UtilitiesWebApiProtosUnit,
   UtilitiesWebApiProtosUnitCommand,
+  UtilitiesWebApiProtosUnitCondition,
   UtilitiesWebApiProtosUnitEventsResponse,
   UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty,
   UtilitiesWebApiProtosUnitEventsResponseTypesUnitPropertyChangedEvent,
@@ -399,6 +413,8 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosUpdateClientAddressRequest,
   UtilitiesWebApiProtosUpdateCompanyRequest,
   UtilitiesWebApiProtosUpdateContactsRequest,
+  UtilitiesWebApiProtosUpdateDeviceModelRequest,
+  UtilitiesWebApiProtosUpdateDeviceModelResponse,
   UtilitiesWebApiProtosUpdateEmployeeRequest,
   UtilitiesWebApiProtosUpdateEventTypeRequest,
   UtilitiesWebApiProtosUpdateEventTypeResponse,
@@ -423,20 +439,23 @@ part 'serializers.g.dart';
   UtilitiesWebApiProtosUser,
   UtilitiesWebApiProtosUserRole,
 ])
-Serializers serializers = (_$serializers.toBuilder()
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(UtilitiesWebApiProtosUnitStatus)]),
-        () => ListBuilder<UtilitiesWebApiProtosUnitStatus>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(String)]),
-        () => ListBuilder<String>(),
-      )
-      ..add(const OneOfSerializer())
-      ..add(const AnyOfSerializer())
-      ..add(const DateSerializer())
-      ..add(Iso8601DateTimeSerializer()))
-    .build();
+Serializers serializers =
+    (_$serializers.toBuilder()
+          ..addBuilderFactory(
+            const FullType(BuiltList, [
+              FullType(UtilitiesWebApiProtosUnitStatus),
+            ]),
+            () => ListBuilder<UtilitiesWebApiProtosUnitStatus>(),
+          )
+          ..addBuilderFactory(
+            const FullType(BuiltList, [FullType(String)]),
+            () => ListBuilder<String>(),
+          )
+          ..add(const OneOfSerializer())
+          ..add(const AnyOfSerializer())
+          ..add(const DateSerializer())
+          ..add(Iso8601DateTimeSerializer()))
+        .build();
 
 Serializers standardSerializers =
     (serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();

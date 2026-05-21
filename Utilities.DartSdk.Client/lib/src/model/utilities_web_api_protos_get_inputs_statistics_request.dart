@@ -21,8 +21,10 @@ part 'utilities_web_api_protos_get_inputs_statistics_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetInputsStatisticsRequest
     implements
-        Built<UtilitiesWebApiProtosGetInputsStatisticsRequest,
-            UtilitiesWebApiProtosGetInputsStatisticsRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosGetInputsStatisticsRequest,
+          UtilitiesWebApiProtosGetInputsStatisticsRequestBuilder
+        > {
   /// Collectio of input codes
   @BuiltValueField(wireName: r'inputCodes')
   BuiltList<String>? get inputCodes;
@@ -49,20 +51,19 @@ abstract class UtilitiesWebApiProtosGetInputsStatisticsRequest
 
   UtilitiesWebApiProtosGetInputsStatisticsRequest._();
 
-  factory UtilitiesWebApiProtosGetInputsStatisticsRequest(
-          [void updates(
-              UtilitiesWebApiProtosGetInputsStatisticsRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosGetInputsStatisticsRequest;
+  factory UtilitiesWebApiProtosGetInputsStatisticsRequest([
+    void updates(UtilitiesWebApiProtosGetInputsStatisticsRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosGetInputsStatisticsRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosGetInputsStatisticsRequestBuilder b) =>
-      b;
+    UtilitiesWebApiProtosGetInputsStatisticsRequestBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosGetInputsStatisticsRequest>
-      get serializer =>
-          _$UtilitiesWebApiProtosGetInputsStatisticsRequestSerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosGetInputsStatisticsRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosGetInputsStatisticsRequestSerializer
@@ -71,7 +72,7 @@ class _$UtilitiesWebApiProtosGetInputsStatisticsRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetInputsStatisticsRequest,
-    _$UtilitiesWebApiProtosGetInputsStatisticsRequest
+    _$UtilitiesWebApiProtosGetInputsStatisticsRequest,
   ];
 
   @override
@@ -132,9 +133,11 @@ class _$UtilitiesWebApiProtosGetInputsStatisticsRequestSerializer
     UtilitiesWebApiProtosGetInputsStatisticsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -150,45 +153,50 @@ class _$UtilitiesWebApiProtosGetInputsStatisticsRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'inputCodes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(String),
+                    ]),
+                  )
+                  as BuiltList<String>;
           result.inputCodes.replace(valueDes);
           break;
         case r'begin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.begin = valueDes;
           break;
         case r'end':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.end = valueDes;
           break;
         case r'timeFrame':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.timeFrame = valueDes;
           break;
         case r'deviceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.deviceId = valueDes;
           break;
         case r'unitCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.unitCode = valueDes;
           break;
         default:

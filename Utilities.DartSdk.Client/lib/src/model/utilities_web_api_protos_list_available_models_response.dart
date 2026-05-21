@@ -17,29 +17,31 @@ part 'utilities_web_api_protos_list_available_models_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListAvailableModelsResponse
     implements
-        Built<UtilitiesWebApiProtosListAvailableModelsResponse,
-            UtilitiesWebApiProtosListAvailableModelsResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosListAvailableModelsResponse,
+          UtilitiesWebApiProtosListAvailableModelsResponseBuilder
+        > {
   @BuiltValueField(wireName: r'items')
   BuiltList<
-          UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem>?
-      get items;
+    UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem
+  >?
+  get items;
 
   UtilitiesWebApiProtosListAvailableModelsResponse._();
 
-  factory UtilitiesWebApiProtosListAvailableModelsResponse(
-          [void updates(
-              UtilitiesWebApiProtosListAvailableModelsResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosListAvailableModelsResponse;
+  factory UtilitiesWebApiProtosListAvailableModelsResponse([
+    void updates(UtilitiesWebApiProtosListAvailableModelsResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosListAvailableModelsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosListAvailableModelsResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosListAvailableModelsResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosListAvailableModelsResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosListAvailableModelsResponseSerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosListAvailableModelsResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosListAvailableModelsResponseSerializer
@@ -48,7 +50,7 @@ class _$UtilitiesWebApiProtosListAvailableModelsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListAvailableModelsResponse,
-    _$UtilitiesWebApiProtosListAvailableModelsResponse
+    _$UtilitiesWebApiProtosListAvailableModelsResponse,
   ];
 
   @override
@@ -65,7 +67,8 @@ class _$UtilitiesWebApiProtosListAvailableModelsResponseSerializer
         object.items,
         specifiedType: const FullType(BuiltList, [
           FullType(
-              UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem)
+            UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem,
+          ),
         ]),
       );
     }
@@ -77,9 +80,11 @@ class _$UtilitiesWebApiProtosListAvailableModelsResponseSerializer
     UtilitiesWebApiProtosListAvailableModelsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -95,14 +100,18 @@ class _$UtilitiesWebApiProtosListAvailableModelsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(
-                  UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem)
-            ]),
-          ) as BuiltList<
-              UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(
+                        UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    UtilitiesWebApiProtosListAvailableModelsResponseTypesListAvailableModelItem
+                  >;
           result.items.replace(valueDes);
           break;
         default:

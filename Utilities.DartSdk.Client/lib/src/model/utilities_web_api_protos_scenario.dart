@@ -23,8 +23,10 @@ part 'utilities_web_api_protos_scenario.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosScenario
     implements
-        Built<UtilitiesWebApiProtosScenario,
-            UtilitiesWebApiProtosScenarioBuilder> {
+        Built<
+          UtilitiesWebApiProtosScenario,
+          UtilitiesWebApiProtosScenarioBuilder
+        > {
   /// Id of the scenario
   @BuiltValueField(wireName: r'id')
   String? get id;
@@ -63,9 +65,9 @@ abstract class UtilitiesWebApiProtosScenario
 
   UtilitiesWebApiProtosScenario._();
 
-  factory UtilitiesWebApiProtosScenario(
-          [void updates(UtilitiesWebApiProtosScenarioBuilder b)]) =
-      _$UtilitiesWebApiProtosScenario;
+  factory UtilitiesWebApiProtosScenario([
+    void updates(UtilitiesWebApiProtosScenarioBuilder b),
+  ]) = _$UtilitiesWebApiProtosScenario;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosScenarioBuilder b) => b;
@@ -80,7 +82,7 @@ class _$UtilitiesWebApiProtosScenarioSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosScenario,
-    _$UtilitiesWebApiProtosScenario
+    _$UtilitiesWebApiProtosScenario,
   ];
 
   @override
@@ -162,9 +164,11 @@ class _$UtilitiesWebApiProtosScenarioSerializer
     UtilitiesWebApiProtosScenario object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -180,66 +184,84 @@ class _$UtilitiesWebApiProtosScenarioSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'objectId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.objectId = valueDes;
           break;
         case r'objectName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.objectName = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'isEnabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.isEnabled = valueDes;
           break;
         case r'eventTypeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.eventTypeId = valueDes;
           break;
         case r'eventTypeName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.eventTypeName = valueDes;
           break;
         case r'eventTypeColor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.eventTypeColor = valueDes;
           break;
         case r'eventTypeIcon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.eventTypeIcon = valueDes;
           break;
         default:

@@ -38,7 +38,7 @@ class ProfileServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetCompanyResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetCompanyResponse>>
-      apiDashboardV1ProfileCompanyGet({
+  apiDashboardV1ProfileCompanyGet({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -49,16 +49,10 @@ class ProfileServiceApi {
     final _path = r'/api/dashboard/v1/profile/company';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -80,10 +74,12 @@ class ProfileServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosGetCompanyResponse),
-            ) as UtilitiesWebApiProtosGetCompanyResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetCompanyResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetCompanyResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -124,7 +120,7 @@ class ProfileServiceApi {
   Future<Response<JsonObject>> apiDashboardV1ProfileCompanyIdPut({
     required String id,
     UtilitiesWebApiProtosUpdateCompanyRequest?
-        utilitiesWebApiProtosUpdateCompanyRequest,
+    utilitiesWebApiProtosUpdateCompanyRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -133,21 +129,17 @@ class ProfileServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/profile/company/{id}'.replaceAll(
-        '{' r'id' '}',
-        encodeQueryParameter(_serializers, id, const FullType(String))
-            .toString());
+      '{'
+      r'id'
+      '}',
+      encodeQueryParameter(_serializers, id, const FullType(String)).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -161,14 +153,13 @@ class ProfileServiceApi {
       const _type = FullType(UtilitiesWebApiProtosUpdateCompanyRequest);
       _bodyData = utilitiesWebApiProtosUpdateCompanyRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosUpdateCompanyRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosUpdateCompanyRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -191,9 +182,10 @@ class ProfileServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -230,7 +222,7 @@ class ProfileServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetProfileResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetProfileResponse>>
-      apiDashboardV1ProfileGet({
+  apiDashboardV1ProfileGet({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -241,16 +233,10 @@ class ProfileServiceApi {
     final _path = r'/api/dashboard/v1/profile';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -272,10 +258,12 @@ class ProfileServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosGetProfileResponse),
-            ) as UtilitiesWebApiProtosGetProfileResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetProfileResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetProfileResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -316,7 +304,7 @@ class ProfileServiceApi {
   Future<Response<JsonObject>> apiDashboardV1ProfileIdPut({
     required String id,
     UtilitiesWebApiProtosUpdateProfileRequest?
-        utilitiesWebApiProtosUpdateProfileRequest,
+    utilitiesWebApiProtosUpdateProfileRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -325,21 +313,17 @@ class ProfileServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/profile/{id}'.replaceAll(
-        '{' r'id' '}',
-        encodeQueryParameter(_serializers, id, const FullType(String))
-            .toString());
+      '{'
+      r'id'
+      '}',
+      encodeQueryParameter(_serializers, id, const FullType(String)).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -353,14 +337,13 @@ class ProfileServiceApi {
       const _type = FullType(UtilitiesWebApiProtosUpdateProfileRequest);
       _bodyData = utilitiesWebApiProtosUpdateProfileRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosUpdateProfileRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosUpdateProfileRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -383,9 +366,10 @@ class ProfileServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -424,7 +408,7 @@ class ProfileServiceApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>> apiDashboardV1ProfilePreferencesPut({
     UtilitiesWebApiProtosSetPreferencesRequest?
-        utilitiesWebApiProtosSetPreferencesRequest,
+    utilitiesWebApiProtosSetPreferencesRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -435,16 +419,10 @@ class ProfileServiceApi {
     final _path = r'/api/dashboard/v1/profile/preferences';
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -458,14 +436,13 @@ class ProfileServiceApi {
       const _type = FullType(UtilitiesWebApiProtosSetPreferencesRequest);
       _bodyData = utilitiesWebApiProtosSetPreferencesRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosSetPreferencesRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosSetPreferencesRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -488,9 +465,10 @@ class ProfileServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

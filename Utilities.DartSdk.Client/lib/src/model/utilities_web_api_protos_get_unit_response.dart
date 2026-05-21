@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_parameter.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_condition.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit_command.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_unit.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_input.dart';
@@ -20,11 +21,14 @@ part 'utilities_web_api_protos_get_unit_response.g.dart';
 /// * [inputs] - The list of sensors.
 /// * [parameters] - List of parameters
 /// * [commands] - List of supported commands
+/// * [conditions] - Non-fatal status signals (see UnitCondition in common.proto).
 @BuiltValue()
 abstract class UtilitiesWebApiProtosGetUnitResponse
     implements
-        Built<UtilitiesWebApiProtosGetUnitResponse,
-            UtilitiesWebApiProtosGetUnitResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosGetUnitResponse,
+          UtilitiesWebApiProtosGetUnitResponseBuilder
+        > {
   @BuiltValueField(wireName: r'unit')
   UtilitiesWebApiProtosUnit? get unit;
 
@@ -40,11 +44,15 @@ abstract class UtilitiesWebApiProtosGetUnitResponse
   @BuiltValueField(wireName: r'commands')
   BuiltList<UtilitiesWebApiProtosUnitCommand>? get commands;
 
+  /// Non-fatal status signals (see UnitCondition in common.proto).
+  @BuiltValueField(wireName: r'conditions')
+  BuiltList<UtilitiesWebApiProtosUnitCondition>? get conditions;
+
   UtilitiesWebApiProtosGetUnitResponse._();
 
-  factory UtilitiesWebApiProtosGetUnitResponse(
-          [void updates(UtilitiesWebApiProtosGetUnitResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosGetUnitResponse;
+  factory UtilitiesWebApiProtosGetUnitResponse([
+    void updates(UtilitiesWebApiProtosGetUnitResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosGetUnitResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosGetUnitResponseBuilder b) => b;
@@ -59,7 +67,7 @@ class _$UtilitiesWebApiProtosGetUnitResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosGetUnitResponse,
-    _$UtilitiesWebApiProtosGetUnitResponse
+    _$UtilitiesWebApiProtosGetUnitResponse,
   ];
 
   @override
@@ -81,24 +89,36 @@ class _$UtilitiesWebApiProtosGetUnitResponseSerializer
       yield r'inputs';
       yield serializers.serialize(
         object.inputs,
-        specifiedType:
-            const FullType(BuiltList, [FullType(UtilitiesWebApiProtosInput)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosInput),
+        ]),
       );
     }
     if (object.parameters != null) {
       yield r'parameters';
       yield serializers.serialize(
         object.parameters,
-        specifiedType: const FullType(
-            BuiltList, [FullType(UtilitiesWebApiProtosUnitParameter)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosUnitParameter),
+        ]),
       );
     }
     if (object.commands != null) {
       yield r'commands';
       yield serializers.serialize(
         object.commands,
-        specifiedType: const FullType(
-            BuiltList, [FullType(UtilitiesWebApiProtosUnitCommand)]),
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosUnitCommand),
+        ]),
+      );
+    }
+    if (object.conditions != null) {
+      yield r'conditions';
+      yield serializers.serialize(
+        object.conditions,
+        specifiedType: const FullType(BuiltList, [
+          FullType(UtilitiesWebApiProtosUnitCondition),
+        ]),
       );
     }
   }
@@ -109,9 +129,11 @@ class _$UtilitiesWebApiProtosGetUnitResponseSerializer
     UtilitiesWebApiProtosGetUnitResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -127,35 +149,57 @@ class _$UtilitiesWebApiProtosGetUnitResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'unit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UtilitiesWebApiProtosUnit),
-          ) as UtilitiesWebApiProtosUnit;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(UtilitiesWebApiProtosUnit),
+                  )
+                  as UtilitiesWebApiProtosUnit;
           result.unit.replace(valueDes);
           break;
         case r'inputs':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosInput)]),
-          ) as BuiltList<UtilitiesWebApiProtosInput>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosInput),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosInput>;
           result.inputs.replace(valueDes);
           break;
         case r'parameters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosUnitParameter)]),
-          ) as BuiltList<UtilitiesWebApiProtosUnitParameter>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosUnitParameter),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosUnitParameter>;
           result.parameters.replace(valueDes);
           break;
         case r'commands':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(UtilitiesWebApiProtosUnitCommand)]),
-          ) as BuiltList<UtilitiesWebApiProtosUnitCommand>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosUnitCommand),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosUnitCommand>;
           result.commands.replace(valueDes);
+          break;
+        case r'conditions':
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(UtilitiesWebApiProtosUnitCondition),
+                    ]),
+                  )
+                  as BuiltList<UtilitiesWebApiProtosUnitCondition>;
+          result.conditions.replace(valueDes);
           break;
         default:
           unhandled.add(key);

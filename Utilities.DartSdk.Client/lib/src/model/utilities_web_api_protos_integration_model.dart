@@ -16,8 +16,10 @@ part 'utilities_web_api_protos_integration_model.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosIntegrationModel
     implements
-        Built<UtilitiesWebApiProtosIntegrationModel,
-            UtilitiesWebApiProtosIntegrationModelBuilder> {
+        Built<
+          UtilitiesWebApiProtosIntegrationModel,
+          UtilitiesWebApiProtosIntegrationModelBuilder
+        > {
   /// Code of the model
   @BuiltValueField(wireName: r'modelCode')
   String? get modelCode;
@@ -28,9 +30,9 @@ abstract class UtilitiesWebApiProtosIntegrationModel
 
   UtilitiesWebApiProtosIntegrationModel._();
 
-  factory UtilitiesWebApiProtosIntegrationModel(
-          [void updates(UtilitiesWebApiProtosIntegrationModelBuilder b)]) =
-      _$UtilitiesWebApiProtosIntegrationModel;
+  factory UtilitiesWebApiProtosIntegrationModel([
+    void updates(UtilitiesWebApiProtosIntegrationModelBuilder b),
+  ]) = _$UtilitiesWebApiProtosIntegrationModel;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosIntegrationModelBuilder b) => b;
@@ -45,7 +47,7 @@ class _$UtilitiesWebApiProtosIntegrationModelSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosIntegrationModel,
-    _$UtilitiesWebApiProtosIntegrationModel
+    _$UtilitiesWebApiProtosIntegrationModel,
   ];
 
   @override
@@ -78,9 +80,11 @@ class _$UtilitiesWebApiProtosIntegrationModelSerializer
     UtilitiesWebApiProtosIntegrationModel object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,17 +100,21 @@ class _$UtilitiesWebApiProtosIntegrationModelSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'modelCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.modelCode = valueDes;
           break;
         case r'modelName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.modelName = valueDes;
           break;
         default:

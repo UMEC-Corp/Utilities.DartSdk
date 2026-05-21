@@ -27,7 +27,7 @@ class UtilitiesWebApiProtosScenarioConditionOperation extends EnumClass {
   /// Type of the operation that should be applied for ScenarioCondition
   @BuiltValueEnumConst(wireName: r'LessThanOrEqualTo')
   static const UtilitiesWebApiProtosScenarioConditionOperation
-      lessThanOrEqualTo = _$lessThanOrEqualTo;
+  lessThanOrEqualTo = _$lessThanOrEqualTo;
 
   /// Type of the operation that should be applied for ScenarioCondition
   @BuiltValueEnumConst(wireName: r'GreaterThan')
@@ -37,14 +37,13 @@ class UtilitiesWebApiProtosScenarioConditionOperation extends EnumClass {
   /// Type of the operation that should be applied for ScenarioCondition
   @BuiltValueEnumConst(wireName: r'GreaterThanOrEqualTo')
   static const UtilitiesWebApiProtosScenarioConditionOperation
-      greaterThanOrEqualTo = _$greaterThanOrEqualTo;
+  greaterThanOrEqualTo = _$greaterThanOrEqualTo;
 
   static Serializer<UtilitiesWebApiProtosScenarioConditionOperation>
-      get serializer =>
-          _$utilitiesWebApiProtosScenarioConditionOperationSerializer;
+  get serializer => _$utilitiesWebApiProtosScenarioConditionOperationSerializer;
 
   const UtilitiesWebApiProtosScenarioConditionOperation._(String name)
-      : super(name);
+    : super(name);
 
   static BuiltSet<UtilitiesWebApiProtosScenarioConditionOperation> get values =>
       _$values;

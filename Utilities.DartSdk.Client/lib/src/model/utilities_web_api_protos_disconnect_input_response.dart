@@ -15,28 +15,28 @@ part 'utilities_web_api_protos_disconnect_input_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDisconnectInputResponse
     implements
-        Built<UtilitiesWebApiProtosDisconnectInputResponse,
-            UtilitiesWebApiProtosDisconnectInputResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosDisconnectInputResponse,
+          UtilitiesWebApiProtosDisconnectInputResponseBuilder
+        > {
   /// Indicates if the input is connected.
   @BuiltValueField(wireName: r'isConnected')
   bool? get isConnected;
 
   UtilitiesWebApiProtosDisconnectInputResponse._();
 
-  factory UtilitiesWebApiProtosDisconnectInputResponse(
-          [void updates(
-              UtilitiesWebApiProtosDisconnectInputResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosDisconnectInputResponse;
+  factory UtilitiesWebApiProtosDisconnectInputResponse([
+    void updates(UtilitiesWebApiProtosDisconnectInputResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosDisconnectInputResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosDisconnectInputResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosDisconnectInputResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosDisconnectInputResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosDisconnectInputResponseSerializer();
+  get serializer => _$UtilitiesWebApiProtosDisconnectInputResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosDisconnectInputResponseSerializer
@@ -45,7 +45,7 @@ class _$UtilitiesWebApiProtosDisconnectInputResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosDisconnectInputResponse,
-    _$UtilitiesWebApiProtosDisconnectInputResponse
+    _$UtilitiesWebApiProtosDisconnectInputResponse,
   ];
 
   @override
@@ -71,9 +71,11 @@ class _$UtilitiesWebApiProtosDisconnectInputResponseSerializer
     UtilitiesWebApiProtosDisconnectInputResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -89,10 +91,12 @@ class _$UtilitiesWebApiProtosDisconnectInputResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'isConnected':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.isConnected = valueDes;
           break;
         default:

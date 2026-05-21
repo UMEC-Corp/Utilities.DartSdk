@@ -17,8 +17,10 @@ part 'utilities_web_api_protos_disconnect_input_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosDisconnectInputRequest
     implements
-        Built<UtilitiesWebApiProtosDisconnectInputRequest,
-            UtilitiesWebApiProtosDisconnectInputRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosDisconnectInputRequest,
+          UtilitiesWebApiProtosDisconnectInputRequestBuilder
+        > {
   /// Id of the physical device
   @BuiltValueField(wireName: r'deviceId')
   String? get deviceId;
@@ -33,10 +35,9 @@ abstract class UtilitiesWebApiProtosDisconnectInputRequest
 
   UtilitiesWebApiProtosDisconnectInputRequest._();
 
-  factory UtilitiesWebApiProtosDisconnectInputRequest(
-          [void updates(
-              UtilitiesWebApiProtosDisconnectInputRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosDisconnectInputRequest;
+  factory UtilitiesWebApiProtosDisconnectInputRequest([
+    void updates(UtilitiesWebApiProtosDisconnectInputRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosDisconnectInputRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosDisconnectInputRequestBuilder b) =>
@@ -44,8 +45,7 @@ abstract class UtilitiesWebApiProtosDisconnectInputRequest
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosDisconnectInputRequest>
-      get serializer =>
-          _$UtilitiesWebApiProtosDisconnectInputRequestSerializer();
+  get serializer => _$UtilitiesWebApiProtosDisconnectInputRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosDisconnectInputRequestSerializer
@@ -54,7 +54,7 @@ class _$UtilitiesWebApiProtosDisconnectInputRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosDisconnectInputRequest,
-    _$UtilitiesWebApiProtosDisconnectInputRequest
+    _$UtilitiesWebApiProtosDisconnectInputRequest,
   ];
 
   @override
@@ -94,9 +94,11 @@ class _$UtilitiesWebApiProtosDisconnectInputRequestSerializer
     UtilitiesWebApiProtosDisconnectInputRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -112,24 +114,30 @@ class _$UtilitiesWebApiProtosDisconnectInputRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'deviceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.deviceId = valueDes;
           break;
         case r'unitCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.unitCode = valueDes;
           break;
         case r'inputCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.inputCode = valueDes;
           break;
         default:

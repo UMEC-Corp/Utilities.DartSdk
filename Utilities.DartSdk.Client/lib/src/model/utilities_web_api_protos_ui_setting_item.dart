@@ -22,8 +22,10 @@ part 'utilities_web_api_protos_ui_setting_item.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUiSettingItem
     implements
-        Built<UtilitiesWebApiProtosUiSettingItem,
-            UtilitiesWebApiProtosUiSettingItemBuilder> {
+        Built<
+          UtilitiesWebApiProtosUiSettingItem,
+          UtilitiesWebApiProtosUiSettingItemBuilder
+        > {
   /// Id of the setting
   @BuiltValueField(wireName: r'id')
   String? get id;
@@ -58,9 +60,9 @@ abstract class UtilitiesWebApiProtosUiSettingItem
 
   UtilitiesWebApiProtosUiSettingItem._();
 
-  factory UtilitiesWebApiProtosUiSettingItem(
-          [void updates(UtilitiesWebApiProtosUiSettingItemBuilder b)]) =
-      _$UtilitiesWebApiProtosUiSettingItem;
+  factory UtilitiesWebApiProtosUiSettingItem([
+    void updates(UtilitiesWebApiProtosUiSettingItemBuilder b),
+  ]) = _$UtilitiesWebApiProtosUiSettingItem;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosUiSettingItemBuilder b) => b;
@@ -75,7 +77,7 @@ class _$UtilitiesWebApiProtosUiSettingItemSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUiSettingItem,
-    _$UtilitiesWebApiProtosUiSettingItem
+    _$UtilitiesWebApiProtosUiSettingItem,
   ];
 
   @override
@@ -150,9 +152,11 @@ class _$UtilitiesWebApiProtosUiSettingItemSerializer
     UtilitiesWebApiProtosUiSettingItem object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -168,59 +172,72 @@ class _$UtilitiesWebApiProtosUiSettingItemSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.id = valueDes;
           break;
         case r'userId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.userId = valueDes;
           break;
         case r'deviceGroupId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.deviceGroupId = valueDes;
           break;
         case r'objectType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.objectType = valueDes;
           break;
         case r'objectKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.objectKey = valueDes;
           break;
         case r'isDefault':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.isDefault = valueDes;
           break;
         case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.value = valueDes;
           break;
         case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.createdAt = valueDes;
           break;
         default:

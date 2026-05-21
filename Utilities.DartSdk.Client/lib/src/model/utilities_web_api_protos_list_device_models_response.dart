@@ -18,31 +18,31 @@ part 'utilities_web_api_protos_list_device_models_response.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListDeviceModelsResponse
     implements
-        Built<UtilitiesWebApiProtosListDeviceModelsResponse,
-            UtilitiesWebApiProtosListDeviceModelsResponseBuilder> {
+        Built<
+          UtilitiesWebApiProtosListDeviceModelsResponse,
+          UtilitiesWebApiProtosListDeviceModelsResponseBuilder
+        > {
   @BuiltValueField(wireName: r'items')
   BuiltList<UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem>?
-      get items;
+  get items;
 
   @BuiltValueField(wireName: r'totalCount')
   int? get totalCount;
 
   UtilitiesWebApiProtosListDeviceModelsResponse._();
 
-  factory UtilitiesWebApiProtosListDeviceModelsResponse(
-          [void updates(
-              UtilitiesWebApiProtosListDeviceModelsResponseBuilder b)]) =
-      _$UtilitiesWebApiProtosListDeviceModelsResponse;
+  factory UtilitiesWebApiProtosListDeviceModelsResponse([
+    void updates(UtilitiesWebApiProtosListDeviceModelsResponseBuilder b),
+  ]) = _$UtilitiesWebApiProtosListDeviceModelsResponse;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosListDeviceModelsResponseBuilder b) =>
-      b;
+    UtilitiesWebApiProtosListDeviceModelsResponseBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosListDeviceModelsResponse>
-      get serializer =>
-          _$UtilitiesWebApiProtosListDeviceModelsResponseSerializer();
+  get serializer => _$UtilitiesWebApiProtosListDeviceModelsResponseSerializer();
 }
 
 class _$UtilitiesWebApiProtosListDeviceModelsResponseSerializer
@@ -51,7 +51,7 @@ class _$UtilitiesWebApiProtosListDeviceModelsResponseSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListDeviceModelsResponse,
-    _$UtilitiesWebApiProtosListDeviceModelsResponse
+    _$UtilitiesWebApiProtosListDeviceModelsResponse,
   ];
 
   @override
@@ -68,7 +68,8 @@ class _$UtilitiesWebApiProtosListDeviceModelsResponseSerializer
         object.items,
         specifiedType: const FullType(BuiltList, [
           FullType(
-              UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem)
+            UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem,
+          ),
         ]),
       );
     }
@@ -87,9 +88,11 @@ class _$UtilitiesWebApiProtosListDeviceModelsResponseSerializer
     UtilitiesWebApiProtosListDeviceModelsResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -105,21 +108,24 @@ class _$UtilitiesWebApiProtosListDeviceModelsResponseSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(
-                  UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem)
-            ]),
-          ) as BuiltList<
-              UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(
+                        UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem
+                  >;
           result.items.replace(valueDes);
           break;
         case r'totalCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.totalCount = valueDes;
           break;
         default:

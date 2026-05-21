@@ -47,7 +47,7 @@ class ScenariosServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosListScenarioRunsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosListScenarioRunsResponse>>
-      apiDashboardV1ScenarioRunsGet({
+  apiDashboardV1ScenarioRunsGet({
     int? offset,
     int? limit,
     BuiltList<String>? scenarioIds,
@@ -61,16 +61,10 @@ class ScenariosServiceApi {
     final _path = r'/api/dashboard/v1/scenario-runs';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -79,11 +73,17 @@ class ScenariosServiceApi {
 
     final _queryParameters = <String, dynamic>{
       if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
+        r'offset': encodeQueryParameter(
+          _serializers,
+          offset,
+          const FullType(int),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (scenarioIds != null)
         r'scenarioIds': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -109,10 +109,12 @@ class ScenariosServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosListScenarioRunsResponse),
-            ) as UtilitiesWebApiProtosListScenarioRunsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosListScenarioRunsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosListScenarioRunsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -155,7 +157,7 @@ class ScenariosServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosListScenariosResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosListScenariosResponse>>
-      apiDashboardV1ScenariosGet({
+  apiDashboardV1ScenariosGet({
     int? offset,
     int? limit,
     BuiltList<String>? ids,
@@ -172,16 +174,10 @@ class ScenariosServiceApi {
     final _path = r'/api/dashboard/v1/scenarios';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -190,11 +186,17 @@ class ScenariosServiceApi {
 
     final _queryParameters = <String, dynamic>{
       if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
+        r'offset': encodeQueryParameter(
+          _serializers,
+          offset,
+          const FullType(int),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
       if (ids != null)
         r'ids': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -210,8 +212,11 @@ class ScenariosServiceApi {
           format: ListFormat.multi,
         ),
       if (isEnabled != null)
-        r'isEnabled':
-            encodeQueryParameter(_serializers, isEnabled, const FullType(bool)),
+        r'isEnabled': encodeQueryParameter(
+          _serializers,
+          isEnabled,
+          const FullType(bool),
+        ),
       if (eventTypeIds != null)
         r'eventTypeIds': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -237,10 +242,12 @@ class ScenariosServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosListScenariosResponse),
-            ) as UtilitiesWebApiProtosListScenariosResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosListScenariosResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosListScenariosResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -278,9 +285,9 @@ class ScenariosServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosAddScenarioResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosAddScenarioResponse>>
-      apiDashboardV1ScenariosPost({
+  apiDashboardV1ScenariosPost({
     UtilitiesWebApiProtosAddScenarioRequest?
-        utilitiesWebApiProtosAddScenarioRequest,
+    utilitiesWebApiProtosAddScenarioRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -291,16 +298,10 @@ class ScenariosServiceApi {
     final _path = r'/api/dashboard/v1/scenarios';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -314,14 +315,13 @@ class ScenariosServiceApi {
       const _type = FullType(UtilitiesWebApiProtosAddScenarioRequest);
       _bodyData = utilitiesWebApiProtosAddScenarioRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosAddScenarioRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosAddScenarioRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -344,10 +344,12 @@ class ScenariosServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosAddScenarioResponse),
-            ) as UtilitiesWebApiProtosAddScenarioResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosAddScenarioResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosAddScenarioResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -394,21 +396,21 @@ class ScenariosServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/scenarios/{scenarioId}'.replaceAll(
-        '{' r'scenarioId' '}',
-        encodeQueryParameter(_serializers, scenarioId, const FullType(String))
-            .toString());
+      '{'
+      r'scenarioId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        scenarioId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -430,9 +432,10 @@ class ScenariosServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -470,7 +473,7 @@ class ScenariosServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetScenarioDetailsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetScenarioDetailsResponse>>
-      apiDashboardV1ScenariosScenarioIdGet({
+  apiDashboardV1ScenariosScenarioIdGet({
     required String scenarioId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -480,21 +483,21 @@ class ScenariosServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/scenarios/{scenarioId}'.replaceAll(
-        '{' r'scenarioId' '}',
-        encodeQueryParameter(_serializers, scenarioId, const FullType(String))
-            .toString());
+      '{'
+      r'scenarioId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        scenarioId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -516,10 +519,12 @@ class ScenariosServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(
-                  UtilitiesWebApiProtosGetScenarioDetailsResponse),
-            ) as UtilitiesWebApiProtosGetScenarioDetailsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetScenarioDetailsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetScenarioDetailsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -558,10 +563,10 @@ class ScenariosServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosUpdateScenarioResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosUpdateScenarioResponse>>
-      apiDashboardV1ScenariosScenarioIdPut({
+  apiDashboardV1ScenariosScenarioIdPut({
     required String scenarioId,
     UtilitiesWebApiProtosUpdateScenarioRequest?
-        utilitiesWebApiProtosUpdateScenarioRequest,
+    utilitiesWebApiProtosUpdateScenarioRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -570,21 +575,21 @@ class ScenariosServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/scenarios/{scenarioId}'.replaceAll(
-        '{' r'scenarioId' '}',
-        encodeQueryParameter(_serializers, scenarioId, const FullType(String))
-            .toString());
+      '{'
+      r'scenarioId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        scenarioId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -598,14 +603,13 @@ class ScenariosServiceApi {
       const _type = FullType(UtilitiesWebApiProtosUpdateScenarioRequest);
       _bodyData = utilitiesWebApiProtosUpdateScenarioRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosUpdateScenarioRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosUpdateScenarioRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -628,10 +632,12 @@ class ScenariosServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosUpdateScenarioResponse),
-            ) as UtilitiesWebApiProtosUpdateScenarioResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosUpdateScenarioResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosUpdateScenarioResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -672,7 +678,7 @@ class ScenariosServiceApi {
   Future<Response<JsonObject>> apiDashboardV1ScenariosScenarioIddisablePost({
     required String scenarioId,
     UtilitiesWebApiProtosDisableScenarioRequest?
-        utilitiesWebApiProtosDisableScenarioRequest,
+    utilitiesWebApiProtosDisableScenarioRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -682,22 +688,21 @@ class ScenariosServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/scenarios/{scenarioId}:disable'
         .replaceAll(
-            '{' r'scenarioId' '}',
-            encodeQueryParameter(
-                    _serializers, scenarioId, const FullType(String))
-                .toString());
+          '{'
+          r'scenarioId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            scenarioId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -711,14 +716,13 @@ class ScenariosServiceApi {
       const _type = FullType(UtilitiesWebApiProtosDisableScenarioRequest);
       _bodyData = utilitiesWebApiProtosDisableScenarioRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosDisableScenarioRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosDisableScenarioRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -741,9 +745,10 @@ class ScenariosServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -784,7 +789,7 @@ class ScenariosServiceApi {
   Future<Response<JsonObject>> apiDashboardV1ScenariosScenarioIdenablePost({
     required String scenarioId,
     UtilitiesWebApiProtosEnableScenarioRequest?
-        utilitiesWebApiProtosEnableScenarioRequest,
+    utilitiesWebApiProtosEnableScenarioRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -793,21 +798,21 @@ class ScenariosServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/scenarios/{scenarioId}:enable'.replaceAll(
-        '{' r'scenarioId' '}',
-        encodeQueryParameter(_serializers, scenarioId, const FullType(String))
-            .toString());
+      '{'
+      r'scenarioId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        scenarioId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -821,14 +826,13 @@ class ScenariosServiceApi {
       const _type = FullType(UtilitiesWebApiProtosEnableScenarioRequest);
       _bodyData = utilitiesWebApiProtosEnableScenarioRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosEnableScenarioRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosEnableScenarioRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -851,9 +855,10 @@ class ScenariosServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -894,7 +899,7 @@ class ScenariosServiceApi {
   Future<Response<JsonObject>> apiDashboardV1ScenariosScenarioIdstartPost({
     required String scenarioId,
     UtilitiesWebApiProtosStartScenarioRequest?
-        utilitiesWebApiProtosStartScenarioRequest,
+    utilitiesWebApiProtosStartScenarioRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -903,21 +908,21 @@ class ScenariosServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/scenarios/{scenarioId}:start'.replaceAll(
-        '{' r'scenarioId' '}',
-        encodeQueryParameter(_serializers, scenarioId, const FullType(String))
-            .toString());
+      '{'
+      r'scenarioId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        scenarioId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -931,14 +936,13 @@ class ScenariosServiceApi {
       const _type = FullType(UtilitiesWebApiProtosStartScenarioRequest);
       _bodyData = utilitiesWebApiProtosStartScenarioRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosStartScenarioRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosStartScenarioRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -961,9 +965,10 @@ class ScenariosServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

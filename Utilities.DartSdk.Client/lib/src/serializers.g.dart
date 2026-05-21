@@ -32,6 +32,9 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosAssignUnitToGroupResponse.serializer)
       ..add(UtilitiesWebApiProtosAttachDeviceRequest.serializer)
       ..add(UtilitiesWebApiProtosAttachUnitRequest.serializer)
+      ..add(UtilitiesWebApiProtosBindDeviceRequest.serializer)
+      ..add(UtilitiesWebApiProtosBindDeviceResponse.serializer)
+      ..add(UtilitiesWebApiProtosBindDeviceUnit.serializer)
       ..add(UtilitiesWebApiProtosBuildReportRequest.serializer)
       ..add(UtilitiesWebApiProtosChangeUserRoleRequest.serializer)
       ..add(UtilitiesWebApiProtosConfirmOtpRequest.serializer)
@@ -40,6 +43,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosConnectInputResponse.serializer)
       ..add(UtilitiesWebApiProtosContact.serializer)
       ..add(UtilitiesWebApiProtosContactType.serializer)
+      ..add(UtilitiesWebApiProtosCreateDeviceModelRequest.serializer)
+      ..add(UtilitiesWebApiProtosCreateDeviceModelResponse.serializer)
       ..add(UtilitiesWebApiProtosCreateGroupRequest.serializer)
       ..add(UtilitiesWebApiProtosCreateGroupResponse.serializer)
       ..add(UtilitiesWebApiProtosCreateShareLinkRequest.serializer)
@@ -190,6 +195,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosUiSettingItem.serializer)
       ..add(UtilitiesWebApiProtosUnit.serializer)
       ..add(UtilitiesWebApiProtosUnitCommand.serializer)
+      ..add(UtilitiesWebApiProtosUnitCondition.serializer)
       ..add(UtilitiesWebApiProtosUnitEventsResponse.serializer)
       ..add(
           UtilitiesWebApiProtosUnitEventsResponseTypesEventProperty.serializer)
@@ -202,6 +208,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UtilitiesWebApiProtosUpdateClientAddressRequest.serializer)
       ..add(UtilitiesWebApiProtosUpdateCompanyRequest.serializer)
       ..add(UtilitiesWebApiProtosUpdateContactsRequest.serializer)
+      ..add(UtilitiesWebApiProtosUpdateDeviceModelRequest.serializer)
+      ..add(UtilitiesWebApiProtosUpdateDeviceModelResponse.serializer)
       ..add(UtilitiesWebApiProtosUpdateEmployeeRequest.serializer)
       ..add(UtilitiesWebApiProtosUpdateEventTypeRequest.serializer)
       ..add(UtilitiesWebApiProtosUpdateEventTypeResponse.serializer)
@@ -275,6 +283,10 @@ Serializers _$serializers = (Serializers().toBuilder()
               BuiltList, const [const FullType(UtilitiesWebApiProtosAlert)]),
           () => ListBuilder<UtilitiesWebApiProtosAlert>())
       ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(UtilitiesWebApiProtosBindDeviceUnit)]),
+          () => ListBuilder<UtilitiesWebApiProtosBindDeviceUnit>())
+      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(UtilitiesWebApiProtosContact)]),
           () => ListBuilder<UtilitiesWebApiProtosContact>())
@@ -345,6 +357,10 @@ Serializers _$serializers = (Serializers().toBuilder()
           ]),
           () => ListBuilder<
               UtilitiesWebApiProtosListUnitsResponseTypesListUnitsResponseSensor>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(UtilitiesWebApiProtosUnitCondition)]),
+          () => ListBuilder<UtilitiesWebApiProtosUnitCondition>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(UtilitiesWebApiProtosDeviceGroup)]),
@@ -453,6 +469,10 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(UtilitiesWebApiProtosUnitCommand)]),
           () => ListBuilder<UtilitiesWebApiProtosUnitCommand>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(UtilitiesWebApiProtosUnitCondition)]),
+          () => ListBuilder<UtilitiesWebApiProtosUnitCondition>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(UtilitiesWebApiProtosIntegration)]),

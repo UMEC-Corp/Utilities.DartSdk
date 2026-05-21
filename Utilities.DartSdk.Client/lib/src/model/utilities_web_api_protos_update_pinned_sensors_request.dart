@@ -18,8 +18,10 @@ part 'utilities_web_api_protos_update_pinned_sensors_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpdatePinnedSensorsRequest
     implements
-        Built<UtilitiesWebApiProtosUpdatePinnedSensorsRequest,
-            UtilitiesWebApiProtosUpdatePinnedSensorsRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosUpdatePinnedSensorsRequest,
+          UtilitiesWebApiProtosUpdatePinnedSensorsRequestBuilder
+        > {
   /// Id of the virtual device
   @BuiltValueField(wireName: r'clientId')
   String? get clientId;
@@ -27,25 +29,25 @@ abstract class UtilitiesWebApiProtosUpdatePinnedSensorsRequest
   /// List of pinned sensors
   @BuiltValueField(wireName: r'items')
   BuiltList<
-          UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem>?
-      get items;
+    UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem
+  >?
+  get items;
 
   UtilitiesWebApiProtosUpdatePinnedSensorsRequest._();
 
-  factory UtilitiesWebApiProtosUpdatePinnedSensorsRequest(
-          [void updates(
-              UtilitiesWebApiProtosUpdatePinnedSensorsRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosUpdatePinnedSensorsRequest;
+  factory UtilitiesWebApiProtosUpdatePinnedSensorsRequest([
+    void updates(UtilitiesWebApiProtosUpdatePinnedSensorsRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosUpdatePinnedSensorsRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosUpdatePinnedSensorsRequestBuilder b) =>
-      b;
+    UtilitiesWebApiProtosUpdatePinnedSensorsRequestBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<UtilitiesWebApiProtosUpdatePinnedSensorsRequest>
-      get serializer =>
-          _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestSerializer();
+  get serializer =>
+      _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestSerializer();
 }
 
 class _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestSerializer
@@ -54,7 +56,7 @@ class _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdatePinnedSensorsRequest,
-    _$UtilitiesWebApiProtosUpdatePinnedSensorsRequest
+    _$UtilitiesWebApiProtosUpdatePinnedSensorsRequest,
   ];
 
   @override
@@ -78,7 +80,8 @@ class _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestSerializer
         object.items,
         specifiedType: const FullType(BuiltList, [
           FullType(
-              UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem)
+            UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem,
+          ),
         ]),
       );
     }
@@ -90,9 +93,11 @@ class _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestSerializer
     UtilitiesWebApiProtosUpdatePinnedSensorsRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -108,21 +113,27 @@ class _$UtilitiesWebApiProtosUpdatePinnedSensorsRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'clientId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.clientId = valueDes;
           break;
         case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(
-                  UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem)
-            ]),
-          ) as BuiltList<
-              UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(
+                        UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    UtilitiesWebApiProtosUpdatePinnedSensorsRequestTypesUpdatePinnedSensorsItem
+                  >;
           result.items.replace(valueDes);
           break;
         default:

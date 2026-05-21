@@ -14,6 +14,8 @@ import 'package:utilities_dart_sdk_client/src/api_util.dart';
 import 'package:utilities_dart_sdk_client/src/model/google_rpc_status.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_attach_device_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_attach_unit_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_bind_device_request.dart';
+import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_bind_device_response.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_change_user_role_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_connect_input_request.dart';
 import 'package:utilities_dart_sdk_client/src/model/utilities_web_api_protos_connect_input_response.dart';
@@ -66,7 +68,7 @@ class UnitsServiceApi {
   Future<Response<JsonObject>> apiDashboardV1ClientsClientIdAddressPut({
     required String clientId,
     UtilitiesWebApiProtosUpdateClientAddressRequest?
-        utilitiesWebApiProtosUpdateClientAddressRequest,
+    utilitiesWebApiProtosUpdateClientAddressRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -75,21 +77,21 @@ class UnitsServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/clients/{clientId}/address'.replaceAll(
-        '{' r'clientId' '}',
-        encodeQueryParameter(_serializers, clientId, const FullType(String))
-            .toString());
+      '{'
+      r'clientId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        clientId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -105,13 +107,11 @@ class UnitsServiceApi {
           ? null
           : _serializers.serialize(
               utilitiesWebApiProtosUpdateClientAddressRequest,
-              specifiedType: _type);
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -134,9 +134,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -175,10 +176,10 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosUpdatePinnedSensorsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosUpdatePinnedSensorsResponse>>
-      apiDashboardV1ClientsClientIdPinnedSensorsPut({
+  apiDashboardV1ClientsClientIdPinnedSensorsPut({
     required String clientId,
     UtilitiesWebApiProtosUpdatePinnedSensorsRequest?
-        utilitiesWebApiProtosUpdatePinnedSensorsRequest,
+    utilitiesWebApiProtosUpdatePinnedSensorsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -188,21 +189,21 @@ class UnitsServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/clients/{clientId}/pinned-sensors'
         .replaceAll(
-            '{' r'clientId' '}',
-            encodeQueryParameter(_serializers, clientId, const FullType(String))
-                .toString());
+          '{'
+          r'clientId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            clientId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -218,13 +219,11 @@ class UnitsServiceApi {
           ? null
           : _serializers.serialize(
               utilitiesWebApiProtosUpdatePinnedSensorsRequest,
-              specifiedType: _type);
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -247,10 +246,12 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(
-                  UtilitiesWebApiProtosUpdatePinnedSensorsResponse),
-            ) as UtilitiesWebApiProtosUpdatePinnedSensorsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosUpdatePinnedSensorsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosUpdatePinnedSensorsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -291,7 +292,7 @@ class UnitsServiceApi {
   Future<Response<JsonObject>> apiDashboardV1ClientsClientIdresetAddressPost({
     required String clientId,
     UtilitiesWebApiProtosResetClientAddressRequest?
-        utilitiesWebApiProtosResetClientAddressRequest,
+    utilitiesWebApiProtosResetClientAddressRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -301,21 +302,21 @@ class UnitsServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/clients/{clientId}:reset-address'
         .replaceAll(
-            '{' r'clientId' '}',
-            encodeQueryParameter(_serializers, clientId, const FullType(String))
-                .toString());
+          '{'
+          r'clientId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            clientId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -331,13 +332,11 @@ class UnitsServiceApi {
           ? null
           : _serializers.serialize(
               utilitiesWebApiProtosResetClientAddressRequest,
-              specifiedType: _type);
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -360,9 +359,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -401,7 +401,7 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetUnitResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetUnitResponse>>
-      apiDashboardV1DevicesDeviceIdUnitsUnitCodeGet({
+  apiDashboardV1DevicesDeviceIdUnitsUnitCodeGet({
     required String deviceId,
     required String unitCode,
     CancelToken? cancelToken,
@@ -413,25 +413,31 @@ class UnitsServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}'
         .replaceAll(
-            '{' r'deviceId' '}',
-            encodeQueryParameter(_serializers, deviceId, const FullType(String))
-                .toString())
+          '{'
+          r'deviceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            deviceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'unitCode' '}',
-            encodeQueryParameter(_serializers, unitCode, const FullType(String))
-                .toString());
+          '{'
+          r'unitCode'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            unitCode,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -453,10 +459,12 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosGetUnitResponse),
-            ) as UtilitiesWebApiProtosGetUnitResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetUnitResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetUnitResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -497,7 +505,7 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetInputsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetInputsResponse>>
-      apiDashboardV1DevicesDeviceIdUnitsUnitCodeInputsGet({
+  apiDashboardV1DevicesDeviceIdUnitsUnitCodeInputsGet({
     required String deviceId,
     required String unitCode,
     int? offset,
@@ -512,27 +520,31 @@ class UnitsServiceApi {
     final _path =
         r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}/inputs'
             .replaceAll(
-                '{' r'deviceId' '}',
-                encodeQueryParameter(
-                        _serializers, deviceId, const FullType(String))
-                    .toString())
+              '{'
+              r'deviceId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                deviceId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'unitCode' '}',
-                encodeQueryParameter(
-                        _serializers, unitCode, const FullType(String))
-                    .toString());
+              '{'
+              r'unitCode'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                unitCode,
+                const FullType(String),
+              ).toString(),
+            );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -541,11 +553,17 @@ class UnitsServiceApi {
 
     final _queryParameters = <String, dynamic>{
       if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
+        r'offset': encodeQueryParameter(
+          _serializers,
+          offset,
+          const FullType(int),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -564,10 +582,12 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosGetInputsResponse),
-            ) as UtilitiesWebApiProtosGetInputsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetInputsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetInputsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -608,12 +628,12 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosConnectInputResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosConnectInputResponse>>
-      apiDashboardV1DevicesDeviceIdUnitsUnitCodeInputsInputCodeconnectPost({
+  apiDashboardV1DevicesDeviceIdUnitsUnitCodeInputsInputCodeconnectPost({
     required String deviceId,
     required String unitCode,
     required String inputCode,
     UtilitiesWebApiProtosConnectInputRequest?
-        utilitiesWebApiProtosConnectInputRequest,
+    utilitiesWebApiProtosConnectInputRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -624,32 +644,41 @@ class UnitsServiceApi {
     final _path =
         r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}/inputs/{inputCode}:connect'
             .replaceAll(
-                '{' r'deviceId' '}',
-                encodeQueryParameter(
-                        _serializers, deviceId, const FullType(String))
-                    .toString())
+              '{'
+              r'deviceId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                deviceId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'unitCode' '}',
-                encodeQueryParameter(
-                        _serializers, unitCode, const FullType(String))
-                    .toString())
+              '{'
+              r'unitCode'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                unitCode,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'inputCode' '}',
-                encodeQueryParameter(
-                        _serializers, inputCode, const FullType(String))
-                    .toString());
+              '{'
+              r'inputCode'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                inputCode,
+                const FullType(String),
+              ).toString(),
+            );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -663,14 +692,13 @@ class UnitsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosConnectInputRequest);
       _bodyData = utilitiesWebApiProtosConnectInputRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosConnectInputRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosConnectInputRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -693,10 +721,12 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosConnectInputResponse),
-            ) as UtilitiesWebApiProtosConnectInputResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosConnectInputResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosConnectInputResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -737,12 +767,12 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosDisconnectInputResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosDisconnectInputResponse>>
-      apiDashboardV1DevicesDeviceIdUnitsUnitCodeInputsInputCodedisconnectPost({
+  apiDashboardV1DevicesDeviceIdUnitsUnitCodeInputsInputCodedisconnectPost({
     required String deviceId,
     required String unitCode,
     required String inputCode,
     UtilitiesWebApiProtosDisconnectInputRequest?
-        utilitiesWebApiProtosDisconnectInputRequest,
+    utilitiesWebApiProtosDisconnectInputRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -753,32 +783,41 @@ class UnitsServiceApi {
     final _path =
         r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}/inputs/{inputCode}:disconnect'
             .replaceAll(
-                '{' r'deviceId' '}',
-                encodeQueryParameter(
-                        _serializers, deviceId, const FullType(String))
-                    .toString())
+              '{'
+              r'deviceId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                deviceId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'unitCode' '}',
-                encodeQueryParameter(
-                        _serializers, unitCode, const FullType(String))
-                    .toString())
+              '{'
+              r'unitCode'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                unitCode,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'inputCode' '}',
-                encodeQueryParameter(
-                        _serializers, inputCode, const FullType(String))
-                    .toString());
+              '{'
+              r'inputCode'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                inputCode,
+                const FullType(String),
+              ).toString(),
+            );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -792,14 +831,13 @@ class UnitsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosDisconnectInputRequest);
       _bodyData = utilitiesWebApiProtosDisconnectInputRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosDisconnectInputRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosDisconnectInputRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -822,10 +860,12 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosDisconnectInputResponse),
-            ) as UtilitiesWebApiProtosDisconnectInputResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosDisconnectInputResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosDisconnectInputResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -866,7 +906,7 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetNotificationsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetNotificationsResponse>>
-      apiDashboardV1DevicesDeviceIdUnitsUnitCodeNotificationsGet({
+  apiDashboardV1DevicesDeviceIdUnitsUnitCodeNotificationsGet({
     required String deviceId,
     required String unitCode,
     int? offset,
@@ -881,27 +921,31 @@ class UnitsServiceApi {
     final _path =
         r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}/notifications'
             .replaceAll(
-                '{' r'deviceId' '}',
-                encodeQueryParameter(
-                        _serializers, deviceId, const FullType(String))
-                    .toString())
+              '{'
+              r'deviceId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                deviceId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'unitCode' '}',
-                encodeQueryParameter(
-                        _serializers, unitCode, const FullType(String))
-                    .toString());
+              '{'
+              r'unitCode'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                unitCode,
+                const FullType(String),
+              ).toString(),
+            );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -910,11 +954,17 @@ class UnitsServiceApi {
 
     final _queryParameters = <String, dynamic>{
       if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
+        r'offset': encodeQueryParameter(
+          _serializers,
+          offset,
+          const FullType(int),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -933,10 +983,12 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosGetNotificationsResponse),
-            ) as UtilitiesWebApiProtosGetNotificationsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetNotificationsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetNotificationsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -977,12 +1029,12 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>>
-      apiDashboardV1DevicesDeviceIdUnitsUnitCodeParametersParameterCodesetPost({
+  apiDashboardV1DevicesDeviceIdUnitsUnitCodeParametersParameterCodesetPost({
     required String deviceId,
     required String unitCode,
     required String parameterCode,
     UtilitiesWebApiProtosSetUnitParameterRequest?
-        utilitiesWebApiProtosSetUnitParameterRequest,
+    utilitiesWebApiProtosSetUnitParameterRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -993,32 +1045,41 @@ class UnitsServiceApi {
     final _path =
         r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}/parameters/{parameterCode}:set'
             .replaceAll(
-                '{' r'deviceId' '}',
-                encodeQueryParameter(
-                        _serializers, deviceId, const FullType(String))
-                    .toString())
+              '{'
+              r'deviceId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                deviceId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'unitCode' '}',
-                encodeQueryParameter(
-                        _serializers, unitCode, const FullType(String))
-                    .toString())
+              '{'
+              r'unitCode'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                unitCode,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'parameterCode' '}',
-                encodeQueryParameter(
-                        _serializers, parameterCode, const FullType(String))
-                    .toString());
+              '{'
+              r'parameterCode'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                parameterCode,
+                const FullType(String),
+              ).toString(),
+            );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -1032,14 +1093,13 @@ class UnitsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosSetUnitParameterRequest);
       _bodyData = utilitiesWebApiProtosSetUnitParameterRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosSetUnitParameterRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosSetUnitParameterRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1062,9 +1122,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1103,7 +1164,7 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse>>
-      apiDashboardV1DevicesDeviceIdUnitsUnitCodeStaticMapUrlGet({
+  apiDashboardV1DevicesDeviceIdUnitsUnitCodeStaticMapUrlGet({
     required String deviceId,
     required String unitCode,
     CancelToken? cancelToken,
@@ -1116,27 +1177,31 @@ class UnitsServiceApi {
     final _path =
         r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}/static-map-url'
             .replaceAll(
-                '{' r'deviceId' '}',
-                encodeQueryParameter(
-                        _serializers, deviceId, const FullType(String))
-                    .toString())
+              '{'
+              r'deviceId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                deviceId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'unitCode' '}',
-                encodeQueryParameter(
-                        _serializers, unitCode, const FullType(String))
-                    .toString());
+              '{'
+              r'unitCode'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                unitCode,
+                const FullType(String),
+              ).toString(),
+            );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -1158,10 +1223,12 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(
-                  UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse),
-            ) as UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetDeviceStaticMapUrlResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1202,7 +1269,7 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetUsersResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetUsersResponse>>
-      apiDashboardV1DevicesDeviceIdUnitsUnitCodeUsersGet({
+  apiDashboardV1DevicesDeviceIdUnitsUnitCodeUsersGet({
     required String deviceId,
     required String unitCode,
     int? offset,
@@ -1216,25 +1283,31 @@ class UnitsServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}/users'
         .replaceAll(
-            '{' r'deviceId' '}',
-            encodeQueryParameter(_serializers, deviceId, const FullType(String))
-                .toString())
+          '{'
+          r'deviceId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            deviceId,
+            const FullType(String),
+          ).toString(),
+        )
         .replaceAll(
-            '{' r'unitCode' '}',
-            encodeQueryParameter(_serializers, unitCode, const FullType(String))
-                .toString());
+          '{'
+          r'unitCode'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            unitCode,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -1243,11 +1316,17 @@ class UnitsServiceApi {
 
     final _queryParameters = <String, dynamic>{
       if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
+        r'offset': encodeQueryParameter(
+          _serializers,
+          offset,
+          const FullType(int),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1266,10 +1345,12 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosGetUsersResponse),
-            ) as UtilitiesWebApiProtosGetUsersResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetUsersResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetUsersResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1309,11 +1390,11 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>>
-      apiDashboardV1DevicesDeviceIdUnitsUnitCodesendCommandPost({
+  apiDashboardV1DevicesDeviceIdUnitsUnitCodesendCommandPost({
     required String deviceId,
     required String unitCode,
     UtilitiesWebApiProtosSendCommandRequest?
-        utilitiesWebApiProtosSendCommandRequest,
+    utilitiesWebApiProtosSendCommandRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1324,27 +1405,31 @@ class UnitsServiceApi {
     final _path =
         r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}:send-command'
             .replaceAll(
-                '{' r'deviceId' '}',
-                encodeQueryParameter(
-                        _serializers, deviceId, const FullType(String))
-                    .toString())
+              '{'
+              r'deviceId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                deviceId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'unitCode' '}',
-                encodeQueryParameter(
-                        _serializers, unitCode, const FullType(String))
-                    .toString());
+              '{'
+              r'unitCode'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                unitCode,
+                const FullType(String),
+              ).toString(),
+            );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -1358,14 +1443,13 @@ class UnitsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosSendCommandRequest);
       _bodyData = utilitiesWebApiProtosSendCommandRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosSendCommandRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosSendCommandRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1388,9 +1472,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1430,11 +1515,11 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>>
-      apiDashboardV1DevicesDeviceIdUnitsUnitCodesendPingPost({
+  apiDashboardV1DevicesDeviceIdUnitsUnitCodesendPingPost({
     required String deviceId,
     required String unitCode,
     UtilitiesWebApiProtosSendUnitPingRequest?
-        utilitiesWebApiProtosSendUnitPingRequest,
+    utilitiesWebApiProtosSendUnitPingRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1445,27 +1530,31 @@ class UnitsServiceApi {
     final _path =
         r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}:send-ping'
             .replaceAll(
-                '{' r'deviceId' '}',
-                encodeQueryParameter(
-                        _serializers, deviceId, const FullType(String))
-                    .toString())
+              '{'
+              r'deviceId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                deviceId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'unitCode' '}',
-                encodeQueryParameter(
-                        _serializers, unitCode, const FullType(String))
-                    .toString());
+              '{'
+              r'unitCode'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                unitCode,
+                const FullType(String),
+              ).toString(),
+            );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -1479,14 +1568,13 @@ class UnitsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosSendUnitPingRequest);
       _bodyData = utilitiesWebApiProtosSendUnitPingRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosSendUnitPingRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosSendUnitPingRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1509,9 +1597,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1551,11 +1640,11 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>>
-      apiDashboardV1DevicesDeviceIdUnitsUnitCodeupdateFirmwarePost({
+  apiDashboardV1DevicesDeviceIdUnitsUnitCodeupdateFirmwarePost({
     required String deviceId,
     required String unitCode,
     UtilitiesWebApiProtosUpdateUnitFirmwareRequest?
-        utilitiesWebApiProtosUpdateUnitFirmwareRequest,
+    utilitiesWebApiProtosUpdateUnitFirmwareRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1566,27 +1655,31 @@ class UnitsServiceApi {
     final _path =
         r'/api/dashboard/v1/devices/{deviceId}/units/{unitCode}:update-firmware'
             .replaceAll(
-                '{' r'deviceId' '}',
-                encodeQueryParameter(
-                        _serializers, deviceId, const FullType(String))
-                    .toString())
+              '{'
+              r'deviceId'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                deviceId,
+                const FullType(String),
+              ).toString(),
+            )
             .replaceAll(
-                '{' r'unitCode' '}',
-                encodeQueryParameter(
-                        _serializers, unitCode, const FullType(String))
-                    .toString());
+              '{'
+              r'unitCode'
+              '}',
+              encodeQueryParameter(
+                _serializers,
+                unitCode,
+                const FullType(String),
+              ).toString(),
+            );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -1602,13 +1695,11 @@ class UnitsServiceApi {
           ? null
           : _serializers.serialize(
               utilitiesWebApiProtosUpdateUnitFirmwareRequest,
-              specifiedType: _type);
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1631,9 +1722,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1672,7 +1764,7 @@ class UnitsServiceApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>> apiDashboardV1DevicesattachPost({
     UtilitiesWebApiProtosAttachDeviceRequest?
-        utilitiesWebApiProtosAttachDeviceRequest,
+    utilitiesWebApiProtosAttachDeviceRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1683,16 +1775,10 @@ class UnitsServiceApi {
     final _path = r'/api/dashboard/v1/devices:attach';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -1706,14 +1792,13 @@ class UnitsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosAttachDeviceRequest);
       _bodyData = utilitiesWebApiProtosAttachDeviceRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosAttachDeviceRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosAttachDeviceRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1736,9 +1821,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1750,6 +1836,108 @@ class UnitsServiceApi {
     }
 
     return Response<JsonObject>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Binds a physical device to the current maintainer (BLE onboarding entry point).
+  /// Returns the bound device id together with the provisioned units so the  client can deep-link to the device page using the {deviceId}/{unitCode}  subscription key, without an extra round-trip.
+  ///
+  /// Parameters:
+  /// * [utilitiesWebApiProtosBindDeviceRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosBindDeviceResponse] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<UtilitiesWebApiProtosBindDeviceResponse>>
+  apiDashboardV1DevicesbindPost({
+    UtilitiesWebApiProtosBindDeviceRequest?
+    utilitiesWebApiProtosBindDeviceRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/dashboard/v1/devices:bind';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{...?headers},
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(UtilitiesWebApiProtosBindDeviceRequest);
+      _bodyData = utilitiesWebApiProtosBindDeviceRequest == null
+          ? null
+          : _serializers.serialize(
+              utilitiesWebApiProtosBindDeviceRequest,
+              specifiedType: _type,
+            );
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(_dio.options, _path),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    UtilitiesWebApiProtosBindDeviceResponse? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosBindDeviceResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosBindDeviceResponse;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<UtilitiesWebApiProtosBindDeviceResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1784,7 +1972,7 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosListUnitsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosListUnitsResponse>>
-      apiDashboardV1UnitsGet({
+  apiDashboardV1UnitsGet({
     BuiltList<UtilitiesWebApiProtosUnitStatus>? statuses,
     BuiltList<String>? types,
     BuiltList<String>? assignedEmployeeIds,
@@ -1804,16 +1992,10 @@ class UnitsServiceApi {
     final _path = r'/api/dashboard/v1/units';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -1824,12 +2006,13 @@ class UnitsServiceApi {
       if (statuses != null)
         r'statuses':
             encodeCollectionQueryParameter<UtilitiesWebApiProtosUnitStatus>(
-          _serializers,
-          statuses,
-          const FullType(
-              BuiltList, [FullType(UtilitiesWebApiProtosUnitStatus)]),
-          format: ListFormat.multi,
-        ),
+              _serializers,
+              statuses,
+              const FullType(BuiltList, [
+                FullType(UtilitiesWebApiProtosUnitStatus),
+              ]),
+              format: ListFormat.multi,
+            ),
       if (types != null)
         r'types': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -1853,19 +2036,34 @@ class UnitsServiceApi {
         ),
       if (hasAddress != null)
         r'hasAddress': encodeQueryParameter(
-            _serializers, hasAddress, const FullType(bool)),
+          _serializers,
+          hasAddress,
+          const FullType(bool),
+        ),
       if (deviceGroupId != null)
         r'deviceGroupId': encodeQueryParameter(
-            _serializers, deviceGroupId, const FullType(String)),
+          _serializers,
+          deviceGroupId,
+          const FullType(String),
+        ),
       if (includeDescendants != null)
         r'includeDescendants': encodeQueryParameter(
-            _serializers, includeDescendants, const FullType(bool)),
+          _serializers,
+          includeDescendants,
+          const FullType(bool),
+        ),
       if (offset != null)
-        r'offset':
-            encodeQueryParameter(_serializers, offset, const FullType(int)),
+        r'offset': encodeQueryParameter(
+          _serializers,
+          offset,
+          const FullType(int),
+        ),
       if (limit != null)
-        r'limit':
-            encodeQueryParameter(_serializers, limit, const FullType(int)),
+        r'limit': encodeQueryParameter(
+          _serializers,
+          limit,
+          const FullType(int),
+        ),
     };
 
     final _response = await _dio.request<Object>(
@@ -1884,10 +2082,12 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosListUnitsResponse),
-            ) as UtilitiesWebApiProtosListUnitsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosListUnitsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosListUnitsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1928,7 +2128,7 @@ class UnitsServiceApi {
   Future<Response<JsonObject>> apiDashboardV1UnitsUnitIdContactsPut({
     required String unitId,
     UtilitiesWebApiProtosUpdateContactsRequest?
-        utilitiesWebApiProtosUpdateContactsRequest,
+    utilitiesWebApiProtosUpdateContactsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1937,21 +2137,21 @@ class UnitsServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}/contacts'.replaceAll(
-        '{' r'unitId' '}',
-        encodeQueryParameter(_serializers, unitId, const FullType(String))
-            .toString());
+      '{'
+      r'unitId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        unitId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -1965,14 +2165,13 @@ class UnitsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosUpdateContactsRequest);
       _bodyData = utilitiesWebApiProtosUpdateContactsRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosUpdateContactsRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosUpdateContactsRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -1995,9 +2194,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2044,21 +2244,21 @@ class UnitsServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}'.replaceAll(
-        '{' r'unitId' '}',
-        encodeQueryParameter(_serializers, unitId, const FullType(String))
-            .toString());
+      '{'
+      r'unitId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        unitId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -2080,9 +2280,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2121,10 +2322,10 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>>
-      apiDashboardV1UnitsUnitIdMaintenanceAssignmentsPut({
+  apiDashboardV1UnitsUnitIdMaintenanceAssignmentsPut({
     required String unitId,
     UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest?
-        utilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest,
+    utilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2134,21 +2335,21 @@ class UnitsServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}/maintenance-assignments'
         .replaceAll(
-            '{' r'unitId' '}',
-            encodeQueryParameter(_serializers, unitId, const FullType(String))
-                .toString());
+          '{'
+          r'unitId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            unitId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -2159,20 +2360,19 @@ class UnitsServiceApi {
     dynamic _bodyData;
 
     try {
-      const _type =
-          FullType(UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest);
+      const _type = FullType(
+        UtilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest,
+      );
       _bodyData =
           utilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest == null
-              ? null
-              : _serializers.serialize(
-                  utilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest,
-                  specifiedType: _type);
+          ? null
+          : _serializers.serialize(
+              utilitiesWebApiProtosUpdateMaintenanceAssignmentsRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2195,9 +2395,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2238,7 +2439,7 @@ class UnitsServiceApi {
   Future<Response<JsonObject>> apiDashboardV1UnitsUnitIdNotePut({
     required String unitId,
     UtilitiesWebApiProtosUpdateNoteRequest?
-        utilitiesWebApiProtosUpdateNoteRequest,
+    utilitiesWebApiProtosUpdateNoteRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2247,21 +2448,21 @@ class UnitsServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}/note'.replaceAll(
-        '{' r'unitId' '}',
-        encodeQueryParameter(_serializers, unitId, const FullType(String))
-            .toString());
+      '{'
+      r'unitId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        unitId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -2275,14 +2476,13 @@ class UnitsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosUpdateNoteRequest);
       _bodyData = utilitiesWebApiProtosUpdateNoteRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosUpdateNoteRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosUpdateNoteRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2305,9 +2505,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2348,7 +2549,7 @@ class UnitsServiceApi {
   Future<Response<JsonObject>> apiDashboardV1UnitsUnitIdchangeUserRolePost({
     required String unitId,
     UtilitiesWebApiProtosChangeUserRoleRequest?
-        utilitiesWebApiProtosChangeUserRoleRequest,
+    utilitiesWebApiProtosChangeUserRoleRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2358,21 +2559,21 @@ class UnitsServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}:change-user-role'
         .replaceAll(
-            '{' r'unitId' '}',
-            encodeQueryParameter(_serializers, unitId, const FullType(String))
-                .toString());
+          '{'
+          r'unitId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            unitId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -2386,14 +2587,13 @@ class UnitsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosChangeUserRoleRequest);
       _bodyData = utilitiesWebApiProtosChangeUserRoleRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosChangeUserRoleRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosChangeUserRoleRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2416,9 +2616,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2457,10 +2658,10 @@ class UnitsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosCreateShareLinkResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosCreateShareLinkResponse>>
-      apiDashboardV1UnitsUnitIdcreateShareLinkPost({
+  apiDashboardV1UnitsUnitIdcreateShareLinkPost({
     required String unitId,
     UtilitiesWebApiProtosCreateShareLinkRequest?
-        utilitiesWebApiProtosCreateShareLinkRequest,
+    utilitiesWebApiProtosCreateShareLinkRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2470,21 +2671,21 @@ class UnitsServiceApi {
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}:create-share-link'
         .replaceAll(
-            '{' r'unitId' '}',
-            encodeQueryParameter(_serializers, unitId, const FullType(String))
-                .toString());
+          '{'
+          r'unitId'
+          '}',
+          encodeQueryParameter(
+            _serializers,
+            unitId,
+            const FullType(String),
+          ).toString(),
+        );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -2498,14 +2699,13 @@ class UnitsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosCreateShareLinkRequest);
       _bodyData = utilitiesWebApiProtosCreateShareLinkRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosCreateShareLinkRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosCreateShareLinkRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2528,10 +2728,12 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosCreateShareLinkResponse),
-            ) as UtilitiesWebApiProtosCreateShareLinkResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosCreateShareLinkResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosCreateShareLinkResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2572,7 +2774,7 @@ class UnitsServiceApi {
   Future<Response<JsonObject>> apiDashboardV1UnitsUnitIddetachUserPost({
     required String unitId,
     UtilitiesWebApiProtosDetachUserFromUnitRequest?
-        utilitiesWebApiProtosDetachUserFromUnitRequest,
+    utilitiesWebApiProtosDetachUserFromUnitRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2581,21 +2783,21 @@ class UnitsServiceApi {
     ProgressCallback? onReceiveProgress,
   }) async {
     final _path = r'/api/dashboard/v1/units/{unitId}:detach-user'.replaceAll(
-        '{' r'unitId' '}',
-        encodeQueryParameter(_serializers, unitId, const FullType(String))
-            .toString());
+      '{'
+      r'unitId'
+      '}',
+      encodeQueryParameter(
+        _serializers,
+        unitId,
+        const FullType(String),
+      ).toString(),
+    );
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -2611,13 +2813,11 @@ class UnitsServiceApi {
           ? null
           : _serializers.serialize(
               utilitiesWebApiProtosDetachUserFromUnitRequest,
-              specifiedType: _type);
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2640,9 +2840,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -2681,7 +2882,7 @@ class UnitsServiceApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>> apiDashboardV1UnitsattachPost({
     UtilitiesWebApiProtosAttachUnitRequest?
-        utilitiesWebApiProtosAttachUnitRequest,
+    utilitiesWebApiProtosAttachUnitRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -2692,16 +2893,10 @@ class UnitsServiceApi {
     final _path = r'/api/dashboard/v1/units:attach';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -2715,14 +2910,13 @@ class UnitsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosAttachUnitRequest);
       _bodyData = utilitiesWebApiProtosAttachUnitRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosAttachUnitRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosAttachUnitRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -2745,9 +2939,10 @@ class UnitsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+                  rawResponse,
+                  specifiedType: const FullType(JsonObject),
+                )
+                as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

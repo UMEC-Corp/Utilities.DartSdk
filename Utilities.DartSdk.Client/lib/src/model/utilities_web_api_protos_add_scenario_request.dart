@@ -23,8 +23,10 @@ part 'utilities_web_api_protos_add_scenario_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosAddScenarioRequest
     implements
-        Built<UtilitiesWebApiProtosAddScenarioRequest,
-            UtilitiesWebApiProtosAddScenarioRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosAddScenarioRequest,
+          UtilitiesWebApiProtosAddScenarioRequestBuilder
+        > {
   /// Id of the host object for the scenario
   @BuiltValueField(wireName: r'objectId')
   String? get objectId;
@@ -44,19 +46,20 @@ abstract class UtilitiesWebApiProtosAddScenarioRequest
   /// List of actions that should be done during scenario execution
   @BuiltValueField(wireName: r'actions')
   BuiltList<UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioActionItem>?
-      get actions;
+  get actions;
 
   /// List of conditions that should be checked before scenario execution
   @BuiltValueField(wireName: r'conditions')
   BuiltList<
-          UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioConditionItem>?
-      get conditions;
+    UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioConditionItem
+  >?
+  get conditions;
 
   UtilitiesWebApiProtosAddScenarioRequest._();
 
-  factory UtilitiesWebApiProtosAddScenarioRequest(
-          [void updates(UtilitiesWebApiProtosAddScenarioRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosAddScenarioRequest;
+  factory UtilitiesWebApiProtosAddScenarioRequest([
+    void updates(UtilitiesWebApiProtosAddScenarioRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosAddScenarioRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosAddScenarioRequestBuilder b) => b;
@@ -71,7 +74,7 @@ class _$UtilitiesWebApiProtosAddScenarioRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosAddScenarioRequest,
-    _$UtilitiesWebApiProtosAddScenarioRequest
+    _$UtilitiesWebApiProtosAddScenarioRequest,
   ];
 
   @override
@@ -116,7 +119,8 @@ class _$UtilitiesWebApiProtosAddScenarioRequestSerializer
         object.actions,
         specifiedType: const FullType(BuiltList, [
           FullType(
-              UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioActionItem)
+            UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioActionItem,
+          ),
         ]),
       );
     }
@@ -126,7 +130,8 @@ class _$UtilitiesWebApiProtosAddScenarioRequestSerializer
         object.conditions,
         specifiedType: const FullType(BuiltList, [
           FullType(
-              UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioConditionItem)
+            UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioConditionItem,
+          ),
         ]),
       );
     }
@@ -138,9 +143,11 @@ class _$UtilitiesWebApiProtosAddScenarioRequestSerializer
     UtilitiesWebApiProtosAddScenarioRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -156,53 +163,69 @@ class _$UtilitiesWebApiProtosAddScenarioRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'objectId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.objectId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         case r'isEnabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(bool),
+                  )
+                  as bool;
           result.isEnabled = valueDes;
           break;
         case r'eventTypeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.eventTypeId = valueDes;
           break;
         case r'actions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(
-                  UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioActionItem)
-            ]),
-          ) as BuiltList<
-              UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioActionItem>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(
+                        UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioActionItem,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioActionItem
+                  >;
           result.actions.replace(valueDes);
           break;
         case r'conditions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [
-              FullType(
-                  UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioConditionItem)
-            ]),
-          ) as BuiltList<
-              UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioConditionItem>;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(BuiltList, [
+                      FullType(
+                        UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioConditionItem,
+                      ),
+                    ]),
+                  )
+                  as BuiltList<
+                    UtilitiesWebApiProtosAddScenarioRequestTypesAddScenarioConditionItem
+                  >;
           result.conditions.replace(valueDes);
           break;
         default:

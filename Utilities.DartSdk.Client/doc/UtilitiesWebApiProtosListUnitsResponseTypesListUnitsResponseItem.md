@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **isInWarning** | **bool** |  | [optional] 
 **lastSeen** | **int** | Timestamp of the last activity | [optional] 
 **deviceGroupId** | **String** | Id of the device group this unit belongs to | [optional] 
+**conditions** | [**BuiltList&lt;UtilitiesWebApiProtosUnitCondition&gt;**](UtilitiesWebApiProtosUnitCondition.md) | Non-fatal status signals (see UnitCondition in common.proto). | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

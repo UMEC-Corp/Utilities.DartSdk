@@ -36,9 +36,9 @@ class StatisticsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetDistributionsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetDistributionsResponse>>
-      apiDashboardV1StatisticsDistributionsPost({
+  apiDashboardV1StatisticsDistributionsPost({
     UtilitiesWebApiProtosGetDistributionsRequest?
-        utilitiesWebApiProtosGetDistributionsRequest,
+    utilitiesWebApiProtosGetDistributionsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -49,16 +49,10 @@ class StatisticsServiceApi {
     final _path = r'/api/dashboard/v1/statistics/distributions';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -72,14 +66,13 @@ class StatisticsServiceApi {
       const _type = FullType(UtilitiesWebApiProtosGetDistributionsRequest);
       _bodyData = utilitiesWebApiProtosGetDistributionsRequest == null
           ? null
-          : _serializers.serialize(utilitiesWebApiProtosGetDistributionsRequest,
-              specifiedType: _type);
+          : _serializers.serialize(
+              utilitiesWebApiProtosGetDistributionsRequest,
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -102,10 +95,12 @@ class StatisticsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType:
-                  const FullType(UtilitiesWebApiProtosGetDistributionsResponse),
-            ) as UtilitiesWebApiProtosGetDistributionsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetDistributionsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetDistributionsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -143,9 +138,9 @@ class StatisticsServiceApi {
   /// Returns a [Future] containing a [Response] with a [UtilitiesWebApiProtosGetInputsStatisticsResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UtilitiesWebApiProtosGetInputsStatisticsResponse>>
-      apiDashboardV1StatisticsInputsPost({
+  apiDashboardV1StatisticsInputsPost({
     UtilitiesWebApiProtosGetInputsStatisticsRequest?
-        utilitiesWebApiProtosGetInputsStatisticsRequest,
+    utilitiesWebApiProtosGetInputsStatisticsRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -156,16 +151,10 @@ class StatisticsServiceApi {
     final _path = r'/api/dashboard/v1/statistics/inputs';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'Bearer',
-            'name': 'oauth2',
-          },
+          {'type': 'http', 'scheme': 'Bearer', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -181,13 +170,11 @@ class StatisticsServiceApi {
           ? null
           : _serializers.serialize(
               utilitiesWebApiProtosGetInputsStatisticsRequest,
-              specifiedType: _type);
+              specifiedType: _type,
+            );
     } catch (error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -210,10 +197,12 @@ class StatisticsServiceApi {
       _responseData = rawResponse == null
           ? null
           : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(
-                  UtilitiesWebApiProtosGetInputsStatisticsResponse),
-            ) as UtilitiesWebApiProtosGetInputsStatisticsResponse;
+                  rawResponse,
+                  specifiedType: const FullType(
+                    UtilitiesWebApiProtosGetInputsStatisticsResponse,
+                  ),
+                )
+                as UtilitiesWebApiProtosGetInputsStatisticsResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

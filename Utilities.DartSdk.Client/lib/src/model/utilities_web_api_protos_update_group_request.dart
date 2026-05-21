@@ -16,8 +16,10 @@ part 'utilities_web_api_protos_update_group_request.g.dart';
 @BuiltValue()
 abstract class UtilitiesWebApiProtosUpdateGroupRequest
     implements
-        Built<UtilitiesWebApiProtosUpdateGroupRequest,
-            UtilitiesWebApiProtosUpdateGroupRequestBuilder> {
+        Built<
+          UtilitiesWebApiProtosUpdateGroupRequest,
+          UtilitiesWebApiProtosUpdateGroupRequestBuilder
+        > {
   /// Id of the device group to update
   @BuiltValueField(wireName: r'groupId')
   String? get groupId;
@@ -28,9 +30,9 @@ abstract class UtilitiesWebApiProtosUpdateGroupRequest
 
   UtilitiesWebApiProtosUpdateGroupRequest._();
 
-  factory UtilitiesWebApiProtosUpdateGroupRequest(
-          [void updates(UtilitiesWebApiProtosUpdateGroupRequestBuilder b)]) =
-      _$UtilitiesWebApiProtosUpdateGroupRequest;
+  factory UtilitiesWebApiProtosUpdateGroupRequest([
+    void updates(UtilitiesWebApiProtosUpdateGroupRequestBuilder b),
+  ]) = _$UtilitiesWebApiProtosUpdateGroupRequest;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(UtilitiesWebApiProtosUpdateGroupRequestBuilder b) => b;
@@ -45,7 +47,7 @@ class _$UtilitiesWebApiProtosUpdateGroupRequestSerializer
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosUpdateGroupRequest,
-    _$UtilitiesWebApiProtosUpdateGroupRequest
+    _$UtilitiesWebApiProtosUpdateGroupRequest,
   ];
 
   @override
@@ -78,9 +80,11 @@ class _$UtilitiesWebApiProtosUpdateGroupRequestSerializer
     UtilitiesWebApiProtosUpdateGroupRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -96,17 +100,21 @@ class _$UtilitiesWebApiProtosUpdateGroupRequestSerializer
       final value = serializedList[i + 1];
       switch (key) {
         case r'groupId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.groupId = valueDes;
           break;
         case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.name = valueDes;
           break;
         default:

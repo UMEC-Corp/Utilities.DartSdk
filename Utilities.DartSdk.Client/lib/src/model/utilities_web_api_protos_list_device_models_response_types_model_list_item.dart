@@ -25,8 +25,10 @@ part 'utilities_web_api_protos_list_device_models_response_types_model_list_item
 @BuiltValue()
 abstract class UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem
     implements
-        Built<UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem,
-            UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemBuilder> {
+        Built<
+          UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem,
+          UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemBuilder
+        > {
   @BuiltValueField(wireName: r'modelId')
   int? get modelId;
 
@@ -60,33 +62,34 @@ abstract class UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem
 
   UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem._();
 
-  factory UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem(
-          [void updates(
-              UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemBuilder
-                  b)]) =
-      _$UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem;
+  factory UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem([
+    void updates(
+      UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemBuilder b,
+    ),
+  ]) = _$UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem;
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(
-          UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemBuilder
-              b) =>
-      b;
+    UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemBuilder b,
+  ) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<
-          UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem>
-      get serializer =>
-          _$UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemSerializer();
+    UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem
+  >
+  get serializer =>
+      _$UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemSerializer();
 }
 
 class _$UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemSerializer
     implements
         PrimitiveSerializer<
-            UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem> {
+          UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem
+        > {
   @override
   final Iterable<Type> types = const [
     UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem,
-    _$UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem
+    _$UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem,
   ];
 
   @override
@@ -176,9 +179,11 @@ class _$UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemSerialize
     UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItem object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    return _serializeProperties(serializers, object,
-            specifiedType: specifiedType)
-        .toList();
+    return _serializeProperties(
+      serializers,
+      object,
+      specifiedType: specifiedType,
+    ).toList();
   }
 
   void _deserializeProperties(
@@ -187,7 +192,7 @@ class _$UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemSerialize
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
     required UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemBuilder
-        result,
+    result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -195,73 +200,92 @@ class _$UtilitiesWebApiProtosListDeviceModelsResponseTypesModelListItemSerialize
       final value = serializedList[i + 1];
       switch (key) {
         case r'modelId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
+          final valueDes =
+              serializers.deserialize(value, specifiedType: const FullType(int))
+                  as int;
           result.modelId = valueDes;
           break;
         case r'vendorId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.vendorId = valueDes;
           break;
         case r'vendorCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.vendorCode = valueDes;
           break;
         case r'vendorName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.vendorName = valueDes;
           break;
         case r'modelCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.modelCode = valueDes;
           break;
         case r'modelName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.modelName = valueDes;
           break;
         case r'modelVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.modelVersion = valueDes;
           break;
         case r'modelFirmwareUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.modelFirmwareUrl = valueDes;
           break;
         case r'hardwareVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(String),
+                  )
+                  as String;
           result.hardwareVersion = valueDes;
           break;
         case r'scope':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UtilitiesWebApiProtosModelScope),
-          ) as UtilitiesWebApiProtosModelScope;
+          final valueDes =
+              serializers.deserialize(
+                    value,
+                    specifiedType: const FullType(
+                      UtilitiesWebApiProtosModelScope,
+                    ),
+                  )
+                  as UtilitiesWebApiProtosModelScope;
           result.scope = valueDes;
           break;
         default:
