@@ -27,3 +27,6 @@ doc/api/
 
 .flutter-plugins
 .flutter-plugins-dependencies
+
+# fvm — local Flutter version cache. .fvmrc (the pin) is tracked; .fvm/ is not.
+.fvm/

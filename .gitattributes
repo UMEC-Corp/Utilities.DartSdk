@@ -1,0 +1,15 @@
+# Standardize on LF in the repo. The Dart formatter and openapi-generator
+# always write LF, so pinning it here avoids CRLF/LF churn every time the
+# SDK is regenerated on Windows (where core.autocrlf=true would otherwise
+# convert on checkout and produce spurious "modified" status entries).
+* text=auto eol=lf
+
+# Binary types that must never be normalized.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary

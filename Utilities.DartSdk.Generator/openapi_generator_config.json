@@ -1,6 +1,6 @@
 {
   "openapiGeneratorVersion": "7.9.0",
-  "additionalCommands": "",
+  "additionalCommands": "--global-property=apiDocs=false,modelDocs=false,apiTests=false,modelTests=false",
   "downloadUrlOverride": null,
   "jarCacheDir": ".dart_tool/openapi_generator_cache",
   "customGeneratorUrls": [

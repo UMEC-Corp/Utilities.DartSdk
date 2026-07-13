@@ -1774,6 +1774,7 @@ class UnitsServiceApi {
   /// * [includeDescendants]
   /// * [offset]
   /// * [limit]
+  /// * [assignedToMe]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1794,6 +1795,7 @@ class UnitsServiceApi {
     bool? includeDescendants,
     int? offset,
     int? limit,
+    bool? assignedToMe,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1866,6 +1868,9 @@ class UnitsServiceApi {
       if (limit != null)
         r'limit':
             encodeQueryParameter(_serializers, limit, const FullType(int)),
+      if (assignedToMe != null)
+        r'assignedToMe': encodeQueryParameter(
+            _serializers, assignedToMe, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
